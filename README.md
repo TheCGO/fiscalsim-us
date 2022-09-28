@@ -1,4 +1,4 @@
-# OpenFisca US
+# FiscalSim US
 
 [![codecov](https://codecov.io/gh/PolicyEngine/openfisca-us/branch/master/graph/badge.svg?token=BLoCjCf5Qr)](https://codecov.io/gh/PolicyEngine/openfisca-us)
 
