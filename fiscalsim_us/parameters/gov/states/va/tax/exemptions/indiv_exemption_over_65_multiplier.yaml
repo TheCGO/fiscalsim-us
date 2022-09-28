@@ -4,6 +4,7 @@ values:
     value: 800
 metadata:
   unit: Currency-USD
+  period: year
   name: va_indiv_p65_exemption_multiplier
   label: Virginia Individual Exemption Multiplier
   reference:

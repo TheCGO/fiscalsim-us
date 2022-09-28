@@ -4,6 +4,7 @@ values:
     value: 930 
 metadata:
   unit: Currency-USD
+  period: year
   name: Virginia Individual Exemption Multiplier
   label: Virginia Individual Exemption Multiplier
   reference:
