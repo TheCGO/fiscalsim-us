@@ -1,0 +1,5 @@
+name: fiscalsim-us-dev
+dependencies:
+  - python=3.7
+  - pip:
+    - openfisca-core
