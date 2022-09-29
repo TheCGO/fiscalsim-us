@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 def create_in_state_variable(state: str) -> Type[Variable]:

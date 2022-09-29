@@ -1,7 +1,7 @@
 from openfisca_tools import IndividualSim as GeneralIndividualSim
-from openfisca_us import CountryTaxBenefitSystem
-from openfisca_us.entities import entities
-from openfisca_us.data import CPS
+from fiscalsim_us import CountryTaxBenefitSystem
+from fiscalsim_us.entities import entities
+from fiscalsim_us.data import CPS
 
 
 class IndividualSim(GeneralIndividualSim):

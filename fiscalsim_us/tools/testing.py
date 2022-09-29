@@ -22,7 +22,7 @@ from openfisca_core.simulation_builder import SimulationBuilder
 from openfisca_core.errors import SituationParsingError, VariableNotFound
 from openfisca_core.scripts import build_tax_benefit_system
 from openfisca_core.reforms import Reform
-from openfisca_us.reforms import set_parameter
+from fiscalsim_us.reforms import set_parameter
 
 log = logging.getLogger(__name__)
 
@@ -103,7 +103,7 @@ def run_tests(tax_benefit_system, paths, options=None):
 
     return pytest.main(
         [*argv, *paths] if True else paths,
-        plugins=[OpenFiscaPlugin(tax_benefit_system, options)],
+        plugins=[FiscalSimPlugin(tax_benefit_system, options)],
     )
 
 
@@ -356,7 +356,7 @@ class YamlItem(pytest.Item):
         )
 
 
-class OpenFiscaPlugin(object):
+class FiscalSimPlugin(object):
     def __init__(self, tax_benefit_system, options):
         self.tax_benefit_system = tax_benefit_system
         self.options = options

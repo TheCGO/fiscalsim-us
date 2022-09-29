@@ -1,8 +1,8 @@
 import logging
 from openfisca_tools.data import PublicDataset
 import h5py
-from openfisca_us.data.datasets.cps.raw_cps import RawCPS
-from openfisca_us.data.storage import OPENFISCA_US_MICRODATA_FOLDER
+from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
+from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
@@ -11,8 +11,8 @@ import pandas as pd
 class CPS(PublicDataset):
     name = "cps"
     label = "CPS"
-    model = "openfisca_us"
-    folder_path = OPENFISCA_US_MICRODATA_FOLDER
+    model = "fiscalsim_us"
+    folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
     url_by_year = {
         2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
@@ -20,7 +20,7 @@ class CPS(PublicDataset):
     }
 
     def generate(self, year: int):
-        """Generates the Current Population Survey dataset for OpenFisca-US microsimulations.
+        """Generates the Current Population Survey dataset for FiscalSim-US microsimulations.
         Technical documentation and codebook here: https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar21.pdf
 
         Args:
@@ -68,7 +68,7 @@ def add_silver_plan_cost(cps: h5py.File, year: int):
         cps (h5py.File): The CPS dataset file.
         year (int): The year of the data.
     """
-    from openfisca_us import Microsimulation
+    from fiscalsim_us import Microsimulation
 
     sim = Microsimulation(dataset=CPS, year=year)
     slspc = sim.calc("second_lowest_silver_plan_cost").values
@@ -245,8 +245,8 @@ def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
         childcare_expenses="SPM_CHILDCAREXPNS",
     )
 
-    for openfisca_variable, asec_variable in SPM_RENAMES.items():
-        cps[openfisca_variable] = spm_unit[asec_variable]
+    for fiscalsim_variable, asec_variable in SPM_RENAMES.items():
+        cps[fiscalsim_variable] = spm_unit[asec_variable]
 
     cps["reduced_price_school_meals_reported"] = (
         cps["free_school_meals_reported"][...] * 0
