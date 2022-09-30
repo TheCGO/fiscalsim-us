@@ -47,6 +47,8 @@ jobs:
       - name: Run tests
         run: make test
       - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
       - name: Build package
         run: make
       - name: Test documentation builds
