@@ -1,5 +1,8 @@
 name: fiscalsim-us-dev
 dependencies:
   - python=3.7
+  - autopep8
+  - black
   - pip:
     - openfisca-core
+    - linecheck
