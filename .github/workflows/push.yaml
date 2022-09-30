@@ -64,6 +64,11 @@ jobs:
       - uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
+          files: ./coverage.xml  # optional
+          flags: unittests  # optional
+          name: codecov-umbrella  # optional
+          fail_ci_if_error: true  # optional (default = false)
+          verbose: true  # optional (default = false)
       - name: Test documentation builds
         if: matrix.os == 'ubuntu-latest'
         run: make documentation
