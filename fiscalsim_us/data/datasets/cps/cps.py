@@ -15,8 +15,7 @@ class CPS(PublicDataset):
     folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
     url_by_year = {
-        2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
-        2021: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-2021-v0/cps_2021.h5",
+        2021: "https://github.com/TheCGO/fiscalsim-us/releases/download/v0.0.0/cps_2021.h5",
     }
 
     def generate(self, year: int):
