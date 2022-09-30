@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class ctc_adult_individual_maximum(Variable):

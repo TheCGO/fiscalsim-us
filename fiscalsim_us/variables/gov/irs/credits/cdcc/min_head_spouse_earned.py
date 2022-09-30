@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class min_head_spouse_earned(Variable):

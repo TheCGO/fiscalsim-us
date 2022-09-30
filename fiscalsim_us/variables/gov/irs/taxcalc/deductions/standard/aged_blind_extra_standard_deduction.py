@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class aged_blind_extra_standard_deduction(Variable):
