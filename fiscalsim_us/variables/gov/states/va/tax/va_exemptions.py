@@ -15,22 +15,42 @@ class va_exemptions(Variable):
             "ut_taxpayer_credit_reduction", period
         )
 
+        
+
         va_indiv_exempt_multiplier = tax_unit("va_indiv_exemption_multiplier",
                                                 period)
 
-        va_indiv_p65_exempt_multiplier = tax_unit("va_indiv_exemption_over_65_multiplier",period)
+        va_indiv_p65_exempt_multiplier = tax_unit(
+            "va_indiv_exemption_over_65_multiplier",period)
 
         dependents = tax_unit("tax_unit_dependents",period)
 
-        spouse_if_filing_jointly = ?
+        filing_status = tax_unit("filing_status", period)
 
-        you_p65 = ?
+        if filing_status == 1:
 
-        spouse_p65 = ? # check to see if this is valid if they are filing separately 
+            spouse_if_filing_jointly = 0
 
-        you_blind = ? 
+        elif filing_status == 2: 
 
-        spouse_blind = ? 
+            spouse_if_filing_jointly = 1 
+        
+        else: 
+
+            spouse_if_filing_jointly = 0 
+        
+
+        you_p65 = (tax_unit("age_head", period) >= 65 ).astype(int)
+
+        spouse_p65 = (tax_unit("age_spouse", period) >=  65 ).astype(
+            int
+        ) # check to see if this is valid if they are filing separately 
+           
+
+        you_blind = tax_unit("blind_head", period).astype(int)
+     
+
+        spouse_blind = tax_unit("blind_spouse", period).astype(int)
 
 
         total_section_A = ((1 + spouse_if_filing_jointly + dependents) * 
