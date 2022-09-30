@@ -1,11 +1,11 @@
-from openfisca_us.model_api import *
-from openfisca_us.variables.gov.irs.credits.ctc.maximum.individual.ctc_child_individual_maximum import (
+from fiscalsim_us.model_api import *
+from fiscalsim_us.variables.gov.irs.credits.ctc.maximum.individual.ctc_child_individual_maximum import (
     ctc_child_individual_maximum,
 )
-from openfisca_us.variables.gov.irs.credits.ctc.maximum.individual.ctc_adult_individual_maximum import (
+from fiscalsim_us.variables.gov.irs.credits.ctc.maximum.individual.ctc_adult_individual_maximum import (
     ctc_adult_individual_maximum,
 )
-from openfisca_us.parameters import default_parameters
+from fiscalsim_us.parameters import default_parameters
 
 
 class ctc_reduction(Variable):

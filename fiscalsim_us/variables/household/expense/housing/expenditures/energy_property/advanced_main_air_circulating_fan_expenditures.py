@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class advanced_main_air_circulating_fan_expenditures(Variable):

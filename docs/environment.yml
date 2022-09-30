@@ -1,4 +1,4 @@
-name: openfisca_us
+name: fiscalsim_us
 channels:
   - defaults
 dependencies:

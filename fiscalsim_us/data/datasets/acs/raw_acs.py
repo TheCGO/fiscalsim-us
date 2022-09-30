@@ -6,7 +6,7 @@ import pandas as pd
 from openfisca_tools.data import PublicDataset
 import requests
 from tqdm import tqdm
-from openfisca_us.data.storage import OPENFISCA_US_MICRODATA_FOLDER
+from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
 
 
 logging.getLogger().setLevel(logging.INFO)
@@ -57,8 +57,8 @@ HOUSEHOLD_COLUMNS = [
 class RawACS(PublicDataset):
     name = "raw_acs"
     label = "Raw ACS"
-    is_openfisca_compatible = False
-    folder_path = OPENFISCA_US_MICRODATA_FOLDER
+    is_fiscalsim_compatible = False
+    folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
     def generate(self, year: int) -> None:
         year = int(year)

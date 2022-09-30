@@ -10,5 +10,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Initial file upload
 
 - This model is build from the foundation of `openfisca-us` and the `openfisca-core` packages.
-
-## [0.163.0] - 2022-09-27 02:30:33

@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 setup(
     name="FiscalSim-US",
     version="0.0.0",
-    author="The CGO",
+    author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="revans@thecgo.org",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -15,10 +15,10 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-    description="OpenFisca tax and benefit system for the US",
+    description="FiscalSim tax and benefit system for the US",
     keywords="benefit microsimulation social tax",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
-    url="https://github.com/PolicyEngine/openfisca-us",
+    url="https://github.com/TheCGO/fiscalsim-us",
     include_package_data=True,  # Will read MANIFEST.in
     data_files=[
         (
@@ -60,8 +60,8 @@ setup(
     python_requires=">=3.7,<3.8",
     entry_points={
         "console_scripts": [
-            "openfisca-us = openfisca_us.tools.cli:main",
-            "openfisca-us-data = openfisca_us.data.cli:cli",
+            "fiscalsim-us = fiscalsim_us.tools.cli:main",
+            "fiscalsim-us-data = fiscalsim_us.data.cli:cli",
         ],
     },
     packages=find_packages(),

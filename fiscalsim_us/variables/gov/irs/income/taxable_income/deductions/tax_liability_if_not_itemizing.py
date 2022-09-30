@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 from openfisca_core.tracers import SimpleTracer
 
 

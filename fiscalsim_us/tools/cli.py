@@ -2,7 +2,7 @@ import argparse
 import logging
 import os
 import sys
-from openfisca_us.tools.testing import run_tests
+from fiscalsim_us.tools.testing import run_tests
 from openfisca_core.scripts import build_tax_benefit_system
 
 OPENFISCA_US = "openfisca_us"
