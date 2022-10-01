@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 # calculated by subtracting the resident credit, which is currently not modeled
 

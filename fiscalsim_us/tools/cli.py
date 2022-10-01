@@ -5,16 +5,16 @@ import sys
 from fiscalsim_us.tools.testing import run_tests
 from openfisca_core.scripts import build_tax_benefit_system
 
-OPENFISCA_US = "openfisca_us"
+FISCALSIM_US = "fiscalsim_us"
 
 
 def add_tax_benefit_system_arguments(parser):
     parser.add_argument(
         "-c",
         "--country-package",
-        default=OPENFISCA_US,
+        default=FISCALSIM_US,
         action="store",
-        help='country package to use. If not provided, an automatic detection will be attempted by scanning the python packages installed in your environment which name contains the word "openfisca".',
+        help='country package to use. If not provided, an automatic detection will be attempted by scanning the python packages installed in your environment which name contains the word "fiscalsim".',
     )
     parser.add_argument(
         "-e",
@@ -103,7 +103,7 @@ def build_parser():
         return parser
 
     parser_test = subparsers.add_parser(
-        "test", help="Run OpenFisca YAML tests"
+        "test", help="Run FiscalSim YAML tests"
     )
     parser_test = build_test_parser(parser_test)
 
@@ -118,7 +118,7 @@ def main():
     )
 
     tax_benefit_system = build_tax_benefit_system(
-        OPENFISCA_US, args.extensions, args.reforms
+        FISCALSIM_US, args.extensions, args.reforms
     )
 
     options = {
