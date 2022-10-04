@@ -1,5 +1,5 @@
 import pytest
-from openfisca_us import CountryTaxBenefitSystem
+from fiscalsim_us import CountryTaxBenefitSystem
 from openfisca_core.simulation_builder import SimulationBuilder
 
 DEFAULT_SITUATION = {

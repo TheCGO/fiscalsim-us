@@ -1,6 +1,6 @@
 # Massachusetts
 
-OpenFisca US has implemented the following state-specific programs in Massachusetts:
+FiscalSim US has implemented the following state-specific programs in Massachusetts:
 * State income taxes
 * SNAP
 * ACA subsidies

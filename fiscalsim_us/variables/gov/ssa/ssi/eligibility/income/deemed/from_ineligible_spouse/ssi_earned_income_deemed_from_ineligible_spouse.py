@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class ssi_earned_income_deemed_from_ineligible_spouse(Variable):

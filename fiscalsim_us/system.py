@@ -1,19 +1,19 @@
 from openfisca_core.taxbenefitsystems import TaxBenefitSystem
-from openfisca_us.entities import *
-from openfisca_us.parameters.gov.irs.uprating import set_irs_uprating_parameter
-from openfisca_us.situation_examples import single_filer
+from fiscalsim_us.entities import *
+from fiscalsim_us.parameters.gov.irs.uprating import set_irs_uprating_parameter
+from fiscalsim_us.situation_examples import single_filer
 from openfisca_tools import (
     homogenize_parameter_structures,
     uprate_parameters,
     propagate_parameter_metadata,
 )
 import os
-from openfisca_us.tools.backdate_parameters import backdate_parameters
+from fiscalsim_us.tools.backdate_parameters import backdate_parameters
 
-from openfisca_us.tools.dev.taxcalc.generate_taxcalc_variable import (
+from fiscalsim_us.tools.dev.taxcalc.generate_taxcalc_variable import (
     add_taxcalc_variable_aliases,
 )
-from openfisca_us.variables.household.demographic.geographic.state.in_state import (
+from fiscalsim_us.variables.household.demographic.geographic.state.in_state import (
     create_50_state_variables,
 )
 
