@@ -1,15 +1,15 @@
 description: KS non-joint filing income tax rate
 brackets:
   - threshold:
-      0000-01-01: 0
+      2021-01-01: 0
     rate:
       2021-01-01: 0.031
   - threshold:
-      0000-01-01: 30_000
+      2021-01-01: 30_000
     rate:
       2021-01-01: 0.0525
   - threshold:
-      0000-01-01: 60_000  
+      2021-01-01: 60_000  
     rate:
       2021-01-01: 0.057
 
