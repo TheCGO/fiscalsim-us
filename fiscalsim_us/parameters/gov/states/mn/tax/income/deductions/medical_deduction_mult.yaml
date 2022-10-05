@@ -1,0 +1,12 @@
+description: Medical and Dental multiplier for itemized deduction 
+values:
+  2019-01-01: .1
+metadata:
+  unit: /1
+  name: mn_medical_deduction_mult
+  label: MN medical deduction multiplier
+  reference:
+    - title: 2021 Schedule M1SA, Minnesota Itemized Deduction
+    href: https://www.revenue.state.mn.us/sites/default/files/2021-12/m1sa_21.pdf
+    - title: Minnesota Itemized Deductions
+    href: https://www.revenue.state.mn.us/minnesota-itemized-deductions
