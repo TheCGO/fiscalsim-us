@@ -1,0 +1,11 @@
+description: KS exemption allowance multiplier
+values:
+  2021-01-01: 2_250
+metadata:
+  unit: currency-USD
+  period: year
+  name: ks_exemption_allowance_multiplier
+  label: KS exemption allowance multiplier
+  reference:
+    - title: Complete Income Tax Instruction Booklet - 2021, page 7
+      href: https://www.ksrevenue.gov/pdf/ip21.pdf#page=7
