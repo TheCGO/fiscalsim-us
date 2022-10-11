@@ -1,0 +1,125 @@
+description: SC Tax Tables
+
+threshold_unit: currency_USD
+  rate_unit: /1
+  threshold_period: year
+  type: marginal_rate
+  name: sc_tax_tables
+  label: SC Tax Tables
+  reference: 
+    - title: South Carolina Tax Brackets (avg)
+      href: https://dor.sc.gov/forms-site/Forms/SC1040TT_2021.pdf
+
+brackets:
+  - threshold:
+      0000-01-01: 3_150
+    rate:
+      2021-01-01: 0
+  - threshold:
+      0000-01-01: 4_000
+    rate:
+      2021-01-01: 0.0037
+  - threshold:
+      0000-01-01: 5_000  
+    rate:
+      2021-01-01: 0.014
+  - threshold:
+      0000-01-01: 6_000  
+    rate:
+      2021-01-01: 0.017
+  - threshold:
+      0000-01-01: 7_000  
+    rate:
+      2021-01-01: 0.024
+  - threshold:
+      0000-01-01: 9_000  
+    rate:
+      2021-01-01: 0.028
+  - threshold:
+      0000-01-01: 11_000  
+    rate:
+      2021-01-01: 0.032
+  - threshold:
+      0000-01-01: 13_000  
+    rate:
+      2021-01-01: 0.036
+  - threshold:
+      0000-01-01: 15_000  
+    rate:
+      2021-01-01: 0.039
+  - threshold:
+      0000-01-01: 17_000  
+    rate:
+      2021-01-01: 0.043
+  - threshold:
+      0000-01-01: 19_000  
+    rate:
+      2021-01-01: 0.046
+  - threshold:
+      0000-01-01: 21_000  
+    rate:
+      2021-01-01: 0.048
+  - threshold:
+      0000-01-01: 23_000  
+    rate:
+      2021-01-01: 0.05
+  - threshold:
+      0000-01-01: 25_000  
+    rate:
+      2021-01-01: 0.052
+  - threshold:
+      0000-01-01: 27_000  
+    rate:
+      2021-01-01: 0.053
+  - threshold:
+      0000-01-01: 29_000  
+    rate:
+      2021-01-01: 0.054
+  - threshold:
+      0000-01-01: 31_000  
+    rate:
+      2021-01-01: 0.055
+  - threshold:
+      0000-01-01: 33_000  
+    rate:
+      2021-01-01: 0.056
+  - threshold:
+      0000-01-01: 35_000  
+    rate:
+      2021-01-01: 0.057
+  - threshold:
+      0000-01-01: 37_000  
+    rate:
+      2021-01-01: 0.058
+  - threshold:
+      0000-01-01: 39_000  
+    rate:
+      2021-01-01: 0.058
+  - threshold:
+      0000-01-01: 41_000  
+    rate:
+      2021-01-01: 0.059
+  - threshold:
+      0000-01-01: 47_000  
+    rate:
+      2021-01-01: 0.06
+  - threshold:
+      0000-01-01: 53_000  
+    rate:
+      2021-01-01: 0.061
+  - threshold:
+      0000-01-01: 59_000  
+    rate:
+      2021-01-01: 0.062
+  - threshold:
+      0000-01-01: 69_000  
+    rate:
+      2021-01-01: 0.063
+  - threshold:
+      0000-01-01: 81_000 
+    rate:
+      2021-01-01: 0.064
+  - threshold:
+      0000-01-01: 99_000  
+    rate:
+      2021-01-01: 0.065
