@@ -1,0 +1,22 @@
+description: Maximum itemized deduction for state and local property tax paid
+
+SINGLE:
+  2021-01-01: 10_000 
+SEPARATE:
+  2020-01-01: 5_000
+WIDOW:
+  2020-01-01: 10_000
+JOINT:
+  2020-01-01: 10_000
+HEAD_OF_HOUSEHOLD:
+  2020-01-01: 10_000
+
+metadata:
+  unit: currency-USD
+  name: mn_state_local_property_tax_max
+  lable: MN state and local property tax paid maximum deduction
+  reference:
+    - title: 2021 Schedule M1SA, Minnesota Itemized Deduction
+    href: https://www.revenue.state.mn.us/sites/default/files/2021-12/m1sa_21.pdf
+    - title: Minnesota Itemized Deductions
+    href: https://www.revenue.state.mn.us/minnesota-itemized-deductions
