@@ -1,0 +1,10 @@
+description: Unreimburesd employee business expenses minimum percent of income
+values:
+  2021-01-01: .02
+metadata:
+  unit: /1
+  period: year
+  name: mn_unreimbursed_employee_expenses_mult
+  reference:
+    - title: 2021 Schedule M1SA, Minnesota Itemized Deductions
+    - href: https://www.revenue.state.mn.us/sites/default/files/2021-12/m1sa_21.pdf
