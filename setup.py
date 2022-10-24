@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="fiscalsim-US",
-    version="0.0.0",
+    version="0.0.1",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="revans@thecgo.org",
     classifiers=[
