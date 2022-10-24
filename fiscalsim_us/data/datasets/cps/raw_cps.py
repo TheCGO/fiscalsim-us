@@ -11,7 +11,7 @@ class RawCPS(PublicDataset):
     name = "raw_cps"
     label = "Raw CPS"
     folder_path = FISCALSIM_US_MICRODATA_FOLDER
-    is_fiscalsim_compatible = False
+    is_openfisca_compatible = False
 
     def generate(self, year: int) -> pd.DataFrame:
         """Generates the raw CPS dataset.
