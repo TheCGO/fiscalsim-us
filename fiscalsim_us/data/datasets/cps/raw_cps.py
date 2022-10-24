@@ -4,13 +4,13 @@ from policyengine_core.data import PublicDataset
 import pandas as pd
 import requests
 from tqdm import tqdm
-from fiscalsim_us.data.storage import fiscalsim_us_MICRODATA_FOLDER
+from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
 
 
 class RawCPS(PublicDataset):
     name = "raw_cps"
     label = "Raw CPS"
-    folder_path = fiscalsim_us_MICRODATA_FOLDER
+    folder_path = FISCALSIM_US_MICRODATA_FOLDER
     is_openfisca_compatible = False
 
     def generate(self, year: int) -> pd.DataFrame:
