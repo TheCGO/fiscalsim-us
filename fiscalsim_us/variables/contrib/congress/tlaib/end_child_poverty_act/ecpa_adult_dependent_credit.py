@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class ecpa_adult_dependent_credit(Variable):
@@ -8,7 +8,7 @@ class ecpa_adult_dependent_credit(Variable):
     unit = USD
     label = "End Child Poverty Act Adult Dependent Credit"
 
-    def formula(tax_unit, period, parameters):
+    def formula_2022(tax_unit, period, parameters):
         person = tax_unit.members
         p = parameters(
             period

@@ -1,8 +1,8 @@
 import logging
-from openfisca_tools.data import PublicDataset
+from policyengine_core.data import PublicDataset
 import h5py
-from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
-from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
+from policyengine_us.data.datasets.cps.raw_cps import RawCPS
+from policyengine_us.data.storage import policyengine_us_MICRODATA_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
@@ -11,15 +11,17 @@ import pandas as pd
 class CPS(PublicDataset):
     name = "cps"
     label = "CPS"
-    model = "fiscalsim_us"
-    folder_path = FISCALSIM_US_MICRODATA_FOLDER
+    model = "policyengine_us"
+    folder_path = policyengine_us_MICRODATA_FOLDER
 
     url_by_year = {
-        2021: "https://github.com/TheCGO/fiscalsim-us/releases/download/v0.0.0/cps_2021.h5",
+        2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
+        2021: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-2021-v0/cps_2021.h5",
+        2022: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-2021-v0/cps_2022.h5",
     }
 
     def generate(self, year: int):
-        """Generates the Current Population Survey dataset for FiscalSim-US microsimulations.
+        """Generates the Current Population Survey dataset for PolicyEngine US microsimulations.
         Technical documentation and codebook here: https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar21.pdf
 
         Args:
@@ -28,6 +30,29 @@ class CPS(PublicDataset):
 
         # Prepare raw CPS tables
         year = int(year)
+
+        if year == 2022:
+            print(
+                "Currently, only the 2021 ASEC is available. Uprating the 2021 ASEC to 2022..."
+            )
+            if 2021 not in CPS.years:
+                print("Didn't find the 2021 CPS dataset. Generating...")
+                CPS.generate(2021)
+
+            from policyengine_us import Microsimulation
+
+            sim = Microsimulation(dataset=CPS, dataset_year=2021)
+            cps_22 = h5py.File(self.file(2022), mode="w")
+            cps_21 = h5py.File(self.file(2021), mode="r")
+            for variable in cps_21:
+                if variable in sim.tax_benefit_system.variables:
+                    cps_22.create_dataset(
+                        variable, data=sim.calculate(variable, 2022).values
+                    )
+            cps_22.close()
+            cps_21.close()
+            return
+
         if year not in RawCPS.years:
             logging.info(f"Generating raw CPS for year {year}.")
             RawCPS.generate(year)
@@ -67,9 +92,9 @@ def add_silver_plan_cost(cps: h5py.File, year: int):
         cps (h5py.File): The CPS dataset file.
         year (int): The year of the data.
     """
-    from fiscalsim_us import Microsimulation
+    from policyengine_us import Microsimulation
 
-    sim = Microsimulation(dataset=CPS, year=year)
+    sim = Microsimulation(dataset=CPS, dataset_year=year)
     slspc = sim.calc("second_lowest_silver_plan_cost").values
 
     cps["second_lowest_silver_plan_cost"] = slspc
@@ -244,8 +269,8 @@ def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
         childcare_expenses="SPM_CHILDCAREXPNS",
     )
 
-    for fiscalsim_variable, asec_variable in SPM_RENAMES.items():
-        cps[fiscalsim_variable] = spm_unit[asec_variable]
+    for openfisca_variable, asec_variable in SPM_RENAMES.items():
+        cps[openfisca_variable] = spm_unit[asec_variable]
 
     cps["reduced_price_school_meals_reported"] = (
         cps["free_school_meals_reported"][...] * 0

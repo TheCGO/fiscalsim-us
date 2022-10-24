@@ -1,5 +1,7 @@
-from fiscalsim_us.model_api import *
-from openfisca_tools import homogenize_parameter_structures
+from policyengine_us.model_api import *
+from policyengine_core.parameters.operations import (
+    homogenize_parameter_structures,
+)
 
 
 class second_lowest_silver_plan_cost(Variable):
@@ -8,6 +10,7 @@ class second_lowest_silver_plan_cost(Variable):
     label = "Second-lowest silver plan cost"
     unit = USD
     definition_period = YEAR
+    defined_for = "is_ptc_eligible"
 
     def formula(tax_unit, period, parameters):
         parameter_tree = tax_unit.simulation.tax_benefit_system.parameters

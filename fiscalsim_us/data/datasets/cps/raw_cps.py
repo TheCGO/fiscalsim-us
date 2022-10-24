@@ -1,17 +1,17 @@
 from io import BytesIO
 from zipfile import ZipFile
-from openfisca_tools.data import PublicDataset
+from policyengine_core.data import PublicDataset
 import pandas as pd
 import requests
 from tqdm import tqdm
-from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
+from policyengine_us.data.storage import policyengine_us_MICRODATA_FOLDER
 
 
 class RawCPS(PublicDataset):
     name = "raw_cps"
     label = "Raw CPS"
-    folder_path = FISCALSIM_US_MICRODATA_FOLDER
-    is_fiscalsim_compatible = False
+    folder_path = policyengine_us_MICRODATA_FOLDER
+    is_openfisca_compatible = False
 
     def generate(self, year: int) -> pd.DataFrame:
         """Generates the raw CPS dataset.

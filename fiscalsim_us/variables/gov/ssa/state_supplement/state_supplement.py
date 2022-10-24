@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class state_supplement(Variable):
@@ -16,9 +16,8 @@ class state_supplement(Variable):
         meets_resource_test = person("meets_ssi_resource_test", period)
         eligible = abd & meets_resource_test
         joint_claim = person("ssi_claim_is_joint", period)
-        amount_if_eligible = where(
+        return where(
             joint_claim,
             person.marital_unit.sum(state_supplement) / 2,
-            state_supplement,
+            state_supplement * eligible,
         )
-        return eligible * amount_if_eligible

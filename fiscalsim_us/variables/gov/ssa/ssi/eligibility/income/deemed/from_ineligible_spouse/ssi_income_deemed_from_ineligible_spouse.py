@@ -1,5 +1,5 @@
-from fiscalsim_us.model_api import *
-from fiscalsim_us.variables.gov.ssa.ssi.eligibility.income._apply_ssi_exclusions import (
+from policyengine_us.model_api import *
+from policyengine_us.variables.gov.ssa.ssi.eligibility.income._apply_ssi_exclusions import (
     _apply_ssi_exclusions,
 )
 
@@ -21,6 +21,8 @@ class ssi_income_deemed_from_ineligible_spouse(Variable):
         spousal_unearned_income = person(
             "ssi_unearned_income_deemed_from_ineligible_spouse", period
         )
+
+        amount = parameters(period).gov.ssa.ssi.amount
 
         income_if_combined = _apply_ssi_exclusions(
             personal_earned_income + spousal_earned_income,
