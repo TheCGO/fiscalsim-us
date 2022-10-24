@@ -64,7 +64,7 @@ setup(
     python_requires=">=3.7,<3.10",
     entry_points={
         "console_scripts": [
-            "fiscalsim-us = policyengine_us.tools.cli:main",
+            "fiscalsim-us = fiscalsim_us.tools.cli:main",
         ],
     },
     packages=find_packages(),
