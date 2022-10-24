@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class retired_on_total_disability(Variable):

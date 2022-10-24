@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class ma_part_c_gross_income(Variable):

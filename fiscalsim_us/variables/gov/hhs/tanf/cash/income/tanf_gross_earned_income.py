@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class tanf_gross_earned_income(Variable):

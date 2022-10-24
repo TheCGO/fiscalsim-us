@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class three_digit_zip_code(Variable):

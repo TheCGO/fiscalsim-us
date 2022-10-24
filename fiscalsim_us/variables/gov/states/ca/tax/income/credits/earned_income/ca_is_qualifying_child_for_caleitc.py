@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class ca_is_qualifying_child_for_caleitc(Variable):
