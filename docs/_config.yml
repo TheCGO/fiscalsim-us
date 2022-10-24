@@ -4,16 +4,7 @@ copyright: "2022"
 
 execute:
   execute_notebooks: cache
-
-html:
-  use_edit_page_button: true # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
-  use_repository_button: true # Whether to add a link to your repository button
-  use_issues_button: true # Whether to add an "open an issue" button
-  # google_analytics_id: "G-TYHPWJGXW8" # A GA id that can be used to track book views.
-  home_page_in_navbar: true # Whether to include your home page in the left Navigation Bar
-
-launch_buttons:
-  notebook_interface: "classic"
+  timeout: -1
 
 repository:
   url: https://github.com/TheCGO/fiscalsim-us
@@ -24,8 +15,8 @@ sphinx:
   config:
     html_js_files:
       - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
-    html_theme: pyramid
-    pygmets_style: default
+    html_theme: classic
+    pygments_style: default
   extra_extensions:
     - "sphinx.ext.autodoc"
     - "sphinxarg.ext"

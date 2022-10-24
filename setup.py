@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="FiscalSim-US",
+    name="fiscalsim-US",
     version="0.0.0",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="revans@thecgo.org",
@@ -15,7 +15,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-    description="FiscalSim US and state tax and benefit system",
+    description="FiscalSim federal and state tax and benefit system for the US",
     keywords="benefit microsimulation social tax",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
     url="https://github.com/TheCGO/fiscalsim-us",
@@ -54,7 +54,6 @@ setup(
             "wheel",
             "yaml-changelog>=0.1.7",
             "linecheck",
-            "furo<2023",
             "markupsafe==2.0.1",
             "sphinx>=4.5.0,<5",
             "sphinx-argparse>=0.3.2,<1",
