@@ -3,3 +3,9 @@
     - First prototype version based off of openfisca-us and tax-calculator.
   date: 2022-09-28 15:59:00
   version: 0.0.0
+- bump: minor
+  changes:
+    added:
+    - reduced the key dependencies to just `policyengine-core` instead of `openfisca-core` and `openfisca-tools`
+    - made `fiscalsim-us` compliant with Python 3.9
+  date: 2022-10-24 06:40:00
