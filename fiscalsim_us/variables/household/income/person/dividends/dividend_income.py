@@ -1,5 +1,4 @@
 from fiscalsim_us.model_api import *
-from fiscalsim_us import CountryTaxBenefitSystem
 
 
 class dividend_income(Variable):

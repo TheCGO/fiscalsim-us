@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="FiscalSim-US",
+    name="fiscalsim-US",
     version="0.0.0",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="revans@thecgo.org",
@@ -12,10 +12,10 @@ setup(
         "License :: OSI Approved :: GNU Affero General Public License v3",
         "Operating System :: POSIX",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-    description="FiscalSim tax and benefit system for the US",
+    description="FiscalSim federal and state tax and benefit system for the US",
     keywords="benefit microsimulation social tax",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
     url="https://github.com/TheCGO/fiscalsim-us",
@@ -29,8 +29,7 @@ setup(
     install_requires=[
         "h5py",
         "microdf_python",
-        "OpenFisca-Core[web-api] >= 35.0.0",
-        "OpenFisca-Tools>=0.13.6,<1.0.0",
+        "policyengine-core >= 1.3.0",
         "pandas",
         "pathlib",
         "pytest",
@@ -55,13 +54,16 @@ setup(
             "wheel",
             "yaml-changelog>=0.1.7",
             "linecheck",
+            "markupsafe==2.0.1",
+            "sphinx>=4.5.0,<5",
+            "sphinx-argparse>=0.3.2,<1",
+            "sphinx-math-dollar>=1.2.1,<2",
         ],
     },
-    python_requires=">=3.7,<3.8",
+    python_requires=">=3.7,<3.10",
     entry_points={
         "console_scripts": [
             "fiscalsim-us = fiscalsim_us.tools.cli:main",
-            "fiscalsim-us-data = fiscalsim_us.data.cli:cli",
         ],
     },
     packages=find_packages(),

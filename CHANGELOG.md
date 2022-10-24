@@ -9,4 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Initial file upload
 
-- This model is build from the foundation of `openfisca-us` and the `openfisca-core` packages.
+- This model is build from the foundation of `policyengine-us` and `tax-calculator` model repositories.

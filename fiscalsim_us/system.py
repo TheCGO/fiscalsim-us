@@ -1,57 +1,83 @@
-from openfisca_core.taxbenefitsystems import TaxBenefitSystem
+from pathlib import Path
+from policyengine_core.taxbenefitsystems import TaxBenefitSystem
 from fiscalsim_us.entities import *
-from fiscalsim_us.parameters.gov.irs.uprating import set_irs_uprating_parameter
-from fiscalsim_us.situation_examples import single_filer
-from openfisca_tools import (
-    homogenize_parameter_structures,
-    uprate_parameters,
-    propagate_parameter_metadata,
+from fiscalsim_us.parameters.gov.irs.uprating import (
+    set_irs_uprating_parameter,
 )
-import os
-from fiscalsim_us.tools.backdate_parameters import backdate_parameters
-
-from fiscalsim_us.tools.dev.taxcalc.generate_taxcalc_variable import (
+from policyengine_core.simulations import (
+    Simulation as CoreSimulation,
+    Microsimulation as CoreMicrosimulation,
+    IndividualSim as CoreIndividualSim,
+)
+from fiscalsim_us.data import CPS
+from fiscalsim_us.tools.taxcalc.generate_taxcalc_variable import (
     add_taxcalc_variable_aliases,
 )
 from fiscalsim_us.variables.household.demographic.geographic.state.in_state import (
     create_50_state_variables,
 )
 
-COUNTRY_DIR = os.path.dirname(os.path.abspath(__file__))
+COUNTRY_DIR = Path(__file__).parent
 
 
-# Our country tax and benefit class inherits from the general TaxBenefitSystem class.
-# The name CountryTaxBenefitSystem must not be changed, as all tools of the OpenFisca ecosystem expect a CountryTaxBenefitSystem class to be exposed in the __init__ module of a country package.
 class CountryTaxBenefitSystem(TaxBenefitSystem):
-    CURRENCY = "$"
+    parameters_dir = COUNTRY_DIR / "parameters"
+    variables_dir = COUNTRY_DIR / "variables"
+    auto_carry_over_input_variables = True
 
     def __init__(self):
         # We initialize our tax and benefit system with the general constructor
         super().__init__(entities)
 
-        # We add to our tax and benefit system all the variables
-        self.add_variables_from_directory(
-            os.path.join(COUNTRY_DIR, "variables")
-        )
-
         self.add_variables(*create_50_state_variables())
-
-        # We add to our tax and benefit system all the legislation parameters defined in the  parameters files
-        param_path = os.path.join(COUNTRY_DIR, "parameters")
-        self.load_parameters(param_path)
-
-        self.parameters = homogenize_parameter_structures(
-            self.parameters, self.variables
-        )
-
-        self.parameters = propagate_parameter_metadata(self.parameters)
 
         self.parameters = set_irs_uprating_parameter(self.parameters)
 
-        self.parameters = uprate_parameters(self.parameters)
-
-        self.parameters = backdate_parameters()(self.parameters)
-
-        # Add taxcalc aliases
-
         add_taxcalc_variable_aliases(self)
+
+
+system = CountryTaxBenefitSystem()
+
+
+class Simulation(CoreSimulation):
+    default_tax_benefit_system = CountryTaxBenefitSystem
+    default_tax_benefit_system_instance = system
+    default_role = "member"
+    default_calculation_period = 2022
+    default_input_period = 2022
+
+
+class Microsimulation(CoreMicrosimulation):
+    default_tax_benefit_system = CountryTaxBenefitSystem
+    default_tax_benefit_system_instance = system
+    default_dataset = CPS
+    default_dataset_year = 2022
+    default_role = "member"
+    default_calculation_period = 2022
+    default_input_period = 2022
+
+
+class IndividualSim(CoreIndividualSim):  # Deprecated
+    tax_benefit_system = CountryTaxBenefitSystem
+    entities = {entity.key: entity for entity in entities}
+    default_dataset = CPS
+
+    default_roles = dict(
+        tax_unit="member",
+        spm_unit="member",
+        household="member",
+        family="member",
+    )
+    required_entities = [
+        "tax_unit",
+        "spm_unit",
+        "household",
+        "family",
+    ]
+
+
+if 2022 not in CPS.years:
+    CPS.download(2022)
+
+if 2021 not in CPS.years:
+    CPS.download(2021)
