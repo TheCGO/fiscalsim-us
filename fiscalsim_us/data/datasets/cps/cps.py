@@ -2,7 +2,7 @@ import logging
 from policyengine_core.data import PublicDataset
 import h5py
 from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
-from fiscalsim_us.data.storage import fiscalsim_us_MICRODATA_FOLDER
+from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
@@ -12,7 +12,7 @@ class CPS(PublicDataset):
     name = "cps"
     label = "CPS"
     model = "fiscalsim_us"
-    folder_path = fiscalsim_us_MICRODATA_FOLDER
+    folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
     url_by_year = {
         2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
