@@ -1,6 +1,6 @@
 from matplotlib import units
 import yaml
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 from policyengine_core.taxbenefitsystems import TaxBenefitSystem
 
 
