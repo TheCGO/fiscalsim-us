@@ -144,7 +144,7 @@ def generate_yaml_test_dict(fn_name: str, name: str = None):
         for x, y in kwargs.items()
         if x in cps and x not in outputs
     }
-    structured_input_dict = convert_tc_structure_to_openfisca(input_dict)
+    structured_input_dict = convert_tc_structure_to_fiscalsim(input_dict)
     test_dict = dict(
         name=f"Unit test for {fn_name}" if name is None else name,
         period=2019,
@@ -155,7 +155,7 @@ def generate_yaml_test_dict(fn_name: str, name: str = None):
     return test_dict
 
 
-def convert_tc_structure_to_openfisca(input_dict: dict) -> dict:
+def convert_tc_structure_to_fiscalsim(input_dict: dict) -> dict:
     new_input_dict = {"people": {}, "tax_units": {"tax_unit": {"members": []}}}
     if "nu06" in input_dict and input_dict["nu06"] > 0:
         for i in range(int(input_dict.get("nu06"))):
@@ -216,7 +216,7 @@ def convert_tc_structure_to_openfisca(input_dict: dict) -> dict:
     return new_input_dict
 
 
-def convert_openfisca_structure_to_tc(input_dict: dict) -> dict:
+def convert_fiscalsim_structure_to_tc(input_dict: dict) -> dict:
     new_input_dict = {}
     members = input_dict["tax_units"]["tax_unit"]["members"]
     new_input_dict["nu06"] = len(
@@ -338,7 +338,7 @@ def get_test_output(test: dict, fn_name: str) -> dict:
         inverse_rename_variable(x): inverse_translate_value(
             inverse_rename_variable(x), y
         )
-        for x, y in convert_openfisca_structure_to_tc(test).items()
+        for x, y in convert_fiscalsim_structure_to_tc(test).items()
     }
     kwargs, fn_, _ = generate_unit_test(fn_name, input_overrides)
     result = {
@@ -356,7 +356,7 @@ def debug_test_yaml(fn_name: str, file: str, i: int = 0):
         inverse_rename_variable(x): inverse_translate_value(
             inverse_rename_variable(x), y
         )
-        for x, y in convert_openfisca_structure_to_tc(test["input"]).items()
+        for x, y in convert_fiscalsim_structure_to_tc(test["input"]).items()
     }
     kwargs, fn_, _ = generate_unit_test(fn_name, input_overrides)
     fn_(kwargs)
