@@ -39,7 +39,7 @@ class CPS(PublicDataset):
                 print("Didn't find the 2021 CPS dataset. Generating...")
                 CPS.generate(2021)
 
-            from policyengine_us import Microsimulation
+            from fiscalsim_us import Microsimulation
 
             sim = Microsimulation(dataset=CPS, dataset_year=2021)
             cps_22 = h5py.File(self.file(2022), mode="w")

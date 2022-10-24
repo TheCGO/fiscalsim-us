@@ -81,7 +81,7 @@ class TaxSim35:
         "fiitax",
         "siitax",
     ]
-    policyengine_us_INPUT_VARIABLES = [
+    fiscalsim_us_INPUT_VARIABLES = [
         "mars",
         "employment_income",
         "age",
@@ -243,7 +243,7 @@ class TaxSim35:
                 test_str += f"      person_{person_number}:\n"
                 person_number += 1
                 for variable_name in (
-                    self.policyengine_us_INPUT_VARIABLES
+                    self.fiscalsim_us_INPUT_VARIABLES
                     + openfisca_named_taxsim_input_variables
                 ):
                     if variables[variable_name].entity.key == "person":
@@ -258,7 +258,7 @@ class TaxSim35:
                             test_str += f"        {variable_name}: {value}\n"
             test_str += f"    tax_units:\n      tax_unit:\n        members: [{','.join(['person_' + str(p) for p in range(1, person_number)])}]\n"
             for variable_name in (
-                self.policyengine_us_INPUT_VARIABLES
+                self.fiscalsim_us_INPUT_VARIABLES
                 + openfisca_named_taxsim_input_variables
             ):
                 if variables[variable_name].entity.key == "tax_unit":
