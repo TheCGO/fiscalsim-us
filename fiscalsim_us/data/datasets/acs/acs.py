@@ -1,8 +1,8 @@
 import logging
 from policyengine_core.data import PublicDataset
 import h5py
-from policyengine_us.data.datasets.acs.raw_acs import RawACS
-from policyengine_us.data.storage import policyengine_us_MICRODATA_FOLDER
+from fiscalsim_us.data.datasets.acs.raw_acs import RawACS
+from fiscalsim_us.data.storage import fiscalsim_us_MICRODATA_FOLDER
 from pandas import DataFrame
 
 
@@ -10,7 +10,7 @@ class ACS(PublicDataset):
     name = "acs"
     is_openfisca_compatible = True
     label = "ACS"
-    folder_path = policyengine_us_MICRODATA_FOLDER
+    folder_path = fiscalsim_us_MICRODATA_FOLDER
 
     def generate(self, year: int) -> None:
         """Generates the ACS dataset.
