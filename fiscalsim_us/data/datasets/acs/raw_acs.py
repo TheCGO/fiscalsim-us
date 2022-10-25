@@ -3,7 +3,7 @@ import logging
 from typing import List
 from zipfile import ZipFile
 import pandas as pd
-from openfisca_tools.data import PublicDataset
+from policyengine_core.data import PublicDataset
 import requests
 from tqdm import tqdm
 from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
@@ -57,7 +57,7 @@ HOUSEHOLD_COLUMNS = [
 class RawACS(PublicDataset):
     name = "raw_acs"
     label = "Raw ACS"
-    is_fiscalsim_compatible = False
+    is_openfisca_compatible = False
     folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
     def generate(self, year: int) -> None:

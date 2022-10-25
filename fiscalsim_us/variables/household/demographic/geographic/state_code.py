@@ -1,4 +1,4 @@
-from openfisca_core.model_api import *
+from policyengine_core.model_api import *
 from fiscalsim_us.entities import *
 from fiscalsim_us.tools.general import *
 
