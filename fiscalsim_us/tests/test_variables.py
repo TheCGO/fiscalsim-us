@@ -1,6 +1,6 @@
 import pytest
 from fiscalsim_us import CountryTaxBenefitSystem
-from openfisca_core.simulation_builder import SimulationBuilder
+from policyengine_core.simulations import SimulationBuilder
 
 DEFAULT_SITUATION = {
     "people": {"person": {}},

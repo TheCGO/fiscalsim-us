@@ -1,5 +1,5 @@
 import logging
-from openfisca_tools.data import PublicDataset
+from policyengine_core.data import PublicDataset
 import h5py
 from fiscalsim_us.data.datasets.acs.raw_acs import RawACS
 from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
@@ -8,7 +8,7 @@ from pandas import DataFrame
 
 class ACS(PublicDataset):
     name = "acs"
-    is_fiscalsim_compatible = True
+    is_openfisca_compatible = True
     label = "ACS"
     folder_path = FISCALSIM_US_MICRODATA_FOLDER
 
