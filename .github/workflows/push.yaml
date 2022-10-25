@@ -30,7 +30,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.9
       - name: Build changelog
         run: pip install yaml-changelog && make changelog
       - name: Preview changelog update
@@ -56,43 +56,19 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.7
+          python-version: 3.9
       - name: Install package
         run: make install
       - name: Run tests
         run: make test
       - uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
+          files: ./coverage.xml  # optional
+          flags: unittests  # optional
+          name: codecov-umbrella  # optional
+          fail_ci_if_error: true  # optional (default = false)
+          verbose: true  # optional (default = false)
       - name: Test documentation builds
         if: matrix.os == 'ubuntu-latest'
         run: make documentation
-      - name: Deploy documentation
-        if: matrix.os == 'ubuntu-latest'
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs/_build/html
-  Publish:
-    runs-on: ubuntu-latest
-    if: |
-      (github.repository == 'TheCGO/fiscalsim-us')
-      && (github.event.head_commit.message == 'Update FiscalSim-US')
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.7
-      - name: Publish a git tag
-        run: ".github/publish-git-tag.sh || true"
-      - name: Install package
-        run: make install
-      - name: Build package
-        run: make
-      - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI }}
-          skip_existing: true

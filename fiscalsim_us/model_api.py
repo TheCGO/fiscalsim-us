@@ -2,7 +2,7 @@ from fiscalsim_us.variables.household.demographic.geographic.state_code import (
     StateCode,
 )
 from functools import reduce
-from openfisca_core.model_api import *
+from policyengine_core.model_api import *
 from fiscalsim_us.entities import *
 from fiscalsim_us.tools.general import *
 from pathlib import Path
