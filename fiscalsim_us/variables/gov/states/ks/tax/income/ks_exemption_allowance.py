@@ -11,7 +11,8 @@ class ks_exemption_allowance(Variable):
     reference = "https://www.ksrevenue.gov/pdf/k-4021.pdf"
 
     def formula(tax_unit, period, parameters):
-        ks_exemption_allowance_multiplier = tax_unit("ks_exemption_allowance_multiplier", period)
+        p = parameters(period).gov.states.ks.tax.income.exemptions
+        ks_exemption_allowance_multiplier = p.exemption_allowance_multiplier
         ks_exemptions_claimed = tax_unit("ks_exemptions_claimed", period)
 
         return ks_exemption_allowance_multiplier * ks_exemptions_claimed
