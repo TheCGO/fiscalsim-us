@@ -11,12 +11,13 @@ class ks_sales_food_tax_credit(Variable):
 
     def formula(tax_unit, period, parameters):
         p = parameters(period).gov.states.ks.tax.income.credits.food_sales_tax_credit
-        ks_exemptions_claimed = tax_unit("ks_exemptions_claimed", period)
+        ks_exemptions_claimed = ("ks_exemptions_claimed", period)
         dependents = tax_unit("tax_unit_dependents", period)
         multiplier = p.multiplier
+        dep_adults = tax_unit("tax_unit_dependents", period)
 
-        line_g = ks_exemptions_claimed - dependents
+        tot_exemptions = ks_exemptions_claimed - dep_adults
 
-        return line_g * multiplier
+        return tot_exemptions * multiplier
 
 #still need to add qualifiers if statement

@@ -9,8 +9,6 @@ class ks_income_tax(Variable):
     definition_period = YEAR
     defined_for = StateCode.KS
 
-# this is the final tax balance found on line 21 of the KS K-40
-
     def formula(tax_unit, period, parameters):
         taxable_income = tax_unit("ks_taxable_income", period)
         filing_status = tax_unit("filing_status", period)
