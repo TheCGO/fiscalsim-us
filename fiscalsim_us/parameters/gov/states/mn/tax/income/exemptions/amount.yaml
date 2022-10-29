@@ -1,0 +1,12 @@
+description: MN dependent exemption amount per dependent
+metadata:
+  name: mn_dependent_exemption_amount
+  label: MN Depenent Exemption Amount
+  period: year
+  unit: currency-USD
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions
+      href: https://www.revenue.state.mn.us/sites/default/files/2022-03/m1_inst_21.pdf
+values:
+  2021-01-01: 4_350
+ 

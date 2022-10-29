@@ -1,0 +1,11 @@
+metadata:
+  period: year
+  unit: /1 
+  name: mn_standard_deduction_extra_income_mult
+  label: Minnesota multiplier for extra income for standard deduction over income threshold
+  reference:
+  - title: 2021 Minnesota Individual Income Tax Forms and Instructions
+    href: https://www.revenue.state.mn.us/sites/default/files/2022-03/m1_inst_21.pdf
+
+values:
+  2021-01-01: .03

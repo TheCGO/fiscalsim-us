@@ -1,0 +1,22 @@
+description: MN threshold when depenent exemptions start phasing out 
+metadata:
+  name: MN_exemption_phase_out_threshold
+  label: MN exemption phase out threshold 
+  period: year
+  unit: currency-USD
+  breakdown:
+    - filing_status
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions
+      href: https://www.revenue.state.mn.us/sites/default/files/2022-03/m1_inst_21.pdf
+
+JOINT:
+  2021-01-01: 299_750
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 249_800
+WIDOW:
+  2021-01-01: 299_750
+SINGLE:
+  2021-01-01: 199_850
+SEPARATE:
+  2021-01-01: 149_875

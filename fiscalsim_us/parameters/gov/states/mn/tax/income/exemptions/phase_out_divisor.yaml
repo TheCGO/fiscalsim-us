@@ -1,0 +1,12 @@
+description: MN dependent exemption phase out divisor
+metadata:
+  name: mn_exemption_phase_out_divisor
+  label: MN Depenent Exemption Phase Out Divisor
+  period: year
+  unit: /1
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions
+      href: https://www.revenue.state.mn.us/sites/default/files/2022-03/m1_inst_21.pdf
+values:
+  2021-01-01: 2_500
+ 

@@ -1,0 +1,57 @@
+description: Amount an individual or couple can receive via standard deduction
+
+0_box:
+  SINGLE:
+    2021-01-01: 12_525
+  SEPARATE:
+    2021-01-01: 12_525
+  WIDOW:
+    2021-01-01: 25_050
+  JOINT:
+    2021-01-01: 25_050
+  HEAD_OF_HOUSEHOLD:
+    2021-01-01: 18_800
+1_box:
+  SINGLE:
+    2021-01-01: 14_175
+  SEPARATE:
+    2021-01-01: 13_825
+  WIDOW:
+    2021-01-01: 26_350
+  JOINT:
+    2021-01-01: 26_350
+  HEAD_OF_HOUSEHOLD:
+    2021-01-01: 20_450
+2_box:
+  SINGLE:
+    2021-01-01: 15_825
+  SEPARATE:
+    2021-01-01: 15_125
+  WIDOW:
+    2021-01-01: 27_650
+  JOINT:
+    2021-01-01: 27_650
+  HEAD_OF_HOUSEHOLD:
+    2021-01-01: 22_100
+3_box:
+  SEPARATE:
+    2021-01-01: 16_425
+  JOINT:
+    2021-01-01: 28_950
+4_box:
+  SEPARATE:
+    2021-01-01: 17_725
+  JOINT:
+    2021-01-01: 30_250
+
+metadata:
+  period: year
+  unit: currency-USD
+  breakdown:
+  - filing_status
+  name: mn_standard_deduction_amount
+  label: Minnesota standard deduction
+  reference:
+  - title: 2021 Minnesota Individual Income Tax Forms and Instructions
+    href: https://www.revenue.state.mn.us/sites/default/files/2022-03/m1_inst_21.pdf
+
