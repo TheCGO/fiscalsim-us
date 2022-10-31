@@ -1,0 +1,33 @@
+description: Kansas estimates use tax based on KS AGI
+brackets:
+  - amount:
+      2021-01-01: 6
+    threshold:
+      2021-01-01: 15_000
+  - amount:
+      2021-01-01: 21
+    threshold:
+      2021-01-01: 30_000
+  - amount:
+      2021-01-01: 35
+    threshold:
+      2021-01-01: 45_000
+  - amount:
+      2021-01-01: 48
+    threshold:
+      2021-01-01: 60_000
+  - amount:
+      2021-01-01: 62
+    threshold:
+      2021-01-01: 75_000
+
+metadata:
+  type: single_amount
+  threshold_unit: currency-USD
+  amount_unit: currency-USD
+  period: year
+  name: ks_use_tax
+  label: KS use tax 
+  reference:
+    - title: KS personal income tax instructions
+      href: https://www.ksrevenue.gov/incomebook21.html#2

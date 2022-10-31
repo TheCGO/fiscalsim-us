@@ -1,0 +1,10 @@
+description: KS use tax multiplier if AGI exceeds 75_000
+values:
+  2021-01-01: 0.00093
+metadata:
+  unit: year
+  name: ks_use_tax_multiplier
+  label: KS use tax multiplier
+  reference:
+    - title: Complete Income Tax Instruction Booklet - 2021
+      href: https://www.ksrevenue.gov/incomebook21.html#2
