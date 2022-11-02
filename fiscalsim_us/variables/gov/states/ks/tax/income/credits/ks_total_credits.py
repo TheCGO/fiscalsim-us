@@ -17,5 +17,4 @@ class ks_sales_food_tax_credit(Variable):
         child_care = tax_unit("ks_child_care", period)
 
         return other_credits + other_states + eitc + sales_food + child_care
-
-#still need to add qualifiers if statement
+        
