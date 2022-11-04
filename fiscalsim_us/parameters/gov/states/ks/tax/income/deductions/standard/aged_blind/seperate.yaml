@@ -1,0 +1,17 @@
+description: KS provides different standard deductions for aged/blind taxpayers
+metadata:
+  unit: currency-USD
+1_box : 
+  2021-01-01: 4_700
+2_box : 
+  2021-01-01: 5_400
+3_box :
+  2021-01-01: 6_100
+4_box :
+  2021-01-01: 6_800
+
+  name: ks_aged_blind_standard_deductions
+  label: KS aged blind standard deduction
+  reference:
+    - title: Complete Income Tax Instruction Booklet - 2021, page 6
+      href: https://www.ksrevenue.gov/pdf/ip21.pdf#page=6
