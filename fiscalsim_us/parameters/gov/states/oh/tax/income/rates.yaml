@@ -1,0 +1,32 @@
+description: Progressive rate schedule for all filers in OH
+metadata:
+  type: marginal_rate
+  threshold_unit: currency-USD
+  rate_unit: /1
+  name: oh_income_tax_rate
+  label: OH State income tax rates
+  reference:
+    - title: OH annual tax rates
+      href: https://tax.ohio.gov/individual/resources/annual-tax-rates
+brackets:
+  - threshold:
+      2021-01-01: 0
+    rate:
+      2021-01-01: 0.000
+  - threshold:
+      2021-01-01: 25_000
+    rate:
+      2021-01-01: 0.02765    
+  - threshold:
+      2021-01-01: 44_250
+    rate:
+      2021-01-01: 0.03226
+  - threshold:
+      2021-01-01: 88_450
+    rate:
+      2021-01-01: 0.03688
+  - threshold:
+      2021-01-01: 110_650
+    rate:
+      2021-01-01: 0.03990
+

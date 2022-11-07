@@ -1,0 +1,21 @@
+description: Exemption multiplier brackets for OH
+brackets:
+  - threshold:
+      2021-01-01: 0
+    amount:
+      2021-01-01: 2_400
+  - threshold:
+      2021-01-01: 40_000
+    amount:
+      2021-01-01: 2_150
+  - threshold:
+      2021-01-01: 80_000
+    amount:
+      2021-01-01: 1_900
+metadata:
+  type: single_amount
+  threshold_unit: /1
+  name: OH exemption multipliers
+  reference:
+    - title: OH IT 1040 booklet
+      href: https://tax.ohio.gov/static/forms/ohio_individual/individual/2021/pit-it1040-booklet.pdf # page 14
