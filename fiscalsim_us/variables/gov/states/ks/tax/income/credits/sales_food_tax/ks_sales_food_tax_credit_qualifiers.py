@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class ks_sales_food_tax_credit_qualifiers(Variable):

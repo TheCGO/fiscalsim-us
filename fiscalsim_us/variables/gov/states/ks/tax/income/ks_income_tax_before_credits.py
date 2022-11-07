@@ -1,7 +1,7 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
-class ks_income_tax(Variable):
+class ks_income_tax_before_credits(Variable):
     value_type = float
     entity = TaxUnit
     label = "KS income tax (before credits)"

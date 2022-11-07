@@ -1,4 +1,4 @@
-from openfisca_us.model_api import *
+from fiscalsim_us.model_api import *
 
 #Total of all credits for Kansas
 class ks_sales_food_tax_credit(Variable):
