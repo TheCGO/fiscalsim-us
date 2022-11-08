@@ -11,6 +11,11 @@ class va_net_amount_of_tax(Variable):
 
     def formula(tax_unit,period,parameters):
 
+        rates = parameters(period).gov.states.va.tax.income.main.va_tax_rates
+
+
+
+
 
         taxable_inc = tax_unit("va_taxable_inc",period)
 
@@ -45,6 +50,7 @@ class va_net_amount_of_tax(Variable):
 
         
         return net_tax
+
 
 
         

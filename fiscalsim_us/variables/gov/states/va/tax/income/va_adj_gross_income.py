@@ -16,12 +16,16 @@ class va_adj_gross_income(Variable):
 
         filing_status = tax_unit("filing_status", period)
 
+        threshold = parameters(period).gov.states.va.tax.va_adjusted_gross_income
+        single = threshold.single
+        joint = threshold.joint
+
 
         subtotal = line3 - line8 
 
         if filing_status == 1 or filing_status == 3:
 
-            if subtotal < 11950 :
+            if subtotal < single :
                 
                 tax_owed = 0 
                 
@@ -29,7 +33,7 @@ class va_adj_gross_income(Variable):
 
         if filing_status == 2: 
 
-            if subtotal < 23900: 
+            if subtotal < joint: 
 
                 tax_owed = 0 
 
