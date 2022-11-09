@@ -11,10 +11,34 @@ class calc_line_14(Variable):
 
     def formula(tax_unit,period,parameters):
 
-        line_11  = tax_unit("va_standard_deduction",period)
+        # line_11  = tax_unit("va_standard_deduction",period)
+
+        filing_status = tax_unit("filing_status", period)
+
+        if filing_status == 1:
+
+
+            va_standard_deduction = parameters(
+            period
+            ).gov.states.va.tax.income.va_standard_deduction_amount.SINGLE
+
+        if filing_status == 2:
+
+            va_standard_deduction = parameters(
+            period
+            ).gov.states.va.tax.income.va_standard_deduction_amount.JOINT
+
+        
+        if filing_status == 3: 
+
+            va_standard_deduction = parameters(
+            period
+            ).gov.states.va.tax.income.va_standard_deduction_amount.SEPARATE
+
+
 
         line_12 = tax_unit("va_exemptions",period)
 
-        subtotal = line_11 + line_12 
+        subtotal = va_standard_deduction + line_12 
 
         return(subtotal)

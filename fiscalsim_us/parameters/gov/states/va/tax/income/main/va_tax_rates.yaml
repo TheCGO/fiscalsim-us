@@ -1,0 +1,28 @@
+description: Tax rates for all filers in VA. 
+metadata:
+  type: marginal_rate
+  threshold_unit: currency-USD
+  rate_unit: /1
+  name: va_income_tax_rates
+  label: VA State income tax rates 
+  reference:
+    - title: VA Form 760 Instructions page 33
+      href: https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2021-760-instructions.pdf
+brackets:
+  - threshold:
+      2021-01-01: 0
+    rate:
+      2021-01-01: 0.02
+  - threshold:
+      2021-01-01: 3_000
+    rate:
+      2021-01-01: 0.03  
+  - threshold:
+      2021-01-01: 5_000
+    rate:
+      2021-01-01: 0.05
+  - threshold:
+      2021-01-01: 17_000
+    rate:
+      2021-01-01: 0.0575
+
