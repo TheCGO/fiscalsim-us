@@ -7,6 +7,7 @@ from fiscalsim_us.variables.gov.ssa.ssi.eligibility.income._apply_ssi_exclusions
 import warnings
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
+warnings.simplefilter("ignore")
 
 
 class ssi_unearned_income_deemed_from_ineligible_parent(Variable):
