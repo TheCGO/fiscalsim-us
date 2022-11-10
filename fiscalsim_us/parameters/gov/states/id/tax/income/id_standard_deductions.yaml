@@ -1,0 +1,21 @@
+description: Standard deduction for ID State tax.
+SINGLE:
+  2021-01-01: 12550
+JOINT:
+  2021-01-01: 25100
+SEPARATE:
+  2021-01-01: 12550
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 18800
+WIDOW:
+  2021-01-01: 25100
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: id_standard_deductions
+  label: ID standard deduction
+  reference:
+    - title: ID Form 40 
+      href: "https://tax.idaho.gov/forms/EFO00089_09-23-2021.pdf"
