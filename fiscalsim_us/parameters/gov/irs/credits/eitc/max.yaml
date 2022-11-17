@@ -14,6 +14,7 @@ brackets:
         2020-01-01: 538
         2021-01-01: 1_502
         2022-01-01: 560
+        2023-01-01: 600
       metadata:
         unit: currency-USD
   - threshold:
@@ -29,6 +30,7 @@ brackets:
         2020-01-01: 3_584
         2021-01-01: 3_618
         2022-01-01: 3_733
+        2023-01-01: 3_995
       metadata:
         unit: currency-USD
   - threshold:
@@ -44,6 +46,7 @@ brackets:
         2020-01-01: 5_920
         2021-01-01: 5_980
         2022-01-01: 6_164
+        2023-01-01: 6_604
       metadata:
         unit: currency-USD
   - threshold:
@@ -59,17 +62,28 @@ brackets:
         2020-01-01: 6_660
         2021-01-01: 6_728
         2022-01-01: 6_935
+        2023-01-01: 7_430
       metadata:
         unit: currency-USD
 metadata:
   type: single_amount
   threshold_unit: child
-  rate_unit: currency-USD
+  amount_unit: currency-USD
+  name: eitc_max
+  label: EITC maximum amount by number of children
   propagate_metadata_to_children: true
   reference:
-    - title: IRS data release
+    - title: 2023 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-22-38.pdf#page=10
+    - title: 2022 IRS data release
       href: https://www.irs.gov/pub/irs-drop/rp-21-45.pdf#page=10
-    - title: Tax-Calculator
-      href: https://github.com/PSLmodels/Tax-Calculator/blob/master/taxcalc/policy_current_law.json
-    - title: EITC Tables | IRS
-      href: https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/earned-income-and-earned-income-tax-credit-eitc-tables#EITC%20Tables
+    - title: 2021 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-20-45.pdf#page=10
+    - title: 2020 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-19-44.pdf#page=10
+    - title: 2019 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-18-57.pdf#page=12
+    - title: 2018 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-17-58.pdf#page=10
+    - title: 2017 IRS data release
+      href: https://www.irs.gov/pub/irs-drop/rp-16-55.pdf#page=11
