@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class is_eligible_md_poverty_line_credit(Variable):
@@ -30,7 +30,7 @@ class is_eligible_md_poverty_line_credit(Variable):
         earnings_below_fpg = earnings <= fpg
         # (iii)    who is not claimed as an exemption on another individual’s
         #  tax return under § 10–211 of this title;
-        # SKIP - assumed throughout fiscalsim-us.
+        # SKIP - assumed throughout openfisca-us.
         # (iv)    for whom the credit allowed under § 10–704(a)(1) of this
         # subtitle is less than the State income tax.
         # This appears to refer to the MD total EITC per

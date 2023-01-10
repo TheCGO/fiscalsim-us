@@ -1,7 +1,7 @@
 import os
-from fiscalsim_us import Microsimulation
-from fiscalsim_us.data.datasets import CPS
-from fiscalsim_us.tools.taxsim.generate_taxsim_tests import (
+from policyengine_us import Microsimulation
+from policyengine_us.data.datasets import CPS
+from policyengine_us.tools.taxsim.generate_taxsim_tests import (
     TaxSim35,
 )
 import numpy as np
@@ -39,10 +39,10 @@ def test_federal_tax_against_taxsim(sim, taxsim):
     tax = sim.calc("income_tax")
     tax.index = sim.calc("tax_unit_id").values
     comparison_df = pd.DataFrame(index=sim.calc("tax_unit_id").values)
-    comparison_df["fiscalsim_us"] = tax
+    comparison_df["policyengine_us"] = tax
     comparison_df["taxsim"] = taxsim.taxsim_fiitax
     relative_distance = np.absolute(
-        comparison_df.fiscalsim_us - comparison_df.taxsim
+        comparison_df.policyengine_us - comparison_df.taxsim
     )
     percent_close = (relative_distance < DISTANCE).mean()
     assert percent_close > MINIMUM_PERCENT_CLOSE
@@ -56,14 +56,14 @@ def test_state_income_tax_against_taxsim(state: str, sim, taxsim):
     tax.index = sim.calc("tax_unit_id").values
     comparison_df = pd.DataFrame(
         dict(
-            fiscalsim_us=tax,
+            policyengine_us=tax,
             taxsim=taxsim.taxsim_siitax,
         ),
         index=sim.calc("tax_unit_id").values,
     )
     comparison_df = comparison_df[in_state]
     relative_distance = np.absolute(
-        comparison_df.fiscalsim_us - comparison_df.taxsim
+        comparison_df.policyengine_us - comparison_df.taxsim
     )
     percent_close = (relative_distance < DISTANCE).mean()
     assert percent_close > MINIMUM_PERCENT_CLOSE

@@ -1,4 +1,4 @@
-name: fiscalsim_us
+name: policyengine_us
 channels:
   - defaults
 dependencies:

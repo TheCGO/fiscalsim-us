@@ -1,5 +1,5 @@
 import pytest
-from fiscalsim_us import CountryTaxBenefitSystem
+from policyengine_us import CountryTaxBenefitSystem
 from policyengine_core.simulations import SimulationBuilder
 
 DEFAULT_SITUATION = {
@@ -19,6 +19,7 @@ EXEMPTIONS = (
     "is_tanf_initial_eligible",
     "is_tanf_continuous_eligible",
     "is_tanf_eligible",
+    "snap_emergency_allotment_monthly",
 )
 
 

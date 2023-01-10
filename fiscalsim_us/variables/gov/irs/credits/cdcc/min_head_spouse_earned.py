@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class min_head_spouse_earned(Variable):
@@ -13,7 +13,5 @@ class min_head_spouse_earned(Variable):
         head_earnings = tax_unit("head_earned", period)
         spouse_earnings = tax_unit("spouse_earned", period)
         return where(
-            is_joint,
-            min_(head_earnings, spouse_earnings),
-            head_earnings,
+            is_joint, min_(head_earnings, spouse_earnings), head_earnings
         )

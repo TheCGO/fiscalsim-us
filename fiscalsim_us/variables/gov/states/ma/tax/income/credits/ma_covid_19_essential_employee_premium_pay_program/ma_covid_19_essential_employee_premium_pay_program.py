@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class ma_covid_19_essential_employee_premium_pay_program(Variable):

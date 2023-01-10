@@ -1,23 +1,26 @@
 import logging
 from policyengine_core.data import PublicDataset
 import h5py
-from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
-from fiscalsim_us.data.storage import FISCALSIM_US_MICRODATA_FOLDER
+from policyengine_us.data.datasets.cps.raw_cps import RawCPS
+from policyengine_us.data.storage import policyengine_us_MICRODATA_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
+import os
+import yaml
 
 
 class CPS(PublicDataset):
     name = "cps"
     label = "CPS"
-    model = "fiscalsim_us"
-    folder_path = FISCALSIM_US_MICRODATA_FOLDER
+    model = "policyengine_us"
+    folder_path = policyengine_us_MICRODATA_FOLDER
 
     url_by_year = {
         2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
-        2021: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-2021-v0/cps_2021.h5",
-        2022: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-2021-v0/cps_2022.h5",
+        2021: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2021.h5",
+        2022: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2022.h5",
+        2023: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2023.h5",
     }
 
     def generate(self, year: int):
@@ -31,26 +34,31 @@ class CPS(PublicDataset):
         # Prepare raw CPS tables
         year = int(year)
 
-        if year == 2022:
+        LATEST_YEAR = 2021
+
+        if year > LATEST_YEAR:
             print(
-                "Currently, only the 2021 ASEC is available. Uprating the 2021 ASEC to 2022..."
+                f"Currently, only the {LATEST_YEAR} ASEC is available. ",
+                f"Uprating the {LATEST_YEAR} ASEC to {year}...",
             )
-            if 2021 not in CPS.years:
-                print("Didn't find the 2021 CPS dataset. Generating...")
-                CPS.generate(2021)
+            if LATEST_YEAR not in CPS.years:
+                print(
+                    f"Didn't find the {LATEST_YEAR} CPS dataset. Generating..."
+                )
+                CPS.generate(LATEST_YEAR)
 
-            from fiscalsim_us import Microsimulation
+            from policyengine_us import Microsimulation
 
-            sim = Microsimulation(dataset=CPS, dataset_year=2021)
-            cps_22 = h5py.File(self.file(2022), mode="w")
-            cps_21 = h5py.File(self.file(2021), mode="r")
-            for variable in cps_21:
+            sim = Microsimulation(dataset=CPS, dataset_year=LATEST_YEAR)
+            uprated_cps = h5py.File(self.file(year), mode="w")
+            latest_cps = h5py.File(self.file(LATEST_YEAR), mode="r")
+            for variable in latest_cps:
                 if variable in sim.tax_benefit_system.variables:
-                    cps_22.create_dataset(
-                        variable, data=sim.calculate(variable, 2022).values
+                    uprated_cps.create_dataset(
+                        variable, data=sim.calculate(variable, year).values
                     )
-            cps_22.close()
-            cps_21.close()
+            uprated_cps.close()
+            latest_cps.close()
             return
 
         if year not in RawCPS.years:
@@ -73,7 +81,7 @@ class CPS(PublicDataset):
 
         add_id_variables(cps, person, tax_unit, family, spm_unit, household)
         add_personal_variables(cps, person)
-        add_personal_income_variables(cps, person)
+        add_personal_income_variables(cps, person, year)
         add_spm_variables(cps, spm_unit)
         add_household_variables(cps, household)
 
@@ -92,7 +100,7 @@ def add_silver_plan_cost(cps: h5py.File, year: int):
         cps (h5py.File): The CPS dataset file.
         year (int): The year of the data.
     """
-    from fiscalsim_us import Microsimulation
+    from policyengine_us import Microsimulation
 
     sim = Microsimulation(dataset=CPS, dataset_year=year)
     slspc = sim.calc("second_lowest_silver_plan_cost").values
@@ -190,6 +198,22 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
     )
     # A_SEX is 1 -> male, 2 -> female.
     cps["is_female"] = person.A_SEX == 2
+    # "Is...blind or does...have serious difficulty seeing even when Wearing
+    #  glasses?" 1 -> Yes
+    cps["is_blind"] = person.PEDISEYE == 1
+    cps["is_ssi_disabled"] = (
+        person[
+            [
+                "PEDISDRS",
+                "PEDISEAR",
+                "PEDISEYE",
+                "PEDISOUT",
+                "PEDISPHY",
+                "PEDISREM",
+            ]
+        ].sum(axis=1)
+        > 0
+    )
 
     def children_per_parent(col: str) -> pd.DataFrame:
         """Calculate number of children in the household using parental
@@ -225,30 +249,66 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
     cps["has_marketplace_health_coverage"] = person.MRK == 1
 
 
-def add_personal_income_variables(cps: h5py.File, person: DataFrame):
+def add_personal_income_variables(
+    cps: h5py.File, person: DataFrame, year: int
+):
     """Add income variables.
 
     Args:
         cps (h5py.File): The CPS dataset file.
         person (DataFrame): The CPS person table.
+        year (int): The CPS year
     """
+    # get income imputation parameters
+    yamlfilename = os.path.join(
+        os.path.abspath(os.path.dirname(__file__)), "income_parameters.yaml"
+    )
+    with open(yamlfilename, "r", encoding="utf-8") as yamlfile:
+        p = yaml.safe_load(yamlfile)
+    assert isinstance(p, dict)
+
+    # assign CPS variables
     cps["employment_income"] = person.WSAL_VAL
-    cps["interest_income"] = person.INT_VAL
+    cps["taxable_interest_income"] = person.INT_VAL * (
+        p["taxable_interest_fraction"][year]
+    )
+    cps["tax_exempt_interest_income"] = person.INT_VAL * (
+        1 - p["taxable_interest_fraction"][year]
+    )
     cps["self_employment_income"] = person.SEMP_VAL
     cps["farm_income"] = person.FRSE_VAL
-    cps["dividend_income"] = person.DIV_VAL
+    cps["qualified_dividend_income"] = person.DIV_VAL * (
+        p["qualified_dividend_fraction"][year]
+    )
+    cps["non_qualified_dividend_income"] = person.DIV_VAL * (
+        1 - p["qualified_dividend_fraction"][year]
+    )
     cps["rental_income"] = person.RNT_VAL
-    cps["social_security"] = person.SS_VAL
+    cps["social_security_reported"] = person.SS_VAL
     cps["unemployment_compensation"] = person.UC_VAL
-    cps["pension_income"] = person.PNSN_VAL + person.ANN_VAL
+    cps_pensions = person.PNSN_VAL + person.ANN_VAL
+    cps["taxable_pension_income"] = cps_pensions * (
+        p["taxable_pension_fraction"][year]
+    )
+    cps["tax_exempt_pension_income"] = cps_pensions * (
+        1 - p["taxable_pension_fraction"][year]
+    )
     cps["alimony_income"] = (person.OI_OFF == 20) * person.OI_VAL
+    cps["child_support_received"] = person.CSP_VAL
     cps["tanf_reported"] = person.PAW_VAL
     cps["ssi_reported"] = person.SSI_VAL
     cps["pension_contributions"] = person.RETCB_VAL
-    cps[
-        "long_term_capital_gains"
-    ] = person.CAP_VAL  # Assume all CPS capital gains are long-term
+    cps["long_term_capital_gains"] = person.CAP_VAL * (
+        p["long_term_capgain_fraction"][year]
+    )
+    cps["short_term_capital_gains"] = person.CAP_VAL * (
+        1 - p["long_term_capgain_fraction"][year]
+    )
     cps["receives_wic"] = person.WICYN == 1
+    cps["veterans_benefits"] = person.VET_VAL
+    # Expenses.
+    # "What is the annual amount of child support paid?"
+    person["child_support_expense"] = person.CHSP_VAL
 
 
 def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
@@ -269,8 +329,8 @@ def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
         childcare_expenses="SPM_CHILDCAREXPNS",
     )
 
-    for fiscalsim_variable, asec_variable in SPM_RENAMES.items():
-        cps[fiscalsim_variable] = spm_unit[asec_variable]
+    for openfisca_variable, asec_variable in SPM_RENAMES.items():
+        cps[openfisca_variable] = spm_unit[asec_variable]
 
     cps["reduced_price_school_meals_reported"] = (
         cps["free_school_meals_reported"][...] * 0

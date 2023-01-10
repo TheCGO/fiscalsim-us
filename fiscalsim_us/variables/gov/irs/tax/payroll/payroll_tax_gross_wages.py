@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class payroll_tax_gross_wages(Variable):
@@ -7,5 +7,4 @@ class payroll_tax_gross_wages(Variable):
     label = "Gross wages and salaries for payroll taxes"
     definition_period = YEAR
     unit = USD
-
-    formula = sum_of_variables(["employment_income"])
+    adds = ["employment_income"]

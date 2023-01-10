@@ -14,12 +14,12 @@ dist
 
 # OS stuff
 
-.DS_Store
+*.DS_Store
 *~
 
 # Python caches
 
-.pytest_cache
+*.pytest_cache
 **/__pycache__
 
 # Data

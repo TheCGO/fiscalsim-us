@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 def create_in_state_variable(state: str) -> Type[Variable]:
@@ -11,6 +11,8 @@ def create_in_state_variable(state: str) -> Type[Variable]:
             "value_type": bool,
             "entity": Household,
             "formula": in_state(state),
+            "module_name": "",
+            "hidden_input": True,
         },
     )
 

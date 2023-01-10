@@ -26,7 +26,7 @@ jobs:
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
-          token: ${{ secrets.THECGO_GITHUB }}
+          token: ${{ secrets.THECGO_GITHUB}}
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -42,6 +42,7 @@ jobs:
           committer_name: Github Actions[bot]
           author_name: Github Actions[bot]
           message: Update FiscalSim-US
+          github_token: ${{ secrets.THECGO_GITHUB }}
   Test:
     runs-on: ${{ matrix.os }}
     if: |
@@ -49,7 +50,7 @@ jobs:
       && (github.event.head_commit.message == 'Update FiscalSim-US')
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3

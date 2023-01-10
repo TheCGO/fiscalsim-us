@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class iitax(Variable):
@@ -6,8 +6,15 @@ class iitax(Variable):
     entity = TaxUnit
     definition_period = YEAR
     unit = USD
-    label = "Federal income tax"
+    label = "federal income tax"
     documentation = "Total federal individual income tax liability."
+    adds = [
+        "income_tax_before_credits",
+    ]
+    subtracts = [
+        "income_tax_refundable_credits",
+        "income_tax_capped_non_refundable_credits",
+    ]
 
     def formula(tax_unit, period, parameters):
         before_refundable_credits = tax_unit(

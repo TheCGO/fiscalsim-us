@@ -3,7 +3,7 @@ values:
   2021-01-01: 2_500
   # End with Inflation Reduction Act.
   # In effect as of 2022-08-16, but backdating so it shows up as current policy
-  # in FiscalSim-US.
+  # in PolicyEngine.
   2022-01-01: 0
 metadata:
   unit: currency-USD

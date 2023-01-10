@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class or_income_after_subtractions(Variable):
@@ -8,8 +8,5 @@ class or_income_after_subtractions(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.OR
-
-    def formula(tax_unit, period, parameters):
-        income_after_additions = tax_unit("or_income_after_additions", period)
-        subtractions = tax_unit("or_income_subtractions", period)
-        return income_after_additions - subtractions
+    adds = ["or_income_after_additions"]
+    subtracts = ["or_income_subtractions"]

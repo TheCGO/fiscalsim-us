@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class no_salt_income_tax(Variable):
@@ -11,8 +11,7 @@ class no_salt_income_tax(Variable):
     def formula(tax_unit, period, parameters):
         simulation = tax_unit.simulation
         no_salt_branch = simulation.get_branch("no_salt")
-        no_salt_branch.tax_benefit_system.variables[
-            "salt_deduction"
-        ].is_neutralized = True
-        tax_liability = no_salt_branch.calculate("income_tax", period)
-        return tax_liability
+        no_salt_branch.set_input(
+            "salt_deduction", period, np.zeros(tax_unit.count)
+        )
+        return no_salt_branch.calculate("income_tax", period)

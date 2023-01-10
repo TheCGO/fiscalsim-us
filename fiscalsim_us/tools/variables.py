@@ -1,4 +1,4 @@
-from fiscalsim_us.system import system
+from policyengine_us.system import system
 from IPython.display import Markdown
 
 variables = system.variables

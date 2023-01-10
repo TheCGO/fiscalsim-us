@@ -1,4 +1,4 @@
-description: State programs that are fully implemented in FiscalSim US.
+description: State programs that are fully implemented in OpenFisca US.
 # List of state codes.
 AK:
   2021-01-01:

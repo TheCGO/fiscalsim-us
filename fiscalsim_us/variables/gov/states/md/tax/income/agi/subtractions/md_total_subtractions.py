@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class md_total_subtractions(Variable):
@@ -8,5 +8,4 @@ class md_total_subtractions(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MD
-
-    formula = sum_of_variables(["md_dependent_care_subtraction"])
+    adds = "gov.states.md.tax.income.agi.subtractions.sources"

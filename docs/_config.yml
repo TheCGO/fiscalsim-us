@@ -1,5 +1,5 @@
-title: FiscalSim-US documentation
-author: Center for Growth and Opportunity at Utah State University (CGO)
+title: PolicyEngine US documentation
+author: PolicyEngine
 copyright: "2022"
 
 execute:
@@ -7,15 +7,15 @@ execute:
   timeout: -1
 
 repository:
-  url: https://github.com/TheCGO/fiscalsim-us
-  branch: main
+  url: https://github.com/policyengine/policyengine-us
+  branch: master
   path_to_book: docs
 
 sphinx:
   config:
     html_js_files:
       - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
-    html_theme: classic
+    html_theme: furo
     pygments_style: default
   extra_extensions:
     - "sphinx.ext.autodoc"
@@ -23,3 +23,4 @@ sphinx:
     - "sphinx.ext.viewcode"
     - "sphinx.ext.napoleon"
     - "sphinx.ext.mathjax"
+

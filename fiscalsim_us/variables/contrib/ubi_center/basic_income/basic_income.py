@@ -1,10 +1,10 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class basic_income(Variable):
     value_type = float
     entity = TaxUnit
-    label = "Basic income"
+    label = "basic income"
     unit = USD
     documentation = "Total basic income payments for this filer."
     definition_period = YEAR
