@@ -9,7 +9,7 @@ metadata:
 values:
   0000-01-01: 0
   # In effect as of 2022-08-16, but backdating so it shows up as current policy
-  # in FiscalSim.
+  # in FiscalSim-US.
   2022-01-01: 0.4
   2024-01-01: 0.5
   2025-01-01: 0.6
