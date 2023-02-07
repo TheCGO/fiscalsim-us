@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class electric_load_service_center_upgrade_expenditures(Variable):
