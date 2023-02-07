@@ -1,8 +1,8 @@
 import logging
 from policyengine_core.data import PublicDataset
 import h5py
-from policyengine_us.data.datasets.cps.raw_cps import RawCPS
-from policyengine_us.data.storage import policyengine_us_MICRODATA_FOLDER
+from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
+from fiscalsim_us.data.storage import fiscalsim_us_MICRODATA_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
@@ -13,8 +13,8 @@ import yaml
 class CPS(PublicDataset):
     name = "cps"
     label = "CPS"
-    model = "policyengine_us"
-    folder_path = policyengine_us_MICRODATA_FOLDER
+    model = "fiscalsim_us"
+    folder_path = fiscalsim_us_MICRODATA_FOLDER
 
     url_by_year = {
         2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
@@ -24,7 +24,7 @@ class CPS(PublicDataset):
     }
 
     def generate(self, year: int):
-        """Generates the Current Population Survey dataset for PolicyEngine US microsimulations.
+        """Generates the Current Population Survey dataset for FiscalSim US microsimulations.
         Technical documentation and codebook here: https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar21.pdf
 
         Args:
@@ -47,7 +47,7 @@ class CPS(PublicDataset):
                 )
                 CPS.generate(LATEST_YEAR)
 
-            from policyengine_us import Microsimulation
+            from fiscalsim_us import Microsimulation
 
             sim = Microsimulation(dataset=CPS, dataset_year=LATEST_YEAR)
             uprated_cps = h5py.File(self.file(year), mode="w")
@@ -100,7 +100,7 @@ def add_silver_plan_cost(cps: h5py.File, year: int):
         cps (h5py.File): The CPS dataset file.
         year (int): The year of the data.
     """
-    from policyengine_us import Microsimulation
+    from fiscalsim_us import Microsimulation
 
     sim = Microsimulation(dataset=CPS, dataset_year=year)
     slspc = sim.calc("second_lowest_silver_plan_cost").values
