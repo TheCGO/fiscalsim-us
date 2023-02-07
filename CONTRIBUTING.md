@@ -1,4 +1,4 @@
-Thank you for wanting to contribute to OpenFisca! :smiley:
+Thank you for wanting to contribute to FiscalSim US.
 
 TL;DR: [GitHub Flow](https://guides.github.com/introduction/flow/), [SemVer](http://semver.org/).
 
@@ -85,7 +85,7 @@ Each change must be documented with the following elements:
 >
 > - Details :
 >
-> * Use OpenFisca-Core `12.0.0`
+> * Use policyengine-core `1.12.0`
 > * Change the syntax used to declare parameters:
 >   - Remove "fuzzy" attribute
 >   - Remove "end" attribute

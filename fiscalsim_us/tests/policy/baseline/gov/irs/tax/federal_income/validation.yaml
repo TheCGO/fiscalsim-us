@@ -87,7 +87,7 @@
   # Single parent with $203k income and three children.
   absolute_error_margin: 0.01
   period: 2021
-  reforms: policyengine_us.reforms.taxsim
+  reforms: fiscalsim_us.reforms.taxsim
   input:
     people:
       person1:

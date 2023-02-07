@@ -95,9 +95,9 @@
     income_tax: 23_409.82
 
 # -----------------------------------------------------------------------------
-# BEGIN : PolicyEngineUS test cases derived from TPC publication test cases
+# BEGIN : FiscalSim US test cases derived from TPC publication test cases
 #
-# Test PolicyEngineUS QBID calculations using the six tax units specified in
+# Test FiscalSim US QBID calculations using the six tax units specified in
 # Table 1 of this TPC publication: "Navigating the New Pass-Through Provisions:
 # A Technical Explanation" by William G. Gale and Aaron Krupkin
 # (January 31, 2018), which is available at this URL:
@@ -286,5 +286,5 @@
   output:
     qualified_business_income_deduction: 10_000
 
-# END : PolicyEngineUS test cases derived from TPC publication test cases
+# END : FiscalSim US test cases derived from TPC publication test cases
 # -----------------------------------------------------------------------------

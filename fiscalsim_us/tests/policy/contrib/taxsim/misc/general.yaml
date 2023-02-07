@@ -218,7 +218,7 @@
   # Married couple with $498k combined income, four children.
   absolute_error_margin: 0.01
   period: 2018
-  reforms: policyengine_us.reforms.taxsim
+  reforms: fiscalsim_us.reforms.taxsim
   input:
     people:
       person1:
