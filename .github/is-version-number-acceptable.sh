@@ -1,8 +1,8 @@
 #! /usr/bin/env bash
 
-if [[ ${GITHUB_REF#refs/heads/} == master ]]
+if [[ ${GITHUB_REF#refs/heads/} == main ]]
 then
-    echo "No need for a version check on master."
+    echo "No need for a version check on main."
     exit 0
 fi
 
@@ -27,7 +27,7 @@ fi
 if ! $(dirname "$BASH_SOURCE")/has-functional-changes.sh | grep --quiet CHANGELOG.md
 then
     echo "CHANGELOG.md has not been modified, while functional changes were made."
-    echo "Explain what you changed before merging this branch into master."
+    echo "Explain what you changed before merging this branch into main."
     echo "Look at the CONTRIBUTING.md file to learn how to write the changelog."
     exit 2
 fi
