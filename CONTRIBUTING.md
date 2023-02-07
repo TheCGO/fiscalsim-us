@@ -1,4 +1,4 @@
-Thank you for your interest in contributing to the FiscalSim-US modeling project.
+Thank you for wanting to contribute to OpenFisca! :smiley:
 
 TL;DR: [GitHub Flow](https://guides.github.com/introduction/flow/), [SemVer](http://semver.org/).
 
@@ -42,7 +42,7 @@ Examples:
 
 ### Changelog
 
-FiscalSim-US changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible.
+PolicyEngine US changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible.
 
 Each change must be documented with the following elements:
 

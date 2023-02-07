@@ -1,4 +1,5 @@
-name: fiscalsim-us
+name: policyengine-us
 dependencies:
   - python=3.9
-  - pip
+  - pip:
+    - policyengine-us

@@ -1,8 +1,19 @@
-# FiscalSim US
+# PolicyEngine US
 
-[![CGO cataloged](https://img.shields.io/badge/CGO-catalogued-9cf)](https://github.com/TheCGO)
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-3916/)
-![example event parameter](https://github.com/TheCGO/fiscalsim-us/actions/workflows/push.yaml/badge.svg?branch=main)
-[![Codecov](https://codecov.io/gh/TheCGO/fiscalsim-us/branch/main/graph/badge.svg)](https://codecov.io/gh/TheCGO/fiscalsim-us)
+[![codecov](https://codecov.io/gh/PolicyEngine/policyengine-us/branch/master/graph/badge.svg?token=BLoCjCf5Qr)](https://codecov.io/gh/PolicyEngine/policyengine-us)
+[![PyPI version](https://badge.fury.io/py/policyengine-us.svg)](https://badge.fury.io/py/policyengine-us)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-FiscalSim US is a microsimulation model of the US state and federal household tax and benefit system. It is supported and maintained by [The Center for Growth and Opportunity at Utah State Uhiversity](https://www.thecgo.org/). Much of the original federal tax and benefit code and some of the state tax logic was developed by [PolicyEngine](https://policyengine.org/), with their version of the code at [https://github.com/PolicyEngine/policyengine-us](https://github.com/PolicyEngine/policyengine-us).
+PolicyEngine US is a microsimulation model of the US state and federal tax and benefit system.
+It is built and primarily supported by [PolicyEngine](https://policyengine.org).
+Other contributors include:
+* [OpenFisca](https://openfisca.org), which developed the microsimulation framework upon which PolicyEngine is based
+* [The Center for Growth and Opportunity](https://thecgo.org), which funded the development of state income tax models in Maryland, Massachusetts, and Washington state
+* [End Poverty Make Trillions](https://www.endpovertymaketrillions.com/), which has provided unrestricted grant funding
+* [Innovation Network for Communities](https://in4c.net/), which funded the development of population-level cliff analysis
+
+To install, run `pip install policyengine-us`.
+
+To contribute, please see the [wiki](https://github.com/PolicyEngine/policyengine-us/wiki).
+
+See our documentation with interactive notebooks at https://policyengine.github.io/policyengine-us.
