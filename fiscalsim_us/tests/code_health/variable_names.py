@@ -7,8 +7,8 @@ GROUP_ENTITY_NAMES = (
 
 
 def test_variable_names():
-    from policyengine_us import CountryTaxBenefitSystem
-    from policyengine_us.model_api import STATES
+    from fiscalsim_us import CountryTaxBenefitSystem
+    from fiscalsim_us.model_api import STATES
 
     system = CountryTaxBenefitSystem()
     for instance in system.variables.values():
