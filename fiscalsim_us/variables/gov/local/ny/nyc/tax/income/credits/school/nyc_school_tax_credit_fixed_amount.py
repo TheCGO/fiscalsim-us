@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class nyc_school_tax_credit_fixed_amount(Variable):

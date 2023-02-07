@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class prior_energy_efficient_home_improvement_credits(Variable):

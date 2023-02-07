@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class in_oos_municipal_obligation_interest_add_back(Variable):
