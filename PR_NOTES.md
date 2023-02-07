@@ -3,6 +3,7 @@
 ## Name mappings
 * "master" to "main"
 * "policyengine-us" to "fiscalsim-us"
+* "policyengine_us" to "fiscalsim_us"
 
 ## Question name mappings
 * "OpenFisca"
