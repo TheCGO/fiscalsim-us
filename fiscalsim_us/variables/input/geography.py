@@ -1,7 +1,7 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 from policyengine_core.parameters import homogenize_parameter_structures
 from policyengine_core.simulations import Simulation
-from policyengine_us.variables.household.demographic.geographic.state_name import (
+from fiscalsim_us.variables.household.demographic.geographic.state_name import (
     StateName,
 )
 

@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from pfiscalsim_us.model_api import *
 
 
 class is_pregnant(Variable):
