@@ -6,10 +6,10 @@ with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
 setup(
-    name="policyengine-us",
-    version="0.211.0",
-    author="PolicyEngine",
-    author_email="hello@policyengine.org",
+    name="fiscalsim-us",
+    version="0.0.2",
+    author="Center for Growth and Opportunity at Utah State University (CGO)",
+    author_email="fiscalsim@thecgo.org",
     long_description=readme,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -19,10 +19,10 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-    description="PolicyEngine tax and benefit system for the US",
-    keywords="benefit microsimulation social tax",
+    description="FiscalSim federal and state tax and benefit system for the US",
+    keywords="tax benefit microsimulation fiscal state household personal",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
-    url="https://github.com/PolicyEngine/policyengine-us",
+    url="https://github.com/TheCGO/fiscalsim-us",
     include_package_data=True,  # Will read MANIFEST.in
     data_files=[
         (
@@ -68,7 +68,7 @@ setup(
     python_requires=">=3.7,<3.10",
     entry_points={
         "console_scripts": [
-            "policyengine-us = policyengine_us.tools.cli:main",
+            "fiscalsim-us = fiscalsim_us.tools.cli:main",
         ],
     },
     packages=find_packages(),
