@@ -41,4 +41,3 @@ filtered:
       - Washington State income tax
       not_modelled:
       - Washington TANF
-  

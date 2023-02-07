@@ -1,7 +1,7 @@
 from pathlib import Path
 from policyengine_core.taxbenefitsystems import TaxBenefitSystem
-from policyengine_us.entities import *
-from policyengine_us.parameters.gov.irs.uprating import (
+from fiscalsim_us.entities import *
+from fiscalsim_us.parameters.gov.irs.uprating import (
     set_irs_uprating_parameter,
 )
 from policyengine_core.simulations import (
@@ -9,14 +9,14 @@ from policyengine_core.simulations import (
     Microsimulation as CoreMicrosimulation,
     IndividualSim as CoreIndividualSim,
 )
-from policyengine_us.data import CPS
-from policyengine_us.tools.taxcalc.generate_taxcalc_variable import (
+from fiscalsim_us.data import CPS
+from fiscalsim_us.tools.taxcalc.generate_taxcalc_variable import (
     add_taxcalc_variable_aliases,
 )
-from policyengine_us.variables.household.demographic.geographic.state.in_state import (
+from fiscalsim_us.variables.household.demographic.geographic.state.in_state import (
     create_50_state_variables,
 )
-from policyengine_us.tools.parameters import backdate_parameters
+from fiscalsim_us.tools.parameters import backdate_parameters
 
 COUNTRY_DIR = Path(__file__).parent
 
