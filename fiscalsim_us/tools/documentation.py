@@ -14,8 +14,8 @@ from policyengine_core.charts import (
     format_fig,
     display_fig,
 )
-from policyengine_us.system import system
-from policyengine_us import Simulation
+from fiscalsim_us.system import system
+from fiscalsim_us import Simulation
 
 
 def variable_summary(variable_name: str):

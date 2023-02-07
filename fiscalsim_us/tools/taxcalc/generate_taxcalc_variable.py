@@ -1,6 +1,6 @@
 from matplotlib import units
 import yaml
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 from policyengine_core.taxbenefitsystems import TaxBenefitSystem
 
 
@@ -23,7 +23,7 @@ def create_taxcalc_alias(name: str, variable: Type[Variable]):
 
     Args:
         name (str): The name of the equivalent Tax-Calculator variable.
-        variable (Type[Variable]): The PolicyEngine US variable class.
+        variable (Type[Variable]): The FiscalSim US variable class.
     """
 
     full_name = "taxcalc_" + name
@@ -44,7 +44,7 @@ def create_taxcalc_alias(name: str, variable: Type[Variable]):
         variable.documentation if hasattr(variable, "documentation") else None
     )
     addition_to_documentation = (
-        "This is a read-only variable alias returning the PolicyEngine US variable "
+        "This is a read-only variable alias returning the FiscalSim US variable "
         + name
         + " under the (prefixed) name for its equivalent in Tax-Calculator, "
         + full_name
@@ -84,15 +84,15 @@ def add_taxcalc_variable_aliases(system: TaxBenefitSystem):
     with open(Path(__file__).parent / "variable_mapping.yaml") as f:
         variable_map = yaml.load(f, Loader=Loader)
 
-    for policyengine_us_name, taxcalc_name in variable_map.items():
+    for fiscalsim_us_name, taxcalc_name in variable_map.items():
         try:
             system.add_variable(
                 create_taxcalc_alias(
-                    taxcalc_name, type(system.variables[policyengine_us_name])
+                    taxcalc_name, type(system.variables[fiscalsim_us_name])
                 )
             )
         except Exception as e:
             print(
-                "Error adding alias for {}: {}".format(policyengine_us_name, e)
+                "Error adding alias for {}: {}".format(fiscalsim_us_name, e)
             )
             raise e

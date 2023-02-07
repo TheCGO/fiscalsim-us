@@ -2,14 +2,14 @@ from time import time
 from pathlib import Path
 from typing import Callable, Dict, List, Tuple
 from taxcalc import Calculator, Policy, Records
-from policyengine_us.tools.taxcalc.calcfunctions import *
-from policyengine_us.system import CountryTaxBenefitSystem
+from fiscalsim_us.tools.taxcalc.calcfunctions import *
+from fiscalsim_us.system import CountryTaxBenefitSystem
 import pandas as pd
 import ast
 import yaml
 import argparse
 
-from policyengine_us.variables.gov.irs.income.sources import nu06
+from fiscalsim_us.variables.gov.irs.income.sources import nu06
 
 np.random.seed(int(time()))
 variables = CountryTaxBenefitSystem().variables
@@ -392,6 +392,6 @@ if __name__ == "__main__":
         # An example of debugging a unit test
         debug_test_yaml(
             "ChildDepTaxCredit",
-            "policyengine_us/tests/policy/baseline/calcfunctions/childdeptaxcredit.yaml",
+            "fiscalsim_us/tests/policy/baseline/calcfunctions/childdeptaxcredit.yaml",
             1,
         )

@@ -5,10 +5,10 @@ import pandas as pd
 import subprocess
 import stat
 from io import StringIO
-from policyengine_us.data.datasets.cps.cps import CPS
+from fiscalsim_us.data.datasets.cps.cps import CPS
 from policyengine_core.data import Dataset
 from policyengine_core.taxbenefitsystems import TaxBenefitSystem
-from policyengine_us import Microsimulation
+from fiscalsim_us import Microsimulation
 from tqdm import tqdm
 from argparse import ArgumentParser
 import platform
@@ -81,7 +81,7 @@ class TaxSim35:
         "fiitax",
         "siitax",
     ]
-    policyengine_us_INPUT_VARIABLES = [
+    fiscalsim_us_INPUT_VARIABLES = [
         "mars",
         "employment_income",
         "age",
@@ -190,14 +190,14 @@ class TaxSim35:
             sim.tax_benefit_system.neutralize_variable(variable)
 
         system: TaxBenefitSystem = sim.tax_benefit_system
-        openfisca_named_taxsim_input_variables = [
+        fiscalsim_named_taxsim_input_variables = [
             f"taxsim_{variable}" for variable in self.INPUT_VARIABLES
         ]
-        openfisca_named_taxsim_output_variables = [
+        fiscalsim_named_taxsim_output_variables = [
             f"taxsim_{variable}" for variable in self.OUTPUT_VARIABLES
         ]
         full_input_df = pd.DataFrame(
-            sim.df(openfisca_named_taxsim_input_variables, period=year)
+            sim.df(fiscalsim_named_taxsim_input_variables, period=year)
         )
         if number is not None:
             full_input_df = full_input_df.sample(n=number * 100)
@@ -217,7 +217,7 @@ class TaxSim35:
         tax_unit_number = 1
         # Shuffle the dataframe
         is_non_zero = (
-            taxsim_df[openfisca_named_taxsim_output_variables].sum(axis=1) > 0
+            taxsim_df[fiscalsim_named_taxsim_output_variables].sum(axis=1) > 0
         )
         if drop_zeros:
             taxsim_df = taxsim_df[is_non_zero]
@@ -243,8 +243,8 @@ class TaxSim35:
                 test_str += f"      person_{person_number}:\n"
                 person_number += 1
                 for variable_name in (
-                    self.policyengine_us_INPUT_VARIABLES
-                    + openfisca_named_taxsim_input_variables
+                    self.fiscalsim_us_INPUT_VARIABLES
+                    + fiscalsim_named_taxsim_input_variables
                 ):
                     if variables[variable_name].entity.key == "person":
                         value = sim.calc(
@@ -258,8 +258,8 @@ class TaxSim35:
                             test_str += f"        {variable_name}: {value}\n"
             test_str += f"    tax_units:\n      tax_unit:\n        members: [{','.join(['person_' + str(p) for p in range(1, person_number)])}]\n"
             for variable_name in (
-                self.policyengine_us_INPUT_VARIABLES
-                + openfisca_named_taxsim_input_variables
+                self.fiscalsim_us_INPUT_VARIABLES
+                + fiscalsim_named_taxsim_input_variables
             ):
                 if variables[variable_name].entity.key == "tax_unit":
                     value = sim.calc(variable_name).values[
@@ -270,7 +270,7 @@ class TaxSim35:
                     except:
                         test_str += f"        {variable_name}: {value}\n"
             test_str += f"  output:\n"
-            for variable_name in openfisca_named_taxsim_output_variables:
+            for variable_name in fiscalsim_named_taxsim_output_variables:
                 if variables[variable_name].entity.key == "tax_unit":
                     value = taxsim_df[variable_name][
                         taxsim_df.taxsim_taxsimid == tax_unit_id
