@@ -53,6 +53,7 @@ setup(
             "coverage",
             "furo",
             "jupyter-book",
+            "jupyter",
             "linecheck",
             "markupsafe",
             "plotly",
