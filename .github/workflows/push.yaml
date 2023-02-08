@@ -1,13 +1,13 @@
 name: Push
 on:
   push:
-    branches: [master]
+    branches: [main]
 jobs:
   Lint:
     runs-on: ubuntu-latest
     if: |
       (github.repository == 'TheCGO/fiscalsim-us')
-      && (github.event.head_commit.message == 'Update FiscalSim-US')
+      && (github.event.head_commit.message == 'Update FiscalSim US')
     steps:
       - uses: actions/checkout@v3
       - name: Check formatting
@@ -18,7 +18,7 @@ jobs:
     name: Update versioning
     if: |
       (github.repository == 'TheCGO/fiscalsim-us')
-      && !(github.event.head_commit.message == 'Update FiscalSim-US')
+      && !(github.event.head_commit.message == 'Update FiscalSim US')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -41,15 +41,16 @@ jobs:
           add: "."
           committer_name: Github Actions[bot]
           author_name: Github Actions[bot]
-          message: Update FiscalSim-US
+          message: Update FiscalSim US
+          github_token: ${{ secrets.THECGO_GITHUB }}
   Test:
     runs-on: ${{ matrix.os }}
     if: |
       (github.repository == 'TheCGO/fiscalsim-us')
-      && (github.event.head_commit.message == 'Update FiscalSim-US')
+      && (github.event.head_commit.message == 'Update FiscalSim US')
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -62,13 +63,6 @@ jobs:
       - name: Run tests
         run: make test
       - uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
-          files: ./coverage.xml  # optional
-          flags: unittests  # optional
-          name: codecov-umbrella  # optional
-          fail_ci_if_error: true  # optional (default = false)
-          verbose: true  # optional (default = false)
       - name: Test documentation builds
         if: matrix.os == 'ubuntu-latest'
         run: make documentation

@@ -1,6 +1,7 @@
 format: jb-book
 root: index
 parts:
+
   - caption: Government programs
     chapters:
       - file: gov/fcc/index
@@ -39,6 +40,7 @@ parts:
               - file: gov/states/md/tax/income/credits/ctc
               - file: gov/states/md/tax/income/credits/eitc
               - file: gov/states/md/tax/income/credits/poverty-line-credit
+              - file: gov/states/md/tax/income/deductions/standard-deduction
           - file: gov/states/ny/index
             sections:
               - file: gov/states/ny/cdcc
@@ -61,3 +63,4 @@ parts:
   - caption: Usage
     chapters:
       - file: usage/speed
+      

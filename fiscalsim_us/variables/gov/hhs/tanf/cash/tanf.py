@@ -7,11 +7,13 @@ class tanf(Variable):
     definition_period = YEAR
     label = "TANF"
     documentation = (
-        "Amount of Temporary Assistance for Needy Families benefit received."
+        "Value of Temporary Assistance for Needy Families benefit received."
     )
     unit = USD
 
     def formula(spm_unit, period, parameters):
+        if parameters(period).gov.hhs.tanf.abolish_tanf:
+            return 0
         tanf_reported = add(spm_unit, period, ["tanf_reported"])
         if tanf_reported.sum() > 0:
             return tanf_reported

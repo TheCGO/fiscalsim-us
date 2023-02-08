@@ -3,12 +3,15 @@ values:
   2010-01-01:
     - employment_income
     - self_employment_income
+    - partnership_s_corp_income
+    - farm_income
+    - farm_rent_income
     - capital_gains
     - taxable_interest_income
     - rental_income
     # Royalties included in rental income
     - dividend_income
-    - pension_income 
+    - taxable_pension_income 
     # Pension income includes annuities and endowment contracts
     - debt_relief
     # Decedent income
