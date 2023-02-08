@@ -1,6 +1,6 @@
-Thank you for wanting to contribute to the FiscalSim-US microsimulation model of federal and state household tax and benefit policy.
+Thank you for wanting to contribute to FiscalSim US.
 
-See [GitHub Flow](https://guides.github.com/introduction/flow/) and [SemVer](http://semver.org/).
+TL;DR: [GitHub Flow](https://guides.github.com/introduction/flow/), [SemVer](http://semver.org/).
 
 ## Pull requests
 
@@ -42,7 +42,7 @@ Examples:
 
 ### Changelog
 
-FiscalSim-US changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible.
+FiscalSim US changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible.
 
 Each change must be documented with the following elements:
 
@@ -85,7 +85,7 @@ Each change must be documented with the following elements:
 >
 > - Details :
 >
-> * Use OpenFisca-Core `12.0.0`
+> * Use policyengine-core `1.12.0`
 > * Change the syntax used to declare parameters:
 >   - Remove "fuzzy" attribute
 >   - Remove "end" attribute

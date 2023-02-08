@@ -10,8 +10,4 @@ class self_employed_health_insurance_ald(Variable):
     definition_period = YEAR
     reference = "https://www.law.cornell.edu/uscode/text/26/162#l"
 
-    def formula(tax_unit, period, parameters):
-        person = tax_unit.members
-        earnings = max_(0, person("self_employment_income", period))
-        premiums = person("self_employed_health_insurance_premiums", period)
-        return tax_unit.sum(min_(earnings, premiums))
+    adds = ["self_employed_health_insurance_ald_person"]

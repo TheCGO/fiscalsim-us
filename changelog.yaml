@@ -9,3 +9,9 @@
     - reduced the key dependencies to just `policyengine-core` instead of `openfisca-core` and `openfisca-tools`
     - made `fiscalsim-us` compliant with Python 3.9
   date: 2022-10-24 06:40:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.211.0
+    - Current PolicyEngine-Core version is v1.12.1
+  date: 2023-02-07 02:30:00
