@@ -2,24 +2,21 @@ from fiscalsim_us.model_api import *
 
 
 class ks_income_tax_before_credits(Variable):
+    """
+    Line 12 on Kansas 2022 Individual Income Tax return form K-40.
+    
+    """
     value_type = float
     entity = TaxUnit
-    label = "KS income tax (before credits)"
+    label = "Kansas Income Tax Before Credits"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.KS
 
     def formula(tax_unit, period, parameters):
-        taxable_income = tax_unit("ks_taxable_income", period)
-        filing_status = tax_unit("filing_status", period)
-        status = filing_status.possible_values
+        income_tax = tax_unit("ks_income_tax_before_additional_taxes", period)
+        additional_taxes = tax_unit("ks_additional_taxes", period)
 
-        rates = parameters(period).gov.states.ks.tax.income
-        joint = rates.joint
-        non_joint = rates.non_joint
-
-        if filing_status == status.JOINT:
-            return joint.calc(taxable_income)
-        
-        else:
-            return non_joint.calc(taxable_income)
+        return (
+            income_tax + additional_taxes
+        )

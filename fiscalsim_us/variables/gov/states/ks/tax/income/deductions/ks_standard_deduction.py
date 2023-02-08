@@ -10,16 +10,13 @@ class ks_standard_deduction(Variable):
     reference = "https://www.ksrevenue.gov/pdf/ip21.pdf#page=6"
     defined_for = StateCode.KS
 
+# still needs to have the aged/blind standard deductions added
+
     def formula(tax_unit, period, parameters):
         standard_deduction = parameters(
             period
-        ).gov.states.ks.tax.income.deductions.standard
+        ).gov.states.ks.tax.income.deductions
         filing_status = tax_unit("filing_status", period)
-        count = tax_unit("ks_aged_blind_count", period)
-        rates = standard_deduction.aged_blind.aged_blind_rates
-
-        if count >= 1:
-            return (rates[filing_status[count]])
-            
-        else:
-            return (standard_deduction.amount[filing_status])
+        return (
+            standard_deduction.amount[filing_status],
+        )

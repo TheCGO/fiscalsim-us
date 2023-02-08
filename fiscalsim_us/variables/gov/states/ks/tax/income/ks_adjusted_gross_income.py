@@ -1,9 +1,9 @@
 from fiscalsim_us.model_api import *
 
 
-class ks_taxable_income(Variable):
+class ks_adjusted_gross_income(Variable):
     """
-    Line 7 on Kansas 2022 Individual Income Tax return form TC-40.
+    Line 3 on Kansas 2022 Individual Income Tax return form TC-40.
     """
     value_type = float
     entity = TaxUnit
@@ -12,5 +12,4 @@ class ks_taxable_income(Variable):
     definition_period = YEAR
     defined_for = StateCode.KS
 
-    max("ks_adjusted_gross_income" - "ks_total_deductions", 0)
-
+    adds = ["adjusted_gross_income", "ks_modifications"]
