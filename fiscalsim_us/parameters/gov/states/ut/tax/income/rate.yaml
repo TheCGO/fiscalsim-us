@@ -5,7 +5,7 @@ values:
   2021-01-01: 0.0485
 metadata:
   unit: /1
-  name: Utah Personal Income Tax Rate
+  name: ut_income_tax_rate
   label: Utah Personal Income Tax Rate
   reference:
     - title: Section 104 Tax basis -- Tax rate -- Exemption. (2b) (Effective 5/4/2022)
