@@ -10,8 +10,8 @@ test:
 	coverage xml -i
 	pytest fiscalsim_us/tests/ --maxfail=0
 documentation:
-	jb clean docs
-	jb build docs
+	jupyter-book clean docs
+	jupyter-book build docs
 	python fiscalsim_us/tools/add_plotly_to_book.py docs/_build
 build:
 	rm fiscalsim_us/data/storage/*.h5 | true

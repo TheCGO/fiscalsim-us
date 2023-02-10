@@ -6,4 +6,4 @@ class has_marketplace_health_coverage(Variable):
     entity = Person
     label = "Receives health insurance from a Marketplace plan."
     definition_period = YEAR
-    default_value = True
+    default_value = False
