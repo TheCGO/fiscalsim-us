@@ -7,7 +7,7 @@
     tax_unit_itemizes: false
     state_code: UT
   output:
-    ut_taxpayer_credit_max: 1750 * 0.06 * 2
+    ut_taxpayer_credit_max: 1802 * 0.06 * 2
 
 - name: Itemizer
   period: 2022
