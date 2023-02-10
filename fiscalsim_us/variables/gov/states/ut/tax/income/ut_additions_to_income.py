@@ -17,6 +17,7 @@ class ut_additions_to_income(Variable):
     * 68: Payroll Protection Program grant or loan addback
     * 69: Equitable adjustments
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT additions to income"

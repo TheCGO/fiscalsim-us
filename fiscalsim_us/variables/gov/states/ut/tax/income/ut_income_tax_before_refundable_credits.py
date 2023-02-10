@@ -5,6 +5,7 @@ class ut_income_tax_before_refundable_credits(Variable):
     """
     Line 32 of Utah 2022 Individual Income Tax return form TC-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT income tax before refundable credits"
@@ -22,9 +23,10 @@ class ut_income_tax_before_refundable_credits(Variable):
             "ut_nonapportionable_nonrefundable_credits", period
         )
         income_tax_before_additions = max_(
-            income_tax_after_credits - apportionable_nonrefundable_credits -
-            nonapportionable_nonrefundable_credits,
-            0
+            income_tax_after_credits
+            - apportionable_nonrefundable_credits
+            - nonapportionable_nonrefundable_credits,
+            0,
         )
         recapture_low_inc_housing_credit = tax_unit(
             "ut_recapture_low_inc_housing_credit", period

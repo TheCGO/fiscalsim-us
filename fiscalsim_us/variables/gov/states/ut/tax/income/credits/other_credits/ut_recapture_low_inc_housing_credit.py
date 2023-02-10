@@ -10,6 +10,7 @@ class ut_recapture_low_inc_housing_credit(Variable):
     a previous year filing for up to three years in order to capture the
     maximum amount possible of the credit.
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT recapture of low-income housing credit"

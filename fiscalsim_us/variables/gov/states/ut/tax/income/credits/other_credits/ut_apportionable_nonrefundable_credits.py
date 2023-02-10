@@ -15,6 +15,7 @@ class ut_apportionable_nonrefundable_credits(Variable):
     * AJ: Military retirement credit
     * AM: Earned income tax credit
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT apportionable nonrefundable credits"

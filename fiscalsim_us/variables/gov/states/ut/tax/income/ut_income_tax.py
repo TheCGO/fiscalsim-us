@@ -5,6 +5,7 @@ class ut_income_tax(Variable):
     """
     Line 40 of Utah 2022 Individual Income Tax return form TC-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT income tax after refundable credits"

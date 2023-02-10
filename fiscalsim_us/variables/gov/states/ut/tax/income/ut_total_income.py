@@ -5,6 +5,7 @@ class ut_total_income(Variable):
     """
     Line 6 on Utah 2022 Individual Income Tax return form TC-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT total income"

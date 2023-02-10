@@ -5,6 +5,7 @@ class ut_taxpayer_credit_max(Variable):
     """
     Line 16 on Utah 2022 Individual Income Tax return form TC-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT taxpayer credit maximum"

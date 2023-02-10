@@ -11,6 +11,7 @@ class ut_refundable_credits(Variable):
     * 47: Agricultural off-highway gas/undyed diesel credit
     * 48: Farm operation hand tools credit
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT refundable credits"

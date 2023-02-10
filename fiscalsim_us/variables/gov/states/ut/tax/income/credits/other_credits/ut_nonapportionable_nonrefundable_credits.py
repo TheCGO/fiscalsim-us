@@ -23,6 +23,7 @@ class ut_nonapportionable_nonrefundable_credits(Variable):
     * AG: Special Needs Opportunity Scholarship Program credit
     * AP: Pass-through entity taxpayer income tax credit
     """
+
     value_type = float
     entity = TaxUnit
     label = "UT nonapportionable nonrefundable credits"
