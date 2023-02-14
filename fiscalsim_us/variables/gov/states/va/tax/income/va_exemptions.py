@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class va_exemptions(Variable):
@@ -10,18 +10,16 @@ class va_exemptions(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-        ut_taxpayer_credit_max = tax_unit("ut_taxpayer_credit_max", period)
-        ut_taxpayer_credit_reduction = tax_unit(
-            "ut_taxpayer_credit_reduction", period
-        )
+       
+        va_indiv_exempt_multiplier = parameters(period).gov.states.va.tax.income.exemptions.indiv_exemption_multiplier
+        # va_indiv_exempt_multiplier = tax_unit("va_indiv_exemption_multiplier",
+        #                                         period)
 
-        
+        # va_indiv_p65_exempt_multiplier = tax_unit(
+        #     "va_indiv_exemption_over_65_multiplier",period)
 
-        va_indiv_exempt_multiplier = tax_unit("va_indiv_exemption_multiplier",
-                                                period)
 
-        va_indiv_p65_exempt_multiplier = tax_unit(
-            "va_indiv_exemption_over_65_multiplier",period)
+        va_indiv_p65_exempt_multiplier = parameters(period).gov.states.va.tax.income.exemptions.indiv_exemption_over_65_multiplier
 
         dependents = tax_unit("tax_unit_dependents",period)
 

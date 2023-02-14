@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class va_line_26(Variable):
@@ -21,7 +21,9 @@ class va_line_26(Variable):
 
         line_22 = tax_unit("va_extension_payments",period)
 
+        line_23 = tax_unit("va_tax_credit_for_low_income_individuals",period)
+
         line_24 = tax_unit("va_credits_from_enclosed_schedule_cr",period)
 
-        return line_19 + line_19b + line_20 + line_21 + line_22 + line_24
+        return line_19 + line_19b + line_20 + line_21 + line_22 + line_24 + line_23
 

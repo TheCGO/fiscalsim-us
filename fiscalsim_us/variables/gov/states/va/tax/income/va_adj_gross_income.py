@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class va_adj_gross_income(Variable):
@@ -10,15 +10,15 @@ class va_adj_gross_income(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit,period,parameters):
-        line3 = tax_unit("calc_line_8",period)
+        line3 = tax_unit("va_calc_line_3",period)
 
-        line8 = tax_unit("calc_line_3",period)
+        line8 = tax_unit("va_calc_line_8",period)
 
         filing_status = tax_unit("filing_status", period)
 
-        threshold = parameters(period).gov.states.va.tax.va_adjusted_gross_income
-        single = threshold.single
-        joint = threshold.joint
+        threshold = parameters(period).gov.states.va.tax.income.va_adjusted_gross_income
+        single = threshold.SINGLE
+        joint = threshold.JOINT
 
 
         subtotal = line3 - line8 

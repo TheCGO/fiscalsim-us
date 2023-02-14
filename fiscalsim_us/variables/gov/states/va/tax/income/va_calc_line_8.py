@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class va_calc_line_8(Variable):
@@ -12,8 +12,8 @@ class va_calc_line_8(Variable):
 
     def formula(tax_unit,period,parameters):
 
-        federal_agi = tax_unit("adjusted_gross_income", period)
+        age_deduction = tax_unit("va_age_deduction",period)
 
-        additions_to_federal_agi = tax_unit("va_additions_to_federal_agi",period)
+        subtractions_to_federal_agi = tax_unit("va_subtractions_to_federal_agi",period)
 
-        return federal_agi + additions_to_federal_agi 
+        return age_deduction + subtractions_to_federal_agi

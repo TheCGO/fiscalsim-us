@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class va_age_deduction(Variable):
@@ -23,13 +23,13 @@ class va_age_deduction(Variable):
 
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
 
-        you_fdca = tax_unit("fixed_date_conformity_additions ")
+        you_fdca = tax_unit("fixed_date_conformity_additions",period)
 
-        spouse_fdca = ?? 
+        spouse_fdca = 0 # change this 
 
-        you_fdcs = tax_unit("fixed_date_conformity_subtractions")
+        you_fdcs = tax_unit("fixed_date_conformity_subtractions",period)
 
-        spouse_fdcs = ?? 
+        spouse_fdcs = 0 # change this 
 
 
 
@@ -78,11 +78,22 @@ class va_age_deduction(Variable):
 
             line6 = line4 - total_fds
 
-            line7 = ? # Taxable benefits from the tax return 
+            line7 = 0 # Taxable benefits from the tax return, change this.
 
             line8 = line6 - line7
 
-            threshold_ln9 = tax_unit("va_age_deduction_threshold")
+            if filing_status == 1:
+
+                threshold_ln9 = parameters.gov.states.va.tax.income.va_age_deduction_threshold.single
+            
+            if filing_status == 2:
+
+                threshold_ln9 = parameters.gov.states.va.tax.income.va_age_deduction_threshold.joint
+            
+            if filing_status == 3: 
+
+                threshold_ln9 = parameters.gov.states.va.tax.income.va_age_deduction_threshold.separate
+
 
             if line8 > threshold_ln9: 
 

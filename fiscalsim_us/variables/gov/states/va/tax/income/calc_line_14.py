@@ -1,4 +1,4 @@
-from fiscalsim_us.model_api import *
+from policyengine_us.model_api import *
 
 
 class calc_line_14(Variable):
@@ -20,20 +20,20 @@ class calc_line_14(Variable):
 
             va_standard_deduction = parameters(
             period
-            ).gov.states.va.tax.income.va_standard_deduction_amount.SINGLE
+            ).gov.states.va.tax.income.va_standard_deduction.SINGLE
 
         if filing_status == 2:
 
             va_standard_deduction = parameters(
             period
-            ).gov.states.va.tax.income.va_standard_deduction_amount.JOINT
+            ).gov.states.va.tax.income.va_standard_deduction.JOINT
 
         
         if filing_status == 3: 
 
             va_standard_deduction = parameters(
             period
-            ).gov.states.va.tax.income.va_standard_deduction_amount.SEPARATE
+            ).gov.states.va.tax.income.va_standard_deduction.SEPARATE
 
 
 
