@@ -1,4 +1,4 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 class va_credits_from_enclosed_schedule_cr(Variable):
     value_type = float
