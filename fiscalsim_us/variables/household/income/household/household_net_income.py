@@ -4,9 +4,12 @@ from fiscalsim_us.model_api import *
 class household_net_income(Variable):
     value_type = float
     entity = Household
-    label = "Household net income"
+    label = "net income"
     definition_period = YEAR
     unit = USD
-
-    def formula(household, period, parameters):
-        return household.sum(household.members("net_income", period))
+    adds = [
+        "household_market_income",
+        "household_benefits",
+        "household_refundable_tax_credits",
+    ]
+    subtracts = ["household_tax_before_refundable_credits"]

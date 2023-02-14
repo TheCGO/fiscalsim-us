@@ -1,9 +1,7 @@
 import os
 from fiscalsim_us import Microsimulation
 from fiscalsim_us.data.datasets import CPS
-from fiscalsim_us.tools.taxsim.generate_taxsim_tests import (
-    TaxSim35,
-)
+from fiscalsim_us.tools.taxsim.generate_taxsim_tests import TaxSim35
 import numpy as np
 import pytest
 import pandas as pd

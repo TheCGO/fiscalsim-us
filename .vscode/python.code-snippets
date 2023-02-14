@@ -12,7 +12,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"FiscalSim-US Variable": {
+	"FiscalSim US Variable": {
 		 	"prefix": "var",
 		 	"body": [
 		 		"class ${1:name}(Variable):",
@@ -25,15 +25,15 @@
 				"",
 				""
 		 	],
-		 	"description": "Insert a new OpenFisca Variable, without a formula."
+		 	"description": "Insert a new FiscalSim Variable, without a formula."
 		 },
-	"FiscalSim-US Formula": {
+	"FiscalSim US Formula": {
 			"prefix": "form",
 			"body": [
 				"def formula(${1:tax_unit}, period, parameters):",
 				"	${2:pass}"
 			],
-			"description": "Insert a new OpenFisca Formula."
+			"description": "Insert a new FiscalSim Formula."
 		},
 	"Tax unit non-dependent sum": {
 			"prefix": "taxunit",
@@ -48,7 +48,7 @@
 				"		return tax_unit_non_dep_sum(\"${1:name}\", tax_unit, period)",
 			]
 		},
-	"FiscalSim-US module": {
+	"FiscalSim US module": {
 		"prefix": "file",
 		"body": [
 			"from fiscalsim_us.model_api import *",
