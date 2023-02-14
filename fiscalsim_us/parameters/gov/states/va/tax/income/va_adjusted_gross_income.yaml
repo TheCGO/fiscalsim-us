@@ -1,10 +1,13 @@
 description: virginia adjusted gross income thresholds
 SINGLE:
-  2021-01-01: 11_950
+  2021-01-01:
+    value: 11_950
 JOINT:
-  2021-01-01: 23_900
+  2021-01-01: 
+    value: 23_900
 SEPARATE:
-  2021-01-01: 11_950
+  2021-01-01:
+    value: 11_950
 metadata:
   unit: currency-USD
   period: year
