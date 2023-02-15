@@ -10,10 +10,10 @@ class state_income_tax(Variable):
     adds = [
         "ks_income_tax",
         "ma_income_tax",
-        "wa_income_tax",
         "md_income_tax",
         "ny_income_tax",
         "or_income_tax",
         "pa_income_tax",
+        "wa_income_tax",
         "ut_income_tax",
     ]
