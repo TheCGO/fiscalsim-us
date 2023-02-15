@@ -5,6 +5,7 @@ class ks_adjusted_gross_income(Variable):
     """
     Line 3 on Kansas 2022 Individual Income Tax return form TC-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "KS adjusted gross income"

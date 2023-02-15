@@ -17,10 +17,6 @@ class ks_itemized_deductions(Variable):
         ks_deductions_if_itemizing = [
             deduction
             for deduction in federal_deductions_if_itemizing
-            if deduction
-            not in [
-                "salt_deduction",
-                "casualty_loss_deduction"
-            ]
+            if deduction not in ["salt_deduction", "casualty_loss_deduction"]
         ]
         return add(tax_unit, period, ks_deductions_if_itemizing)

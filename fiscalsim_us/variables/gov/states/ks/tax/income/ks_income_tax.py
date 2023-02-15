@@ -5,6 +5,7 @@ class ks_income_tax(Variable):
     """
     Line 19 minus lines 23 and 24 of KS 2022 Individual Income Tax return form K-40.
     """
+
     value_type = float
     entity = TaxUnit
     label = "KS income tax after refundable credits"

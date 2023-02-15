@@ -4,8 +4,9 @@ from fiscalsim_us.model_api import *
 class ks_income_tax_before_credits(Variable):
     """
     Line 8 on Kansas 2022 Individual Income Tax return form K-40.
-    
+
     """
+
     value_type = float
     entity = TaxUnit
     label = "Kansas Income Tax Before Credits"

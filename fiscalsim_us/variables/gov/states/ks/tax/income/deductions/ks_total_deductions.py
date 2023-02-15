@@ -16,6 +16,5 @@ class ks_total_deductions(Variable):
             tax_unit("ks_itemized_deductions", period),
             tax_unit("ks_standard_deduction", period),
         )
-        
 
         return ks_exemption_allowance + ks_deductions
