@@ -9,17 +9,24 @@ class va_subtractions_to_federal_agi(Variable):
     definition_period = YEAR
     defined_for = StateCode.VA
 
-
     def formula(tax_unit, period, parameters):
 
-        income_from_obligations_state_exempt = tax_unit("income_from_obligations_state_exempt", period)
+        income_from_obligations_state_exempt = tax_unit(
+            "income_from_obligations_state_exempt", period
+        )
 
-        fixed_date_conformity_subtractions = tax_unit("fixed_date_conformity_subtractions", period)
+        fixed_date_conformity_subtractions = tax_unit(
+            "fixed_date_conformity_subtractions", period
+        )
 
-        disability_income_reported_as_wages = tax_unit("disability_income_reported_as_wages", period)
+        disability_income_reported_as_wages = tax_unit(
+            "disability_income_reported_as_wages", period
+        )
 
-        subtractions_to_fed_agi =  income_from_obligations_state_exempt + fixed_date_conformity_subtractions +  disability_income_reported_as_wages
+        subtractions_to_fed_agi = (
+            income_from_obligations_state_exempt
+            + fixed_date_conformity_subtractions
+            + disability_income_reported_as_wages
+        )
 
-        return(subtractions_to_fed_agi)
-
-
+        return subtractions_to_fed_agi

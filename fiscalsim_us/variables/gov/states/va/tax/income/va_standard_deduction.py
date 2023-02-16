@@ -9,24 +9,26 @@ class va_standard_deduction(Variable):
     definition_period = YEAR
     defined_for = StateCode.VA
 
-    def formula(tax_unit,period,parameters):
+    def formula(tax_unit, period, parameters):
 
         filing_status = tax_unit("filing_status", period)
 
-        if filing_status == 1 : 
+        if filing_status == 1:
 
-            standard_deduction = parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
+            standard_deduction = (
+                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
+            )
 
-        if filing_status == 2: 
+        if filing_status == 2:
 
-            standard_deduction = parameters.gov.states.va.tax.income.va_standard_deduction.JOINT
+            standard_deduction = (
+                parameters.gov.states.va.tax.income.va_standard_deduction.JOINT
+            )
 
-        if filing_status == 3: 
+        if filing_status == 3:
 
-            standard_deduction = parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
+            standard_deduction = (
+                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
+            )
 
-        
         return standard_deduction
-
-
-

@@ -9,22 +9,20 @@ class va_income_tax(Variable):
     definition_period = YEAR
     defined_for = StateCode.VA
 
-    def formula(tax_unit,period,parameters):
+    def formula(tax_unit, period, parameters):
 
-        net_tax = tax_unit("va_income_tax_before_refundable_credits",period)
+        net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
-        line_26 = tax_unit("va_line_26",period)
+        line_26 = tax_unit("va_line_26", period)
 
         if line_26 < net_tax:
 
-            owed_tax = net_tax - line_26 
+            owed_tax = net_tax - line_26
 
             return owed_tax
 
-        if net_tax < line_26: 
+        if net_tax < line_26:
 
-            refund = (line_26 - net_tax) * -1  
+            refund = (line_26 - net_tax) * -1
 
             return refund
-
-
