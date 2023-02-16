@@ -1,4 +1,5 @@
-name: fiscalsim-us
+name: fiscalsim-us-pytables
 dependencies:
   - python=3.9
   - pip
+  - pytables
