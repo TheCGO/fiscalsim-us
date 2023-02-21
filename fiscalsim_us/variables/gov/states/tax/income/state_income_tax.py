@@ -34,4 +34,3 @@ class state_income_tax(Variable):
             )
         else:
             return add(tax_unit, period, state_income_tax.adds)
-            
