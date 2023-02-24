@@ -12,6 +12,7 @@ class spm_unit_benefits(Variable):
         BENEFITS = [
             "social_security",
             "ssi",
+            "state_supplement",
             "ca_cvrp",  # California Clean Vehicle Rebate Project.
             "snap",
             "wic",
@@ -20,13 +21,14 @@ class spm_unit_benefits(Variable):
             "lifeline",
             "acp",
             "ebb",
-            "spm_unit_capped_housing_subsidy",
             "tanf",
             "high_efficiency_electric_home_rebate",
             "residential_efficiency_electrification_rebate",
             # Contributed.
             "basic_income",
         ]
-        if parameters(period).contrib.ubi_center.flat_tax.deduct_ptc:
+        if parameters(period).gov.contrib.ubi_center.flat_tax.deduct_ptc:
             BENEFITS.append("premium_tax_credit")
+        if not parameters(period).gov.hud.abolition:
+            BENEFITS.append("spm_unit_capped_housing_subsidy")
         return add(spm_unit, period, BENEFITS)

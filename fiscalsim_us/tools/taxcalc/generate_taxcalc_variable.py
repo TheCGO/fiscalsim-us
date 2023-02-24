@@ -18,9 +18,8 @@ yaml, Loader = import_yaml()
 
 
 def create_taxcalc_alias(name: str, variable: Type[Variable]):
-    """Creates a new FiscalSim variable with the same metadata as the given
-    variable, but the Tax-Calculator name. The variable will be cast to tax
-    unit level if it is not already.
+    """Creates a new OpenFisca variable with the same metadata as the given variable, but the Tax-Calculator name.
+    The variable will be cast to tax unit level if it is not already.
 
     Args:
         name (str): The name of the equivalent Tax-Calculator variable.
@@ -70,6 +69,7 @@ def create_taxcalc_alias(name: str, variable: Type[Variable]):
             documentation=documentation,
             value_type=variable.value_type,
             formula=formula,
+            module_name="tools.taxcalc",
         ),
     )
 

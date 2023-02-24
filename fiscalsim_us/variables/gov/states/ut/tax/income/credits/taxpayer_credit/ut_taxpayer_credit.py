@@ -2,6 +2,10 @@ from fiscalsim_us.model_api import *
 
 
 class ut_taxpayer_credit(Variable):
+    """
+    Line 20 of Utah 2022 Individual Income Tax return form TC-40.
+    """
+
     value_type = float
     entity = TaxUnit
     label = "UT taxpayer credit"
@@ -9,9 +13,5 @@ class ut_taxpayer_credit(Variable):
     definition_period = YEAR
     defined_for = StateCode.UT
 
-    def formula(tax_unit, period, parameters):
-        ut_taxpayer_credit_max = tax_unit("ut_taxpayer_credit_max", period)
-        ut_taxpayer_credit_reduction = tax_unit(
-            "ut_taxpayer_credit_reduction", period
-        )
-        return ut_taxpayer_credit_max - ut_taxpayer_credit_reduction
+    adds = ["ut_taxpayer_credit_max"]
+    subtracts = ["ut_taxpayer_credit_reduction"]

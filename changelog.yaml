@@ -9,3 +9,22 @@
     - reduced the key dependencies to just `policyengine-core` instead of `openfisca-core` and `openfisca-tools`
     - made `fiscalsim-us` compliant with Python 3.9
   date: 2022-10-24 06:40:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.211.0
+    - Current PolicyEngine-Core version is v1.12.1
+  date: 2023-02-07 02:30:00
+- bump: minor
+  changes:
+    added:
+    - Adds a `fiscalsim_us/parameters/gov/states/ut/README.md` that details specific approaches taken with the Utah tax form.
+    - Adds all the Utah parameters to the ``fiscalsim_us/parameters/gov/states/ut` directory.
+    - Adds a `fiscalsim_us/variables/gov/states/README.md` that details the steps to adding a state tax logic to the model.
+    - Adds all the Utah variables to the ``fiscalsim_us/parameters/gov/states/ut` directory.
+    - Updates the `state_income_tax.py` and `state_income_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/gov/states/tax/income/` directory.
+    - Updates the `household_refundable_tax_credits.py` and `household_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/household/income/household/` directory.
+    - Sets the default value to `False` in `/fiscalsim_us/variables/household/expense/health/has_marketplace_health_coverage.py`
+    - `black` and `linecheck` formatted all new `.py` files.
+    - `make documentation` command still errors out. I need to fix the documentation.
+  date: 2023-02-10 14:30:00

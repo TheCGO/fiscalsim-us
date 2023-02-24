@@ -2,6 +2,10 @@ from fiscalsim_us.model_api import *
 
 
 class ut_total_income(Variable):
+    """
+    Line 6 on Utah 2022 Individual Income Tax return form TC-40.
+    """
+
     value_type = float
     entity = TaxUnit
     label = "UT total income"
@@ -9,8 +13,4 @@ class ut_total_income(Variable):
     definition_period = YEAR
     defined_for = StateCode.UT
 
-    def formula(tax_unit, period, parameters):
-        federal_agi = tax_unit("adjusted_gross_income", period)
-        ut_additions = tax_unit("ut_additions_to_income", period)
-
-        return federal_agi + ut_additions
+    adds = ["adjusted_gross_income", "ut_additions_to_income"]

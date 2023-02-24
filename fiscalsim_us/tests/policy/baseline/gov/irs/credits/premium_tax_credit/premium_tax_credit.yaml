@@ -6,6 +6,7 @@
     state_code: MA
     medicaid_income: 13_590 * 2
     age: 21
+    has_marketplace_health_coverage: true
     second_lowest_silver_plan_cost: 4_133
   output:
     premium_tax_credit: 301 * 12
@@ -27,7 +28,9 @@
     people:
       parent:
         age: 32
+        has_marketplace_health_coverage: true
       child:
         age: 5
+        has_marketplace_health_coverage: true
   output:
     premium_tax_credit: 459 * 12

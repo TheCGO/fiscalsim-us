@@ -2,11 +2,15 @@
 
 from setuptools import find_packages, setup
 
+with open("README.md", "r") as readme_file:
+    readme = readme_file.read()
+
 setup(
-    name="fiscalsim-US",
-    version="0.0.1",
+    name="fiscalsim-us",
+    version="0.0.3",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
-    author_email="revans@thecgo.org",
+    author_email="fiscalsim@thecgo.org",
+    long_description=readme,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU Affero General Public License v3",
@@ -16,7 +20,7 @@ setup(
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
     description="FiscalSim federal and state tax and benefit system for the US",
-    keywords="benefit microsimulation social tax",
+    keywords="tax benefit microsimulation fiscal state household personal",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
     url="https://github.com/TheCGO/fiscalsim-us",
     include_package_data=True,  # Will read MANIFEST.in
@@ -27,39 +31,41 @@ setup(
         ),
     ],
     install_requires=[
+        "click==8.1.3",
         "h5py",
         "microdf_python",
-        "policyengine-core >= 1.3.0",
         "pandas",
         "pathlib",
-        "pytest",
+        "policyengine-core==1.12.1",
+        "pytest==5.4.3",
         "pytest-dependency",
         "pyyaml",
         "requests",
         "synthimpute",
         "tables",
-        "tqdm",
-        "click>=8.0.0",
         "tabulate",
+        "tqdm",
     ],
     extras_require={
         "dev": [
-            "autopep8 >= 1.5.4, < 2.0.0",
+            "autopep8",
             "black",
             "coverage",
+            "furo",
             "jupyter-book",
-            "plotly",
-            "pytest",
-            "setuptools",
-            "wheel",
-            "yaml-changelog>=0.1.7",
+            "jupyter",
             "linecheck",
-            "markupsafe==2.0.1",
-            "sphinx>=4.5.0,<5",
-            "sphinx-argparse>=0.3.2,<1",
-            "sphinx-math-dollar>=1.2.1,<2",
+            "markupsafe",
+            "plotly",
+            "setuptools",
+            "sphinx",
+            "sphinx-argparse",
+            "sphinx-math-dollar",
+            "wheel",
+            "yaml-changelog",
         ],
     },
+    # Windows CI requires Python 3.9.
     python_requires=">=3.7,<3.10",
     entry_points={
         "console_scripts": [
