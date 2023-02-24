@@ -11,15 +11,6 @@ class mn_taxable_income(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-    def formula(tax_unit, period, parameters):
-        federal_agi = 0 # something here! 
 
-        additions = tax_unit(
-            "mn_additions_to_income", period
-        )
-
-        subtractions = tax_unit(
-            "mn_subtractions_from_income", period
-        )
-
-        return federal_agi + additions - subtractions
+    adds = ["adjusted_gross_income", "mn_additions_to_income"]
+    subtracts = ["mn_subtractions_from_income"]

@@ -11,6 +11,7 @@ class mn_additions_to_income(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
+
     def formula(tax_unit, period, parameters):
 
         return 0
