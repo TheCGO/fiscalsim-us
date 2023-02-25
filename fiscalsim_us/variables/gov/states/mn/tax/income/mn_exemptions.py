@@ -1,13 +1,13 @@
 from fiscalsim_us.model_api import *
 
 
-class mn_refundable_credits(Variable):
+class mn_exemptions(Variable):
     """
-    TODO: SOMETHING HERE
+    Line 5 of Minnesota 2022 Individual Income Tax return from M1.
     """
     value_type = float
     entity = TaxUnit
-    label = "MN refundable credits"
+    label = "MN exemptions"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN

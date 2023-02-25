@@ -1,13 +1,13 @@
 from fiscalsim_us.model_api import *
 
 
-class mn_refundable_credits(Variable):
+class mn_deductions(Variable):
     """
-    TODO: SOMETHING HERE
+    Line 4 of Minnesota 2022 Individual Income Tax return from M1.
     """
     value_type = float
     entity = TaxUnit
-    label = "MN refundable credits"
+    label = "MN deductions"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
@@ -15,3 +15,4 @@ class mn_refundable_credits(Variable):
     def formula(tax_unit, period, parameters):
 
         return 0
+

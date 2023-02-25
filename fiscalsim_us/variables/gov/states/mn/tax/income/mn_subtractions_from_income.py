@@ -1,9 +1,9 @@
-from policyengine_us.model_api import *
+from fiscalsim_us.model_api import *
 
 
 class mn_subtractions_from_income(Variable):
     """
-    TODO: SOMETHING HERE
+    Line 8 of Minnesota 2022 Individual Income Tax return from M1.
     """
     value_type = float
     entity = TaxUnit
@@ -11,7 +11,4 @@ class mn_subtractions_from_income(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-
-    def formula(tax_unit, period, parameters):
-
-        return 0
+    adds = ["mn_deductions", "mn_exeptions", "mn_other_subtractions_from_income"]
