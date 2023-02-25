@@ -18,11 +18,26 @@ class mn_income_tax_before_credits(Variable):
             "mn_taxable_income", period
         )
 
-        tax = 0
-        # other tax logic/ table lookup here
+        p = parameters(period).gov.states.mn.tax.income.rates
+        tax = select(
+            [
+                filing_status == filing_statuses.SINGLE,
+                filing_status == filing_statuses.SEPARATE,
+                filing_status == filing_statuses.JOINT,
+                filing_status == filing_statuses.HEAD_OF_HOUSEHOLD,
+                filing_status == filing_statuses.WIDOW,
+            ],
+            [
+                p.single.calc(taxable_income),
+                p.separate.calc(taxable_income),
+                p.joint.calc(taxable_income),
+                p.head.calc(taxable_income),
+                p.widow.calc(taxable_income),
+            ],
+        )
+
         amt = tax_unit(
             "mn_alternative_minimum_tax", period
         )
 
-
-        return 0
+        return tax + amt 
