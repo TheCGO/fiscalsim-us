@@ -23,7 +23,7 @@ class mn_standard_deduction(Variable):
         
         std_deduct = p.standard_amount[filing_status] + p.aged_or_blind * aged_blind_count
 
-        if fed_agi <= p.standard_threshold[filing_status]
+        if fed_agi <= p.standard_threshold[filing_status]:
             return std_deduct
 
         phaseout_subtract = min(
