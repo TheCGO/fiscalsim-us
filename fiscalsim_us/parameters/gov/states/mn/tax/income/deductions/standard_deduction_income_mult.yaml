@@ -1,0 +1,11 @@
+description: MN standard deduction income multiplier for income over threshold
+values:
+  2021-01-01: .03
+metadata:
+  unit: /1
+  period: year
+  name: mn_standard_deduction_income_mult
+  label: MN standard deduction income multiplier
+  reference:
+    - title:
+      href:
