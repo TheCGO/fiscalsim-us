@@ -11,4 +11,8 @@ class mn_itemized_deductions(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-    adds = ["mn_other_itemized_deductions"]
+    adds = [
+        "mn_other_itemized_deductions",
+        "mn_medical_dental_deduction",
+        "interest_expense"
+        ]
