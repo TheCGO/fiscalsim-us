@@ -1,0 +1,11 @@
+description: MN charitable donation deduction limit 
+values:
+  2021-01-01: .6
+metadata:
+  unit: /1
+  period: year
+  name: mn_charitable_donation_limit
+  label: MN charitable donation deduction limit 
+  reference:
+    - title:
+      href:
