@@ -7,9 +7,9 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.0.3",
-    author="Center for Growth and Opportunity at Utah State University (CGO)",
-    author_email="fiscalsim@thecgo.org",
+    version="0.220.0",
+    author="PolicyEngine",
+    author_email="hello@policyengine.org",
     long_description=readme,
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -19,10 +19,10 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
-    description="FiscalSim federal and state tax and benefit system for the US",
-    keywords="tax benefit microsimulation fiscal state household personal",
+    description="FiscalSim tax and benefit system for the US",
+    keywords="benefit microsimulation social tax",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
-    url="https://github.com/TheCGO/fiscalsim-us",
+    url="https://github.com/PolicyEngine/fiscalsim-us",
     include_package_data=True,  # Will read MANIFEST.in
     data_files=[
         (
@@ -36,7 +36,7 @@ setup(
         "microdf_python",
         "pandas",
         "pathlib",
-        "policyengine-core==1.12.1",
+        "policyengine-core>=1.12,<1.13",
         "pytest==5.4.3",
         "pytest-dependency",
         "pyyaml",
@@ -53,7 +53,6 @@ setup(
             "coverage",
             "furo",
             "jupyter-book",
-            "jupyter",
             "linecheck",
             "markupsafe",
             "plotly",
