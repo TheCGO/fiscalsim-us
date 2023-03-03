@@ -26,6 +26,7 @@ setup(
     include_package_data=True,  # Will read MANIFEST.in
     data_files=[
         (
+            "share/openfisca/openfisca-country-template",
             ["CHANGELOG.md", "LICENSE", "README.md"],
         ),
     ],
