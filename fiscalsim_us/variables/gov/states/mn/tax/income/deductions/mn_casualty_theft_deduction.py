@@ -14,11 +14,11 @@ class mn_casualty_theft_deduction(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        p = (
+        p = parameters(
             period
         ).gov.states.mn.tax.income.deductions
         fed_agi = tax_unit("adjusted_gross_income", period)
-        loss = tax_unit("casualty_loss", period)
+        loss = add(tax_unit, period, ["casualty_loss"])
 
         adj_loss = max(0, loss - p.theft_deduction_floor)
 

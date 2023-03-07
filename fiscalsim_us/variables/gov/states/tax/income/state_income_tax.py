@@ -15,6 +15,7 @@ class state_income_tax(Variable):
         "pa_income_tax",
         "wa_income_tax",
         "ut_income_tax",
+        "mn_income_tax",
     ]
 
     def formula(tax_unit, period, parameters):

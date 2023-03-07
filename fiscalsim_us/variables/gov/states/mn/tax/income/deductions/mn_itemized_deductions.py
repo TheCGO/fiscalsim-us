@@ -14,7 +14,7 @@ class mn_itemized_deductions(Variable):
 
 
     def formula(tax_unit, period, parameters):
-        p = (
+        p = parameters(
             period
         ).gov.states.mn.tax.income.deductions
  

@@ -13,7 +13,7 @@ class mn_standard_deduction(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        p = (
+        p = parameters(
             period
         ).gov.states.mn.tax.income.deductions
 
@@ -21,7 +21,7 @@ class mn_standard_deduction(Variable):
         filing_status = tax_unit("filing_status", period)
         aged_blind_count = tax_unit("aged_blind_count", period)
         
-        std_deduct = p.standard_amount[filing_status] + p.aged_or_blind * aged_blind_count
+        std_deduct = p.standard_amount[filing_status] + p.aged_or_blind[filing_status] * aged_blind_count
 
         if fed_agi <= p.standard_threshold[filing_status]:
             return std_deduct

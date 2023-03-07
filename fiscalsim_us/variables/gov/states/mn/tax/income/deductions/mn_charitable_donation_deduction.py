@@ -14,10 +14,12 @@ class mn_charitable_donation_deduction(Variable):
     defined_for = StateCode.MN
  
     def formula(tax_unit, period, parameters):
-        cash_donations = tax_unit("charitable_cash_donations", period)
-        non_cash_donations = tax_unit("charitable_non_cash_donations", period)
+        cash_donations = add(tax_unit, period, ["charitable_cash_donations"])
+        non_cash_donations = add(
+            tax_unit, period, ["charitable_non_cash_donations"]
+        )
         fed_agi = tax_unit("adjusted_gross_income", period)
-        mult = (
+        mult = parameters(
             period
         ).gov.states.mn.tax.income.deductions.charitable_donation_limit
 

@@ -14,7 +14,7 @@ class mn_exemptions(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        p = (
+        p = parameters(
             period
         ).gov.states.mn.tax.income.exemptions
 

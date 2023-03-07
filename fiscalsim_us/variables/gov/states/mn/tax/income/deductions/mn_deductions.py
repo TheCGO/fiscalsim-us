@@ -15,6 +15,6 @@ class mn_deductions(Variable):
     def formula(tax_unit, period, parameters):
 
         standard = tax_unit("mn_standard_deduction", period)
-        itemized = tax_unit("mn_itemized_deduction", period)
+        itemized = tax_unit("mn_itemized_deductions", period)
 
         return max(standard, itemized)

@@ -16,6 +16,7 @@ class household_refundable_tax_credits(Variable):
         # Skip PA, which has no refundable credits.
         "ut_refundable_credits",  # Utah
         "wa_refundable_credits",  # Washington.
+        "mn_refundable_credits",  # Minnesota
     ]
 
     def formula(household, period, parameters):

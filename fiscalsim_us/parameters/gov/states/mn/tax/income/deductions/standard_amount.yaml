@@ -1,4 +1,14 @@
 description: MN state standard deduction amount based on filing status
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_standard_deduction_amount
+  label: MN dependent standard deduction amount
+  reference:
+    - title: ""
+      href: ""
 SINGLE:
   2021-01-01: 12_900
 JOINT:
@@ -9,13 +19,3 @@ HEAD_OF_HOUSEHOLD:
   2021-01-01: 19_400
 WIDOW:
   2021-01-01: 25_800
-metadata:
-  unit: currency-USD
-  period: year
-  breakdown:
-    - filing_status
-  name: mn_standard_deduction_amount
-  label: MN dependent standard deduction amount
-  reference:
-    - title: 
-      href: 

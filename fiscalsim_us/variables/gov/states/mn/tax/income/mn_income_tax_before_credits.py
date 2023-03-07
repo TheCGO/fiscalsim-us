@@ -13,12 +13,13 @@ class mn_income_tax_before_credits(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        
+        p = parameters(period).gov.states.mn.tax.income.rates
         taxable_income = tax_unit(
             "mn_taxable_income", period
         )
 
-        p = parameters(period).gov.states.mn.tax.income.rates
+        filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
         tax = select(
             [
                 filing_status == filing_statuses.SINGLE,

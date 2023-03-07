@@ -11,4 +11,4 @@ class mn_subtractions_from_income(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-    adds = ["mn_deductions", "mn_exeptions", "mn_other_subtractions_from_income"]
+    adds = ["mn_deductions", "mn_exemptions", "mn_other_subtractions_from_income"]
