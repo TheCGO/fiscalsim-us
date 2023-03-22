@@ -1,0 +1,12 @@
+description: Virginia Individual over 65 and blind exemption multiplier
+values:
+  2021-01-01:
+    value: 800
+metadata:
+  unit: Currency-USD
+  period: year
+  name: va_indiv_p65_exemption_multiplier
+  label: Virginia Individual Exemption Multiplier
+  reference:
+    - title: 2021 Virginia Form 760, Resident Income Tax Return
+      href: https://www.tax.virginia.gov/forms/search?category=1&year=611
