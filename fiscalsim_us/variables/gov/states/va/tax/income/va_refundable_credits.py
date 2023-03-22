@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class va_line_26(Variable):
+class va_refundable_credits(Variable):
     value_type = float
     entity = TaxUnit
     label = "line 26 on the va tax return"

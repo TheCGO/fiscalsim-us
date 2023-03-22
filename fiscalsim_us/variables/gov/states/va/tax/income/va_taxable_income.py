@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class va_taxable_inc(Variable):
+class va_taxable_income(Variable):
     value_type = float
     entity = TaxUnit
     label = "VA taxable income line 15 on form 760"

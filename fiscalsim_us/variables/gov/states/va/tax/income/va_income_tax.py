@@ -13,7 +13,7 @@ class va_income_tax(Variable):
 
         net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
-        line_26 = tax_unit("va_line_26", period)
+        line_26 = tax_unit("va_refundable_credits", period)
 
         if line_26 < net_tax:
 

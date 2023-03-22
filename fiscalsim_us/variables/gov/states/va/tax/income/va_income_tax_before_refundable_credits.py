@@ -13,7 +13,7 @@ class va_income_tax_before_refundable_credits(Variable):
 
         rates = parameters(period).gov.states.va.tax.income.va_tax_rates
 
-        taxable_inc = tax_unit("va_taxable_inc", period)
+        taxable_inc = tax_unit("va_taxable_income", period)
 
         if taxable_inc > 0:
 
