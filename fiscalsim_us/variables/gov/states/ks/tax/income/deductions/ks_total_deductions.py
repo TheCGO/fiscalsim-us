@@ -12,7 +12,7 @@ class ks_total_deductions(Variable):
 
     def formula(tax_unit, period, parameters):
         ks_exemption_allowance = tax_unit("ks_exemption_allowance", period)
-        ks_deductions = max(
+        ks_deductions = max_(
             tax_unit("ks_itemized_deductions", period),
             tax_unit("ks_standard_deduction", period),
         )
