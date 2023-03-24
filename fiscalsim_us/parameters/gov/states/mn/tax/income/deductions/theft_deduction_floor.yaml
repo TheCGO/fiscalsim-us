@@ -1,0 +1,11 @@
+description: MN casualty and theft loss deduction income multiplier
+values:
+  2021-01-01: 100
+metadata:
+  unit: currency-USD
+  period: year
+  name: mn_casualty_loss_deduction_mult
+  label: MN casualty and theft loss income mult
+  reference:
+    - title:
+      href:
