@@ -1,0 +1,19 @@
+description: Standard deduction for KS State tax.
+SINGLE:
+  2021-01-01: 3_500
+JOINT:
+  2021-01-01: 8_000
+SEPARATE:
+  2021-01-01: 4_000
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 6_000
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: ks_standard_deduction_amount
+  label: KS standard deduction
+  reference:
+    - title: Complete Income Tax Instruction Booklet - 2021, page 6
+      href: https://www.ksrevenue.gov/pdf/ip21.pdf#page=6

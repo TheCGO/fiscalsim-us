@@ -8,6 +8,7 @@ class state_income_tax(Variable):
     unit = USD
     definition_period = YEAR
     adds = [
+        "ks_income_tax",
         "ma_income_tax",
         "md_income_tax",
         "ny_income_tax",

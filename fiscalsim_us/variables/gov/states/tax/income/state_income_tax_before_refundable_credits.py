@@ -9,6 +9,7 @@ class state_income_tax_before_refundable_credits(Variable):
     definition_period = YEAR
     adds = [
         "il_total_tax",
+        "ks_income_tax_before_refundable_credits",
         "ma_income_tax_before_refundable_credits",
         "md_income_tax_before_refundable_credits",
         "mo_income_tax_before_refundable_credits",
