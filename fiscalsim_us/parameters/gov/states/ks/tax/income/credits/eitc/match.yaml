@@ -1,0 +1,10 @@
+description: Percent of the EITC which is matched by KS income tax.
+values:
+  2022-01-01: 0.17
+metadata:
+  unit: /1
+  name: ks_eitc_match
+  label: KS EITC percent
+  reference:
+    - title: Earned income tax credit worksheet
+      href: "https://www.ksrevenue.gov/pdf/ip22.pdf"  # page 8 worksheet
