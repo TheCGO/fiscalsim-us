@@ -18,4 +18,4 @@ class ks_income_tax_before_refundable_credits(Variable):
         )
         credits = tax_unit("ks_nonrefundable_credits", period)
 
-        return max_(income_tax_before_credits - credits, 0)
+        return max_(0, income_tax_before_credits - credits)
