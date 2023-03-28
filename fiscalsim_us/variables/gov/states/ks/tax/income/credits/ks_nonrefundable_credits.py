@@ -15,6 +15,7 @@ class ks_nonrefundable_credits(Variable):
     definition_period = YEAR
     defined_for = StateCode.KS
 
+adds = ["ks_eitc"]
 
 # TODO: Add credits for:
 # * Line 17: Kansas earned income credit
