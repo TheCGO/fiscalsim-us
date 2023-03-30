@@ -54,7 +54,7 @@ class mn_alternative_minimum_tax(Variable):
         # line 23
         reduced_income = adj_income - phase_in
         # line 25 
-        phased_sub = p.phase_in[filing_status] - reduced_income * p.mult
+        phased_sub = p.phasein_end[filing_status] - reduced_income * p.mult
         amt_income = adj_income - phased_sub
 
         normal_rates = parameters(period).gov.states.mn.tax.income.rates

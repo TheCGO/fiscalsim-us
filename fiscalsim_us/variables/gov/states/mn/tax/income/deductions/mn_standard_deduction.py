@@ -1,3 +1,4 @@
+from numpy import min_scalar_type
 from fiscalsim_us.model_api import *
 
 
@@ -23,11 +24,10 @@ class mn_standard_deduction(Variable):
         
         std_deduct = p.standard_amount[filing_status] + p.aged_or_blind[filing_status] * aged_blind_count
 
-        if fed_agi <= p.standard_threshold[filing_status]:
-            return std_deduct
+        over_threshold = fed_agi >= p.standard_threshold[filing_status]
 
-        phaseout_subtract = min(
-            fed_agi - threshold * p.standard_deduction_income_mult,
+        phaseout_subtract = min_(
+            fed_agi - p.standard_threshold[filing_status] * p.standard_deduction_income_mult,
             std_deduct * p.standard_deduction_mult
         )
-        return std_deduct - phaseout_subtract
+        return std_deduct - over_threshold * phaseout_subtract

@@ -12,6 +12,7 @@ class household_refundable_tax_credits(Variable):
         "il_refundable_credits",  # Illinois
         "ma_refundable_credits",  # Massachusetts
         "md_refundable_credits",  # Maryland
+        "mn_refundable_credits",  # Minnesota
         "mo_refundable_credits",  # Missouri
         "or_refundable_credits",  # Oregon
         "ny_refundable_credits",  # New York
