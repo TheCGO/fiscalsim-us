@@ -23,4 +23,4 @@ class mn_charitable_donation_deduction(Variable):
             period
         ).gov.states.mn.tax.income.deductions.charitable_donation_limit
 
-        return min(mult * fed_agi, cash_donations + non_cash_donations)
+        return min_(mult * fed_agi, cash_donations + non_cash_donations)
