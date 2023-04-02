@@ -20,25 +20,32 @@ class mn_itemized_deductions(Variable):
  
         fed_agi = tax_unit("adjusted_gross_income", period)
         filing_status = tax_unit("filing_status", period)
-        deductions = [
-            "mn_other_itemized_deductions",
-            "mn_medical_dental_deduction",
-            "interest_expense",
-            "mn_charitable_donation_deduction",
-            "mn_casualty_theft_deduction"
-            ]
 
-        if fed_agi <= p.itemized_threshold[filing_status]:
-            return add(tax_unit, period, deductions)
-
+        # reduced deductions for households with income over a 
+        # threshold
         reduced_deductions = [
             "mn_other_itemized_deductions",
             "interest_expense",
             "mn_charitable_donation_deduction"
-            ]
-        
+        ]
+
+        # deductions only available for households under the income
+        # threshold
+        other_deductions = [
+            "mn_medical_dental_deduction",
+            "mn_casualty_theft_deduction"
+        ]
+
         deduction_amount = add(tax_unit, period, reduced_deductions)
-        return min(
+        all_deductions = deduction_amount + \
+            add(tax_unit, period, other_deductions)
+
+
+        return where(
+            fed_agi <= p.itemized_threshold[filing_status],
+            all_deductions,
+            min_(
             deduction_amount * p.itemized_mult,
-            (fed_agi - p.itemized_threshold) * p.itemized_income_mult
+            (fed_agi - p.itemized_threshold[filing_status]) * p.itemized_income_mult
+            )
         )
