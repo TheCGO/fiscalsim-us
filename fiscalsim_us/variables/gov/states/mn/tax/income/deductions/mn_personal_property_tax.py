@@ -8,6 +8,7 @@ class mn_personal_property_tax(Variable):
     Line 10 of 2022 M1SA, Minnesota Itemized Deductions
     Line 5c of Federal Schedule A
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN personal property tax"

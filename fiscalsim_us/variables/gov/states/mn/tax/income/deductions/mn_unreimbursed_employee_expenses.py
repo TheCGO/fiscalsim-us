@@ -5,6 +5,7 @@ class mn_unreimbursed_employee_expenses(Variable):
     """
     Line 20 of 2022 M1SA, Minnesota Itemized Deductions
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN unreimbursed employee expenses"

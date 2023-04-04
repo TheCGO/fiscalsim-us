@@ -5,6 +5,7 @@ class mn_income_tax_before_credits(Variable):
     """
     TODO: SOMETHING HERE
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN income tax before credits"
@@ -14,9 +15,7 @@ class mn_income_tax_before_credits(Variable):
 
     def formula(tax_unit, period, parameters):
         p = parameters(period).gov.states.mn.tax.income.rates
-        taxable_income = tax_unit(
-            "mn_taxable_income", period
-        )
+        taxable_income = tax_unit("mn_taxable_income", period)
 
         filing_status = tax_unit("filing_status", period)
         filing_statuses = filing_status.possible_values
@@ -37,8 +36,6 @@ class mn_income_tax_before_credits(Variable):
             ],
         )
 
-        amt = tax_unit(
-            "mn_alternative_minimum_tax", period
-        )
+        amt = tax_unit("mn_alternative_minimum_tax", period)
 
-        return tax + amt 
+        return tax + amt

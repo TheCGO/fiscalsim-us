@@ -6,6 +6,7 @@ class mn_alternative_minimum_tax(Variable):
     """
     TODO: SOMETHING HERE
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN alternative minimum tax"
@@ -14,11 +15,9 @@ class mn_alternative_minimum_tax(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        # items not included: 
+        # items not included:
         # line 4 - additions from Schedule M1MB and M1NC
-        p = parameters(
-            period
-        ).gov.states.mn.tax.income.amt
+        p = parameters(period).gov.states.mn.tax.income.amt
         fed_agi = tax_unit("adjusted_gross_income", period)
         filing_status = tax_unit("filing_status", period)
 
@@ -40,28 +39,28 @@ class mn_alternative_minimum_tax(Variable):
         unreimbursed = tax_unit("mn_unreimbursed_employee_deduction", period)
         # currently not included:
         # line 13 - impairment related work expenses
-        # line 15 - State income tax refund 
-        # line 16 line federal bonus deprecitaion subtraction 
+        # line 15 - State income tax refund
+        # line 16 line federal bonus deprecitaion subtraction
         # line 17 - Mutual fund dividends of US bond
-        # line 18 - other subtractions 
+        # line 18 - other subtractions
 
-        adj_income = line8 - medical - investment - charity - theft - unreimbursed
+        adj_income = (
+            line8 - medical - investment - charity - theft - unreimbursed
+        )
         phase_in = p.income_floor[filing_status]
 
         required = adj_income > phase_in
-        #if adj_income <= phase_in:
+        # if adj_income <= phase_in:
         #    return 0
-        
+
         # line 23
         reduced_income = adj_income - phase_in
-        # line 25 
+        # line 25
         phased_sub = p.phasein_end[filing_status] - reduced_income * p.mult
         amt_income = adj_income - phased_sub
 
         normal_rates = parameters(period).gov.states.mn.tax.income.rates
-        taxable_income = tax_unit(
-            "mn_taxable_income", period
-        )
+        taxable_income = tax_unit("mn_taxable_income", period)
 
         filing_statuses = filing_status.possible_values
         tax = select(
@@ -81,6 +80,6 @@ class mn_alternative_minimum_tax(Variable):
             ],
         )
 
-        amt = max_(0, amt_income * p.rate) 
+        amt = max_(0, amt_income * p.rate)
 
         return required * max_(0, amt - tax)

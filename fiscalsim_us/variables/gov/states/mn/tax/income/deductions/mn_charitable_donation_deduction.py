@@ -6,13 +6,14 @@ class mn_charitable_donation_deduction(Variable):
     Minnesota charitable donation deduction
     Line 4 of 2022 M1SA, Minnesota Itemized Deductions
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN charitable donation deductions"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
- 
+
     def formula(tax_unit, period, parameters):
         cash_donations = add(tax_unit, period, ["charitable_cash_donations"])
         non_cash_donations = add(

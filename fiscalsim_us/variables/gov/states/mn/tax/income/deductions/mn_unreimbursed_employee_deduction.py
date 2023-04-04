@@ -5,6 +5,7 @@ class mn_unreimbursed_employee_deduction(Variable):
     """
     Line 23 of 2022 M1SA, Minnesota Itemized Deductions
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN unreimbursed employee expenses deduction"
@@ -15,7 +16,7 @@ class mn_unreimbursed_employee_deduction(Variable):
     def formula(tax_unit, period, parameters):
         fed_agi = tax_unit("adjusted_gross_income", period)
         mult = parameters(
-            period 
+            period
         ).gov.states.mn.tax.income.deductions.unreimbursed_employee_mult
         expense = tax_unit("mn_unreimbursed_employee_expenses", period)
 

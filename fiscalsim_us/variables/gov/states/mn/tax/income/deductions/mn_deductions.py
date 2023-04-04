@@ -5,6 +5,7 @@ class mn_deductions(Variable):
     """
     Line 4 of Minnesota 2022 Individual Income Tax return from M1.
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN deductions"

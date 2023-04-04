@@ -11,13 +11,13 @@ class mn_other_itemized_deductions(Variable):
     * Deduction for repayment of amounts under a claim of right
     * Certain unrecovered investment in pension
     * Impairment-related work expenses of a person with a disability
-    * Deduction allowable in connection with personal property used 
+    * Deduction allowable in connection with personal property used
     in a short sale as described under section 67(b)(8)
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN other itemized deductions"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-
