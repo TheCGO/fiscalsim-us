@@ -20,6 +20,6 @@ class mn_casualty_theft_deduction(Variable):
         fed_agi = tax_unit("adjusted_gross_income", period)
         loss = add(tax_unit, period, ["casualty_loss"])
 
-        adj_loss = max(0, loss - p.theft_deduction_floor)
+        adj_loss = max_(0, loss - p.theft_deduction_floor)
 
-        return max(0, adj_loss - fed_agi * p.theft_deduction_income_mult)
+        return max_(0, adj_loss - fed_agi * p.theft_deduction_income_mult)

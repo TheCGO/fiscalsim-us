@@ -20,4 +20,4 @@ class mn_medical_dental_deduction(Variable):
             period
         ).gov.states.mn.tax.income.deductions.medical_and_dental_mult
 
-        return max(0, expense - mult * fed_agi)
+        return max_(0, expense - mult * fed_agi)

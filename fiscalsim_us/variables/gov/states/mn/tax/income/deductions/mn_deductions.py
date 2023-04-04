@@ -17,4 +17,4 @@ class mn_deductions(Variable):
         standard = tax_unit("mn_standard_deduction", period)
         itemized = tax_unit("mn_itemized_deductions", period)
 
-        return max(standard, itemized)
+        return max_(standard, itemized)
