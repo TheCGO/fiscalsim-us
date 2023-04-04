@@ -1,5 +1,4 @@
 from fiscalsim_us.model_api import *
-from math import ceil
 
 
 class mn_exemptions(Variable):
@@ -23,13 +22,14 @@ class mn_exemptions(Variable):
         filing_status = tax_unit("filing_status", period)
         amount_per_depend = p.dependent
         threshold = p.dependent_phaseout[filing_status]
-
-        if fed_agi <= threshold:
-            return dependents * amount_per_depend
-        
+       
         extra = fed_agi - threshold
         divisor = p.dependent_phase_divisor[filing_status] 
 
-        return max(dependents * amount_per_depend * (1 - ceil(extra / divisor) * .02),
+        phase_out = fed_agi > threshold
+ 
+        return max_(dependents * amount_per_depend * (1 - phase_out * np.ceil(extra / divisor) * .02),
             0
         )
+
+
