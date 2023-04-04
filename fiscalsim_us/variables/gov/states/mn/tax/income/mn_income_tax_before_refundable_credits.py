@@ -21,4 +21,4 @@ class mn_income_tax_before_refundable_credits(Variable):
             "mn_nonrefundable_credits", period
         )
 
-        return max(income_tax_before_credits - nonrefundable_credits, 0)
+        return max_(income_tax_before_credits - nonrefundable_credits, 0)

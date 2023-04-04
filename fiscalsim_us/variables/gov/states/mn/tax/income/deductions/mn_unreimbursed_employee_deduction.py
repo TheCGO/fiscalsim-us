@@ -19,4 +19,4 @@ class mn_unreimbursed_employee_deduction(Variable):
         ).gov.states.mn.tax.income.deductions.unreimbursed_employee_mult
         expense = tax_unit("mn_unreimbursed_employee_expenses", period)
 
-        return max(expense - fed_agi * mult, 0)
+        return max_(expense - fed_agi * mult, 0)

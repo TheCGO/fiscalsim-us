@@ -48,8 +48,9 @@ class mn_alternative_minimum_tax(Variable):
         adj_income = line8 - medical - investment - charity - theft - unreimbursed
         phase_in = p.income_floor[filing_status]
 
-        if adj_income <= phase_in:
-            return 0
+        required = adj_income > phase_in
+        #if adj_income <= phase_in:
+        #    return 0
         
         # line 23
         reduced_income = adj_income - phase_in
@@ -80,6 +81,6 @@ class mn_alternative_minimum_tax(Variable):
             ],
         )
 
-        amt = max(0, amt_income * p.rate) 
+        amt = max_(0, amt_income * p.rate) 
 
-        return max(0, amt - tax)
+        return required * max_(0, amt - tax)
