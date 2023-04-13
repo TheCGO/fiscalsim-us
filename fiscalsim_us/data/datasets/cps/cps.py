@@ -343,8 +343,8 @@ def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
         childcare_expenses="SPM_CHILDCAREXPNS",
     )
 
-    for openfisca_variable, asec_variable in SPM_RENAMES.items():
-        cps[openfisca_variable] = spm_unit[asec_variable]
+    for fiscalsim_variable, asec_variable in SPM_RENAMES.items():
+        cps[fiscalsim_variable] = spm_unit[asec_variable]
 
     cps["reduced_price_school_meals_reported"] = (
         cps["free_school_meals_reported"][...] * 0
