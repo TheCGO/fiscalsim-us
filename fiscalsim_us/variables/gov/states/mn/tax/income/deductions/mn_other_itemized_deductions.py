@@ -4,8 +4,6 @@ from fiscalsim_us.model_api import *
 class mn_other_itemized_deductions(Variable):
     """
     Other itemized deductions from for M1SA lines 20 and 24
-    * Unreimbursed Employee Expenses
-    * Gambling loss
     * Federal estate tax on income in respect of a decedent
     * Deduction for amortizable bond premium
     * Deduction for repayment of amounts under a claim of right

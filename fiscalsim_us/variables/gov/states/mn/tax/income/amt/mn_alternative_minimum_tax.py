@@ -15,8 +15,6 @@ class mn_alternative_minimum_tax(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        # items not included:
-        # line 4 - additions from Schedule M1MB and M1NC
         p = parameters(period).gov.states.mn.tax.income.amt
         fed_agi = tax_unit("adjusted_gross_income", period)
         filing_status = tax_unit("filing_status", period)
@@ -37,15 +35,15 @@ class mn_alternative_minimum_tax(Variable):
         charity = tax_unit("mn_charitable_donation_deduction", period)
         theft = tax_unit("mn_casualty_theft_deduction", period)
         unreimbursed = tax_unit("mn_unreimbursed_employee_deduction", period)
+        impaired_deduct = tax_unit("mn_disabled_impairment_work_deduction", period)
         # currently not included:
-        # line 13 - impairment related work expenses
         # line 15 - State income tax refund
-        # line 16 line federal bonus deprecitaion subtraction
+        # line 16 - line federal bonus deprecitaion subtraction
         # line 17 - Mutual fund dividends of US bond
         # line 18 - other subtractions
 
         adj_income = (
-            line8 - medical - investment - charity - theft - unreimbursed
+            line8 - medical - investment - charity - theft - unreimbursed - impaired_deduct
         )
         phase_in = p.income_floor[filing_status]
 

@@ -22,4 +22,4 @@ class mn_taxes_paid_deducion(Variable):
             period
         ).gov.states.mn.tax.income.deductions.taxes_paid_ceiling[filing_status]
 
-        return min(ceiling, real_estate + personal_property)
+        return min_(ceiling, real_estate + personal_property)
