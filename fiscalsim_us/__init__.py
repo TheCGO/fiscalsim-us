@@ -14,6 +14,4 @@ from fiscalsim_us.system import (
     IndividualSim,
 )
 
-from fiscalsim_us.data import ACS, CPS
-
-DATASETS = [ACS, CPS]
+from fiscalsim_us.data import *
