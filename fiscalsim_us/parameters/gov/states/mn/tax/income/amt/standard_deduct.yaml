@@ -1,11 +1,11 @@
-description: MN alternative minimum tax income lower requirements
+description: MN alternative minimum tax standard deduction phase out
 metadata:
   unit: currency-USD
   period: year
   breakdown:
     - filing_status
-  name: mn_amt_income_floor
-  label: MN alternative minimum tax income floor
+  name: mn_amt_standard_deduct_phase_out
+  label: MN alternative minimum tax standard deduction phase out 
   reference:
     - title: ""
       href: ""

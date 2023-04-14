@@ -1,11 +1,11 @@
-description: MN alternative minimum tax income phase in end
+description: MN alternative minimum tax standard deduction
 metadata:
   unit: currency-USD
   period: year
   breakdown:
     - filing_status
-  name: mn_phasein_end
-  label: MN alternative minimum tax income phase in limit
+  name: mn_amt_standard_deduct
+  label: MN alternative minimum tax standard deduction
   reference:
     - title: ""
       href: ""

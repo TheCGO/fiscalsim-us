@@ -42,20 +42,18 @@ class mn_alternative_minimum_tax(Variable):
         # line 17 - Mutual fund dividends of US bond
         # line 18 - other subtractions
 
-        adj_income = (
+        # line 20
+        amt_income_before_std = (
             line8 - medical - investment - charity - theft - unreimbursed - impaired_deduct
         )
-        phase_in = p.income_floor[filing_status]
-
-        required = adj_income > phase_in
-        # if adj_income <= phase_in:
-        #    return 0
+        std_deduct_phase_out = p.std_deduct_phase_out[filing_status]
+        std_deduct = p.standard_deduct[filing_status]
 
         # line 23
-        reduced_income = adj_income - phase_in
+        income_over_phase_out = max_(0, amt_income_before_std - std_deduct_phase_out)
         # line 25
-        phased_sub = p.phasein_end[filing_status] - reduced_income * p.mult
-        amt_income = adj_income - phased_sub
+        phased_std_deduct = max_(0, std_deduct - income_over_phase_out * p.mult)
+        amt_income = amt_income_before_std - phased_std_deduct
 
         normal_rates = parameters(period).gov.states.mn.tax.income.rates
         taxable_income = tax_unit("mn_taxable_income", period)
@@ -80,4 +78,4 @@ class mn_alternative_minimum_tax(Variable):
 
         amt = max_(0, amt_income * p.rate)
 
-        return required * max_(0, amt - tax)
+        return max_(0, amt - tax)
