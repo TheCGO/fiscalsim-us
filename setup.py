@@ -49,7 +49,7 @@ setup(
     extras_require={
         "dev": [
             "autopep8",
-            "black",
+            "black>=23.3.0",
             "coverage",
             "furo",
             "jupyter-book",
