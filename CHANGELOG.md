@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.6] = 2023-04-15 22:40:00
+
+### Changed
+
+- Updated files from PolicyEngine-US v0.252.0
+- This PR updates the pinned version of policyengine-core
+- This PR creates skip commands for the `test_microsim.py` test and three tests in `test_cps.py`
+
 ## [0.0.5] = 2023-04-13 12:00:00
 
 ### Changed
