@@ -1,6 +1,6 @@
 import os
 from fiscalsim_us import Microsimulation
-from fiscalsim_us.data.datasets import CPS
+from fiscalsim_us.data import CPS_2023
 from fiscalsim_us.tools.taxsim.generate_taxsim_tests import TaxSim35
 import numpy as np
 import pytest
@@ -24,7 +24,7 @@ if os.name != "nt":
         taxsim = TaxSim35()
 
         yield taxsim.generate_from_microsimulation(
-            CPS, 2022, None, True, False
+            CPS_2023, 2022, None, True, False
         ).set_index("taxsim_taxsimid")
 
     @pytest.fixture(scope="module")

@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.0.5",
+    version="0.0.6",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
@@ -36,7 +36,7 @@ setup(
         "microdf_python",
         "pandas",
         "pathlib",
-        "policyengine-core==1.12.1",
+        "policyengine-core>=2.0.1,<3",
         "pytest==5.4.3",
         "pytest-dependency",
         "pyyaml",
@@ -49,7 +49,7 @@ setup(
     extras_require={
         "dev": [
             "autopep8",
-            "black",
+            "black>=23.3.0",
             "coverage",
             "furo",
             "jupyter-book",
