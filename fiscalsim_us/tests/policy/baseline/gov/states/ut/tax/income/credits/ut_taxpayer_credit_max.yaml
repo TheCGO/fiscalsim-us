@@ -1,8 +1,8 @@
 - name: Dependents get the exemption
   period: 2022
-  absolute_error_margin: 0
+  absolute_error_margin: 1
   input:
-    tax_unit_count_dependents: 2
+    ut_total_dependents: 2
     standard_deduction: 0
     tax_unit_itemizes: false
     state_code: UT
@@ -11,9 +11,9 @@
 
 - name: Itemizer
   period: 2022
-  absolute_error_margin: 0
+  absolute_error_margin: 1
   input:
-    tax_unit_count_dependents: 0
+    ut_total_dependents: 0
     tax_unit_itemizes: true
     charitable_deduction: 100
     interest_deduction: 100

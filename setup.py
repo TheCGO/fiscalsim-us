@@ -11,6 +11,7 @@ setup(
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
+    long_description_content_type="text/markdown",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU Affero General Public License v3",
@@ -57,12 +58,14 @@ setup(
             "linecheck",
             "markupsafe",
             "plotly",
+            "pydata-sphinx-theme==0.13.1",
             "setuptools",
             "sphinx",
             "sphinx-argparse",
             "sphinx-math-dollar",
             "wheel",
             "yaml-changelog",
+            "survey-enhance",
         ],
     },
     # Windows CI requires Python 3.9.

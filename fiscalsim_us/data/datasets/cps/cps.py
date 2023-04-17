@@ -160,7 +160,7 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
     DISABILITY_FLAGS = [
         "PEDIS" + i for i in ["DRS", "EAR", "EYE", "OUT", "PHY", "REM"]
     ]
-    cps["is_ssi_disabled"] = person[DISABILITY_FLAGS].sum(axis=1) > 0
+    cps["is_ssi_disabled"] = (person[DISABILITY_FLAGS] == 1).any(axis=1)
 
     def children_per_parent(col: str) -> pd.DataFrame:
         """Calculate number of children in the household using parental
@@ -194,6 +194,9 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
     cps["own_children_in_household"] = tmp.children.fillna(0)
 
     cps["has_marketplace_health_coverage"] = person.MRK == 1
+
+    cps["cps_race"] = person.PRDTRACE
+    cps["is_hispanic"] = person.PRDTHSP != 0
 
 
 def add_personal_income_variables(
@@ -339,7 +342,7 @@ CPS_2022 = UpratedCPS.from_dataset(
     "cps_2022",
     "CPS 2022",
     STORAGE_FOLDER / "cps_2022.h5",
-    "https://api.github.com/repos/PolicyEngine/policyengine-us/releases/assets/100380304",
+    new_url="release://policyengine/policyengine-us/cps-2022/cps_2022.h5",
 )
 
 CPS_2023 = UpratedCPS.from_dataset(
