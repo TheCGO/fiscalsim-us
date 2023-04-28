@@ -1,4 +1,4 @@
-name: Pull request
+name: Tests on pull request
 on:
   pull_request:
     branches: [main]
