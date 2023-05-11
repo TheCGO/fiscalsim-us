@@ -1,4 +1,4 @@
-"""This file contains your country package's metadata and dependencies."""
+"""This file contains the fiscalsim-us package's metadata and dependencies."""
 
 from setuptools import find_packages, setup
 
@@ -18,10 +18,10 @@ setup(
         "Operating System :: POSIX",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
-        "Topic :: Scientific/Engineering :: Information Analysis",
+        "Topic :: Scientific/Engineering :: Information Analysis :: Microsimulation",
     ],
-    description="FiscalSim federal and state tax and benefit system for the US",
-    keywords="tax benefit microsimulation fiscal state household personal",
+    description="FiscalSim federal and state individual tax and benefit system for the US",
+    keywords="tax benefit microsimulation fiscal state household individual personal",
     license="http://www.fsf.org/licensing/licenses/agpl-3.0.html",
     url="https://github.com/TheCGO/fiscalsim-us",
     include_package_data=True,  # Will read MANIFEST.in
