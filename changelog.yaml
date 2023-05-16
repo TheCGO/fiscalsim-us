@@ -28,3 +28,30 @@
     - `black` and `linecheck` formatted all new `.py` files.
     - `make documentation` command still errors out. I need to fix the documentation.
   date: 2023-02-10 14:30:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.220.0
+  date: 2023-03-03 10:27:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.251.1
+  date: 2023-04-13 12:00:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.252.0
+    - This PR updates the pinned version of policyengine-core
+    - This PR creates skip commands for the `test_microsim.py` test and three tests in `test_cps.py`
+  date: 2023-04-15 22:40:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.293.1
+  date: 2023-04-17 10:00:00
+- bump: minor
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.303.1
+  date: 2023-04-27 20:00:00
