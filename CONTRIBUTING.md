@@ -22,6 +22,14 @@ In case of changes that break past functionality and connections, you **must** g
 
 We follow the [semantic versioning protocol](http://semver.org/). Any change impacts the version number, and the version number conveys API compatibility information **only**.
 
+Every pull request submitted to the main branch of the repository should have a `changelog_entry.yaml` file that has the following structure and format:
+```yaml
+- bump: {major, minor, patch}
+  changes:
+    {added, removed, changed, fixed}:
+      - <variable or program>
+```
+
 Examples:
 
 #### Patch bump

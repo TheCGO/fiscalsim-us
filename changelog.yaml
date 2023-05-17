@@ -3,19 +3,19 @@
     - First prototype version based off of openfisca-us and tax-calculator.
   date: 2022-09-28 15:59:00
   version: 0.0.0
-- bump: minor
+- bump: patch
   changes:
     added:
     - reduced the key dependencies to just `policyengine-core` instead of `openfisca-core` and `openfisca-tools`
     - made `fiscalsim-us` compliant with Python 3.9
   date: 2022-10-24 06:40:00
-- bump: minor
+- bump: patch
   changes:
     added:
     - Updated files from PolicyEngine-US v0.211.0
     - Current PolicyEngine-Core version is v1.12.1
   date: 2023-02-07 02:30:00
-- bump: minor
+- bump: patch
   changes:
     added:
     - Adds a `fiscalsim_us/parameters/gov/states/ut/README.md` that details specific approaches taken with the Utah tax form.
@@ -25,6 +25,33 @@
     - Updates the `state_income_tax.py` and `state_income_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/gov/states/tax/income/` directory.
     - Updates the `household_refundable_tax_credits.py` and `household_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/household/income/household/` directory.
     - Sets the default value to `False` in `/fiscalsim_us/variables/household/expense/health/has_marketplace_health_coverage.py`
-    - `black` and `linecheck` formatted all new `.py` files.
-    - `make documentation` command still errors out. I need to fix the documentation.
+    - '`black` and `linecheck` formatted all new `.py` files.'
+    - '`make documentation` command still errors out. I need to fix the documentation.'
   date: 2023-02-10 14:30:00
+- bump: patch
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.220.0
+  date: 2023-03-03 10:27:00
+- bump: patch
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.251.1
+  date: 2023-04-13 12:00:00
+- bump: patch
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.252.0
+    - This PR updates the pinned version of policyengine-core
+    - This PR creates skip commands for the `test_microsim.py` test and three tests in `test_cps.py`
+  date: 2023-04-15 22:40:00
+- bump: patch
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.293.1
+  date: 2023-04-17 10:00:00
+- bump: patch
+  changes:
+    added:
+    - Updated files from PolicyEngine-US v0.303.1
+  date: 2023-04-27 20:00:00
