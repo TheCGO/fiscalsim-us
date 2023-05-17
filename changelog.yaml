@@ -25,8 +25,8 @@
     - Updates the `state_income_tax.py` and `state_income_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/gov/states/tax/income/` directory.
     - Updates the `household_refundable_tax_credits.py` and `household_tax_before_refundable_credits.py` files with the appropriate Utah variables in the `/fiscalsim_us/variables/household/income/household/` directory.
     - Sets the default value to `False` in `/fiscalsim_us/variables/household/expense/health/has_marketplace_health_coverage.py`
-    - `black` and `linecheck` formatted all new `.py` files.
-    - `make documentation` command still errors out. I need to fix the documentation.
+    - '`black` and `linecheck` formatted all new `.py` files.'
+    - '`make documentation` command still errors out. I need to fix the documentation.'
   date: 2023-02-10 14:30:00
 - bump: patch
   changes:
