@@ -1,15 +1,13 @@
 from fiscalsim_us.model_api import *
 
 
-class mn_additions_to_income(Variable):
+class mn_other_additions(Variable):
     """
+    Unimplemented additions to Minnesota taxable income. 
     Line 2 of Minnesota 2022 Individual Income Tax return form M1. These
-    additions to income include the following categories and are listed at
-    https://www.revenue.state.mn.us/sites/default/files/2023-01/m1m_22.pdf
-    and on the Minnesota 2022 M1M form.
+    additions to income include the following categories which aren't calculated with other variables.  
     * Interest from municipal bond of another state
     * Federally exempt interest from mutual funds investing in state bonds
-    * Lump sum distribution
     * Expenses deducted on federal form income not taxed by Minnesota
     * Net nonqualified withdrawl from First-Time Homebuyer Savings Acct
     * Distributions from higher ed savings accout used in K-12 tuition
@@ -21,3 +19,4 @@ class mn_additions_to_income(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
+    # if implemented as separate vars, delete from list and add to sources yaml
