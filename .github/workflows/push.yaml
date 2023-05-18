@@ -66,7 +66,7 @@ jobs:
       - name: Test documentation builds
         if: matrix.os == 'ubuntu-latest'
         run: make documentation
-Publish:
+  Publish:
     runs-on: ubuntu-latest
     if: |
       (github.repository == 'TheCGO/fiscalsim-us')
