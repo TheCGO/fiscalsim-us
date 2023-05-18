@@ -14,5 +14,9 @@ class mn_taxable_income(Variable):
         "https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf" 
     )
     defined_for = StateCode.MN
-    adds = ["adjusted_gross_income", "mn_additions_to_income"]
-    subtracts = ["mn_subtractions_from_income"]
+    adds = ["adjusted_gross_income", "mn_additions"]
+    subtracts = [
+            "mn_subtractions",
+            "mn_exemptions",
+            "mn_deductions"
+            ]
