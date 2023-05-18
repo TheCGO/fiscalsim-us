@@ -42,7 +42,7 @@ jobs:
           committer_name: Github Actions[bot]
           author_name: Github Actions[bot]
           message: Update FiscalSim US
-          github_token: ${{ secrets.FISCALSIMBOT_GITHUB }}
+          github_token: ${{ secrets.FISCALSIM_GITHUB }}
   Test:
     runs-on: ${{ matrix.os }}
     if: |
