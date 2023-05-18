@@ -1,0 +1,21 @@
+description: MN alternative minimum tax standard deduction phase out
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_amt_standard_deduct_phase_out
+  label: MN alternative minimum tax standard deduction phase out 
+  reference:
+    - title: ""
+      href: ""
+SINGLE:
+  2021-01-01: 112_500
+JOINT:
+  2021-01-01: 150_000
+SEPARATE:
+  2021-01-01: 75_000
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 112_500
+WIDOW:
+  2021-01-01: 150_000

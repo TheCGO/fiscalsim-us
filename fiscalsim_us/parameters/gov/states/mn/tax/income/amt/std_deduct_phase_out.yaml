@@ -1,0 +1,21 @@
+description: MN alternative minimum tax standard deduction
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_amt_standard_deduct
+  label: MN alternative minimum tax standard deduction
+  reference:
+    - title: ""
+      href: ""
+SINGLE:
+  2021-01-01: 61_610
+JOINT:
+  2021-01-01: 82_150
+SEPARATE:
+  2021-01-01: 41_080
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 61_610
+WIDOW:
+  2021-01-01: 82_150
