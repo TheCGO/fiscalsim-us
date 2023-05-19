@@ -18,7 +18,7 @@ setup(
         "Operating System :: POSIX",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
-        "Topic :: Scientific/Engineering :: Information Analysis :: Microsimulation",
+        "Topic :: Scientific/Engineering :: Information Analysis",
     ],
     description="FiscalSim federal and state individual tax and benefit system for the US",
     keywords="tax benefit microsimulation fiscal state household individual personal",
