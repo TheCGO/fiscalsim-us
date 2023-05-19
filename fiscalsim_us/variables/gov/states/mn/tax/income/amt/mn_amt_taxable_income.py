@@ -14,18 +14,46 @@ class mn_amt_taxable_income(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        fagi = tax_unit("adjusted_gross_income", period)
-        itemizing = tax_unit("mn_itemizing", period)
-        SOME_DEDUCTIONS = [
-            "charitable_deduction",
-            "medical_expense_deduction",
-            "casualty_loss_deduction",
+        p = parameters(period).gov.states.mn.tax.income.amt
+        fed_agi = tax_unit("adjusted_gross_income", period)
+
+        ADDITIONS = [
+            "mn_adjustmnets_fed6251",
+            "non_mn_bond_interest", 
+            "mn_depletion",
+            "mn_intangible_drilling_costs",
         ]
-        some_itm_deds = itemizing * add(tax_unit, period, SOME_DEDUCTIONS)
-        AMT_SUBTRACTIONS = [
-            "us_govt_interest",
-            "mn_charity_subtraction",
-            "mn_social_security_subtraction",
+        # currently not included:
+        # line 4 - other addition from M1MB and M1NC
+
+        line8 = add(tax_unit, period, ADDITIONS)
+
+        SUBTRACTIONS = [
+            "mn_medical_dental_deduction",
+            "interest_expense",
+            "mn_charitable_donation_deduction",
+            "mn_casualty_theft_deduction",
+            "mn_unreimbursed_employee_deduction",
+            "mn_disabled_impairment_work_deduction",
         ]
-        amt_subs = add(tax_unit, period, AMT_SUBTRACTIONS)
-        return fagi - some_itm_deds - amt_subs
+        # currently not included:
+        # line 15 - State income tax refund
+        # line 16 - line federal bonus deprecitaion subtraction
+        # line 17 - Mutual fund dividends of US bond
+        # line 18 - other subtractions
+
+        # line 20
+        amt_income_before_std = line8 - add(tax_unit, period, SUBTRACTIONS)
+        std_deduct_phase_out = p.std_deduct_phase_out[filing_status]
+        std_deduct = p.standard_deduct[filing_status]
+        # line 23
+        income_over_phase_out = max_(0, amt_income_before_std - std_deduct_phase_out)
+        # line 25
+        phased_std_deduct = max_(0, std_deduct - income_over_phase_out * p.mult)
+
+        return amt_income_before_std - phased_std_deduct
+
+
+
+
+        
