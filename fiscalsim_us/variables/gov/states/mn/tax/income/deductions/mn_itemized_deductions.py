@@ -28,20 +28,21 @@ class mn_itemized_deductions(Variable):
         # reduced deductions for households with income over a
         # threshold (deductions allowed for everyone)
         reduced_deductions = [
-            "mn_other_itemized_deductions",
-            "mn_charitable_donation_deduction",
-            "mn_home_mortgage_interest_deduction",
+            "mn_taxes_paid_deducion",
+            "charitable_deduction",
             "mn_unreimbursed_employee_deduction",
             "mn_gambling_loss_deduction",
             "mn_disabled_impairment_work_deduction",
+            "mn_other_itemized_deductions",
         ]
 
         # deductions only available for households under the income
         # threshold
         other_deductions = [
             "mn_medical_dental_deduction",
-            "mn_casualty_theft_deduction",
             "interest_deduction",
+            "mn_home_mortgage_interest_deduction",
+            "mn_casualty_theft_deduction",
         ]
 
         deduction_amount = add(tax_unit, period, reduced_deductions)
