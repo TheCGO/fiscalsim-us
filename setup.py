@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.0.8",
+    version="0.0.10",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
@@ -18,7 +18,7 @@ setup(
         "Operating System :: POSIX",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.9",
-        "Topic :: Scientific/Engineering :: Information Analysis :: Microsimulation",
+        "Topic :: Scientific/Engineering :: Information Analysis",
     ],
     description="FiscalSim federal and state individual tax and benefit system for the US",
     keywords="tax benefit microsimulation fiscal state household individual personal",
