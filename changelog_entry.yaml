@@ -1,9 +1,0 @@
-- bump: patch
-  changes:
-    added:
-      - Update the `pr.yaml` and `push.yaml` GitHub Action files. Also adds a "Check version" action to the `pr.yaml` file and adds "Update versioning" and "Publish" [to PyPI] actions to the `push.yaml` file.
-      - Adds small example `changelog_entry.yaml` text to `CONTRIBUTING.md`
-      - Adds small update to the language in `README.md`
-      - Manually updates the `changelog.yaml` file so it could be up-to-date for the automatic updating
-      - Adds small descriptor updates in `setup.py`
-      - Updates `README.md` badge
