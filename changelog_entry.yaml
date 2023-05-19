@@ -1,4 +1,0 @@
-- bump: patch
-  changes:
-    fixed:
-    - Fixes an error in the `setup.py` classifier description

@@ -78,3 +78,8 @@
     - Adds small descriptor updates in `setup.py`
     - Updates `README.md` badge
   date: 2023-05-19 00:28:11
+- bump: patch
+  changes:
+    fixed:
+    - Fixes an error in the `setup.py` classifier description
+  date: 2023-05-19 01:51:04
