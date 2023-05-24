@@ -3,8 +3,8 @@ from fiscalsim_us.model_api import *
 
 class mn_other_nonrefundable_credits(Variable):
     """
-    Other nonrefundable credits that haven't been implemented in other vars. 
-    Other nonrefundable credits from Line 16 on Minnesota 2022 
+    Other nonrefundable credits that haven't been implemented in other vars.
+    Other nonrefundable credits from Line 16 on Minnesota 2022
     Indivual Tax Return from M1 not yet implemented
     * Credit for long term care insurcance premiums paid
     * Credit for taxes paid to another state
@@ -23,7 +23,7 @@ class mn_other_nonrefundable_credits(Variable):
     * Carryforward of prior year increasing research activities credit
     * Alternative Minimum Tax Credit
 
-    If another variable gets added, remove from the list. 
+    If another variable gets added, remove from the list.
     """
 
     value_type = float

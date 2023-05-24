@@ -1,5 +1,7 @@
 from fiscalsim_us.model_api import *
-from fiscalsim_us.variables.gov.states.mn.tax.income.mn_basic_tax import mn_basic_tax
+from fiscalsim_us.variables.gov.states.mn.tax.income.mn_basic_tax import (
+    mn_basic_tax,
+)
 
 
 class mn_amt(Variable):

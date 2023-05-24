@@ -14,4 +14,4 @@ class mn_home_mortgage_interest_deduction(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.MN
-    # use federal variable once it is made 
+    # use federal variable once it is made

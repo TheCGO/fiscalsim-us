@@ -20,7 +20,7 @@ class mn_amt_taxable_income(Variable):
 
         ADDITIONS = [
             "mn_adjustmnets_fed6251",
-            "non_mn_bond_interest", 
+            "non_mn_bond_interest",
             "mn_depletion",
             "mn_intangible_drilling_costs",
         ]
@@ -45,17 +45,17 @@ class mn_amt_taxable_income(Variable):
 
         # line 20
         amt_income_before_std = line8 - add(tax_unit, period, SUBTRACTIONS)
-        amt_income_before_std = tax_unit("adjusted_gross_income", period) 
+        amt_income_before_std = tax_unit("adjusted_gross_income", period)
 
         # line 23
-        income_over_phase_out = max_(0, amt_income_before_std - p.std_deduct_phase_out[filing_status])
+        income_over_phase_out = max_(
+            0, amt_income_before_std - p.std_deduct_phase_out[filing_status]
+        )
 
         # line 25
-        phased_std_deduct = max_(0, p.standard_deduct[filing_status] - income_over_phase_out * p.mult)
+        phased_std_deduct = max_(
+            0,
+            p.standard_deduct[filing_status] - income_over_phase_out * p.mult,
+        )
 
         return amt_income_before_std - phased_std_deduct
-
-
-
-
-        

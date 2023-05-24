@@ -3,8 +3,8 @@ from fiscalsim_us.model_api import *
 
 class mn_other_refundable_credits(Variable):
     """
-    Other refundable credits that haven't been implemented in other vars. 
-    Other refundable credits from Line 22 on Minnesota 2022 
+    Other refundable credits that haven't been implemented in other vars.
+    Other refundable credits from Line 22 on Minnesota 2022
 
     * K-12 Education Credit
     * Credit for Parents of Stillborn Children
@@ -14,8 +14,8 @@ class mn_other_refundable_credits(Variable):
     * Angel Investment Credit
     * Pass Through Entity Credit
     * Claim of right
- 
-    If another variable gets added, remove from the list. 
+
+    If another variable gets added, remove from the list.
     """
 
     value_type = float
