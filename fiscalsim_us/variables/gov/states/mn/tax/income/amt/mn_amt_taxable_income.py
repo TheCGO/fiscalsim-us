@@ -27,7 +27,7 @@ class mn_amt_taxable_income(Variable):
         # currently not included:
         # line 4 - other addition from M1MB and M1NC
 
-        line8 = add(tax_unit, period, ADDITIONS)
+        line8 = fed_agi + add(tax_unit, period, ADDITIONS)
 
         SUBTRACTIONS = [
             "mn_medical_dental_deduction",
@@ -36,16 +36,15 @@ class mn_amt_taxable_income(Variable):
             "mn_casualty_theft_deduction",
             "mn_unreimbursed_employee_deduction",
             "mn_disabled_impairment_work_deduction",
+            "us_govt_interest",
         ]
         # currently not included:
         # line 15 - State income tax refund
         # line 16 - line federal bonus deprecitaion subtraction
-        # line 17 - Mutual fund dividends of US bond
         # line 18 - other subtractions
 
         # line 20
         amt_income_before_std = line8 - add(tax_unit, period, SUBTRACTIONS)
-        amt_income_before_std = tax_unit("adjusted_gross_income", period)
 
         # line 23
         income_over_phase_out = max_(

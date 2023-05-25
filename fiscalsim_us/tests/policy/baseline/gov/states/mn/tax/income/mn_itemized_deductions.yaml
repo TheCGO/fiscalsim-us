@@ -15,7 +15,7 @@
   input:
     filing_status: SINGLE
     adjusted_gross_income: 216_050
-    interest_deduction: 10_000
+    charitable_deduction: 10_000
     state_code: MN
   output:
     mn_itemized_deductions: 10_000 - 0.03 * (216_050 - 206_050)
@@ -26,7 +26,7 @@
   input:
     filing_status: SINGLE
     adjusted_gross_income: 1_206_050
-    interest_deduction: 10_000
+    charitable_deduction: 10_000
     state_code: MN
   output:
     mn_itemized_deductions: 10_000 - 0.80 * 10_000
@@ -37,9 +37,9 @@
   input:
     filing_status: SINGLE
     adjusted_gross_income: 1_206_050
-    interest_deduction: 10_000
-    medical_expense_deduction: 400
-    casualty_loss_deduction: 200
+    charitable_deduction: 10_000
+    mn_medical_dental_deduction: 400
+    mn_casualty_theft_deduction: 200
     state_code: MN
   output:
     mn_itemized_deductions: (10_000 + 400 + 200) - 0.80 * 10_000

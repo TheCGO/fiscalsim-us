@@ -53,7 +53,7 @@ class mn_itemized_deductions(Variable):
         return where(
             fed_agi <= p.itemized_threshold[filing_status],
             all_deductions,
-            deduction_amount
+            all_deductions
             - min_(
                 deduction_amount * p.itemized_mult,
                 (fed_agi - p.itemized_threshold[filing_status])

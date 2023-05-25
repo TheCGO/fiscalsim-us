@@ -14,5 +14,11 @@ class mn_taxable_income(Variable):
         "https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf"
     )
     defined_for = StateCode.MN
-    adds = ["adjusted_gross_income", "mn_additions"]
-    subtracts = ["mn_subtractions", "mn_exemptions", "mn_deductions"]
+
+
+    def formula(tax_unit, period, parameters):
+        ADDS = ["adjusted_gross_income", "mn_additions"]
+        SUBTRACTS = ["mn_subtractions", "mn_exemptions", "mn_deductions"]
+
+        income = add(tax_unit, period, ADDS) - add(tax_unit, period, SUBTRACTS)
+        return max_(0, income)
