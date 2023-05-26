@@ -7,9 +7,6 @@ metadata:
   name: mn_medical_dental_deduction_mult
   label: MN medical and dental deduction multiplier
   reference:
-    - title:
-      href:
-  reference:
     - title: 2021 M1SA, Minnesota Itemized Deductions, Line 3
       href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
     - title: 2022 M1SA, Minnesota Itemized Deductions, Line 3

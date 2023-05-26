@@ -46,8 +46,8 @@ class mn_itemized_deductions(Variable):
         ]
 
         limited_amount = add(tax_unit, period, limited_deductions)
-        all_deductions = deduction_amount + add(
-            tax_unit, period, other_deductions
+        all_deductions = limited_amount + add(
+            tax_unit, period, non_limited_deductions
         )
 
         return where(

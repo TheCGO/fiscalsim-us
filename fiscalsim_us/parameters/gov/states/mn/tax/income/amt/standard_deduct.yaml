@@ -6,7 +6,7 @@ metadata:
     - filing_status
   name: mn_amt_standard_deduct
   label: MN alternative minimum tax standard deduction
- reference:
+  reference:
   - title: 2021 Minnesota Schedule M1MT form, Line 21
     href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1mt_21.pdf#page=1
   - title: 2022 Minnesota Schedule M1MT form, Line 21
