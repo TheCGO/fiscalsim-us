@@ -31,7 +31,7 @@ class mn_amt_taxable_income(Variable):
 
         SUBTRACTIONS = [
             "mn_medical_dental_deduction",
-            "interest_expense",
+            "interest_deduction",
             "charitable_deduction",
             "mn_casualty_theft_deduction",
             "mn_unreimbursed_employee_deduction",
@@ -54,7 +54,7 @@ class mn_amt_taxable_income(Variable):
         # line 25
         phased_std_deduct = max_(
             0,
-            p.standard_deduct[filing_status] - income_over_phase_out * p.mult,
+            p.standard_deduct[filing_status] - (income_over_phase_out * p.mult),
         )
 
         return amt_income_before_std - phased_std_deduct

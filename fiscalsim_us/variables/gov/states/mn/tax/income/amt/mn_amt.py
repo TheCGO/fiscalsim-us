@@ -1,7 +1,5 @@
 from fiscalsim_us.model_api import *
-from fiscalsim_us.variables.gov.states.mn.tax.income.mn_basic_tax import (
-    mn_basic_tax,
-)
+from numpy import round
 
 
 class mn_amt(Variable):
@@ -22,4 +20,4 @@ class mn_amt(Variable):
         amt = max_(0, amt_income * p.rate)
         basic_tax = tax_unit("mn_basic_tax", period)
 
-        return max_(0, amt - basic_tax)
+        return round(max_(0, amt - basic_tax))
