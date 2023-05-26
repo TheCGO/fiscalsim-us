@@ -25,27 +25,27 @@ class mn_itemized_deductions(Variable):
         fed_agi = tax_unit("adjusted_gross_income", period)
         filing_status = tax_unit("filing_status", period)
 
-        # reduced deductions for households with income over a
-        # threshold (deductions allowed for everyone)
-        reduced_deductions = [
+        # deductions that are limited to 20% of the deduction over the 
+        # income threshold
+        limited_deductions = [
             "mn_taxes_paid_deducion",
             "charitable_deduction",
             "mn_unreimbursed_employee_deduction",
             "mn_gambling_loss_deduction",
             "mn_disabled_impairment_work_deduction",
+            "mn_home_mortgage_interest_deduction",
             "mn_other_itemized_deductions",
         ]
 
-        # deductions only available for households under the income
-        # threshold
-        other_deductions = [
+        # deductions that aren't limited over the income threshold 
+        # (they don't get phased out) 
+        non_limited_deductions = [
             "mn_medical_dental_deduction",
             "interest_deduction",
-            "mn_home_mortgage_interest_deduction",
             "mn_casualty_theft_deduction",
         ]
 
-        deduction_amount = add(tax_unit, period, reduced_deductions)
+        limited_amount = add(tax_unit, period, limited_deductions)
         all_deductions = deduction_amount + add(
             tax_unit, period, other_deductions
         )
@@ -55,7 +55,7 @@ class mn_itemized_deductions(Variable):
             all_deductions,
             all_deductions
             - min_(
-                deduction_amount * p.itemized_mult,
+                limited_amount * p.itemized_mult,
                 (fed_agi - p.itemized_threshold[filing_status])
                 * p.itemized_income_mult,
             ),

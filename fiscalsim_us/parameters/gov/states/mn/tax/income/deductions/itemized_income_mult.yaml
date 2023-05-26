@@ -7,5 +7,7 @@ metadata:
   name: mn_itemized_deductions_income_mult
   label: MN itemized deduciton income multiplier
   reference:
-    - title:
-      href:
+    - title: 2021 M1SA, Minnesota Itemized Deductions, Line 26 Worksheet
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
+    - title: 2022 M1SA, Minnesota Itemized Deductions, Line 26 Worksheet
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf
