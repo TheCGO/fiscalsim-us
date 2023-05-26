@@ -21,16 +21,13 @@ class mn_standard_deduction(Variable):
         aged_blind_count = tax_unit("aged_blind_count", period)
 
         std_deduct = (
-            p.base[filing_status]
-            + p.extra[filing_status] * aged_blind_count
+            p.base[filing_status] + p.extra[filing_status] * aged_blind_count
         )
 
         over_threshold = fed_agi >= p.threshold[filing_status]
 
         phaseout_subtract = min_(
-            (fed_agi
-            - p.threshold[filing_status])
-            * p.income_mult,
+            (fed_agi - p.threshold[filing_status]) * p.income_mult,
             std_deduct * p.mult,
         )
         return std_deduct - over_threshold * phaseout_subtract

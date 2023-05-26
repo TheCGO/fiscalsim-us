@@ -15,7 +15,6 @@ class mn_taxable_income(Variable):
     )
     defined_for = StateCode.MN
 
-
     def formula(tax_unit, period, parameters):
         ADDS = ["adjusted_gross_income", "mn_additions"]
         SUBTRACTS = ["mn_subtractions", "mn_exemptions", "mn_deductions"]

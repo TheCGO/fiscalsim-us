@@ -25,7 +25,7 @@ class mn_itemized_deductions(Variable):
         fed_agi = tax_unit("adjusted_gross_income", period)
         filing_status = tax_unit("filing_status", period)
 
-        # deductions that are limited to 20% of the deduction over the 
+        # deductions that are limited to 20% of the deduction over the
         # income threshold
         limited_deductions = [
             "mn_taxes_paid_deducion",
@@ -37,8 +37,8 @@ class mn_itemized_deductions(Variable):
             "mn_other_itemized_deductions",
         ]
 
-        # deductions that aren't limited over the income threshold 
-        # (they don't get phased out) 
+        # deductions that aren't limited over the income threshold
+        # (they don't get phased out)
         non_limited_deductions = [
             "mn_medical_dental_deduction",
             "interest_deduction",

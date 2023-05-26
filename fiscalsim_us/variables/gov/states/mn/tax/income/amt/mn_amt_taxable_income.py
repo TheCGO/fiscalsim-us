@@ -54,7 +54,8 @@ class mn_amt_taxable_income(Variable):
         # line 25
         phased_std_deduct = max_(
             0,
-            p.standard_deduct[filing_status] - (income_over_phase_out * p.mult),
+            p.standard_deduct[filing_status]
+            - (income_over_phase_out * p.mult),
         )
 
         return amt_income_before_std - phased_std_deduct
