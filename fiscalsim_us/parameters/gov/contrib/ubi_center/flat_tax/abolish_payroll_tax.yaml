@@ -1,6 +1,0 @@
-description: Abolish all payroll tax liabilities.
-values:
-  0000-01-01: false
-metadata:
-  unit: bool
-  label: Abolish payroll taxes

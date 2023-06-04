@@ -1,7 +1,0 @@
-- name: SNAP utility region inferred from state.
-  period: 2020
-  absolute_error_margin: 0
-  input:
-    state_code: IL
-  output:
-    snap_utility_region: IL

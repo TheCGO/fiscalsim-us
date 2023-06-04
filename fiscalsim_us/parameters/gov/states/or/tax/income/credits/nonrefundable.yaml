@@ -1,7 +1,0 @@
-description: Oregon nonrefundable tax credits.
-values:
-  2019-01-01:
-  - or_exemption_credit
-metadata:
-  unit: list
-  label: OR nonrefundable tax credits

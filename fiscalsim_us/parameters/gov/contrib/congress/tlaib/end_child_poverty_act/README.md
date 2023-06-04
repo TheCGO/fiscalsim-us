@@ -1,1 +1,0 @@
-# End Child Poverty Act
