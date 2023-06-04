@@ -83,3 +83,9 @@
     fixed:
     - Fixes an error in the `setup.py` classifier description
   date: 2023-05-19 01:51:04
+- bump: patch
+  changes:
+    changed:
+    - Updates the `README.md`, `Makefile`, and GitHub Action `push.yaml`
+    - Makes many updates to the `./docs/` documentation directory
+  date: 2023-06-04 07:47:45

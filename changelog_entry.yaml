@@ -1,5 +1,0 @@
-- bump: patch
-  changes:
-    changed:
-      - Updates the `README.md`, `Makefile`, and GitHub Action `push.yaml`
-      - Makes many updates to the `./docs/` documentation directory

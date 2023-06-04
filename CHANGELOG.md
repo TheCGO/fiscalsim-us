@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.11] - 2023-06-04 07:47:45
+
+### Changed
+
+- Updates the `README.md`, `Makefile`, and GitHub Action `push.yaml`
+- Makes many updates to the `./docs/` documentation directory
+
 ## [0.0.10] - 2023-05-19 01:51:04
 
 ### Fixed
@@ -90,6 +97,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+[0.0.11]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.10...0.0.11
 [0.0.10]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.9...0.0.10
 [0.0.9]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.8...0.0.9
 [0.0.8]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.7...0.0.8
