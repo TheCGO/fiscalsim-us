@@ -9,9 +9,12 @@ parts:
   - caption: Federal programs
     chapters:
     - file: federal/irs/intro
-  - caption: Federal programs with state-specific parameters
+  - caption: Federal programs with state parameters
+    chapters:
+    - file: federalstate/snap/intro
     - file: federalstate/tanf/intro
   - caption: State programs
+    chapters:
     - file: state/intro
     - file: state/ut/intro
   - caption: Validation
@@ -19,8 +22,9 @@ parts:
     - file: validation/intro
   - caption: Usage and Tutorials
     chapters:
+    - file: tutorials/intro
     - file: tutorials/baseline
-    - file: tutorials/federalpopulation
+    - file: tutorials/federal_pop
     - file: tutorials/household
     - file: tutorials/household_inc
     - file: tutorials/visualizations
@@ -29,7 +33,7 @@ parts:
     - file: appendix/intro
   - caption: References
     chapters:
-    - file: FiscalSim_references
+    - file: FiscalSim-US_references
   - caption: Citations of FiscalSim-US
     chapters:
     - file: citations
