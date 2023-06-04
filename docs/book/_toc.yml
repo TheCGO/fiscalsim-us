@@ -1,7 +1,11 @@
 format: jb-book
 root: index
 parts:
-
+  - caption: Getting Started
+    chapters:
+    - file: getting_started/webapp
+    - file: getting_started/cloud
+    - file: getting_started/local
   - caption: Government programs
     chapters:
       - file: gov/fcc/index
@@ -64,4 +68,3 @@ parts:
   - caption: Usage
     chapters:
       - file: usage/speed
-      
