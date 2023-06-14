@@ -89,3 +89,8 @@
     - Updates the `README.md`, `Makefile`, and GitHub Action `push.yaml`
     - Makes many updates to the `./docs/` documentation directory
   date: 2023-06-04 07:47:45
+- bump: patch
+  changes:
+    changed:
+    - Updated the value for the Kansas standard deduction amount for Widow filer types.
+  date: 2023-06-14 15:42:49
