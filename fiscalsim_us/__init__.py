@@ -1,5 +1,5 @@
 """
-This file defines our country's tax and benefit system.
+This file defines the fiscalsim-us tax and benefit system.
 
 A tax and benefit system is the higher-level instance in FiscalSim. Its goal is
 to model the legislation of a country. Basically a tax and benefit system
