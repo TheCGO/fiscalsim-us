@@ -18,7 +18,7 @@ yaml, Loader = import_yaml()
 
 
 def create_taxcalc_alias(name: str, variable: Type[Variable]):
-    """Creates a new OpenFisca variable with the same metadata as the given variable, but the Tax-Calculator name.
+    """Creates a new FiscalSim variable with the same metadata as the given variable, but the Tax-Calculator name.
     The variable will be cast to tax unit level if it is not already.
 
     Args:
@@ -92,5 +92,7 @@ def add_taxcalc_variable_aliases(system: TaxBenefitSystem):
                 )
             )
         except Exception as e:
-            print("Error adding alias for {}: {}".format(fiscalsim_us_name, e))
+            print(
+                "Error adding alias for {}: {}".format(fiscalsim_us_name, e)
+            )
             raise e
