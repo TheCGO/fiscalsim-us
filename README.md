@@ -1,7 +1,7 @@
 # FiscalSim US
 
 [![CGO cataloged](https://img.shields.io/badge/CGO-catalogued-9cf)](https://github.com/TheCGO)
-[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31011/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-3916/)
 ![example event parameter](https://github.com/TheCGO/fiscalsim-us/actions/workflows/push.yaml/badge.svg?branch=main)
 [![Codecov](https://codecov.io/gh/TheCGO/fiscalsim-us/branch/main/graph/badge.svg)](https://codecov.io/gh/TheCGO/fiscalsim-us)
 
