@@ -58,6 +58,7 @@ setup(
             "linecheck",
             "markupsafe",
             "plotly",
+            "bokeh>=3.1.1",
             "pydata-sphinx-theme==0.13.1",
             "setuptools",
             "sphinx",
