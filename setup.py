@@ -37,8 +37,8 @@ setup(
         "microdf_python",
         "pandas",
         "pathlib",
-        "policyengine-core>=2.0.1,<3",
-        "pytest==5.4.3",
+        "policyengine-core>=2.1,<3",
+        "pytest",
         "pytest-dependency",
         "pyyaml",
         "requests",
@@ -50,7 +50,7 @@ setup(
     extras_require={
         "dev": [
             "autopep8",
-            "black>=23.3.0",
+            "black",
             "coverage",
             "furo",
             "jupyter-book",
@@ -58,6 +58,7 @@ setup(
             "linecheck",
             "markupsafe",
             "plotly",
+            "bokeh>=3.1.1",
             "pydata-sphinx-theme==0.13.1",
             "setuptools",
             "sphinx",
@@ -69,7 +70,7 @@ setup(
         ],
     },
     # Windows CI requires Python 3.9.
-    python_requires=">=3.7,<3.10",
+    python_requires=">=3.7, <3.10",
     entry_points={
         "console_scripts": [
             "fiscalsim-us = fiscalsim_us.tools.cli:main",
