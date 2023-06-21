@@ -70,7 +70,7 @@ setup(
         ],
     },
     # Windows CI requires Python 3.9.
-    python_requires=">=3.7, <3.11",
+    python_requires=">=3.7, <3.10",
     entry_points={
         "console_scripts": [
             "fiscalsim-us = fiscalsim_us.tools.cli:main",
