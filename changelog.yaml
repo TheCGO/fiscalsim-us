@@ -94,3 +94,8 @@
     changed:
     - Updated the value for the Kansas standard deduction amount for Widow filer types.
   date: 2023-06-14 15:42:49
+- bump: minor
+  changes:
+    added:
+    - Updates files from PolicyEngine-US v0.335.1
+  date: 2023-06-21 07:27:51
