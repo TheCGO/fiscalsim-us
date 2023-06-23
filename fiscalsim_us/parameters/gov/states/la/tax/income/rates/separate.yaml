@@ -1,4 +1,4 @@
-description: Louisiana levies income taxes at these rates for filers who file as single
+description: Louisiana levies income taxes at these rates for filers who are married filing separately
 brackets:
   - threshold:
       2009-01-01: 0
@@ -21,7 +21,7 @@ metadata:
   threshold_unit: currency-USD
   rate_unit: /1
   threshold_period: year
-  label: Louisiana single filer income tax rates
+  label: Louisiana married filing separately income tax rates
   reference:
   - title: Louisiana Department of Revenue Individual Income Tax
     href: "https://revenue.louisiana.gov/individualincometax"

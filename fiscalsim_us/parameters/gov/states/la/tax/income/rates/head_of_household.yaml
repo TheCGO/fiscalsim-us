@@ -1,33 +1,27 @@
-description: Minnesota levies income taxes at these rates for filers who file as head of household.
+description: Louisiana levies income taxes at these rates for filers who file as head of household.
 brackets:
   - threshold:
-      2021-01-01: 0
+      2009-01-01: 0
     rate:
-      2021-01-01: 0.0535
+      2009-01-01: 0.02
+      2021-01-01: 0.0185
   - threshold:
-      2021-01-01: 33_520
-      2022-01-01: 34_570
+      2009-01-01: 12_500
     rate:
-      2021-01-01: 0.068
+      2009-01-01: 0.04
+      2021-01-01: 0.035
   - threshold:
-      2021-01-01: 134_700
-      2022-01-01: 138_890
+      2009-01-01: 50_000
     rate:
-      2021-01-01: 0.0785
-  - threshold:
-      2021-01-01: 220_730
-      2022-01-01: 227_600
-    rate:
-      2021-01-01: 0.0985
+      2009-01-01: 0.06
+      2021-01-01: 0.0425
 
 metadata:
   type: marginal_rate
   threshold_unit: currency-USD
   rate_unit: /1
   threshold_period: year
-  label: Minnesota head of household income tax rates
+  label: Louisiana head of household income tax rates
   reference:
-  - title: 2021 Minnesota M1 form instructions, Tax Rate Schedules
-    href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf#page=35
-  - title: 2022 Minnesota M1 form instructions, Tax Rate Schedules
-    href: https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf#page=35
+  - title: Louisiana Department of Revenue Individual Income Tax
+    href: "https://revenue.louisiana.gov/individualincometax"
