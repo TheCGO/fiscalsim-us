@@ -2,6 +2,9 @@ description: Louisiana provides these refundable priority 2 tax credits.
 values:
   2021-01-01:
     - la_refundable_childcare
+    - la_refundable_school_ready
+    - la_eitc
+    - la_other_refundable_p2
 
 metadata:
   unit: variable

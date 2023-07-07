@@ -1,9 +1,9 @@
 from fiscalsim_us.model_api import *
 
 
-class la_total_additions(Variable):
+class la_total_subtractions(Variable):
     """
-    subtractions from louisiana adjusted income
+    Subtractions from louisiana adjusted income
     """
 
     value_type = float
@@ -12,3 +12,4 @@ class la_total_additions(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.LA
+    adds = gov.states.la.tax.income.agi.subtractions.sources
