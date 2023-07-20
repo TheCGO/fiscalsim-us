@@ -3,15 +3,11 @@
 
 (Chap_SNAPoverview)=
 ## Overview
-The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was (x billion), and in 2022 there were approximately (x million) United States SNAP recipients.
+The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [SNAPstats].
 
 Less formally known as food stamps, SNAP works to alleviate food insecurity by providing impoverished households with a monthly income support to purchase food. Eligibility for SNAP benefits are determined through a complex set of requirements that are established at the federal level, with several variations at the state level. The amount of SNAP benefit is allocated according to the number of members in the household, as well as the household's program-specific definition of net income (accounting for gross income, and removing several deductions, including utilities, transportation, and extenuating circumstances like disability or care for the elderly).
 
 While state variations exist, the basic structure of SNAP allotment remains the same: disbursed SNAP monthly allottment varies according to household net income, number of household members, deductions, disability, and elderly household members. Interesting to note is that across states with various CPIs and standards of living, household quantity and determined household net income are associated with the same amount of SNAP allotment. For example, a family of 3 making \$18,000 per year in the Bay Area recieves as much SNAP benefits as a family of 3 in rural Utah with similar characteristics making \$18,000 per year, despite vast differences in the purchasing power of those SNAP dollars.[^cost_of_living]
-
-While the basic structure of SNAP established by federal tax code ensures a fundamentally similar format across states, state-by-state variations make minor adjustments to SNAP eligibility and deductions that determine a household's net income. 
-
-The most significant state variations exist with the asset test, varying gross income limits, and deduction caps. States that are more generous with SNAP may abolish the asset test and a gross income limit--no matter how many assets a household has, or what their gross income is, as long as their calculated deductions are great enough to bring them under 100% of the Federal Poverty Level, then they may qualify for SNAP. These states may also have larger deduction caps for various expenses, such as utilities. States that are more stringent with SNAP benefits may choose to establish tighter deduction caps, limiting the amount of income that can be deducted to calculate final household net income. These states may also choose to include the various eligibility hurdles--namely, an asset test and an income limit. 
 
 Although a 4-year period from 1939 to 1943 marked the first use of a food stamp program, the first Food Stamp Pilot Program occurred in 1961 from an executive order from President Kennedy.[1961ExecOrder] In 1964, the Food Stamp Act was passed to make the Food Stamp Program permanent.[1964FoodStampAct] This orginal Food Stamp program, like the current iteration, was federally funded, with the states being responsible for certification and issuance of benefits. 
 
@@ -24,6 +20,8 @@ Much research exists investigating the effects of SNAP on various outcomes. Rese
 
 ### Eligibility
 Groups that may be eligible for SNAP benefits include those who work for low wages, are unemployed or work part time, recieve public assistance, have household members who are elderly or disabled, or are homeless.
+
+Broad based categorical eligibility (BBCE) is a policy in which TANF-eligibile households automatically qualify for SNAP. For a complete list of states that implement BBCE, see the FiscalSim code.
 
 Three eligibility requirements must be met to recieve SNAP benefits. 
 
@@ -63,6 +61,8 @@ Deductions from gross income to compute net income included the following:
 - Shelter expenses
 - Standard, Limited or single utilities
 
+Each of these deductions have different deduction caps that vary with the discretion of each state. See FiscalSim code for more details.
+
 
 ## State SNAP policy characteristics
 
@@ -72,6 +72,8 @@ The most significant state variations exist with the asset test, varying gross i
 (SecSNAPfootnotes)=
 
 ## Footnotes
+
+[SNAPstats]: The {cite}`Peterson:2023` article gives an overview of the economic statistics of the SNAP program (see https://www.pgpf.org/blog/2023/05/what-is-snap)
 
 [^cost_of_living]: The {cite}`GerstenPaal:2022` policy memo details the SNAP FY 2023 cost of living adjustments (see https://www.fns.usda.gov/snap/fy-2023-cola). The SNAP allotments only differ among the following three groups--(i) 48 States, DC, Guam, Virgin Islands, (ii) Alaska, and (iii) Hawaii. All of those values increase with inflation each year, but all recipients in the lower 48 states have no difference in benefit amounts and are not adjusted within that group for cost of living.
 
