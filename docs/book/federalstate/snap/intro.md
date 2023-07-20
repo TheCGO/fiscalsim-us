@@ -3,17 +3,17 @@
 
 (Chap_SNAPoverview)=
 ## Overview
-The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [SNAPstats].
+The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [^SNAPstats].
 
 Less formally known as food stamps, SNAP works to alleviate food insecurity by providing impoverished households with a monthly income support to purchase food. Eligibility for SNAP benefits are determined through a complex set of requirements that are established at the federal level, with several variations at the state level. The amount of SNAP benefit is allocated according to the number of members in the household, as well as the household's program-specific definition of net income (accounting for gross income, and removing several deductions, including utilities, transportation, and extenuating circumstances like disability or care for the elderly).
 
 While state variations exist, the basic structure of SNAP allotment remains the same: disbursed SNAP monthly allottment varies according to household net income, number of household members, deductions, disability, and elderly household members. Interesting to note is that across states with various CPIs and standards of living, household quantity and determined household net income are associated with the same amount of SNAP allotment. For example, a family of 3 making \$18,000 per year in the Bay Area recieves as much SNAP benefits as a family of 3 in rural Utah with similar characteristics making \$18,000 per year, despite vast differences in the purchasing power of those SNAP dollars.[^cost_of_living]
 
-Although a 4-year period from 1939 to 1943 marked the first use of a food stamp program, the first Food Stamp Pilot Program occurred in 1961 from an executive order from President Kennedy.[1961ExecOrder] In 1964, the Food Stamp Act was passed to make the Food Stamp Program permanent.[1964FoodStampAct] This orginal Food Stamp program, like the current iteration, was federally funded, with the states being responsible for certification and issuance of benefits. 
+Although a 4-year period from 1939 to 1943 marked the first use of a food stamp program, the first Food Stamp Pilot Program occurred in 1961 from an executive order from President Kennedy.[^1961ExecOrder] In 1964, the Food Stamp Act was passed to make the Food Stamp Program permanent.[^1964FoodStampAct] This orginal Food Stamp program, like the current iteration, was federally funded, with the states being responsible for certification and issuance of benefits. 
 
-Since 1964, many legislative changes in the SNAP program have been passed, including its funding, changes to eligibility requirements, deduction specifics, and allotment amounts. Between 1988 and 2004, food stamp benefits began to be disbursed through an Electronic Benefit Transfer (EBT) card, as opposed to manual vouchers.[EBT] In 2008, the program name was changed from "Food Stamp Program" to "Supplemental Nutrition Assistance Program" (SNAP).[2008FarmBill] Under that same 2008 Farm Bill, a nutrition education component of the program was created and came to be known as SNAP-Ed. During the COVID-19 pandemic from 2020-2023, emergency allotments were added to increase SNAP benefits. These emergency allotments were terminated in March of 2023 with the end of the pandemic.[COVIDSNAP] 
+Since 1964, many legislative changes in the SNAP program have been passed, including its funding, changes to eligibility requirements, deduction specifics, and allotment amounts. Between 1988 and 2004, food stamp benefits began to be disbursed through an Electronic Benefit Transfer (EBT) card, as opposed to manual vouchers.[^EBT] In 2008, the program name was changed from "Food Stamp Program" to "Supplemental Nutrition Assistance Program" (SNAP).[^2008FarmBill] Under that same 2008 Farm Bill, a nutrition education component of the program was created and came to be known as SNAP-Ed. During the COVID-19 pandemic from 2020-2023, emergency allotments were added to increase SNAP benefits. These emergency allotments were terminated in March of 2023 with the end of the pandemic.[^COVIDSNAP] 
 
-Much research exists investigating the effects of SNAP on various outcomes. Researchers monitor SNAP's economic effects (as a poverty reduction tool) [SNAPpoverty], its nutritional effects (as a food security tool) [foodsecurity], and even a growing amount of research investigates various other markers of well-being and development outcomes related to SNAP use (such as CPS and neglect events, child academic performance, and parental depression rates) [SNAPCPS].
+Much research exists investigating the effects of SNAP on various outcomes. Researchers monitor SNAP's economic effects (as a poverty reduction tool) [^SNAPpoverty], its nutritional effects (as a food security tool) [^foodsecurity], and even a growing amount of research investigates various other markers of well-being and development outcomes related to SNAP use (such as CPS and neglect events, child academic performance, and parental depression rates) [^SNAPCPS].
 
 (Chap_SNAPfederal)=
 ## Federal SNAP policy characteristics
@@ -43,10 +43,10 @@ This calculation assumes that when SNAP households combine 30% of their net inco
 
 #### Maximum Eligible Household Benefit Amount
 
-The maximum elgible household benefit amount for the fiscal year of 2023 is given in the following table:
+The SNAP maximum eligible household benefit amount for the fiscal year of 2023 is given in the following table:
 
-| Household Size | Maximum Monthly Benefit, Fiscal Year 2023 |
-| --- | --- |
+| Household Size | Max Monthly Benefit |
+| :---: | :---: |
 | 1 | $281 |
 | 2 | $516 |
 | 3 | $740 |
@@ -84,22 +84,22 @@ The most significant state variations exist with the asset test, varying gross i
 
 ## Footnotes
 
-[SNAPstats]: The {cite}`Peterson:2023` article gives an overview of the economic statistics of the SNAP program (see https://www.pgpf.org/blog/2023/05/what-is-snap)
+[^SNAPstats]: The {cite}`Peterson:2023` article gives an overview of the economic statistics of the SNAP program (see https://www.pgpf.org/blog/2023/05/what-is-snap)
 
 [^cost_of_living]: The {cite}`GerstenPaal:2022` policy memo details the SNAP FY 2023 cost of living adjustments (see https://www.fns.usda.gov/snap/fy-2023-cola). The SNAP allotments only differ among the following three groups--(i) 48 States, DC, Guam, Virgin Islands, (ii) Alaska, and (iii) Hawaii. All of those values increase with inflation each year, but all recipients in the lower 48 states have no difference in benefit amounts and are not adjusted within that group for cost of living.
 
-[1961ExecOrder]: The {cite}`PeetersWoolley` article from the American Presidency Project at UC Santa Barbara expounds on the 1961 Executive Order From President Kennedy that expanded the Food Stamp program (see https://www.presidency.ucsb.edu/documents/executive-order-10914-providing-for-expanded-program-food-distribution-needy-families).
+[^1961ExecOrder]: The {cite}`Woolley:2023` article from the American Presidency Project at UC Santa Barbara expounds on the 1961 Executive Order From President Kennedy that expanded the Food Stamp program (see https://www.presidency.ucsb.edu/documents/executive-order-10914-providing-for-expanded-program-food-distribution-needy-families).
 
-[1964FoodStampAct]: The {cite}`Shahin:2014` article from the USDA website gives an overview of the 1964 Food Stamp Act that made the program permanent (see https://www.usda.gov/media/blog/2014/10/15/commemorating-history-snap-looking-back-food-stamp-act-1964)
+[^1964FoodStampAct]: The {cite}`Shahin:2014` article from the USDA website gives an overview of the 1964 Food Stamp Act that made the program permanent (see https://www.usda.gov/media/blog/2014/10/15/commemorating-history-snap-looking-back-food-stamp-act-1964)
 
-[EBT]: This {cite}`USDA:1988` legislation outlines the Hunger Prevention Act of 1988, which allowed for the food stamp program to test the effectiveness of Electronic Benefit Transfer Cards (see https://www.fns.usda.gov/pl-100-435)
+[^EBT]: This {cite}`USDA:1988` legislation outlines the Hunger Prevention Act of 1988, which allowed for the food stamp program to test the effectiveness of Electronic Benefit Transfer Cards (see https://www.fns.usda.gov/pl-100-435)
 
-[2008FarmBill]: This {cite}`USDA:2008` legislation presents the 2008 Farm Bill, which made many administrative changes to the Food Stamp Program, including changing its name to SNAP and the creation of SNAP-Ed (see https://www.fns.usda.gov/pl-110-234)
+[^2008FarmBill]: This {cite}`USDA:2008` legislation presents the 2008 Farm Bill, which made many administrative changes to the Food Stamp Program, including changing its name to SNAP and the creation of SNAP-Ed (see https://www.fns.usda.gov/pl-110-234)
 
-[COVIDSNAP]: This {cite}`USDA:2023` article from the USDA website explains the termination of emergency allotment SNAP benefits (see https://www.fns.usda.gov/snap/changes-2023-benefit-amounts).
+[^COVIDSNAP]: This {cite}`USDA:2023` article from the USDA website explains the termination of emergency allotment SNAP benefits (see https://www.fns.usda.gov/snap/changes-2023-benefit-amounts).
 
-[SNAPpoverty]: This {cite}`CanningMorrison:2019` research article seeks to quantify the impact of SNAP benefits on the US Economy (see https://www.ers.usda.gov/amber-waves/2019/july/quantifying-the-impact-of-snap-benefits-on-the-u-s-economy-and-jobs/).
+[^SNAPpoverty]: This {cite}`Canning:2019` research article seeks to quantify the impact of SNAP benefits on the US Economy (see https://www.ers.usda.gov/amber-waves/2019/july/quantifying-the-impact-of-snap-benefits-on-the-u-s-economy-and-jobs/).
 
-[foodsecurity]: This {cite}`MandeFlaherty:2023` research article investigates the childhood health impacts of the SNAP program (see https://pubmed.ncbi.nlm.nih.gov/36354297/).
+[^foodsecurity]: This {cite}`Mande:2023` research article investigates the childhood health impacts of the SNAP program (see https://pubmed.ncbi.nlm.nih.gov/36354297/).
 
-[SNAPCPS]: This [cite]`Johnson-Motoyama:2022' research article investigates the relationship between state SNAP generostiy and statewide CPS events (see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/).
+[^SNAPCPS]: This {cite}`Johnson-Motoyama:2022` research article investigates the relationship between state SNAP generostiy and statewide CPS events (see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/).
