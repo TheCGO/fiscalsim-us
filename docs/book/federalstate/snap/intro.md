@@ -45,9 +45,8 @@ This calculation assumes that when SNAP households combine 30% of their net inco
 
 The maximum elgible household benefit amount for the fiscal year of 2023 is given in the following table:
 
-
 | Household Size | Maximum Monthly Benefit, Fiscal Year 2023 |
-|---|---|
+| --- | --- |
 | 1 | $281 |
 | 2 | $516 |
 | 3 | $740 |
