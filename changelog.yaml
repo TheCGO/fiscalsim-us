@@ -99,3 +99,10 @@
     added:
     - Updates files from PolicyEngine-US v0.335.1
   date: 2023-06-21 07:27:51
+- bump: patch
+  changes:
+    added:
+    - Added documentation to the Jupyter Book for the Supplemental Nutrition Assistance
+      Program (SNAP), formerly known as food stamps
+    - Added bibliographic references to the `FiscalSim-US_references.bib` file
+  date: 2023-07-21 05:58:19
