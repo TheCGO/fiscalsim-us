@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2023-07-21 05:58:19
+
+### Added
+
+- Added documentation to the Jupyter Book for the Supplemental Nutrition Assistance Program (SNAP), formerly known as food stamps
+- Added bibliographic references to the `FiscalSim-US_references.bib` file
+
 ## [0.1.0] - 2023-06-21 07:27:51
 
 ### Added
@@ -109,6 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+[0.1.1]: https://github.com/TheCGO/fiscalsim-us/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.12...0.1.0
 [0.0.12]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.11...0.0.12
 [0.0.11]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.10...0.0.11
