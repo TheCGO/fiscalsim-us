@@ -1,0 +1,5 @@
+- bump: patch
+  changes:
+    added:
+      - Added documentation to the Jupyter Book for the Supplemental Nutrition Assistance Program (SNAP), formerly known as food stamps
+      - Added bibliographic references to the `FiscalSim-US_references.bib` file
