@@ -35,6 +35,7 @@ setup(
         "click==8.1.3",
         "h5py",
         "microdf_python",
+        "numpy<=1.20.3",  # v1.21.0 breaks matplotlib (see https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)
         "pandas",
         "pathlib",
         "policyengine-core>=2.1,<3",
