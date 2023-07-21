@@ -240,11 +240,143 @@
         </div>
         <article role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="supplemental-nutritional-assistance-program-snap">
-<span id="chap-federalstatesnapintro"></span><h1>Supplemental Nutritional Assistance Program (SNAP)<a class="headerlink" href="#supplemental-nutritional-assistance-program-snap" title="Permalink to this heading">#</a></h1>
-<p>Put SNAP intro here.</p>
+<span id="chap-snap"></span><h1>Supplemental Nutritional Assistance Program (SNAP)<a class="headerlink" href="#supplemental-nutritional-assistance-program-snap" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<span id="chap-snapoverview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month <a class="footnote-reference brackets" href="#snapstats" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>Less formally known as food stamps, SNAP works to alleviate food insecurity by providing impoverished households with a monthly income support to purchase food. Eligibility for SNAP benefits are determined through a complex set of requirements that are established at the federal level, with several variations at the state level. The amount of SNAP benefit is allocated according to the number of members in the household, as well as the household’s program-specific definition of net income (accounting for gross income, and removing several deductions, including utilities, transportation, and extenuating circumstances like disability or care for the elderly).</p>
+<p>While state variations exist, the basic structure of SNAP allotment remains the same: disbursed SNAP monthly allottment varies according to household net income, number of household members, deductions, disability, and elderly household members. Interesting to note is that across states with various CPIs and standards of living, household quantity and determined household net income are associated with the same amount of SNAP allotment. For example, a family of 3 making $18,000 per year in the Bay Area recieves as much SNAP benefits as a family of 3 in rural Utah with similar characteristics making $18,000 per year, despite vast differences in the purchasing power of those SNAP dollars.<a class="footnote-reference brackets" href="#cost-of-living" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>Although a 4-year period from 1939 to 1943 marked the first use of a food stamp program, the first Food Stamp Pilot Program occurred in 1961 from an executive order from President Kennedy.<a class="footnote-reference brackets" href="#execorder" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> In 1964, the Food Stamp Act was passed to make the Food Stamp Program permanent.<a class="footnote-reference brackets" href="#foodstampact" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> This orginal Food Stamp program, like the current iteration, was federally funded, with the states being responsible for certification and issuance of benefits.</p>
+<p>Since 1964, many legislative changes in the SNAP program have been passed, including its funding, changes to eligibility requirements, deduction specifics, and allotment amounts. Between 1988 and 2004, food stamp benefits began to be disbursed through an Electronic Benefit Transfer (EBT) card, as opposed to manual vouchers.<a class="footnote-reference brackets" href="#ebt" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> In 2008, the program name was changed from “Food Stamp Program” to “Supplemental Nutrition Assistance Program” (SNAP).<a class="footnote-reference brackets" href="#farmbill" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> Under that same 2008 Farm Bill, a nutrition education component of the program was created and came to be known as SNAP-Ed. During the COVID-19 pandemic from 2020-2023, emergency allotments were added to increase SNAP benefits. These emergency allotments were terminated in March of 2023 with the end of the pandemic.<a class="footnote-reference brackets" href="#covidsnap" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a></p>
+<p>Much research exists investigating the effects of SNAP on various outcomes. Researchers monitor SNAP’s economic effects (as a poverty reduction tool) <a class="footnote-reference brackets" href="#snappoverty" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>, its nutritional effects (as a food security tool) <a class="footnote-reference brackets" href="#foodsecurity" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>, and even a growing amount of research investigates various other markers of well-being and development outcomes related to SNAP use (such as CPS and neglect events, child academic performance, and parental depression rates) <a class="footnote-reference brackets" href="#snapcps" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="federal-snap-policy-characteristics">
+<span id="chap-snapfederal"></span><h2>Federal SNAP policy characteristics<a class="headerlink" href="#federal-snap-policy-characteristics" title="Permalink to this heading">#</a></h2>
+<section id="eligibility">
+<h3>Eligibility<a class="headerlink" href="#eligibility" title="Permalink to this heading">#</a></h3>
+<p>Groups that may be eligible for SNAP benefits include those who work for low wages, are unemployed or work part time, recieve public assistance, have household members who are elderly or disabled, or are homeless.</p>
+<p>Broad based categorical eligibility (BBCE) is a policy in which TANF-eligibile households automatically qualify for SNAP. For a complete list of states that implement BBCE, see the FiscalSim code.</p>
+<p>Three eligibility requirements must be met to recieve SNAP benefits.</p>
+<ol class="arabic simple">
+<li><p>Gross household income less than 130% FPL</p></li>
+<li><p>Net household income (after deductions) less than 100% FPL</p></li>
+<li><p>Household assets less than $2,750 in value</p></li>
+</ol>
+<p>If a household meets these three requirements, then they are SNAP eligibile. More inclusive eligibility requirements (which vary state-by-state) exist for households that include elderly and disabled persons.</p>
+<p>Additional eligibility requirements exist for Able Bodied Adults Without Dependents (ABAWD). Unless exempted for reasons of disability, adults ages 18-50 without children are limited to 3 months of SNAP benefits every three years. After the 3 months are up, individuals must be working or in a work training program for 20 hours per week to continue receiving SNAP benefits.</p>
+</section>
+<section id="benefit-amount">
+<h3>Benefit Amount<a class="headerlink" href="#benefit-amount" title="Permalink to this heading">#</a></h3>
+<p>Once a household is deemed eligible for SNAP benefits, their benefit amount is calculated by the following equation:</p>
+<p>SNAP benefit amount = Maximum eligible household benefit amount - (0.3)(net income)</p>
+<p>This calculation assumes that when SNAP households combine 30% of their net income with their allotted SNAP benefits, a household will have sufficient funds to purchase a nutritionally adequate diet according to the USDA’s Thrifty Food Plan (TFP).</p>
+<section id="maximum-eligible-household-benefit-amount">
+<h4>Maximum Eligible Household Benefit Amount<a class="headerlink" href="#maximum-eligible-household-benefit-amount" title="Permalink to this heading">#</a></h4>
+<p>The SNAP maximum eligible household benefit amount for the fiscal year of 2023 is given in the following table:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Household Size</p></th>
+<th class="head text-center"><p>Max Monthly Benefit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>$281</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>$516</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>$740</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>$939</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>$1,116</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>$1,339</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>7</p></td>
+<td class="text-center"><p>$1,480</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>8</p></td>
+<td class="text-center"><p>$1,691</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="gross-income">
+<h4>Gross Income<a class="headerlink" href="#gross-income" title="Permalink to this heading">#</a></h4>
+<p>The alloted SNAP benefit amount decreases as their calculated net income increases. Net income is calculated by subtracting relevant deductions from gross income. Gross income is the total household income before taxes, including the following sources: job, veteran’s benefits, interest income, self employment, social security, disability, child support, worker’s comp, unemployment income, pension income.</p>
+</section>
+<section id="deductions">
+<h4>Deductions<a class="headerlink" href="#deductions" title="Permalink to this heading">#</a></h4>
+<p>Deductions from gross income to compute net income included the following:</p>
+<ul class="simple">
+<li><p>Standard deduction</p></li>
+<li><p>Earned income deduction</p></li>
+<li><p>Dependent care</p></li>
+<li><p>Child support</p></li>
+<li><p>Medical expenses</p></li>
+<li><p>Shelter expenses</p></li>
+<li><p>Standard, Limited or single utilities</p></li>
+</ul>
+<p>Each of these deductions have different deduction caps that vary with the discretion of each state. See FiscalSim code for more details.</p>
+</section>
+</section>
+</section>
+<section id="state-snap-policy-characteristics">
+<h2>State SNAP policy characteristics<a class="headerlink" href="#state-snap-policy-characteristics" title="Permalink to this heading">#</a></h2>
+<p>While the basic structure of SNAP established by federal tax code ensures a fundamentally similar format across states, state-by-state variations make minor adjustments to SNAP eligibility and deductions that determine a household’s net income. Below is a summary of the most prominent state variations–see the FiscalSim SNAP code for a complete list of state variations.</p>
+<p>The most significant state variations exist with the asset test, varying gross income limits, and deduction caps. States that are more generous with SNAP may abolish the asset test and a gross income limit–no matter how many assets a household has, or what their gross income is, as long as their calculated deductions are great enough to bring them under 100% of the Federal Poverty Level, then they may qualify for SNAP. These states may also have larger deduction caps for various expenses, such as utilities. States that are more stringent with SNAP benefits may choose to establish tighter deduction caps, limiting the amount of income that can be deducted to calculate final household net income. These states may also choose to include the various eligibility hurdles–namely, an asset test and an income limit.</p>
+</section>
 <section id="footnotes">
-<span id="secfederalstatesnapintrofootnotes"></span><h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this heading">#</a></h2>
-<!-- [^citation_note]: See {cite}`AuerbachEtAl:1981,AuerbachEtAl:1983`, {cite}`AuerbachKotlikoff:1983a,AuerbachKotlikoff:1983b,AuerbachKotlikoff:1983c`, and {cite}`AuerbachKotlikoff:1985`. -->
+<span id="secsnapfootnotes"></span><h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this heading">#</a></h2>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="snapstats" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The <span id="id11">[<a class="reference internal" href="../../FiscalSim-US_references.html#id30" title="Peter G. Peterson. What is snap? an overview of the largest federal anti-hunger program. Program Overview Paper 1, Peter G. Peterson Foundation, https://www.pgpf.org/blog/2023/05/what-is-snap, 2023.">Peterson, 2023</a>]</span> article gives an overview of the economic statistics of the SNAP program (see <a class="reference external" href="https://www.pgpf.org/blog/2023/05/what-is-snap">https://www.pgpf.org/blog/2023/05/what-is-snap</a>)</p>
+</aside>
+<aside class="footnote brackets" id="cost-of-living" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>The <span id="id12">[<a class="reference internal" href="../../FiscalSim-US_references.html#id2" title="Sasha Gersten-Paal. Snap fy 2023 cost-of-living adjustments. Policy Memo, Food and Nutrition Service, US Department of Agriculture, August 9 2022.">Gersten-Paal, 2022</a>]</span> policy memo details the SNAP FY 2023 cost of living adjustments (see <a class="reference external" href="https://www.fns.usda.gov/snap/fy-2023-cola">https://www.fns.usda.gov/snap/fy-2023-cola</a>). The SNAP allotments only differ among the following three groups–(i) 48 States, DC, Guam, Virgin Islands, (ii) Alaska, and (iii) Hawaii. All of those values increase with inflation each year, but all recipients in the lower 48 states have no difference in benefit amounts and are not adjusted within that group for cost of living.</p>
+</aside>
+<aside class="footnote brackets" id="execorder" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>The <span id="id13">[<a class="reference internal" href="../../FiscalSim-US_references.html#id39" title="John Woolley. Executive order 10914-providing for an expanded program of food distribution to needy families. Executive Order Documentation 1, UC-Santa Barbara, https://www.presidency.ucsb.edu/documents/executive-order-10914-providing-for-expanded-program-food-distribution-needy-families, 2023.">Woolley, 2023</a>]</span> article from the American Presidency Project at UC Santa Barbara expounds on the 1961 Executive Order From President Kennedy that expanded the Food Stamp program (see <a class="reference external" href="https://www.presidency.ucsb.edu/documents/executive-order-10914-providing-for-expanded-program-food-distribution-needy-families">https://www.presidency.ucsb.edu/documents/executive-order-10914-providing-for-expanded-program-food-distribution-needy-families</a>).</p>
+</aside>
+<aside class="footnote brackets" id="foodstampact" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>The <span id="id14">[<a class="reference internal" href="../../FiscalSim-US_references.html#id35" title="Jessica Shahin. Commemorating the history of snap: looking back at the food stamp act of 1964. Legislation Overview 1, USDA, https://www.usda.gov/media/blog/2014/10/15/commemorating-history-snap-looking-back-food-stamp-act-1964, 2014.">Shahin, 2014</a>]</span> article from the USDA website gives an overview of the 1964 Food Stamp Act that made the program permanent (see <a class="reference external" href="https://www.usda.gov/media/blog/2014/10/15/commemorating-history-snap-looking-back-food-stamp-act-1964">https://www.usda.gov/media/blog/2014/10/15/commemorating-history-snap-looking-back-food-stamp-act-1964</a>)</p>
+</aside>
+<aside class="footnote brackets" id="ebt" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id15">[<a class="reference internal" href="../../FiscalSim-US_references.html#id36" title="USDA. Pl 100-435 - hunger prevention act of 1988. Legislation 1, USDA, https://www.fns.usda.gov/pl-100-435, 1988.">USDA, 1988</a>]</span> legislation outlines the Hunger Prevention Act of 1988, which allowed for the food stamp program to test the effectiveness of Electronic Benefit Transfer Cards (see <a class="reference external" href="https://www.fns.usda.gov/pl-100-435">https://www.fns.usda.gov/pl-100-435</a>)</p>
+</aside>
+<aside class="footnote brackets" id="farmbill" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id16">[<a class="reference internal" href="../../FiscalSim-US_references.html#id37" title="USDA. Pl 100-234 - food, conservation, and energy act of 2008. Legislation 1, USDA, https://www.fns.usda.gov/pl-110-234, 2008.">USDA, 2008</a>]</span> legislation presents the 2008 Farm Bill, which made many administrative changes to the Food Stamp Program, including changing its name to SNAP and the creation of SNAP-Ed (see <a class="reference external" href="https://www.fns.usda.gov/pl-110-234">https://www.fns.usda.gov/pl-110-234</a>)</p>
+</aside>
+<aside class="footnote brackets" id="covidsnap" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id17">[<a class="reference internal" href="../../FiscalSim-US_references.html#id38" title="USDA. Changes to snap benefit amounts - 2023. FAQs/Q&amp;As 1, USDA, https://www.fns.usda.gov/snap/changes-2023-benefit-amounts, 2023.">USDA, 2023</a>]</span> article from the USDA website explains the termination of emergency allotment SNAP benefits (see <a class="reference external" href="https://www.fns.usda.gov/snap/changes-2023-benefit-amounts">https://www.fns.usda.gov/snap/changes-2023-benefit-amounts</a>).</p>
+</aside>
+<aside class="footnote brackets" id="snappoverty" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id18">[<a class="reference internal" href="../../FiscalSim-US_references.html#id14" title="Patrick Canning. Quantifying the impact of snap benefits on the u.s. economy and jobs. SNAP Feature 1, USDA Economic Research Service, https://www.ers.usda.gov/amber-waves/2019/july/quantifying-the-impact-of-snap-benefits-on-the-u-s-economy-and-jobs/, 2019.">Canning, 2019</a>]</span> research article seeks to quantify the impact of SNAP benefits on the US Economy (see <a class="reference external" href="https://www.ers.usda.gov/amber-waves/2019/july/quantifying-the-impact-of-snap-benefits-on-the-u-s-economy-and-jobs/">https://www.ers.usda.gov/amber-waves/2019/july/quantifying-the-impact-of-snap-benefits-on-the-u-s-economy-and-jobs/</a>).</p>
+</aside>
+<aside class="footnote brackets" id="foodsecurity" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id19">[<a class="reference internal" href="../../FiscalSim-US_references.html#id25" title="Jerold Mande. Supplemental nutrition assistance program as a health intervention. Current Opinion in Pediatrics, 35(1):33-38, Feb 2023.">Mande, 2023</a>]</span> research article investigates the childhood health impacts of the SNAP program (see <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/36354297/">https://pubmed.ncbi.nlm.nih.gov/36354297/</a>).</p>
+</aside>
+<aside class="footnote brackets" id="snapcps" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id20">[<a class="reference internal" href="../../FiscalSim-US_references.html#id24" title="Michelle Johnson-Motoyama. Association between state supplemental nutrition assistance program policies, child protective services involvement, and foster care in the us, 2004-2016. Journal of the American Medical Association, 5(7):1, July 2022.">Johnson-Motoyama, 2022</a>]</span> research article investigates the relationship between state SNAP generostiy and statewide CPS events (see <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/</a>).</p>
+</aside>
 </section>
 </section>
 
@@ -323,6 +455,18 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Supplemental Nutritional Assistance Program (SNAP)</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#federal-snap-policy-characteristics">Federal SNAP policy characteristics</a><ul>
+<li><a class="reference internal" href="#eligibility">Eligibility</a></li>
+<li><a class="reference internal" href="#benefit-amount">Benefit Amount</a><ul>
+<li><a class="reference internal" href="#maximum-eligible-household-benefit-amount">Maximum Eligible Household Benefit Amount</a></li>
+<li><a class="reference internal" href="#gross-income">Gross Income</a></li>
+<li><a class="reference internal" href="#deductions">Deductions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#state-snap-policy-characteristics">State SNAP policy characteristics</a></li>
 <li><a class="reference internal" href="#footnotes">Footnotes</a></li>
 </ul>
 </li>
