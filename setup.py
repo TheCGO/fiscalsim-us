@@ -56,7 +56,6 @@ setup(
             "autopep8",
             "black",
             "coverage",
-            "furo",
             "jupyter-book",
             "jupyter",
             "linecheck",

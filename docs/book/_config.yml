@@ -81,7 +81,6 @@ sphinx:
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     html_js_files:
       - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
-    html_theme: furo
     pygments_style: default
   extra_extensions:
     - "sphinx.ext.autodoc"
