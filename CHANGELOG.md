@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2023-07-31 18:22:17
+
+### Added
+
+- Updates the NumPy version in `setup.py` to be `numpy<=1.20.3` in order to be compatible with the `matplotlib` package (see [this link](https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)). This change should solve the `windows-latest` GitHub Action test failure from merged PR
+- Updates `fiscalsim_us/data/datasets/README.md`
+- Adds `abolish` parameters in `additional_parameters.yaml` file
+
 ## [0.1.1] - 2023-07-21 05:58:19
 
 ### Added
@@ -116,6 +124,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 
+[0.1.2]: https://github.com/TheCGO/fiscalsim-us/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/TheCGO/fiscalsim-us/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.12...0.1.0
 [0.0.12]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.11...0.0.12
