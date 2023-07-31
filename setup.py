@@ -35,6 +35,10 @@ setup(
         "click==8.1.3",
         "h5py",
         "microdf_python",
+        # NumPy v1.21.0 breaks matplotlib (see
+        # https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)
+        # But policyengine-core requires numpy<1.22 and >=1.21
+        "numpy>=1.21, <1.22",
         "pandas",
         "pathlib",
         "policyengine-core>=2.1,<3",
@@ -52,7 +56,6 @@ setup(
             "autopep8",
             "black",
             "coverage",
-            "furo",
             "jupyter-book",
             "jupyter",
             "linecheck",
