@@ -2,7 +2,7 @@ from fiscalsim_us.model_api import *
 
 
 class la_federal_retirement_benefits(Variable):
-    "Amount of retirement benefits recieved from a 
+    """Amount of retirement benefits recieved from a 
     Federal Retirement System
     """
     value_type = float

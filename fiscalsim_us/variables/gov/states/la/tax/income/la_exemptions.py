@@ -20,8 +20,7 @@ class la_exemptions(Variable):
             filing_status == statuses.SEPARATE
         )
  
-        dependents = tax_unit("tax_unit_dependents", period) - 
-            where(joint_separate, 1, 0)
+        dependents = tax_unit("tax_unit_dependents", period) - where(joint_separate, 1, 0)
         aged_blind = tax_unit("aged_blind_count", period) 
 
         personal_multiplier = where(joint_separate, 2, 1)

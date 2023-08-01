@@ -12,4 +12,4 @@ class la_total_subtractions(Variable):
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.LA
-    adds = gov.states.la.tax.income.agi.subtractions.sources
+    adds = "gov.states.la.tax.income.agi.subtractions.sources"
