@@ -19,14 +19,16 @@ class la_refundable_credits(Variable):
     
         # line 18 - floor at 0 since the priority 3 credits are nonrefundable
         tax_afer_p_2_credits = max_(
-                0,
-                tax_unit("la_income_tax_before_refundable_credits", period) - priority_2_refund
+            0,
+            tax_unit("la_income_tax_before_refundable_credits", period) - priority_2_refund
             )
 
         priority_3_nonrefund_amount = tax_unit("la_nonrefundable_priority_3_credits", period)
-         
-        priority_3_nonrefund_add = max_(tax_afer_p_2_credits, priority_3_nonrefund_amount)
 
-        priority_4_refund = tax_unit("la_refundable_priority_4_credits", tax_unit)
-    
-        return priority_3_eligible + priority_3_nonrefund_add + priority_4_refund 
+        # either refund the rest of the tax liability (leftover from p2)
+        # or refund the total amount of p3 credits, whichever is less
+        priority_3_nonrefund_add = min_(tax_afer_p_2_credits, priority_3_nonrefund_amount)
+
+        priority_4_refund = tax_unit("la_refundable_priority_4_credits", period)
+
+        return priority_2_refund + priority_3_nonrefund_add + priority_4_refund

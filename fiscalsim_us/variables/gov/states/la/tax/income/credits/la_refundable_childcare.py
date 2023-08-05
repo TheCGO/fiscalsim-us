@@ -20,18 +20,18 @@ class la_refundable_childcare(Variable):
         earned_income = tax_unit("tax_unit_earned_income", period)
         childcare_expenses = tax_unit("tax_unit_childcare_expenses", period)
 
-        # check for eligible children 
+        # check for eligible children
         person = tax_unit.members
         dependent = person("is_tax_unit_dependent", period)
         age = person("age", period)
         child = age < p.childcare_child_age_limit
         eligible = dependent & child
-        eligible_children = tax_unit.sum(eligible_child)
+        eligible_children = tax_unit.sum(eligible)
 
         max_expense = p.childcare_expense_limit.calc(eligible_children)
         expense = min_(childcare_expenses, max_expense)
 
-        # line 6 of worksheet 
+        # line 6 of worksheet
         credit = min_(expense, earned_income)
 
         income_mult = p.childcare_income_mult.calc(agi)

@@ -1,0 +1,9 @@
+- name: LA taxable income not itemizing
+  period: 2021
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+  output:
+    la_taxable_income: 100_000

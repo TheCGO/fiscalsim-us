@@ -1,7 +1,7 @@
 description: Louisiana allows these subtractions (exemptions) from taxable income
 values:
   2021-01-01:
-    - us_govt_income
+    - us_govt_interest
     - tax_unit_taxable_social_security
     - la_state_employee_retirement_benefits
     - la_state_teacher_retirement_benefits

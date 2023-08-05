@@ -12,6 +12,7 @@ class state_income_tax(Variable):
         "ca_income_tax",
         "il_income_tax",
         "ks_income_tax",
+        "la_income_tax",
         "ma_income_tax",
         "md_income_tax",
         "mn_income_tax",
