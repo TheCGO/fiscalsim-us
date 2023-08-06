@@ -4,6 +4,6 @@
   input:
     filing_status: SINGLE
     state_code: LA
-    adjusted_gross_income: 100_000
+    adjusted_gross_income: 100
   output:
     la_taxable_income: 100_000

@@ -21,9 +21,9 @@ class la_taxable_income(Variable):
 
         # LA allows tax units to subtract from income any portion of federal
         # medical expense deductions that is more than the standard deduction
-        filing_status = tax_unit("fiscalsim_us", period)
+        filing_status = tax_unit("filing_status", period)
         itemizing = tax_unit("tax_unit_itemizes", period)
-        std_deduct = parameters.gov.ird.deductions.standard.amount[filing_status]
+        std_deduct = parameters(period).gov.irs.deductions.standard.amount[filing_status]
         medical_deduct = tax_unit("medical_expense_deduction", period)
         
         excess_fed_deduct = max_(0, itemizing * (medical_deduct - std_deduct))
