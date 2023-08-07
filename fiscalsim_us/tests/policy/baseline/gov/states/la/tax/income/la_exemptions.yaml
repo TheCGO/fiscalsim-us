@@ -1,0 +1,53 @@
+- name: LA exemption single no dependents
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 4_500
+
+- name: LA exemption joint no dependents
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: JOINT
+    state_code: LA
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 9_000
+
+- name: LA exemption joint 2 dependents
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: JOINT
+    state_code: LA
+    tax_unit_dependents: 2
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 11_000
+
+- name: LA exemption single 2 dependents
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    tax_unit_dependents: 2
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 6_500
+
+- name: LA exemption single 1 dependents and 1 65+/blind
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    tax_unit_dependents: 1
+    aged_blind_count: 1
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 6_500

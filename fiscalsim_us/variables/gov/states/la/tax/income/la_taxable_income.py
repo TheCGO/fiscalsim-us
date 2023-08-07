@@ -26,6 +26,7 @@ class la_taxable_income(Variable):
         std_deduct = parameters(period).gov.irs.deductions.standard.amount[filing_status]
         medical_deduct = tax_unit("medical_expense_deduction", period)
         
-        excess_fed_deduct = max_(0, itemizing * (medical_deduct - std_deduct))
+        excess_fed_deduct = max_(0, medical_deduct - std_deduct)
 
-        return max_(0, la_agi - excess_fed_deduct)
+#        return max_(0, la_agi - excess_fed_deduct)
+        return where(itemizing, la_agi - excess_fed_deduct, la_agi)
