@@ -3,7 +3,9 @@
 
 (Chap_SNAPoverview)=
 ## Overview
-The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [^SNAPstats].
+The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. 68.5% of the 2019-2023 Farm Bill budget is allotted to SNAP [^FarmBill]. The 2021 Fiscal Year SNAP federal budget was $111 billion. [^SNAPFY2021] For comparison, similar welfare programs in FY 2021 - TANF: $30 billion;[^TANFFY2021] Medicaid: $521 billion; Medicare: $868 billion; Social Security: $1.1 trillion. [^MedSSFY2021]
+
+ The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [^SNAPstats].
 
 Less formally known as food stamps, SNAP works to alleviate food insecurity by providing impoverished households with a monthly income support to purchase food. Eligibility for SNAP benefits are determined through a complex set of requirements that are established at the federal level, with several variations at the state level. The amount of SNAP benefit is allocated according to the number of members in the household, as well as the household's program-specific definition of net income (accounting for gross income, and removing several deductions, including utilities, transportation, and extenuating circumstances like disability or care for the elderly).
 
@@ -83,6 +85,15 @@ The most significant state variations exist with the asset test, varying gross i
 (SecSNAPfootnotes)=
 
 ## Footnotes
+
+[^FarmBill]: This {cite}`USDA:2023` USDA webpage outlines distribution of the 2018 Farm Bill (see https://www.ers.usda.gov/topics/farm-economy/farm-commodity-policy/farm-bill-spending/).
+
+[^SNAPFY2021]: This {cite}`CBPP:2022` article on the Center for Budget and Policy Priorities website gives an outline of the SNAP program, including its
+FY 2021 budget (see https://www.cbpp.org/research/food-assistance/the-supplemental-nutrition-assistance-program-snap).
+
+[^TANFFY2021]: This {cite}`ACF:2022` article from the DHHS government website outlines TANF spending for FY 2021 (see https://www.acf.hhs.gov/ofa/data/tanf-and-moe-spending-and-transfers-activity-fy-2021).
+
+[^MedSSFY2021]: This {cite}`CBO:2022` infographic from the Congressional Budget Office outlines spending for various government programs for Fiscal Year 2021, including Medicare, Medicaid, and Social Security (see https://www.cbo.gov/publication/58270). 
 
 [^SNAPstats]: The {cite}`Peterson:2023` article gives an overview of the economic statistics of the SNAP program (see https://www.pgpf.org/blog/2023/05/what-is-snap)
 
