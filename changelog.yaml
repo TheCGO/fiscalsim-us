@@ -106,3 +106,13 @@
       Program (SNAP), formerly known as food stamps
     - Added bibliographic references to the `FiscalSim-US_references.bib` file
   date: 2023-07-21 05:58:19
+- bump: patch
+  changes:
+    added:
+    - Updates the NumPy version in `setup.py` to be `numpy<=1.20.3` in order to be
+      compatible with the `matplotlib` package (see [this link](https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)).
+      This change should solve the `windows-latest` GitHub Action test failure from
+      merged PR
+    - Updates `fiscalsim_us/data/datasets/README.md`
+    - Adds `abolish` parameters in `additional_parameters.yaml` file
+  date: 2023-07-31 18:22:17
