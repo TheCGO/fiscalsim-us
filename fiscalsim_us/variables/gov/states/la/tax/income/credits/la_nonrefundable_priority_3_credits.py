@@ -3,7 +3,7 @@ from fiscalsim_us.model_api import *
 
 class la_nonrefundable_priority_3_credits(Variable):
     """
-    Louisiana nonrefundable priority 3 credits 
+    Louisiana nonrefundable priority 3 credits
     Form IT-540 line 20
     These include the following credits with codes:
     202 – Organ Donation
@@ -43,6 +43,7 @@ class la_nonrefundable_priority_3_credits(Variable):
     510 – Enterprise Zone
     550 – Recycling Credit
     """
+
     value_type = float
     entity = TaxUnit
     label = "Louisiana nonrefundable priority 3 income tax credits"
@@ -51,6 +52,5 @@ class la_nonrefundable_priority_3_credits(Variable):
     defined_for = StateCode.LA
     reference = (
         "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf"
+        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
     )
-

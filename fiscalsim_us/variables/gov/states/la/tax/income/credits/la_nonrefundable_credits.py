@@ -20,6 +20,6 @@ class la_nonrefundable_credits(Variable):
     definition_period = YEAR
     reference = (
         "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf"
+        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
     )
     defined_for = StateCode.LA

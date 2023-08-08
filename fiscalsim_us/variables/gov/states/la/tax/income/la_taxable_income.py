@@ -23,10 +23,12 @@ class la_taxable_income(Variable):
         # medical expense deductions that is more than the standard deduction
         filing_status = tax_unit("filing_status", period)
         itemizing = tax_unit("tax_unit_itemizes", period)
-        std_deduct = parameters(period).gov.irs.deductions.standard.amount[filing_status]
+        std_deduct = parameters(period).gov.irs.deductions.standard.amount[
+            filing_status
+        ]
         medical_deduct = tax_unit("medical_expense_deduction", period)
-        
+
         excess_fed_deduct = max_(0, medical_deduct - std_deduct)
 
-#        return max_(0, la_agi - excess_fed_deduct)
+        #        return max_(0, la_agi - excess_fed_deduct)
         return where(itemizing, la_agi - excess_fed_deduct, la_agi)

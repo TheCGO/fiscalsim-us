@@ -5,6 +5,7 @@ class la_total_subtractions(Variable):
     """
     Subtractions from louisiana adjusted income
     """
+
     value_type = float
     entity = TaxUnit
     label = "Louisiana total subtractions from AGI"

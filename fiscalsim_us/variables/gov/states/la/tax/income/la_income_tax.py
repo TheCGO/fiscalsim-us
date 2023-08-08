@@ -14,4 +14,3 @@ class la_income_tax(Variable):
     defined_for = StateCode.LA
     adds = ["la_income_tax_before_refundable_credits"]
     subtracts = ["la_refundable_credits"]
-

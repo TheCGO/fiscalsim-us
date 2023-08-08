@@ -4,7 +4,7 @@ from fiscalsim_us.model_api import *
 class la_other_subtractions(Variable):
     """
     Other subtractions from louisiana taxable income.
-    These include the following exemptions from income with 
+    These include the following exemptions from income with
     the associated codes:
     05E – Other Retirement Benefits
     06E – Annual Retirement Income Exemption for Taxpayers 65

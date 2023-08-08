@@ -3,8 +3,8 @@ from fiscalsim_us.model_api import *
 
 class la_other_refundable_p2(Variable):
     """
-    Other Louisiana refundable priority 2 credits listed 
-    on Schedule F for IT-540. These credits include the 
+    Other Louisiana refundable priority 2 credits listed
+    on Schedule F for IT-540. These credits include the
     following with codes:
     * 52F - Ad Valorem Offshore Vessels
     * 54F – Telephone Company Property
@@ -15,7 +15,7 @@ class la_other_refundable_p2(Variable):
     * 62F – Musical and Theatrical Production
     * 65F – School Readiness Child Care Provider
     * 66F – School Readiness Child Care Directors and Staff
-    * 67F – School Readiness Business-Supported Child Care 
+    * 67F – School Readiness Business-Supported Child Care
     * 68F – School Readiness Fees and Grants to Resource and
     Referral Agencies
     * 70F – Retention and Modernization
@@ -24,6 +24,7 @@ class la_other_refundable_p2(Variable):
     * 77F – Funeral and Burial Expense for a Pregnancy-related Death
     * 80F – Other Refundable Credit
     """
+
     unit = USD
     value_type = float
     entity = TaxUnit
@@ -33,6 +34,5 @@ class la_other_refundable_p2(Variable):
     defined_for = StateCode.LA
     reference = (
         "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf"
+        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
     )
-

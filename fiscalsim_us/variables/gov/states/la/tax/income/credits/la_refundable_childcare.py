@@ -10,11 +10,10 @@ class la_refundable_childcare(Variable):
     defined_for = StateCode.LA
     reference = (
         "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf"
+        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
     )
 
     def formula(tax_unit, period, parameters):
-
         p = parameters(period).gov.states.la.tax.income.credits.refundable_p2
         agi = tax_unit("adjusted_gross_income", period)
         person = tax_unit.members
@@ -27,9 +26,10 @@ class la_refundable_childcare(Variable):
         # earned incomes, else pick the (only) max non-dependent income
         tax_unit_min_income = where(
             filing_status == filing_status.possible_values.JOINT,
-            tax_unit.sum(non_dependent_income) - tax_unit.max(non_dependent_income),
-            tax_unit.max(non_dependent_income)
-            )
+            tax_unit.sum(non_dependent_income)
+            - tax_unit.max(non_dependent_income),
+            tax_unit.max(non_dependent_income),
+        )
 
         # earned_income = tax_unit("tax_unit_earned_income", period)
         childcare_expenses = tax_unit("tax_unit_childcare_expenses", period)

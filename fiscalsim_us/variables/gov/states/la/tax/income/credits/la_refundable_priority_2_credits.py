@@ -10,6 +10,6 @@ class la_refundable_priority_2_credits(Variable):
     defined_for = StateCode.LA
     reference = (
         "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf"
+        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
     )
     adds = "gov.states.la.tax.income.credits.refundable_p2.sources"
