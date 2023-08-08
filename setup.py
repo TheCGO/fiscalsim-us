@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.0.10",
+    version="0.1.2",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
@@ -35,10 +35,14 @@ setup(
         "click==8.1.3",
         "h5py",
         "microdf_python",
+        # NumPy v1.21.0 breaks matplotlib (see
+        # https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)
+        # But policyengine-core requires numpy<1.22 and >=1.21
+        "numpy>=1.21, <1.22",
         "pandas",
         "pathlib",
-        "policyengine-core>=2.0.1,<3",
-        "pytest==5.4.3",
+        "policyengine-core>=2.1,<3",
+        "pytest",
         "pytest-dependency",
         "pyyaml",
         "requests",
@@ -50,14 +54,14 @@ setup(
     extras_require={
         "dev": [
             "autopep8",
-            "black>=23.3.0",
+            "black",
             "coverage",
-            "furo",
             "jupyter-book",
             "jupyter",
             "linecheck",
             "markupsafe",
             "plotly",
+            "bokeh>=3.1.1",
             "pydata-sphinx-theme==0.13.1",
             "setuptools",
             "sphinx",
@@ -69,7 +73,7 @@ setup(
         ],
     },
     # Windows CI requires Python 3.9.
-    python_requires=">=3.7,<3.10",
+    python_requires=">=3.7, <3.10",
     entry_points={
         "console_scripts": [
             "fiscalsim-us = fiscalsim_us.tools.cli:main",
