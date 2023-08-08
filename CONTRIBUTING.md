@@ -1,4 +1,4 @@
-Thank you for wanting to contribute to FiscalSim US.
+# How to contribute to FiscalSim US.
 
 The FiscalSim-US project follows the [GitHub workflow](https://guides.github.com/introduction/flow/) and [semantic versioning protocol](http://semver.org/).
 
@@ -38,11 +38,12 @@ Examples:
 
 #### Minor bump
 
-- Adding a variable to the tax and benefit system.
+- Adding a new state's tax logic or a major tax or benefit program (multiple variables and multiple parameters).
 
 #### Major bump
 
-- Renaming or removing a variable from the tax and benefit system.
+- Major update, refactor, or compatibility change.
+
 
 ### Changelog
 
