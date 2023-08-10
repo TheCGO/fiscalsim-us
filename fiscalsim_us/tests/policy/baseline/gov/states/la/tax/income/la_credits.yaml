@@ -117,6 +117,41 @@
   output:
     la_refundable_childcare: 320
 
+- name: LA nonrefundable child care credit below income floor ($0 nonrefundable)
+  period: 2022
+  input:
+    adjusted_gross_income: 23_000
+    cdcc: 2_000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 0
+
+- name: LA nonrefundable child care credit 
+  period: 2022
+  input:
+    adjusted_gross_income: 30_000
+    cdcc: 2_000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 600
+
+- name: LA nonrefundable child care credit above income threshold
+  period: 2022
+  input:
+    adjusted_gross_income: 60_001
+    cdcc: 200
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 20 
+
+- name: LA nonrefundable child care credit above income threshold with credit limit
+  period: 2022
+  input:
+    adjusted_gross_income: 60_001
+    cdcc: 1000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 25
 
 - name: Addition of p2 refundable credits
   period: 2022

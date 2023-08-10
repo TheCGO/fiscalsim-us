@@ -14,14 +14,13 @@ class la_exemptions(Variable):
         p = parameters(period).gov.states.la.tax.income.exemptions
         filing_status = tax_unit("filing_status", period)
         statuses = filing_status.possible_values
-        joint_separate = (filing_status == statuses.JOINT) | (
-            filing_status == statuses.SEPARATE
-        )
+        single_separate = (filing_status == statuses.SINGLE) | (
+            filing_status == statuses.SEPARATE)
 
         dependents = tax_unit("tax_unit_dependents", period)
         aged_blind = tax_unit("aged_blind_count", period)
 
-        personal_multiplier = where(joint_separate, 2, 1)
+        personal_multiplier = where(single_separate, 1, 2)
         n_extra = dependents + aged_blind
 
         return (

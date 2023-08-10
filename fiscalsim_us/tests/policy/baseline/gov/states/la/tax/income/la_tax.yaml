@@ -1,5 +1,5 @@
 - name: LA tax no income
-  period: 2021
+  period: 2022
   absolute_error_margin: 0
   input:
     filing_status: SINGLE
@@ -9,7 +9,7 @@
     la_income_tax: 0.0
 
 - name: LA first tax bracket
-  period: 2021
+  period: 2022
   absolute_error_margin: 0
   input:
     filing_status: SINGLE
@@ -19,7 +19,7 @@
     la_income_tax: 222
 
 - name: LA all tax brackets
-  period: 2021
+  period: 2022
   absolute_error_margin: 0
   input:
     filing_status: SINGLE

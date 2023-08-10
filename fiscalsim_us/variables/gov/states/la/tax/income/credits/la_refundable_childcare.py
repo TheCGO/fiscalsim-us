@@ -14,7 +14,7 @@ class la_refundable_childcare(Variable):
     )
 
     def formula(tax_unit, period, parameters):
-        p = parameters(period).gov.states.la.tax.income.credits.refundable_p2
+        p = parameters(period).gov.states.la.tax.income.credits.refundable_p2.refundable_child_care
         agi = tax_unit("adjusted_gross_income", period)
         person = tax_unit.members
         dependent = person("is_tax_unit_dependent", period)
@@ -37,17 +37,17 @@ class la_refundable_childcare(Variable):
         # check for eligible children
         dependent = person("is_tax_unit_dependent", period)
         age = person("age", period)
-        child = age < p.childcare_child_age_limit
+        child = age < p.child_age_limit
         eligible = dependent & child
         eligible_children = tax_unit.sum(eligible)
 
-        max_expense = p.childcare_expense_limit.calc(eligible_children)
+        max_expense = p.expense_limit.calc(eligible_children)
         expense = min_(childcare_expenses, max_expense)
 
         # line 6 of worksheet
         credit = min_(expense, tax_unit_min_income)
 
-        income_mult = p.childcare_income_mult.calc(agi)
-        mult = p.refundable_childcare_mult
+        income_mult = p.income_mult.calc(agi)
+        mult = p.mult
 
         return credit * income_mult * mult

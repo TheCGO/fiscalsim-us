@@ -1,0 +1,16 @@
+description: Louisiana makes its child and dependent care credit refundable for incomes under the income floor using slightly different logic found in the la_refundable_childcare variable
+
+values:
+  2006-01-01: 25_000
+
+metadata:
+  period: year
+  unit: currency-USD
+  label: Louisiana non-refundable child care credit income floor
+  reference:
+    - title: §297.4. Reduction to tax due; certain child care expenses, part (B)
+      href: http://legis.la.gov/Legis/Law.aspx?d=101769
+    - title: 2022 Louisiana Resident Income Tax Return, page 14,16
+      href: https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf
+    - title: 2021 Louisiana Resident Income Tax Return, page 14,16
+      href: https://revenue.louisiana.gov/TaxForms/IT540WEB(2021)%20F.pdf
