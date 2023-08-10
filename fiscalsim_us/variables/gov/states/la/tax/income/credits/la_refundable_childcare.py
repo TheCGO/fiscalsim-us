@@ -16,25 +16,10 @@ class la_refundable_childcare(Variable):
     def formula(tax_unit, period, parameters):
         p = parameters(period).gov.states.la.tax.income.credits.refundable_p2.refundable_child_care
         agi = tax_unit("adjusted_gross_income", period)
-        person = tax_unit.members
-        dependent = person("is_tax_unit_dependent", period)
-        earned_income = max_(0, person("earned", period))
-        filing_status = tax_unit("filing_status", period)
-        non_dependent_income = ~dependent * earned_income
-
-        # if tax unit is joint then pick the minimum of the non-dependent
-        # earned incomes, else pick the (only) max non-dependent income
-        tax_unit_min_income = where(
-            filing_status == filing_status.possible_values.JOINT,
-            tax_unit.sum(non_dependent_income)
-            - tax_unit.max(non_dependent_income),
-            tax_unit.max(non_dependent_income),
-        )
-
-        # earned_income = tax_unit("tax_unit_earned_income", period)
         childcare_expenses = tax_unit("tax_unit_childcare_expenses", period)
 
         # check for eligible children
+        person = tax_unit.members
         dependent = person("is_tax_unit_dependent", period)
         age = person("age", period)
         child = age < p.child_age_limit
@@ -45,6 +30,7 @@ class la_refundable_childcare(Variable):
         expense = min_(childcare_expenses, max_expense)
 
         # line 6 of worksheet
+        tax_unit_min_income = tax_unit("min_head_spouse_earned", period)
         credit = min_(expense, tax_unit_min_income)
 
         income_mult = p.income_mult.calc(agi)

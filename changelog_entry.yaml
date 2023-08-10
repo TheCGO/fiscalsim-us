@@ -1,4 +1,4 @@
 - bump: minor
   changes:
     added:
-      - Added Minnesota state income tax logic with credits and refunds
+      - Added Louisiana state income tax logic with credits and refunds
