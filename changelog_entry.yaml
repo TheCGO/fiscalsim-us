@@ -1,0 +1,4 @@
+- bump: patch
+  changes:
+    added:
+      - updated SNAP intro and citations in documentation
