@@ -87,7 +87,17 @@ The most significant state variations exist with the asset test, varying gross i
 
 (SecSNAPfarmbill)=
 ## SNAP and the Farm Bill
-Put farm bill stuff here.
+
+The legislation, procedures, and funding for SNAP come from the Farm Bill. [^FarmBillProcess] Originally enacted in 1933 to support US food and agriculture producers affected by the Great Depression and the Dust Bowl, the current Farm Bill includes 12 titles that support various elements of agriculture and food production. Within the 12 titles, the 3 titles recieving the largest amounts of funding include Title I: Commodities (covers price and income support for farmers who produce widely-traded non-perishable crops); Title XI, Crop Insurance (subsidies to protect against losses in yield); and Title IV, Nutrition (90% of the funding for this Nutrition title goes to SNAP).
+
+The Farm Bill legislation is passed every 5 years. For example, the Farm Bill that was passed in 2018 expires Septembeer 30th, 2023. A year before current legislation expires, lobbying for provisions begins by farm ogranizations, environmental groups, taxpayers, and other groups. [^FarmPrimer] After this public input, both the Senate and House Agriculture Committees draft, debate, and pass separate bill proposals. The Senate Agricultural Committee on Subsidies and Nutrition, and the House Agricultural Committee on Subsidies, Policy, and Oversight, are the two "Ag Committees" that draft these two bills. The two bills are sent to a Conference Committee where they are combined. The combined bill must then be approved by the entire House and Senate. This is the reauthorization process. 
+
+The appropriations process determines funding for the various titles and programs in the Farm Bill. The 2018 Farm Bill received $428 billion. SNAP is an "entitlement program," where appropriatons will automatically be granted to fund their program. Other programs recieve "descretionary spending," where funds are granted at the discretion of the Appropriations Committees in Congress. This will be done before October 1st, 2023 for upcoming Farm Bill. 
+
+The President then signs the Bill, which has been reauthorized and appropriated, into public law.
+
+The "rulemaking phase" then occurs. After reauthorization and appropriations are complete and the bill has become a law, the USDA establishes specific rules and regulations which are implemented into the Farm Bill programs.
+
 
 
 (SecSNAPfootnotes)=
@@ -121,3 +131,7 @@ FY 2021 budget (see https://www.cbpp.org/research/food-assistance/the-supplement
 [^foodsecurity]: This {cite}`Mande:2023` research article investigates the childhood health impacts of the SNAP program (see https://pubmed.ncbi.nlm.nih.gov/36354297/).
 
 [^SNAPCPS]: This {cite}`Johnson-Motoyama:2022` research article investigates the relationship between state SNAP generostiy and statewide CPS events (see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/).
+
+[^FarmBillProcess]: This {cite}`ERSUSDA:2023` USDA webpage outlines the policy process of the passing of the Farm Bill (see https://www.ers.usda.gov/topics/farm-economy/farm-commodity-policy/u-s-farm-policy-and-policy-process/).
+
+[^FarmPrimer]: This `Frye:2023` Farm Bill primer was graciously provided by Jason Frye at Terrapin Strategy consulting. 
