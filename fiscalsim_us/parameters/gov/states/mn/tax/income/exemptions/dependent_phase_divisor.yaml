@@ -1,0 +1,23 @@
+description: MN number to divide income by to determined phased out deduction amount
+SINGLE:
+  2021-01-01: 2_500
+JOINT:
+  2021-01-01: 2_500
+SEPARATE:
+  2021-01-01: 1_250
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 2_500
+WIDOW:
+  2021-01-01: 2_500
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_dependent_phaseout_divisor
+  label: MN dependent exemption phaseout divisor
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf
+    - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_22.pdf

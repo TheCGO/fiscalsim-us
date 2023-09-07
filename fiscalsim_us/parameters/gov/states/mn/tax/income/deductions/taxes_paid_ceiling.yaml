@@ -1,0 +1,23 @@
+description: MN taxes paid itemized deduction ceiling 
+SINGLE:
+  2021-01-01: 10_000
+JOINT:
+  2021-01-01: 10_000
+SEPARATE:
+  2021-01-01: 5_000
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 10_000
+WIDOW:
+  2021-01-01: 10_000
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_taxes_paid_deducion_ceiling
+  label: MN taxes paid deduction ceiling
+  reference:
+    - title: 2021 M1SA, Minnesota Itemized Deductions, Line 8
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
+    - title: 2022 M1SA, Minnesota Itemized Deductions, Line 8
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf

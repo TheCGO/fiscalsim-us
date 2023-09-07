@@ -5,6 +5,7 @@ values:
     - mn_social_security_subtraction
     - us_govt_interest
     - mn_elderly_disabled_subtraction
+    - mn_other_subtractions
 
 metadata:
   unit: variable

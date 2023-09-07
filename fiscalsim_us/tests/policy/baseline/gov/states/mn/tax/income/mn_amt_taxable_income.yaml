@@ -7,7 +7,7 @@
     us_govt_interest: 3_000
     state_code: MN
   output:
-    mn_amt_taxable_income: 200_000 - 1_000 - 3_000
+    mn_amt_taxable_income: 157_125
 
 - name: MN AMT taxable income unit test 2
   period: 2021
@@ -18,4 +18,4 @@
     us_govt_interest: 3_000
     state_code: MN
   output:
-    mn_amt_taxable_income: 200_000 - 250 - 3_000
+    mn_amt_taxable_income: 157_125

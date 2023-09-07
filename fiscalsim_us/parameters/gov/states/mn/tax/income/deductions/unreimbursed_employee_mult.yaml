@@ -1,0 +1,13 @@
+description: MN unreimbursed employee expenses deduction multiplier
+values:
+  2021-01-01: .02
+metadata:
+  unit: /1
+  period: year
+  name: mn_unreimbursed_employee_mult
+  label: MN unreimbursed employee deduction multiplier
+  reference:
+    - title: 2021 M1SA, Minnesota Itemized Deductions, Line 20
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
+    - title: 2022 M1SA, Minnesota Itemized Deductions, Line 20
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf        

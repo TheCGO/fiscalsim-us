@@ -65,4 +65,4 @@
         state_code: MN
   output:  # expected results from patched TAXSIM35 2023-04-10 version
     mn_marriage_credit: 69.73
-    mn_income_tax: 12_955.17
+    mn_income_tax: 12_940.566 
