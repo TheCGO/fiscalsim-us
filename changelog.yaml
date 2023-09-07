@@ -83,3 +83,36 @@
     fixed:
     - Fixes an error in the `setup.py` classifier description
   date: 2023-05-19 01:51:04
+- bump: patch
+  changes:
+    changed:
+    - Updates the `README.md`, `Makefile`, and GitHub Action `push.yaml`
+    - Makes many updates to the `./docs/` documentation directory
+  date: 2023-06-04 07:47:45
+- bump: patch
+  changes:
+    changed:
+    - Updated the value for the Kansas standard deduction amount for Widow filer types.
+  date: 2023-06-14 15:42:49
+- bump: minor
+  changes:
+    added:
+    - Updates files from PolicyEngine-US v0.335.1
+  date: 2023-06-21 07:27:51
+- bump: patch
+  changes:
+    added:
+    - Added documentation to the Jupyter Book for the Supplemental Nutrition Assistance
+      Program (SNAP), formerly known as food stamps
+    - Added bibliographic references to the `FiscalSim-US_references.bib` file
+  date: 2023-07-21 05:58:19
+- bump: patch
+  changes:
+    added:
+    - Updates the NumPy version in `setup.py` to be `numpy<=1.20.3` in order to be
+      compatible with the `matplotlib` package (see [this link](https://matplotlib.org/stable/devel/min_dep_policy.html#list-of-dependency-versions)).
+      This change should solve the `windows-latest` GitHub Action test failure from
+      merged PR
+    - Updates `fiscalsim_us/data/datasets/README.md`
+    - Adds `abolish` parameters in `additional_parameters.yaml` file
+  date: 2023-07-31 18:22:17

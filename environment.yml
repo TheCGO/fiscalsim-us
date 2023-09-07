@@ -1,4 +1,4 @@
-name: fiscalsim-us
+name: fiscalsim-us-dev
 dependencies:
   - python=3.9
   - pip
