@@ -1,0 +1,17 @@
+description: Age deduction for va State tax.
+SINGLE:
+  2021-01-01: 50_000
+JOINT:
+  2021-01-01: 75_000
+SEPARATE:
+  2021-01-01: 75_000
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: va_age_deduction_amount
+  label: VA age deduction
+  reference:
+    - title:  va tax age deduction worksheet page 10
+      href: "https://www.tax.virginia.gov/sites/default/files/vatax-pdf/2021-760-instructions.pdf"
