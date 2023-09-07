@@ -1,0 +1,13 @@
+description: MN alternative minimum tax income multiplier
+values:
+  2021-01-01: .25
+metadata:
+  unit: /1
+  period: year
+  name: mn_amt_income_mult
+  label: MN amt income mutliplier
+  reference:
+    - title: 2021 Minnesota Schedule M1MT form, Line 24
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1mt_21.pdf#page=1
+    - title: 2022 Minnesota Schedule M1MT form, Line 24
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1mt_22.pdf#page=1

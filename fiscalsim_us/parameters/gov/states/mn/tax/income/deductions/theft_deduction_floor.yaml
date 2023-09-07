@@ -1,0 +1,13 @@
+description: MN casualty and theft loss deduction income floor
+values:
+  2021-01-01: 100
+metadata:
+  unit: currency-USD
+  period: year
+  name: mn_casualty_loss_deduction_floor
+  label: MN casualty and theft loss income mult
+  reference:
+    - title: 2021 M1SA, Minnesota Itemized Deductions, Line 19
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
+    - title: 2022 M1SA, Minnesota Itemized Deductions, Line 19
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf        

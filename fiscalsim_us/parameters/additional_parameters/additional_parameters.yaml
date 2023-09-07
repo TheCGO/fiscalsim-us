@@ -1,0 +1,238 @@
+reforms:
+  abolition:
+    abolish_income_tax:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish federal income tax
+        name: abolish_income_tax
+        unit: abolition
+        variable: income_tax
+        tests:
+          - increases_net_income: true
+    abolish_employee_payroll_tax:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish employee-side payroll tax
+        name: abolish_emp_payroll_tax
+        unit: abolition
+        variable: employee_payroll_tax
+        tests:
+          - increases_net_income: true
+    abolish_self_employment_tax:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish self-employment tax
+        name: abolish_self_emp_tax
+        unit: abolition
+        variable: self_employment_tax
+        tests:
+          - increases_net_income: true
+    abolish_non_refundable_ctc:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish non-refundable CTC
+        name: abolish_non_refundable_ctc
+        unit: abolition
+        variable: non_refundable_ctc
+        tests:
+          - increases_net_income: false
+    abolish_refundable_ctc:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish refundable CTC
+        name: abolish_refundable_ctc
+        unit: abolition
+        variable: refundable_ctc
+        tests:
+          - increases_net_income: false
+    abolish_cdcc:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish CDCC
+        name: abolish_cdcc
+        unit: abolition
+        variable: cdcc
+        tests:
+          - increases_net_income: false
+    abolish_eitc:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish EITC
+        name: abolish_eitc
+        unit: abolition
+        variable: earned_income_tax_credit
+        tests:
+          - increases_net_income: false
+    abolish_snap:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish SNAP
+        name: abolish_snap
+        unit: abolition
+        variable: snap
+        tests:
+          - increases_net_income: false
+    abolish_snap_emergency_allotment:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish SNAP emergency allotments
+        name: abolish_snap_ea
+        unit: abolition
+        variable: snap_emergency_allotment
+        tests:
+          - increases_net_income: false
+    abolish_spm_unit_capped_housing_subsidy:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish housing subsidies
+        name: abolish_housing_subsidies
+        unit: abolition
+        variable: spm_unit_capped_housing_subsidy
+        tests:
+          - increases_net_income: false
+    abolish_social_security:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish Social Security
+        name: abolish_social_security
+        unit: abolition
+        variable: social_security
+        tests:
+          - increases_net_income: false
+    abolish_ssi:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish SSI
+        name: abolish_ssi
+        unit: abolition
+        variable: ssi
+        tests:
+          - increases_net_income: false
+    abolish_tanf:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish TANF cash benefits
+        name: abolish_tanf
+        unit: abolition
+        variable: tanf
+        tests:
+          - increases_net_income: false
+    abolish_wic:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish WIC
+        name: abolish_wic
+        unit: abolition
+        variable: wic
+        tests:
+          - increases_net_income: false
+    abolish_snap_dependent_care_deduction:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish SNAP dependent care deduction
+        name: abolish_snap_dependent_care_deduction
+        unit: abolition
+        variable: snap_dependent_care_deduction
+        tests:
+          - increases_net_income: false
+    abolish_md_dependent_care_subtraction:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish Maryland dependent care subtraction
+        name: abolish_md_dependent_care_subtraction
+        unit: abolition
+        variable: md_dependent_care_subtraction
+        tests:
+          - increases_net_income: false
+    abolish_wa_working_families_tax_credit:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Abolish WA Working Families Tax Credit
+        name: abolish_wa_working_families_tax_credit
+        unit: abolition
+        variable: wa_working_families_tax_credit
+        tests:
+          - increases_net_income: false
+    exempt_ptc_from_flat_tax:
+      values:
+        2010-01-01: false
+      metadata:
+        label: Pay the Premium Tax Credit as a benefit
+        name: ptc_exemption
+        unit: boolean
+  state_specific:
+    description: Simulate reforms on a specific state of the US.
+    values:
+      2010-01-01: [UNITED_STATES]
+    metadata:
+      label: State-specific analysis
+      name: state_specific
+      possible_values:
+        - key: UNITED_STATES
+          value: United States
+        - key: AK
+          value: Alaska
+        - key: CA
+          value: California
+        - key: FL
+          value: Florida
+        - key: IL
+          value: Illinois
+        - key: KS
+          value: Kansas
+        - key: KY
+          value: Kentucky
+        - key: MD
+          value: Maryland
+        - key: MA
+          value: Massachusetts
+        - key: MN
+          value: Minnesota
+        - key: MT
+          value: Montana
+        - key: NV
+          value: Nevada
+        - key: NH
+          value: New Hampshire
+        - key: NJ
+          value: New Jersey
+        - key: NY
+          value: New York
+        - key: NC
+          value: North Carolina
+        - key: OK
+          value: Oklahoma
+        - key: OR
+          value: Oregon
+        - key: PA
+          value: Pennsylvania
+        - key: RI
+          value: Rhode Island
+        - key: SD
+          value: South Dakota
+        - key: TN
+          value: Tennessee
+        - key: TX
+          value: Texas
+        - key: UT
+          value: Utah
+        - key: WA
+          value: Washington
+      value_type: Enum

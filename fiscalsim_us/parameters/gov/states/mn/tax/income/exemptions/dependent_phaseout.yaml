@@ -1,0 +1,23 @@
+description: MN state income to start phase out for dependent exemption
+SINGLE:
+  2021-01-01: 206_050
+JOINT:
+  2021-01-01: 309_050
+SEPARATE:
+  2021-01-01: 154_525
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 257_550
+WIDOW:
+  2021-01-01: 309_050
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_dependent_exemption_phaseout
+  label: MN dependent exemption phaseout start
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf
+    - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_22.pdf

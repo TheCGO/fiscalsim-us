@@ -1,99 +1,55 @@
 import logging
-from policyengine_core.data import PublicDataset
+from policyengine_core.data import Dataset
 import h5py
-from fiscalsim_us.data.datasets.cps.raw_cps import RawCPS
-from fiscalsim_us.data.storage import fiscalsim_us_MICRODATA_FOLDER
+from fiscalsim_us.data.datasets.cps.raw_cps import (
+    RawCPS_2020,
+    RawCPS_2021,
+    RawCPS,
+)
+from fiscalsim_us.data.datasets.cps.uprated_cps import UpratedCPS
+from fiscalsim_us.data.storage import STORAGE_FOLDER
 from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
 import os
 import yaml
+from typing import Type
 
 
-class CPS(PublicDataset):
+class CPS(Dataset):
     name = "cps"
     label = "CPS"
-    model = "fiscalsim_us"
-    folder_path = fiscalsim_us_MICRODATA_FOLDER
+    raw_cps: Type[RawCPS] = None
+    data_format = Dataset.ARRAYS
 
-    url_by_year = {
-        2020: "https://github.com/PolicyEngine/openfisca-us/releases/download/cps-v0/cps_2020.h5",
-        2021: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2021.h5",
-        2022: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2022.h5",
-        2023: "https://github.com/PolicyEngine/policyengine-us/releases/download/cps-2021-v0/cps_2023.h5",
-    }
-
-    def generate(self, year: int):
+    def generate(self):
         """Generates the Current Population Survey dataset for FiscalSim US microsimulations.
         Technical documentation and codebook here: https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar21.pdf
-
-        Args:
-            year (int): The year of the Raw CPS to use.
         """
 
-        # Prepare raw CPS tables
-        year = int(year)
+        raw_data = self.raw_cps().load()
+        cps = h5py.File(self.file_path, mode="w")
 
-        LATEST_YEAR = 2021
-
-        if year > LATEST_YEAR:
-            print(
-                f"Currently, only the {LATEST_YEAR} ASEC is available. ",
-                f"Uprating the {LATEST_YEAR} ASEC to {year}...",
-            )
-            if LATEST_YEAR not in CPS.years:
-                print(
-                    f"Didn't find the {LATEST_YEAR} CPS dataset. Generating..."
-                )
-                CPS.generate(LATEST_YEAR)
-
-            from fiscalsim_us import Microsimulation
-
-            sim = Microsimulation(dataset=CPS, dataset_year=LATEST_YEAR)
-            uprated_cps = h5py.File(self.file(year), mode="w")
-            latest_cps = h5py.File(self.file(LATEST_YEAR), mode="r")
-            for variable in latest_cps:
-                if variable in sim.tax_benefit_system.variables:
-                    uprated_cps.create_dataset(
-                        variable, data=sim.calculate(variable, year).values
-                    )
-            uprated_cps.close()
-            latest_cps.close()
-            return
-
-        if year not in RawCPS.years:
-            logging.info(f"Generating raw CPS for year {year}.")
-            RawCPS.generate(year)
-
-        raw_data = RawCPS.load(year)
-        cps = h5py.File(self.file(year), mode="w")
-
+        ENTITIES = ("person", "tax_unit", "family", "spm_unit", "household")
         person, tax_unit, family, spm_unit, household = [
-            raw_data[entity]
-            for entity in (
-                "person",
-                "tax_unit",
-                "family",
-                "spm_unit",
-                "household",
-            )
+            raw_data[entity] for entity in ENTITIES
         ]
 
         add_id_variables(cps, person, tax_unit, family, spm_unit, household)
         add_personal_variables(cps, person)
-        add_personal_income_variables(cps, person, year)
+        add_personal_income_variables(cps, person, self.raw_cps.time_period)
         add_spm_variables(cps, spm_unit)
         add_household_variables(cps, household)
 
         raw_data.close()
         cps.close()
 
-        cps = h5py.File(self.file(year), mode="a")
-        add_silver_plan_cost(cps, year)
+        cps = h5py.File(self.file_path, mode="a")
+        add_silver_plan_cost(self, cps, 2022)
         cps.close()
 
 
-def add_silver_plan_cost(cps: h5py.File, year: int):
+def add_silver_plan_cost(self, cps: h5py.File, year: int):
     """Adds the second-lowest silver plan cost for each tax unit, based on geography.
 
     Args:
@@ -102,8 +58,8 @@ def add_silver_plan_cost(cps: h5py.File, year: int):
     """
     from fiscalsim_us import Microsimulation
 
-    sim = Microsimulation(dataset=CPS, dataset_year=year)
-    slspc = sim.calc("second_lowest_silver_plan_cost").values
+    sim = Microsimulation(dataset=self)
+    slspc = sim.calc("second_lowest_silver_plan_cost", year).values
 
     cps["second_lowest_silver_plan_cost"] = slspc
 
@@ -201,19 +157,10 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
     # "Is...blind or does...have serious difficulty seeing even when Wearing
     #  glasses?" 1 -> Yes
     cps["is_blind"] = person.PEDISEYE == 1
-    cps["is_ssi_disabled"] = (
-        person[
-            [
-                "PEDISDRS",
-                "PEDISEAR",
-                "PEDISEYE",
-                "PEDISOUT",
-                "PEDISPHY",
-                "PEDISREM",
-            ]
-        ].sum(axis=1)
-        > 0
-    )
+    DISABILITY_FLAGS = [
+        "PEDIS" + i for i in ["DRS", "EAR", "EYE", "OUT", "PHY", "REM"]
+    ]
+    cps["is_ssi_disabled"] = (person[DISABILITY_FLAGS] == 1).any(axis=1)
 
     def children_per_parent(col: str) -> pd.DataFrame:
         """Calculate number of children in the household using parental
@@ -248,6 +195,9 @@ def add_personal_variables(cps: h5py.File, person: DataFrame) -> None:
 
     cps["has_marketplace_health_coverage"] = person.MRK == 1
 
+    cps["cps_race"] = person.PRDTRACE
+    cps["is_hispanic"] = person.PRDTHSP != 0
+
 
 def add_personal_income_variables(
     cps: h5py.File, person: DataFrame, year: int
@@ -259,7 +209,7 @@ def add_personal_income_variables(
         person (DataFrame): The CPS person table.
         year (int): The CPS year
     """
-    # get income imputation parameters
+    # Get income imputation parameters.
     yamlfilename = os.path.join(
         os.path.abspath(os.path.dirname(__file__)), "income_parameters.yaml"
     )
@@ -267,7 +217,7 @@ def add_personal_income_variables(
         p = yaml.safe_load(yamlfile)
     assert isinstance(p, dict)
 
-    # assign CPS variables
+    # Assign CPS variables.
     cps["employment_income"] = person.WSAL_VAL
     cps["taxable_interest_income"] = person.INT_VAL * (
         p["taxable_interest_fraction"][year]
@@ -294,6 +244,7 @@ def add_personal_income_variables(
         person.SS_VAL - cps["social_security_retirement"]
     )
     cps["unemployment_compensation"] = person.UC_VAL
+    # Add pensions and annuities.
     cps_pensions = person.PNSN_VAL + person.ANN_VAL
     cps["taxable_pension_income"] = cps_pensions * (
         p["taxable_pension_fraction"][year]
@@ -301,8 +252,14 @@ def add_personal_income_variables(
     cps["tax_exempt_pension_income"] = cps_pensions * (
         1 - p["taxable_pension_fraction"][year]
     )
+    # Other income (OI_VAL) is a catch-all for all other income sources.
+    # The code for alimony income is 20.
     cps["alimony_income"] = (person.OI_OFF == 20) * person.OI_VAL
+    # The code for strike benefits is 12.
+    cps["strike_benefits"] = (person.OI_OFF == 12) * person.OI_VAL
     cps["child_support_received"] = person.CSP_VAL
+    # Assume all public assistance / welfare dollars (PAW_VAL) are TANF.
+    # They could also include General Assistance.
     cps["tanf_reported"] = person.PAW_VAL
     cps["ssi_reported"] = person.SSI_VAL
     cps["pension_contributions"] = person.RETCB_VAL
@@ -314,11 +271,23 @@ def add_personal_income_variables(
     )
     cps["receives_wic"] = person.WICYN == 1
     cps["veterans_benefits"] = person.VET_VAL
+    cps["workers_compensation"] = person.WC_VAL
+    # Disability income has multiple sources and values split across two pairs
+    # of variables. Include everything except for worker's compensation
+    # (code 1), which is defined as WC_VAL.
+    WORKERS_COMP_DISABILITY_CODE = 1
+    disability_benefits_1 = person.DIS_VAL1 * (
+        person.DIS_SC1 != WORKERS_COMP_DISABILITY_CODE
+    )
+    disability_benefits_2 = person.DIS_VAL2 * (
+        person.DIS_SC2 != WORKERS_COMP_DISABILITY_CODE
+    )
+    cps["disability_benefits"] = disability_benefits_1 + disability_benefits_2
     # Expenses.
     # "What is the annual amount of child support paid?"
-    person["child_support_expense"] = person.CHSP_VAL
-    person["health_insurance_premiums"] = person.PHIP_VAL
-    person["medical_out_of_pocket_expenses"] = person.MOOP
+    cps["child_support_expense"] = person.CHSP_VAL
+    cps["health_insurance_premiums"] = person.PHIP_VAL
+    cps["medical_out_of_pocket_expenses"] = person.MOOP
 
 
 def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
@@ -348,7 +317,58 @@ def add_spm_variables(cps: h5py.File, spm_unit: DataFrame) -> None:
 
 
 def add_household_variables(cps: h5py.File, household: DataFrame) -> None:
-    cps["fips"] = household.GESTFIPS
+    cps["state_fips"] = household.GESTFIPS
+    cps["county_fips"] = household.GTCO
+    state_county_fips = cps["state_fips"][...] * 1e3 + cps["county_fips"][...]
+    # Assign is_nyc here instead of as a variable formula so that it shows up
+    # as toggleable in the webapp.
+    # List county FIPS codes for each NYC county/borough.
+    NYC_COUNTY_FIPS = [
+        5,  # Bronx
+        47,  # Kings (Brooklyn)
+        61,  # New York (Manhattan)
+        81,  # Queens
+        85,  # Richmond (Staten Island)
+    ]
+    # Compute NYC by concatenating NY state FIPS with county FIPS.
+    # For example, 36061 is Manhattan.
+    NYS_FIPS = 36
+    nyc_full_county_fips = [
+        NYS_FIPS * 1e3 + county_fips for county_fips in NYC_COUNTY_FIPS
+    ]
+    cps["in_nyc"] = np.isin(state_county_fips, nyc_full_county_fips)
 
 
-CPS = CPS()
+class CPS_2020(CPS):
+    name = "cps_2020"
+    label = "CPS 2020"
+    raw_cps = RawCPS_2020
+    file_path = STORAGE_FOLDER / "cps_2020.h5"
+    time_period = 2020
+
+
+class CPS_2021(CPS):
+    name = "cps_2021"
+    label = "CPS 2021"
+    raw_cps = RawCPS_2021
+    file_path = STORAGE_FOLDER / "cps_2021.h5"
+    time_period = 2021
+
+
+CPS_2022 = UpratedCPS.from_dataset(
+    CPS_2021,
+    2022,
+    "cps_2022",
+    "CPS 2022",
+    STORAGE_FOLDER / "cps_2022.h5",
+    new_url="release://policyengine/policyengine-us/cps-2022/cps_2022.h5",
+)
+
+CPS_2023 = UpratedCPS.from_dataset(
+    CPS_2021,
+    2023,
+    "cps_2023",
+    "CPS 2023",
+    STORAGE_FOLDER / "cps_2023.h5",
+    new_url="release://policyengine/policyengine-us/cps-2023/cps_2023.h5",
+)

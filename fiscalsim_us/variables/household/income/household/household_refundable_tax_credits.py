@@ -8,17 +8,23 @@ class household_refundable_tax_credits(Variable):
     definition_period = YEAR
     unit = USD
     adds = [
-        "income_tax_refundable_credits",  # Federal
-        "il_refundable_credits",  # Illinois
-        "ma_refundable_credits",  # Massachusetts
-        "md_refundable_credits",  # Maryland
-        "mo_refundable_credits",  # Missouri
-        "or_refundable_credits",  # Oregon
-        "ny_refundable_credits",  # New York
-        # Skip PA, which has no refundable credits
-        "va_refundable_credits",
-        "ut_refundable_credits",  # Utah
-        "wa_refundable_credits",  # Washington
+        "income_tax_refundable_credits",  # Federal.
+        "ca_refundable_credits",  # California.
+        "il_refundable_credits",  # Illinois.
+        "ks_refundable_credits",  # Kansas.
+        "ma_refundable_credits",  # Massachusetts.
+        "md_refundable_credits",  # Maryland.
+        "mn_refundable_credits",  # Minnesota.
+        "mo_refundable_credits",  # Missouri.
+        "or_refundable_credits",  # Oregon.
+        "nd_refundable_credits",  # North Dakota.
+        "ne_refundable_credits",  # Nebraska.
+        "ny_refundable_credits",  # New York.
+        # Skip PA, which has no refundable credits.
+        "ut_refundable_credits",  # Utah.
+        "va_refundable_credits",  # Virginia
+        "wa_refundable_credits",  # Washington.
+        "nyc_refundable_credits",  # New York City.
     ]
 
     def formula(household, period, parameters):

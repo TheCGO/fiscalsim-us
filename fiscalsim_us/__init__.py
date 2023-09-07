@@ -1,5 +1,5 @@
 """
-This file defines our country's tax and benefit system.
+This file defines the fiscalsim-us tax and benefit system.
 
 A tax and benefit system is the higher-level instance in FiscalSim. Its goal is
 to model the legislation of a country. Basically a tax and benefit system
@@ -14,6 +14,4 @@ from fiscalsim_us.system import (
     IndividualSim,
 )
 
-from fiscalsim_us.data import ACS, CPS
-
-DATASETS = [ACS, CPS]
+from fiscalsim_us.data import *
