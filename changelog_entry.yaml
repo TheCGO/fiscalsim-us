@@ -1,4 +1,5 @@
 - bump: patch
   changes:
     added:
-      - updated SNAP intro and citations in documentation
+      - Updated SNAP intro and citations in documentation
+      - Updated TANF documentation

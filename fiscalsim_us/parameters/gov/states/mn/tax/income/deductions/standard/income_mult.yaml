@@ -1,0 +1,13 @@
+description: MN standard deduction income multiplier for income over threshold
+values:
+  2021-01-01: .03
+metadata:
+  unit: /1
+  period: year
+  name: mn_standard_deduction_income_mult
+  label: MN standard deduction income multiplier
+  reference:
+    - title: 2021 Minnesota Individual Income Tax Return (M1) Instructions, Page 12
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf, Page 12
+    - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf

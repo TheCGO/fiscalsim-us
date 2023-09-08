@@ -1,0 +1,29 @@
+description: MN state itemized deductions threshold for full deduction
+JOINT:
+  2021-01-01: 199_850
+  2022-01-01: 206_050
+HEAD_OF_HOUSEHOLD:
+  2021-01-01: 199_850
+  2022-01-01: 206_050
+WIDOW:
+  2021-01-01: 199_850
+  2022-01-01: 206_050
+SINGLE:
+  2021-01-01: 199_850
+  2022-01-01: 206_050
+SEPARATE:
+  2021-01-01: 99_925
+  2022-01-01: 103_025
+metadata:
+  unit: currency-USD
+  period: year
+  breakdown:
+    - filing_status
+  name: mn_itemized_threshold
+  label: MN itemized deductions threshold
+  reference:
+    - title: 2021 M1SA, Minnesota Itemized Deductions, Line 26 Worksheet
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
+    - title: 2022 M1SA, Minnesota Itemized Deductions, Line 26 Worksheet
+      href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf
+

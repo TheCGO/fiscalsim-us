@@ -1,10 +1,11 @@
 from fiscalsim_us.model_api import *
+from numpy import round
 
 
 class mn_amt(Variable):
     value_type = float
     entity = TaxUnit
-    label = "Minnesota alternative minimum tax (AMT)"
+    label = "MN alternative minimum tax"
     unit = USD
     definition_period = YEAR
     reference = (
@@ -14,15 +15,9 @@ class mn_amt(Variable):
     defined_for = StateCode.MN
 
     def formula(tax_unit, period, parameters):
-        taxinc = tax_unit("mn_amt_taxable_income", period)
-        # calculate gross AMT amount
-        filing_status = tax_unit("filing_status", period)
-        p = parameters(period).gov.states.mn.tax.income
-        excess_taxinc = max_(0, taxinc - p.amt.income_threshold[filing_status])
-        fractional_taxinc = excess_taxinc * p.amt.income_fraction
-        fractional_threshold = p.amt.fractional_income_threshold[filing_status]
-        taxinc_amount = max_(0, fractional_threshold - fractional_taxinc)
-        net_taxinc = max_(0, taxinc - taxinc_amount)
-        amt_gross = net_taxinc * p.amt.rate
-        # calculate net AMT amount
-        return max_(0, amt_gross - tax_unit("mn_basic_tax", period))
+        p = parameters(period).gov.states.mn.tax.income.amt
+        amt_income = tax_unit("mn_amt_taxable_income", period)
+        amt = max_(0, amt_income * p.rate)
+        basic_tax = tax_unit("mn_basic_tax", period)
+
+        return round(max_(0, amt - basic_tax))

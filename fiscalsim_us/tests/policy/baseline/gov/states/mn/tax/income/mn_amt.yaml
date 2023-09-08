@@ -6,7 +6,7 @@
     mn_basic_tax: 0
     state_code: MN
   output:
-    mn_amt: 675
+    mn_amt: 4_708
 
 - name: MN AMT unit test 2
   period: 2021
@@ -26,7 +26,7 @@
     mn_basic_tax: 0
     state_code: MN
   output:
-    mn_amt: 675
+    mn_amt: 6_220
 
 - name: MN AMT unit test 4
   period: 2022
@@ -36,4 +36,4 @@
     mn_basic_tax: 0
     state_code: MN
   output:
-    mn_amt: 675
+    mn_amt: 4834
