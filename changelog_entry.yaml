@@ -2,3 +2,4 @@
   changes:
     added:
       - Update push.yaml and pr.yaml GH Actions
+      - Fix code formatting in some files
