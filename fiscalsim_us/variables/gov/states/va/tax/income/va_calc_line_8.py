@@ -10,7 +10,6 @@ class va_calc_line_8(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         age_deduction = tax_unit("va_age_deduction", period)
 
         subtractions_to_federal_agi = tax_unit(

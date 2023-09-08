@@ -25,17 +25,13 @@ class va_adj_gross_income(Variable):
         subtotal = line3 - line8
 
         if filing_status == 1 or filing_status == 3:
-
             if subtotal < single:
-
                 tax_owed = 0
 
                 return tax_owed
 
         if filing_status == 2:
-
             if subtotal < joint:
-
                 tax_owed = 0
 
                 return tax_owed

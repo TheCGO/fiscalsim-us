@@ -10,7 +10,6 @@ class va_exemptions(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         va_indiv_exempt_multiplier = parameters(
             period
         ).gov.states.va.tax.income.exemptions.indiv_exemption_multiplier
@@ -29,15 +28,12 @@ class va_exemptions(Variable):
         filing_status = tax_unit("filing_status", period)
 
         if filing_status == 1:
-
             spouse_if_filing_jointly = 0
 
         elif filing_status == 2:
-
             spouse_if_filing_jointly = 1
 
         else:
-
             spouse_if_filing_jointly = 0
 
         you_p65 = (tax_unit("age_head", period) >= 65).astype(int)
