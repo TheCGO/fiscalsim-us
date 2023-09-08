@@ -3,7 +3,9 @@
 
 (Chap_SNAPoverview)=
 ## Overview
-The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [^SNAPstats].
+The Supplemental Nutrition Assistance Program (SNAP) is the largest federal nutrition assistance program in the United States, and one of the largest poverty reduction programs in the United States. 68.5% of the 2019-2023 Farm Bill budget is allotted to SNAP [^FarmBill]. The 2021 Fiscal Year SNAP federal budget was $111 billion. [^SNAPFY2021] For comparison, similar welfare programs in FY 2021 - TANF: $30 billion;[^TANFFY2021] Medicaid: $521 billion; Medicare: $868 billion; Social Security: $1.1 trillion. [^MedSSFY2021]
+
+The 2022 SNAP federal budget was $119 billion, aiding approximately 41 million low income beneficiaries per month [^SNAPstats].
 
 Less formally known as food stamps, SNAP works to alleviate food insecurity by providing impoverished households with a monthly income support to purchase food. Eligibility for SNAP benefits are determined through a complex set of requirements that are established at the federal level, with several variations at the state level. The amount of SNAP benefit is allocated according to the number of members in the household, as well as the household's program-specific definition of net income (accounting for gross income, and removing several deductions, including utilities, transportation, and extenuating circumstances like disability or care for the elderly).
 
@@ -75,14 +77,40 @@ Deductions from gross income to compute net income included the following:
 Each of these deductions have different deduction caps that vary with the discretion of each state. See FiscalSim code for more details.
 
 
+(SecSNAPstatepolicy)=
 ## State SNAP policy characteristics
 
 While the basic structure of SNAP established by federal tax code ensures a fundamentally similar format across states, state-by-state variations make minor adjustments to SNAP eligibility and deductions that determine a household's net income. Below is a summary of the most prominent state variations--see the FiscalSim SNAP code for a complete list of state variations.
 
-The most significant state variations exist with the asset test, varying gross income limits, and deduction caps. States that are more generous with SNAP may abolish the asset test and a gross income limit--no matter how many assets a household has, or what their gross income is, as long as their calculated deductions are great enough to bring them under 100% of the Federal Poverty Level, then they may qualify for SNAP. These states may also have larger deduction caps for various expenses, such as utilities. States that are more stringent with SNAP benefits may choose to establish tighter deduction caps, limiting the amount of income that can be deducted to calculate final household net income. These states may also choose to include the various eligibility hurdles--namely, an asset test and an income limit. 
-(SecSNAPfootnotes)=
+The most significant state variations exist with the asset test, varying gross income limits, and deduction caps. States that are more generous with SNAP may abolish the asset test and a gross income limit--no matter how many assets a household has, or what their gross income is, as long as their calculated deductions are great enough to bring them under 100% of the Federal Poverty Level, then they may qualify for SNAP. These states may also have larger deduction caps for various expenses, such as utilities. States that are more stringent with SNAP benefits may choose to establish tighter deduction caps, limiting the amount of income that can be deducted to calculate final household net income. These states may also choose to include the various eligibility hurdles--namely, an asset test and an income limit.
 
+
+(SecSNAPfarmbill)=
+## SNAP and the Farm Bill
+
+The legislation, procedures, and funding for SNAP come from the Farm Bill. [^FarmBillProcess] Originally enacted in 1933 to support US food and agriculture producers affected by the Great Depression and the Dust Bowl, the current Farm Bill includes 12 titles that support various elements of agriculture and food production. Within the 12 titles, the 3 titles recieving the largest amounts of funding include Title I: Commodities (covers price and income support for farmers who produce widely-traded non-perishable crops); Title XI, Crop Insurance (subsidies to protect against losses in yield); and Title IV, Nutrition (90% of the funding for this Nutrition title goes to SNAP).
+
+The Farm Bill legislation is passed every 5 years. For example, the Farm Bill that was passed in 2018 expires Septembeer 30th, 2023. A year before current legislation expires, lobbying for provisions begins by farm ogranizations, environmental groups, taxpayers, and other groups. [^FarmPrimer] After this public input, both the Senate and House Agriculture Committees draft, debate, and pass separate bill proposals. The Senate Agricultural Committee on Subsidies and Nutrition, and the House Agricultural Committee on Subsidies, Policy, and Oversight, are the two "Ag Committees" that draft these two bills. The two bills are sent to a Conference Committee where they are combined. The combined bill must then be approved by the entire House and Senate. This is the reauthorization process. 
+
+The appropriations process determines funding for the various titles and programs in the Farm Bill. The 2018 Farm Bill received $428 billion. SNAP is an "entitlement program," where appropriatons will automatically be granted to fund their program. Other programs recieve "descretionary spending," where funds are granted at the discretion of the Appropriations Committees in Congress. This will be done before October 1st, 2023 for upcoming Farm Bill. 
+
+The President then signs the Bill, which has been reauthorized and appropriated, into public law.
+
+The "rulemaking phase" then occurs. After reauthorization and appropriations are complete and the bill has become a law, the USDA establishes specific rules and regulations which are implemented into the Farm Bill programs.
+
+
+
+(SecSNAPfootnotes)=
 ## Footnotes
+
+[^FarmBill]: This {cite}`USDA:2023` USDA webpage outlines distribution of the 2018 Farm Bill (see https://www.ers.usda.gov/topics/farm-economy/farm-commodity-policy/farm-bill-spending/).
+
+[^SNAPFY2021]: This {cite}`CBPP:2022` article on the Center for Budget and Policy Priorities website gives an outline of the SNAP program, including its
+FY 2021 budget (see https://www.cbpp.org/research/food-assistance/the-supplemental-nutrition-assistance-program-snap).
+
+[^TANFFY2021]: This {cite}`ACF:2022` article from the DHHS government website outlines TANF spending for FY 2021 (see https://www.acf.hhs.gov/ofa/data/tanf-and-moe-spending-and-transfers-activity-fy-2021).
+
+[^MedSSFY2021]: This {cite}`CBO:2022` infographic from the Congressional Budget Office outlines spending for various government programs for Fiscal Year 2021, including Medicare, Medicaid, and Social Security (see https://www.cbo.gov/publication/58270). 
 
 [^SNAPstats]: The {cite}`Peterson:2023` article gives an overview of the economic statistics of the SNAP program (see https://www.pgpf.org/blog/2023/05/what-is-snap)
 
@@ -103,3 +131,7 @@ The most significant state variations exist with the asset test, varying gross i
 [^foodsecurity]: This {cite}`Mande:2023` research article investigates the childhood health impacts of the SNAP program (see https://pubmed.ncbi.nlm.nih.gov/36354297/).
 
 [^SNAPCPS]: This {cite}`Johnson-Motoyama:2022` research article investigates the relationship between state SNAP generostiy and statewide CPS events (see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9280401/).
+
+[^FarmBillProcess]: This {cite}`ERSUSDA:2023` USDA webpage outlines the policy process of the passing of the Farm Bill (see https://www.ers.usda.gov/topics/farm-economy/farm-commodity-policy/u-s-farm-policy-and-policy-process/).
+
+[^FarmPrimer]: This `Frye:2023` Farm Bill primer was graciously provided by Jason Frye at Terrapin Strategy consulting. 
