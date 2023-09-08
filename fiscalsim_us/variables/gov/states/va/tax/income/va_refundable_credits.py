@@ -10,7 +10,6 @@ class va_refundable_credits(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         line_19 = tax_unit("va_witholding", period)
 
         line_19b = tax_unit("va_spouse_witholding", period)

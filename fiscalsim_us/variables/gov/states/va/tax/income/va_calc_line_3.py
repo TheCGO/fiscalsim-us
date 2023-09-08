@@ -10,7 +10,6 @@ class va_calc_line_3(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         federal_agi = tax_unit("adjusted_gross_income", period)
 
         additions_to_federal_agi = tax_unit(

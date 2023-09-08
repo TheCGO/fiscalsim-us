@@ -10,7 +10,6 @@ class va_additions_to_federal_agi(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         income_from_obligations_fed_exempt = tax_unit(
             "income_from_obligations_fed_exempt", period
         )

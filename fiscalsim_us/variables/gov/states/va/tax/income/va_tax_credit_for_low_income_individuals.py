@@ -10,7 +10,6 @@ class va_tax_credit_for_low_income_individuals(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         agi = tax_unit("va_adj_gross_income", period)
 
         filing_status = tax_unit("filing_status", period)
@@ -20,15 +19,12 @@ class va_tax_credit_for_low_income_individuals(Variable):
         net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
         if filing_status == 1:
-
             spouse_if_filing_jointly = 0
 
         elif filing_status == 2:
-
             spouse_if_filing_jointly = 1
 
         else:
-
             spouse_if_filing_jointly = 0
 
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
@@ -50,7 +46,6 @@ class va_tax_credit_for_low_income_individuals(Variable):
         # threshold = 12880 + (4540*(total_num_exemptions-1))
 
         if total_agi < threshold:
-
             line_13 = total_num_exemptions * 300
 
             # if fed_eitc > 0 :
@@ -62,24 +57,19 @@ class va_tax_credit_for_low_income_individuals(Variable):
             line_15 = line_14 * eitc_rate
 
             if line_15 > line_13:
-
                 line_16 = line_15
             else:
-
                 line_16 = line_13
 
             if net_tax > line_16:
-
                 line_17 = line_16
 
             else:
-
                 line_17 = net_tax
 
             return line_17
 
         else:
-
             line_17 = 0
 
             return line_17
