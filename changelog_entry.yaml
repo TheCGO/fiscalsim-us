@@ -1,4 +1,5 @@
 - bump: minor
   changes:
     added:
-      - Added Minnesota state income tax logic with credits and refunds
+      - Update push.yaml and pr.yaml GH Actions
+      - Fix code formatting in some files

@@ -10,7 +10,6 @@ class va_taxable_income(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         line_14 = tax_unit("calc_line_14", period)
 
         line_9 = tax_unit("va_adj_gross_income", period)

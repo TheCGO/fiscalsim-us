@@ -10,13 +10,11 @@ class va_income_tax_before_refundable_credits(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-
         rates = parameters(period).gov.states.va.tax.income.va_tax_rates
 
         taxable_inc = tax_unit("va_taxable_income", period)
 
         if taxable_inc > 0:
-
             net_tax = rates.calc(taxable_inc)
 
         #     if taxable_inc < 3000:
@@ -42,7 +40,6 @@ class va_income_tax_before_refundable_credits(Variable):
         #         net_tax = (excess_taxable * .0575) + 720
 
         else:
-
             net_tax = 0
 
         return net_tax
