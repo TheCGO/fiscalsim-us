@@ -70,6 +70,8 @@ setup(
             "wheel",
             "yaml-changelog",
             "survey-enhance",
+            "pytest-cov",
+            "pytest-pycodestyle",
         ],
     },
     # Windows CI requires Python 3.9.
