@@ -1,0 +1,10 @@
+description: Montana provides a nonrefundable tax credit of this amount per exemption.
+values:
+  # Defined in the law as $90 in 1986, indexed by CPI-U.
+  2022-01-01: 219
+metadata:
+  unit: currency-USD
+  label: MT exemption amount
+  reference:
+    - title: Chapter 316 — Personal Income Tax 316.085 (1)(a)
+      href: https://www.oregonlegislature.gov/bills_laws/ors/ors316.html
