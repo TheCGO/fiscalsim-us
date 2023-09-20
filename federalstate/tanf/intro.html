@@ -5,7 +5,7 @@
 
 <html lang="en" >
 
-  <head><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'federalstate/tanf/intro';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -394,6 +396,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanf-calculations-cash-assistance">TANF Calculations - Cash Assistance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefit-amount-calculation">Benefit Amount Calculation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanf-calculations-non-cash-benefits-bbce">TANF Calculations - Non-cash Benefits/BBCE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Eligibility</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
 </ul>
             </nav>
@@ -408,10 +419,102 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="temporary-assistance-for-needy-families-tanf">
 <span id="chap-federalstatetanfintro"></span><h1>Temporary Assistance for Needy Families (TANF)<a class="headerlink" href="#temporary-assistance-for-needy-families-tanf" title="Permalink to this heading">#</a></h1>
-<p>Put TANF intro here.</p>
+<p>Temporary Assistance for Needy Families (TANF) is an federal block grant that is awarded annually to states to aid impoverished family households. Enacted in 1996 as part of the Welfare Reform Act, TANF has four stated program goals.<a class="footnote-reference brackets" href="#tanfhhs" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> Those goals are:</p>
+<ol class="arabic simple">
+<li><p>Provide assistance to needy families so that children can be cared for in their own homes</p></li>
+<li><p>Reduce the dependency of needy parents by promoting job preparation, work and marriage</p></li>
+<li><p>Prevent and reduce the incidence of out-of-wedlock pregnancies</p></li>
+<li><p>Encourage the formation and maintenance of two-parent families.</p></li>
+</ol>
+<p>The TANF block grant funding that states receive must be put towards any combination of these four purposes. There are many ways that states allocate TANF funds. The total amount of the TANF block grant that is given out to states has remained constant at $16.5 billion since its creation in 1996. As a result, its real value has gone down by 40%.<a class="footnote-reference brackets" href="#tanffaq" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> Below is a table that shows TANF spending aggregrated across all 50 states for FY 2020.<a class="footnote-reference brackets" href="#tanfprimer" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Category</p></th>
+<th class="head text-center"><p>Amount Spent in billions (% Total Spending)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Basic Assistance</p></td>
+<td class="text-center"><p>$7.1 (22%)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Work, Education, and Training Activities</p></td>
+<td class="text-center"><p>$3.0 (10%)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Work Supports and Supportive Services</p></td>
+<td class="text-center"><p>$0.8 (2%)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Child Care</p></td>
+<td class="text-center"><p>$5.2 (17%)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Refundable Tax Credits</p></td>
+<td class="text-center"><p>$2.8 (9%)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Pre-Kindergarten/Head Start</p></td>
+<td class="text-center"><p>$2.7 (9%)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Child Welfare</p></td>
+<td class="text-center"><p>$2.6 (8%)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Program Management</p></td>
+<td class="text-center"><p>$3.2 (10%)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Other</p></td>
+<td class="text-center"><p>$4.1 (13%)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Total</p></td>
+<td class="text-center"><p>$31.5 (100%)</p></td>
+</tr>
+</tbody>
+</table>
+<p>As shown above, the most common use of state TANF funds is cash assistance (indicated in the table as “Basic Assistance). Similar to other welfare programs, the eligibilty and benefit level of TANF cash assistance involves a complex set of calculations that are established at the federal level with some state-by-state variations. Calculations for TANF eligiblity and benefit level are explained further down in this introduction.</p>
+<p>In addition to cash assistance, states may use part of their TANF grant to provide non-cash assistance by allocating funds towards services and programs that fulfill one of the four stated program goals. As shown above, the most significant of these include work readiness programs, child care, and refundable tax credits.</p>
+<p>States are required to spend dollars from their own budget in order to receive TANF and avoid fiscal penalty. These funds are known as “maintenance of effort” spending.<a class="footnote-reference brackets" href="#utahtanf" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> As shown in the above table, in addition to the <span class="math notranslate nohighlight">\(16.5 billion TANF block grant, states spent put an additional \)</span>15 billion towards TANF assistance and programs.</p>
+<section id="tanf-calculations-cash-assistance">
+<h2>TANF Calculations - Cash Assistance<a class="headerlink" href="#tanf-calculations-cash-assistance" title="Permalink to this heading">#</a></h2>
+<section id="eligibility">
+<h3>Eligibility<a class="headerlink" href="#eligibility" title="Permalink to this heading">#</a></h3>
+<p>TANF assistance is given to families if they are both demographically and socioeconomically eligible. To fulfill the demographic eligibility requirement, households must contain children (individuals aged 0-17), pregnant persons, or 18-year olds who are enrolled in high school. To be economically eligible, a family must have an calculated “countable income” lower than a certain level.</p>
+</section>
+<section id="benefit-amount-calculation">
+<h3>Benefit Amount Calculation<a class="headerlink" href="#benefit-amount-calculation" title="Permalink to this heading">#</a></h3>
+<p>The basic formula for calculating SNAP benefit amount is:</p>
+<p>Maximum TANF amount - (Countable Income - Deductions) = TANF benefit</p>
+<p>The maximum TANF amount is an amount that is most significantly affected by household size. Each state has a specific maximum benefit level for 1-person, 2-person, etc. households. Additionally, some states elect to set different maximum cash benefit TANF amounts for different counties to reflect major categories of differences in CPI. Also, some states choose to offer slightly more TANF cash benefits to those households containing elderly or disabled persons.</p>
+<p>The countable income of a household includes the following sources of income: employment, self-employment, dividend, interest, GI cash assistance, Social Security, and SSI.</p>
+<p>There are two deductions that are then applied to the countable income of a household. First, a flat earned income deduction is applied. This amount varies across states, but for reference, the flat earned income deduction in California is $600 per month. Then, a percentage earned income deduction is applied. This percentage also varies across states, but for reference, the percent earned income deduction in Illinois is 75%.</p>
+</section>
+</section>
+<section id="tanf-calculations-non-cash-benefits-bbce">
+<h2>TANF Calculations - Non-cash Benefits/BBCE<a class="headerlink" href="#tanf-calculations-non-cash-benefits-bbce" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3>Eligibility<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>There are a separate set of eligibility calculations that are performed to determine if a household is available for non-cash TANF-funded benefits (such as a child care service or work program). These eligibility requirements are easier to satisfy than TANF cash asssistance benefit requirements.</p>
+<p>In some states, if a household is non-cash TANF eligibile, then they automatically become categorically eligible to recieve Supplemental Nutrition Assistance Program (SNAP) benefits as well. This categorical SNAP eligibility through non-cash TANF eligibility is referred to as broad-based categorical eligibility (BBCE).</p>
+<p>3 main eligibility requirements for non-cash TANF benefits include an asset limit, an gross income limit, and a net income limit.</p>
+<p>While the asset limit varies between states, the most common limit amongst states is $3,500. Some state exceptions include abolishing the asset limit if a household’s income is below 200% FPL or if a disabled or elder person in the household, or simply adjusting the asset limit to best reflect the cost of living in that state.</p>
+<p>The gross income limit varies across states, but generally can be as low as 130% FPL, or as high as 200% of FPL.</p>
+<p>The net income limit also varies across states.</p>
+</section>
+</section>
 <section id="footnotes">
 <span id="secfederalstatetanfintrofootnotes"></span><h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this heading">#</a></h2>
-<!-- [^citation_note]: See {cite}`AuerbachEtAl:1981,AuerbachEtAl:1983`, {cite}`AuerbachKotlikoff:1983a,AuerbachKotlikoff:1983b,AuerbachKotlikoff:1983c`, and {cite}`AuerbachKotlikoff:1985`. -->
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="tanfhhs" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id6">[<a class="reference internal" href="../../FiscalSim-US_references.html#id31" title="HHS. About tanf. Summary Page 1, The Department of Health and Human Services, https://www.acf.hhs.gov/ofa/programs/tanf/about, 2022.">HHS, 2022</a>]</span> TANF summary page from the Office of Family Assistance in the Department of Health and Human services outlines the basic purposes of TANF (see <a class="reference external" href="https://www.acf.hhs.gov/ofa/programs/tanf/about">https://www.acf.hhs.gov/ofa/programs/tanf/about</a>).</p>
+</aside>
+<aside class="footnote brackets" id="tanffaq" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id7">[<a class="reference internal" href="../../FiscalSim-US_references.html#id20" title="CRS. The temoprary assistance for needy families (tanf) block grant: responses to frequently asked questions. FAQ 1, Congressional Research Service, https://crsreports.congress.gov/product/pdf/RL/RL32760/154, 2018.">CRS, 2018</a>]</span> TANF Frequently Asked Questions document from the Congressional Research Service explains that TANF funds have been locked at $16.5 billion since 1996 (see <a class="reference external" href="https://crsreports.congress.gov/product/pdf/RL/RL32760/154">https://crsreports.congress.gov/product/pdf/RL/RL32760/154</a>).</p>
+</aside>
+<aside class="footnote brackets" id="tanfprimer" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id8">[<a class="reference internal" href="../../FiscalSim-US_references.html#id19" title="Center on Budget and Policy Priorities. Policy basics: temporary assistance for needy families. Policy Overview, Center on Budget and Policy Priorities, https://www.cbpp.org/research/income-security/temporary-assistance-for-needy-families, March 2022.">on Budget and Priorities, 2022</a>]</span> TANF Policy Basics page from the Center for Budget and Policy Priorities outlines the history and basic functions of TANF. It also provides the information for the listed national TANF expenses (see <a class="reference external" href="https://www.cbpp.org/research/income-security/temporary-assistance-for-needy-families">https://www.cbpp.org/research/income-security/temporary-assistance-for-needy-families</a>).</p>
+</aside>
+<aside class="footnote brackets" id="utahtanf" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>This <span id="id9">[]</span> TANF summary page from the Utah State Legislature website explains the maintenance of effort aspect of TANF (see <a class="reference external" href="https://budget.utah.gov/what-in-the-tanf/">https://budget.utah.gov/what-in-the-tanf/</a>).</p>
+</aside>
 </section>
 </section>
 
@@ -476,6 +579,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanf-calculations-cash-assistance">TANF Calculations - Cash Assistance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#benefit-amount-calculation">Benefit Amount Calculation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tanf-calculations-non-cash-benefits-bbce">TANF Calculations - Non-cash Benefits/BBCE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Eligibility</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footnotes">Footnotes</a></li>
 </ul>
   </nav></div>
