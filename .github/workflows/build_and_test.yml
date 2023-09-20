@@ -1,5 +1,4 @@
 name: Build and test [Python 3.9]
-
 on: [push, pull_request]
 jobs:
   build:
@@ -28,7 +27,9 @@ jobs:
       - name: Build and install
         shell: bash -l {0}
         run: |
-          make install
+          pip install -e .[dev]
+          pip install pytest-cov
+          pip install pytest-pycodestyle
       - name: Run tests
         run: |
           make test
