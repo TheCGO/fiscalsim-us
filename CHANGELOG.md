@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2023-09-19 12:00:00
+
+### Added
+
+- Updates the GH Actions files and adds two dependencies to `setup.py`
+- Updates in PR #50 that updates the SNAP and TANF documentation
+- Updates in PR #33 that update the VA tax logic
+- Updates in PR #32 that update the MN tax logic
+
 ## [0.1.2] - 2023-07-31 18:22:17
 
 ### Added
@@ -139,4 +148,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.0.3]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.0...0.0.1
-
