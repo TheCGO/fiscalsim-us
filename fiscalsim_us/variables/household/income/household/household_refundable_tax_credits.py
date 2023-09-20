@@ -23,6 +23,7 @@ class household_refundable_tax_credits(Variable):
         "ny_refundable_credits",  # New York.
         # Skip PA, which has no refundable credits.
         "ut_refundable_credits",  # Utah.
+        "va_refundable_credits",  # Virginia
         "wa_refundable_credits",  # Washington.
         "nyc_refundable_credits",  # New York City.
     ]
