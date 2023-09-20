@@ -67,6 +67,7 @@ setup(
             "sphinx",
             "sphinx-argparse",
             "sphinx-math-dollar",
+            "sphinx-contrib-bibtex>=2.0.0",
             "wheel",
             "yaml-changelog",
             "survey-enhance",
