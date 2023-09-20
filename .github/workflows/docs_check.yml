@@ -8,9 +8,19 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          persist-credentials: false
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniforge-variant: Mambaforge
+          activate-environment: fiscalsim-us-dev
+          environment-file: environment.yml
           python-version: "3.9"
+          auto-activate-base: false
       - name: Install package
-        run: make install
+        run: |
+          pip install -e .[dev]
+          python -m ipykernel install --user --name=fiscalsim-us-dev
 
       - name: Build documentation  # Build Jupyter Book
-        run: make documentation
+        run: jb build ./docs/book
