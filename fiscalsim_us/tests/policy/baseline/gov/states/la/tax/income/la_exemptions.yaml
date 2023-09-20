@@ -1,0 +1,111 @@
+- name: Single filer gets $4500 exemption.
+  period: 2022
+  input:
+    state_code: LA
+    filing_status: SINGLE
+  output:
+    la_exemptions: 4_500
+
+- name: Joint filer gets $9,000 exemption.
+  period: 2022
+  input:
+    state_code: LA
+    filing_status: JOINT
+  output:
+    la_exemptions: 9_000
+
+- name: Head of household filer gets $9,000 exemption.
+  period: 2022
+  input:
+    state_code: LA
+    filing_status: HEAD_OF_HOUSEHOLD
+  output:
+    la_exemptions: 9_000
+
+- name: Separate filer gets $4500 exemption.
+  period: 2022
+  input:
+    state_code: LA
+    filing_status: SEPARATE
+  output:
+    la_exemptions: 4_500
+
+- name: Joint 2 dependents gets $11,000 exemption
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: JOINT
+    state_code: LA
+    tax_unit_dependents: 2
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 11_000
+
+- name: Single 2 dependents gets $6_500 exemption
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    tax_unit_dependents: 2
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 6_500
+
+- name: Single 1 dependents and 1 65+/blind gets $6,500 exemption
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    state_code: LA
+    tax_unit_dependents: 1
+    aged_blind_count: 1
+    adjusted_gross_income: 100_000
+  output:
+    la_exemptions: 6_500
+
+- name: 1 Blind not aged gets $10,000 exemption
+  period: 2021
+  input:
+    people:
+      person1:
+        age: 64
+        is_tax_unit_head: 1
+        is_blind: 1
+      person2:
+        age: 64
+        is_tax_unit_spouse: 1
+        is_blind: 0
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2]
+        state_code: LA
+  output:
+    la_exemptions: 10_000
+
+- name: Non blind not aged gets $9,000 exemption
+  period: 2021
+  input:
+    people:
+      person1:
+        age: 64
+        is_tax_unit_head: 1
+        is_blind: 0
+      person2:
+        age: 64
+        is_tax_unit_spouse: 1
+        is_blind: 0
+    tax_units:
+      tax_unit:
+        members: [person1, person2]
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2]
+        state_code: LA
+  output:
+    la_exemptions: 9_000

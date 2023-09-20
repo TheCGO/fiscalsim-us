@@ -1,0 +1,16 @@
+description: Louisiana allows these subtractions (exemptions) from taxable income
+values:
+  2021-01-01:
+    - us_govt_interest
+    - tax_unit_taxable_social_security
+    - la_state_employee_retirement_benefits
+    - la_state_teacher_retirement_benefits
+    - la_federal_retirement_benefits
+    - la_other_subtractions
+
+metadata:
+  unit: variable
+  label: Louisiana subtractions from income 
+  reference:
+  - title: Louisiana Form IT-540 Schedule F - Refundable credits
+    href: https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf 

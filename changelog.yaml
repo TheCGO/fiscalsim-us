@@ -124,3 +124,8 @@
     - Updates in PR 33 that update the VA tax logic
     - Updates in PR 32 that update the MN tax logic
   date: 2023-09-19 12:00:00
+- bump: patch
+  changes:
+    added:
+      - Added Louisiana state income tax logic with credits and refunds
+  date: 2023-09-20 16:00:00

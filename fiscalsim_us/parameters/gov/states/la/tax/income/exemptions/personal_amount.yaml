@@ -1,0 +1,15 @@
+description: Louisiana allows this personal exemption from income
+values:
+  1983-01-01: 4_500
+
+metadata:
+  period: year
+  unit: currency-USD
+  label: Louisiana personal exemption amount
+  reference:
+  - title: Louisiana Resident Income Tax Return Tax Table 2021
+    href: "https://revenue.louisiana.gov/TaxForms/IT540TT%20(2021).pdf"
+  - title: Louisiana Resident Income Tax Return Tax Table 2022
+    href: "https://revenue.louisiana.gov/TaxForms/IT540(2022)%20Tax%20Table.pdf"
+  - title: Louisiana Laws Revised Statutes, Title 47 — Revenue and taxation, RS 47:294 —  Personal exemptions and credit for dependents, A
+    href: https://www.legis.la.gov/legis/Law.aspx?d=101761

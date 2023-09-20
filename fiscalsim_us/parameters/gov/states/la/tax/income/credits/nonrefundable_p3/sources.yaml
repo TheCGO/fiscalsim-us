@@ -1,0 +1,13 @@
+description: Louisiana provides these non-refundable priority 3 tax credits.
+values:
+  2021-01-01:
+    - la_nonrefundable_childcare
+    - la_other_nonrefundable_p3
+
+metadata:
+  unit: variable
+  label: Louisiana refundable priorty 3 tax credits
+  reference:
+  - title: Louisiana Form IT-540 Schedule J - Refundable credits
+    href: https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf 
+
