@@ -14,7 +14,9 @@ class la_refundable_childcare(Variable):
     )
 
     def formula(tax_unit, period, parameters):
-        p = parameters(period).gov.states.la.tax.income.credits.refundable_p2.refundable_child_care
+        p = parameters(
+            period
+        ).gov.states.la.tax.income.credits.refundable_p2.refundable_child_care
         agi = tax_unit("adjusted_gross_income", period)
         childcare_expenses = tax_unit("tax_unit_childcare_expenses", period)
 

@@ -15,7 +15,8 @@ class la_exemptions(Variable):
         filing_status = tax_unit("filing_status", period)
         statuses = filing_status.possible_values
         single_separate = (filing_status == statuses.SINGLE) | (
-            filing_status == statuses.SEPARATE)
+            filing_status == statuses.SEPARATE
+        )
 
         dependents = tax_unit("tax_unit_dependents", period)
         aged_blind = tax_unit("aged_blind_count", period)
