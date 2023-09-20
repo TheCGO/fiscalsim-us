@@ -17,10 +17,11 @@ jobs:
           environment-file: environment.yml
           python-version: "3.9"
           auto-activate-base: false
-      - name: Install package
+      - name: Install package and build documentation
+        shell: bash -l {0}
         run: |
           pip install -e .[dev]
+          pip install jupyter-book>=0.11.3
+          pip install sphinxcontrib-bibtex>=2.0.0
           python -m ipykernel install --user --name=fiscalsim-us-dev
-
-      - name: Build documentation  # Build Jupyter Book
-        run: jb build ./docs/book
+          jb build ./docs/book
