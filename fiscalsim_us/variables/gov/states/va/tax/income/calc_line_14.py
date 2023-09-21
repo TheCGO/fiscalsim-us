@@ -14,12 +14,12 @@ class calc_line_14(Variable):
 
         filing_status = tax_unit("filing_status", period)
 
-        if filing_status == 1:
+        if filing_status == 0:
             va_standard_deduction = parameters(
                 period
             ).gov.states.va.tax.income.va_standard_deduction.SINGLE
 
-        if filing_status == 2:
+        if filing_status == 1:
             va_standard_deduction = parameters(
                 period
             ).gov.states.va.tax.income.va_standard_deduction.JOINT

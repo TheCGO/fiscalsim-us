@@ -18,13 +18,16 @@ class va_tax_credit_for_low_income_individuals(Variable):
 
         net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
-        if filing_status == 1:
+        if filing_status == 3:
+
             spouse_if_filing_jointly = 0
 
-        elif filing_status == 2:
-            spouse_if_filing_jointly = 1
+        elif filing_status == 1: 
 
-        else:
+            spouse_if_filing_jointly = 1 
+        
+        else: 
+
             spouse_if_filing_jointly = 0
 
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
