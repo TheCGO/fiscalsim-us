@@ -1,0 +1,11 @@
+description: Arkansas Qualifying Childcare Expense Max.
+values:
+  2021-01-01: 3_000
+  2022-01-01: 3_000
+metadata:
+  reference:
+    - title: 2022 ARKANSAS INDIVIDUAL INCOME TAX CHILD AND DEPENDENT CARE EXPENSES (Line 3)
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2441_Child_andDependentCareExpenses.pdf
+  unit: currency-USD
+  period: year
+  label: Arkansas Qualifying Childcare Expense Max.

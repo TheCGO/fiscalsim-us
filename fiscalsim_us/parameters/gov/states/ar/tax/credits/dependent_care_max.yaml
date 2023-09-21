@@ -1,0 +1,10 @@
+description: Arkansas Dependent Care Deductible Benefits Max.
+values:
+  2022-01-01: 5_000
+metadata:
+  reference:
+    - title: 2022 ARKANSAS INDIVIDUAL INCOME TAX CHILD AND DEPENDENT CARE EXPENSES (Line 20)
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2441_Child_andDependentCareExpenses.pdf
+  unit: currency-USD
+  period: year
+  label: Arkansas Dependent Care Deductible Benefits Max.
