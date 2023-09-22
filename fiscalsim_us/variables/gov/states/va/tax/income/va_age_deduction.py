@@ -87,7 +87,12 @@ class va_age_deduction(Variable):
             if line11 < line12:
                 line14 = line12 - line11
 
-            if filing_status == 0 or filing_status == 2 or filing_status == 4 or filing_status == 1:
+            if (
+                filing_status == 0
+                or filing_status == 2
+                or filing_status == 4
+                or filing_status == 1
+            ):
                 return line14
 
             if filing_status == 3 and age_of_spouse >= 65:
