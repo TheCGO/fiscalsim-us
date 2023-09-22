@@ -134,3 +134,8 @@
     added:
       - Updated `README.md` and its badges.
   date: 2023-09-20 17:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated Virginia tax logic with correct mapping from federal filing status to state filing status.
+  date: 2023-09-22 12:00:00
