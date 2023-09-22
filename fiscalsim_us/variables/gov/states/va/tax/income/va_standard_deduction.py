@@ -12,12 +12,12 @@ class va_standard_deduction(Variable):
     def formula(tax_unit, period, parameters):
         filing_status = tax_unit("filing_status", period)
 
-        if filing_status == 1:
+        if filing_status == 0 or filing_status == 2 or filing_status == 4:
             standard_deduction = (
                 parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
             )
 
-        if filing_status == 2:
+        if filing_status == 1:
             standard_deduction = (
                 parameters.gov.states.va.tax.income.va_standard_deduction.JOINT
             )

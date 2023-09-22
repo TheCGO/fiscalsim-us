@@ -13,8 +13,9 @@ class calc_line_14(Variable):
         # line_11  = tax_unit("va_standard_deduction",period)
 
         filing_status = tax_unit("filing_status", period)
-
-        if filing_status == 0:
+        
+        # for single, head of household, widow filing status
+        if filing_status == 0 or filing_status == 2 or filing_status == 4:
             va_standard_deduction = parameters(
                 period
             ).gov.states.va.tax.income.va_standard_deduction.SINGLE

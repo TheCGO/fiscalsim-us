@@ -29,25 +29,25 @@ class va_age_deduction(Variable):
         spouse_fdcs = 0  # change this
 
         if age_of_head > 65:
-            if filing_status == 1:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4:
                 age_deduction_count = 1
 
-            if filing_status == 2 & age_of_spouse > 65:
+            if (filing_status == 1 or filing_status == 3) & age_of_spouse > 65:
                 age_deduction_count = 2
 
-            if filing_status == 1:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4:
                 total_agi = federal_agi
 
             else:
                 total_agi = federal_agi + spouse_agi
 
-            if filing_status == 1:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4:
                 total_fda = you_fdca
 
             else:
                 total_fda = you_fdca + spouse_fdca
 
-            if filing_status == 1:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4:
                 total_fds = you_fdcs
 
             else:
@@ -61,12 +61,12 @@ class va_age_deduction(Variable):
 
             line8 = line6 - line7
 
-            if filing_status == 1:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4:
                 threshold_ln9 = (
                     parameters.gov.states.va.tax.income.va_age_deduction_threshold.single
                 )
 
-            if filing_status == 2:
+            if filing_status == 1:
                 threshold_ln9 = (
                     parameters.gov.states.va.tax.income.va_age_deduction_threshold.joint
                 )
@@ -87,8 +87,8 @@ class va_age_deduction(Variable):
             if line11 < line12:
                 line14 = line12 - line11
 
-            if filing_status == 1 or filing_status == 2:
+            if filing_status == 0 or filing_status == 2 or filing_status == 4 or filing_status == 1:
                 return line14
 
-            if filing_status == 3:
+            if filing_status == 3 and age_of_spouse >= 65:
                 return line14 / 2

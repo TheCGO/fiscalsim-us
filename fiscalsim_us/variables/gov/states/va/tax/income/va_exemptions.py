@@ -27,10 +27,10 @@ class va_exemptions(Variable):
 
         filing_status = tax_unit("filing_status", period)
 
-        if filing_status == 1:
+        if filing_status == 0 or filing_status == 2 or filing_status == 4:
             spouse_if_filing_jointly = 0
 
-        elif filing_status == 2:
+        elif filing_status == 1:
             spouse_if_filing_jointly = 1
 
         else:
