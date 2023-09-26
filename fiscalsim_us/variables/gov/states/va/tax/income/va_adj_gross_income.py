@@ -28,7 +28,7 @@ class va_adj_gross_income(Variable):
             filing_status == 0
             or filing_status == 2
             or filing_status == 4
-            or filing_status == 2
+            or filing_status == 3
         ):
             if subtotal < single:
                 tax_owed = 0
