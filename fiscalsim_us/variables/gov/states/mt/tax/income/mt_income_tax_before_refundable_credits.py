@@ -2,6 +2,9 @@ from fiscalsim_us.model_api import *
 
 
 class mt_income_tax_before_refundable_credits(Variable):
+    """
+    Line 18 of Montana state individual tax return form 2
+    """
     value_type = float
     entity = TaxUnit
     label = "Montana income tax before refundable credits"
@@ -11,7 +14,7 @@ class mt_income_tax_before_refundable_credits(Variable):
 
     def formula(tax_unit, period, parameters):
         income = tax_unit("mt_taxable_income", period)
-        p = parameters(period).gov.states.mt.tax.income.main
+        p = parameters(period).gov.states.mt.tax.income.rates
         filing_status = tax_unit("filing_status", period)
         status = filing_status.possible_values
         return select(

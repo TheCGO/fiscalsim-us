@@ -1,0 +1,10 @@
+description: Montana provides a nonrefundable tax credit of this amount per exemption.
+values:
+  # Defined in the law as $1900 beginning after December 31, 2004, indexed by inflation. (Repealed effective January 1, 2024)
+  2022-01-01: 2_710
+metadata:
+  unit: currency-USD
+  label: MT exemption amount
+  reference:
+    - title: Rule 42.15.402 PERSONAL EXEMPTIONS
+      href: https://rules.mt.gov/gateway/RuleNo.asp?RN=42%2E15%2E402

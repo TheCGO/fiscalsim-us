@@ -1,0 +1,26 @@
+description: Montana provides a standard deduction based on these amounts.
+"""
+This refers to line 3 of the standard deduction on Montana tax form 2
+"""
+metadate: 
+  label: MT standard deduction max
+  period: year
+  unit: currency-USD
+  breakdown:
+    - filing_status
+  reference:
+    - title: Title 15 Chapter 30 Individual Income Tax Part 21. Rate and General Provisions, Standard Deduction Rule 15-30-2132
+      href: https://leg.mt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0320/0150-0300-0210-0320.html
+JOINT: 
+  #increase each year with inflation (repealed effective January 1, 2024)
+  2022-01-01: 10_180
+HEAD_OF_HOUSEHOLD:
+  #increase each year with inflation (repealed effective January 1, 2024)
+  2022-01-01: 10_180
+SINGLE:
+  #increase each year with inflation (repealed effective January 1, 2024)
+  2022-01-01: 5_090
+SEPARATE:
+  #increase each year with inflation (repealed effective January 1, 2024)
+  2022-01-01: 5_090
+  
