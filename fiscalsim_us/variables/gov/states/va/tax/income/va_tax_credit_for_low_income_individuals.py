@@ -13,22 +13,22 @@ class va_tax_credit_for_low_income_individuals(Variable):
         agi = tax_unit("va_adj_gross_income", period)
 
         filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
 
         fed_eitc = tax_unit("earned_income_tax_credit", period)
 
         net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
-        if filing_status == 3:
-
+        if (
+            filing_status == filing_statuses.SEPARATE
+            or filing_status == filing_statuses.SINGLE
+            or filing_status == filing_statuses.WIDOW
+            or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
+        ):
             spouse_if_filing_jointly = 0
 
-        elif filing_status == 1: 
-
-            spouse_if_filing_jointly = 1 
-        
-        else: 
-
-            spouse_if_filing_jointly = 0
+        elif filing_status == filing_statuses.JOINT:
+            spouse_if_filing_jointly = 1
 
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
 
@@ -42,9 +42,9 @@ class va_tax_credit_for_low_income_individuals(Variable):
 
         # logic to determine if the person qualifies for the EITC
 
-        threshold = parameters(
-            period
-        ).gov.states.va.tax.income.va_eitc_threshold.calc(total_num_exemptions)
+        threshold = parameters(period).gov.states.va.tax.income.va_eitc_threshold.calc(
+            total_num_exemptions
+        )
 
         # threshold = 12880 + (4540*(total_num_exemptions-1))
 

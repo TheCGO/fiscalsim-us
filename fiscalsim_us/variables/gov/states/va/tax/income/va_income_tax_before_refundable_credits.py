@@ -17,28 +17,6 @@ class va_income_tax_before_refundable_credits(Variable):
         if taxable_inc > 0:
             net_tax = rates.calc(taxable_inc)
 
-        #     if taxable_inc < 3000:
-
-        #         net_tax = taxable_inc * .02
-
-        #     if taxable_inc > 3000 and taxable_inc < 5000:
-
-        #         excess_taxable = taxable_inc - 3000
-
-        #         net_tax = (excess_taxable * .03) + 60
-
-        #     if taxable_inc > 5000 and taxable_inc < 17000:
-
-        #         excess_taxable = taxable_inc - 5000
-
-        #         net_tax = (excess_taxable * .05) + 120
-
-        #     if taxable_inc > 17000:
-
-        #         excess_taxable = taxable_inc - 17000
-
-        #         net_tax = (excess_taxable * .0575) + 720
-
         else:
             net_tax = 0
 

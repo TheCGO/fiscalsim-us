@@ -12,8 +12,6 @@ class va_calc_line_3(Variable):
     def formula(tax_unit, period, parameters):
         federal_agi = tax_unit("adjusted_gross_income", period)
 
-        additions_to_federal_agi = tax_unit(
-            "va_additions_to_federal_agi", period
-        )
+        additions_to_federal_agi = tax_unit("va_additions_to_federal_agi", period)
 
         return federal_agi + additions_to_federal_agi

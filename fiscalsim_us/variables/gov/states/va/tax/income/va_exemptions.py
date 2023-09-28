@@ -26,15 +26,18 @@ class va_exemptions(Variable):
         dependents = tax_unit("tax_unit_dependents", period)
 
         filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
 
-        if filing_status == 0 or filing_status == 2 or filing_status == 4:
+        if (
+            filing_status == filing_statuses.SINGLE
+            or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
+            or filing_status == filing_statuses.WIDOW
+            or filing_status == filing_statuses.SEPARATE
+        ):
             spouse_if_filing_jointly = 0
 
-        elif filing_status == 1:
+        elif filing_status == filing_statuses.JOINT:
             spouse_if_filing_jointly = 1
-
-        else:
-            spouse_if_filing_jointly = 0
 
         you_p65 = (tax_unit("age_head", period) >= 65).astype(int)
 

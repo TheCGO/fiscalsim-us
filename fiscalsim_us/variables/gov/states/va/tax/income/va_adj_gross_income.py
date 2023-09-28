@@ -15,22 +15,26 @@ class va_adj_gross_income(Variable):
         line8 = tax_unit("va_calc_line_8", period)
 
         filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
 
-        threshold = parameters(
-            period
-        ).gov.states.va.tax.income.va_adjusted_gross_income
+        threshold = parameters(period).gov.states.va.tax.income.va_adjusted_gross_income
         single = threshold.SINGLE
         joint = threshold.JOINT
 
         subtotal = line3 - line8
 
-        if filing_status == 0 or filing_status == 2 or filing_status == 4 or filing_status == 2:
+        if (
+            filing_status == filing_statuses.SINGLE
+            or filing_status == filing_statuses.SEPARATE
+            or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
+            or filing_status == filing_statuses.WIDOW
+        ):
             if subtotal < single:
                 tax_owed = 0
 
                 return tax_owed
 
-        if filing_status == 1:
+        if filing_status == filing_statuses.JOINT:
             if subtotal < joint:
                 tax_owed = 0
 
