@@ -5,6 +5,7 @@ class mt_eitc(Variable):
     """
     Line 23b on Montana individual tax return form 2
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana EITC amount"
@@ -16,8 +17,9 @@ class mt_eitc(Variable):
     )
     defined_for = StateCode.MT
 
-def formula(tax_unit,period,parameters):
+
+def formula(tax_unit, period, parameters):
     p = parameters(period).gov.states.mt.tax.income.credits
-    federaleitc = tax_unit("earned_income_tax_credit",period)
-    
+    federaleitc = tax_unit("earned_income_tax_credit", period)
+
     return federaleitc * p.eitc

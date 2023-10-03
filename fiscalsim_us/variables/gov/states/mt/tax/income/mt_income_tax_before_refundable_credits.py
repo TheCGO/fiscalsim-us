@@ -5,6 +5,7 @@ class mt_income_tax_before_refundable_credits(Variable):
     """
     Line 18 of Montana state individual tax return form 2
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana income tax before refundable credits"

@@ -5,6 +5,7 @@ class mt_adjusted_gross_income(Variable):
     """
     Line 14 on Montana individual income tax return form 2
     """
+
     value_type = float
     entity = TaxUnit
     label = "MT adjusted gross income"

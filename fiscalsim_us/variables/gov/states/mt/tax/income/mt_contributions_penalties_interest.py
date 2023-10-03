@@ -5,6 +5,7 @@ class mt_contributions_penalties_interest(Variable):
     """
     Line 24 on Montana individual income tax retrun form 2
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana contributions penatlites and interest"

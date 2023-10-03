@@ -5,6 +5,7 @@ class mt_refundable_credits(Variable):
     """
     Line 22 on Montana individual tax return form 2
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana refundable credits"
