@@ -116,3 +116,21 @@
     - Updates `fiscalsim_us/data/datasets/README.md`
     - Adds `abolish` parameters in `additional_parameters.yaml` file
   date: 2023-07-31 18:22:17
+- bump: patch
+  changes:
+    added:
+    - Updates the GH Actions files and adds two dependencies to `setup.py`
+    - Updates in PR 50 that updates the SNAP and TANF documentation
+    - Updates in PR 33 that update the VA tax logic
+    - Updates in PR 32 that update the MN tax logic
+  date: 2023-09-19 12:00:00
+- bump: patch
+  changes:
+    added:
+      - Added Louisiana state income tax logic with credits and refunds
+  date: 2023-09-20 16:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated `README.md` and its badges.
+  date: 2023-09-20 17:00:00

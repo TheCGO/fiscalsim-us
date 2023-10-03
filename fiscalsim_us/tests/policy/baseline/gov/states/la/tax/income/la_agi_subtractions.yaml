@@ -1,0 +1,16 @@
+- name: LA subtractions from income
+  period: 2021
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    adjusted_gross_income: 100_000
+    us_govt_interest: 1_000
+    tax_unit_taxable_social_security: 1_000
+    la_state_employee_retirement_benefits: 1_000
+    la_state_teacher_retirement_benefits: 1_000
+    la_federal_retirement_benefits: 1_000
+    la_other_subtractions: 1_000
+    la_exemptions: 0
+    state_code: LA
+  output:
+    la_taxable_income: 94_000

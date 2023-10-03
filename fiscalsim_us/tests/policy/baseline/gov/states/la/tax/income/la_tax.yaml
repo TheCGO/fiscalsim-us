@@ -1,0 +1,29 @@
+- name: LA tax no income
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_taxable_income: 0
+    state_code: LA
+  output:
+    la_income_tax: 0.0
+
+- name: LA first tax bracket
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_taxable_income: 12_000
+    state_code: LA
+  output:
+    la_income_tax: 222
+
+- name: LA all tax brackets
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_taxable_income: 100_000
+    state_code: LA
+  output:
+    la_income_tax: 3668.75

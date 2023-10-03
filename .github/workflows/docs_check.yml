@@ -1,0 +1,27 @@
+name: Check that docs build
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniforge-variant: Mambaforge
+          activate-environment: fiscalsim-us-dev
+          environment-file: environment.yml
+          python-version: "3.9"
+          auto-activate-base: false
+      - name: Install package and build documentation
+        shell: bash -l {0}
+        run: |
+          pip install -e .[dev]
+          pip install jupyter-book>=0.11.3
+          pip install sphinxcontrib-bibtex>=2.0.0
+          python -m ipykernel install --user --name=fiscalsim-us-dev
+          jb build ./docs/book

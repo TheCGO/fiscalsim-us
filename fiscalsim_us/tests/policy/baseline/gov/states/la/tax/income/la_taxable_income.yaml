@@ -1,0 +1,73 @@
+- name: LA taxable income not itemizing with additions
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: false
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+    la_total_additions: 1_000
+    la_exemptions: 0
+  output:
+    la_taxable_income: 101_000
+
+- name: LA taxable income not itemizing with subtractions
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: false
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+    la_total_subtractions: 1_000
+    la_exemptions: 2_000
+  output:
+    la_taxable_income: 97_000
+
+- name: LA taxable income not itemizing additions and exemptions
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: false
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+    la_total_additions: 1_000
+  output:
+    la_taxable_income: 96_500
+
+- name: LA taxable income not itemizing additions and exemptions joint
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: false
+    filing_status: JOINT
+    state_code: LA
+    adjusted_gross_income: 100_000
+    la_total_additions: 1_000
+  output:
+    la_taxable_income: 92_000
+
+- name: LA taxable income itemizing additions and exemptions joint
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: true
+    filing_status: JOINT
+    state_code: LA
+    adjusted_gross_income: 100_000
+    la_total_additions: 1_000
+  output:
+    la_taxable_income: 92_000
+
+- name: LA taxable income itemizing single with medical expenses
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    tax_unit_itemizes: true
+    filing_status: SINGLE
+    state_code: LA
+    adjusted_gross_income: 100_000
+    medical_expense_deduction: 14_950
+  output:
+    la_taxable_income: 93_500

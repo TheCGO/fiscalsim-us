@@ -1,0 +1,14 @@
+description: Louisiana provides these refundable priority 2 tax credits.
+values:
+  2021-01-01:
+    - la_refundable_childcare
+    - la_refundable_school_ready
+    - la_eitc
+    - la_other_refundable_p2
+
+metadata:
+  unit: variable
+  label: Louisiana refundable priorty 2 tax credits
+  reference:
+  - title: Louisiana Form IT-540 Schedule F - Refundable credits
+    href: https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf 
