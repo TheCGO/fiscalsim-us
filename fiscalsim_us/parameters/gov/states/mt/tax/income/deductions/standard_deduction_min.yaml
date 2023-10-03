@@ -2,7 +2,7 @@ description: Montana provides a standard deduction based on these amounts.
 
 #This refers to line 5 of the standard deduction on Montana tax form 2
 
-metadate: 
+metadata: 
   label: MT standard deduction min
   period: year
   unit: currency-USD

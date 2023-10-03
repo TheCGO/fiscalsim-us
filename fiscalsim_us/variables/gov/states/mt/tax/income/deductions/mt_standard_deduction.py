@@ -14,7 +14,7 @@ class mt_standard_deduction(Variable):
     )
     defined_for = StateCode.MT
 
-    def fomula(tax_unit, period, parameters):
+    def formula(tax_unit, period, parameters):
         p = parameters(period).gov.states.mt.tax.income.deductions
         filing_status = tax_unit("filing_status", period)
         line2 = mt_adjusted_gross_income *.2
