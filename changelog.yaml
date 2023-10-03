@@ -134,3 +134,8 @@
     added:
       - Updated `README.md` and its badges.
   date: 2023-09-20 17:00:00
+- bump: patch
+  changes:
+    added:
+      - Adds Montana tax logic
+  date: 2023-10-03 20:00:00
