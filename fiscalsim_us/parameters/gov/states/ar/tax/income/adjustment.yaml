@@ -2,7 +2,6 @@ description: Adjustment Used When Calculating Tax in Line 29. Income * Tax Rate 
 metadata:
   type: single_amount
   threshold_unit: currency-USD
-  rate_unit: /1
   label: Adjustment Used When Calculating Tax
   reference:
   - title: 2022 Indexed Tax Brackets

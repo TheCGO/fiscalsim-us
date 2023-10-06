@@ -1,0 +1,10 @@
+description: Multiply the amount in Line 8 by this amount
+values:
+  2022-01-01: 0.20
+metadata:
+  reference:
+    - title: 2022 ARKANSAS INDIVIDUAL INCOME TAX CHILD AND DEPENDENT CARE EXPENSES
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2441_Child_andDependentCareExpenses.pdf
+  unit: currency-USD
+  period: year
+  label: AR child care tax credit multiple
