@@ -116,3 +116,33 @@
     - Updates `fiscalsim_us/data/datasets/README.md`
     - Adds `abolish` parameters in `additional_parameters.yaml` file
   date: 2023-07-31 18:22:17
+- bump: patch
+  changes:
+    added:
+    - Updates the GH Actions files and adds two dependencies to `setup.py`
+    - Updates in PR 50 that updates the SNAP and TANF documentation
+    - Updates in PR 33 that update the VA tax logic
+    - Updates in PR 32 that update the MN tax logic
+  date: 2023-09-19 12:00:00
+- bump: patch
+  changes:
+    added:
+      - Added Louisiana state income tax logic with credits and refunds
+  date: 2023-09-20 16:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated `README.md` and its badges.
+  date: 2023-09-20 17:00:00
+- bump: minor
+  changes:
+    added:
+      - Updates the Python version to 3.10 in `environment.yml`, `setup.py`, `README.md`, `build_and_test.yml`, `deploy_docs.yml`, `docs_check.yml`, and `publish_to_pypi.yml`.
+      - Adds back the Windows CI tests to `build_and_test.yml`. See Issue 49.
+      - Updates to `numpy>=1.24,<1.24` and `policyengine-core>=2.8,<3` in `setup.py`. This change is what enabled the update to Python 3.10 and came from PR 117 to `policyengine-core`.
+  date: 2023-10-09 01:30:00
+- bump: patch
+  changes:
+    added:
+      - Updates two files `la_nonrefundable_childcare.py` and `in_unemployment_compensation_deduction.py` that need a `min()` reference updated to `min_()`
+  date: 2023-10-09 02:00:00

@@ -1,0 +1,105 @@
+- name: LA income tax p1 credit
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_nonrefundable_credits: 1_000
+    state_code: LA
+  output:
+    la_income_tax: 4_000
+
+- name: LA income tax p1 credit nonrefundable
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_nonrefundable_credits: 6_000
+    state_code: LA
+  output:
+    la_income_tax: 0
+
+- name: LA p2 credit nonrefundable
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_refundable_priority_2_credits: 6_000
+    state_code: LA
+  output:
+    la_income_tax: -1_000
+
+- name: LA p1 and p2 credits mixed
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_nonrefundable_credits: 3_000
+    la_refundable_priority_2_credits: 6_000
+    state_code: LA
+  output:
+    la_income_tax: -4_000
+
+- name: LA p1 and p2 credits mixed extra nonrefundable
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_nonrefundable_credits: 6_000
+    la_refundable_priority_2_credits: 6_000
+    state_code: LA
+  output:
+    la_income_tax: -6_000
+
+- name: LA p2 and p3 credits refund
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_refundable_priority_2_credits: 6_000
+    la_nonrefundable_priority_3_credits: 1_000
+    state_code: LA
+  output:
+    la_income_tax: -1_000
+
+- name: LA p2 and p3 credits no refund
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_refundable_priority_2_credits: 3_000
+    la_nonrefundable_priority_3_credits: 1_000
+    state_code: LA
+  output:
+    la_income_tax: 1_000
+
+- name: LA p2 and p3 credits extra p3
+  period: 2021
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_refundable_priority_2_credits: 3_000
+    la_nonrefundable_priority_3_credits: 3_000
+    state_code: LA
+  output:
+    la_income_tax: 0
+
+- name: LA p2, p3, and p4 credits
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    filing_status: SINGLE
+    la_income_tax_before_credits: 5_000
+    la_refundable_priority_2_credits: 3_000
+    la_nonrefundable_priority_3_credits: 1_000
+    la_refundable_priority_4_credits: 2_000
+    state_code: LA
+  output:
+    la_income_tax: -1_000

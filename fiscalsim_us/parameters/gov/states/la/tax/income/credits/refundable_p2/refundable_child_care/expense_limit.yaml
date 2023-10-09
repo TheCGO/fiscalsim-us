@@ -1,0 +1,26 @@
+description: Childcare expense limit for Louisiana refundable childcare credit
+brackets:
+  - threshold:
+      2021-01-01: 0
+    amount:
+      2021-01-01: 0
+  - threshold:
+      2021-01-01: 1
+    amount:
+      2021-01-01: 8_000
+      2022-01-01: 3_000
+  - threshold:
+      2021-01-01: 2
+    amount:
+      2021-01-01: 16_000
+      2022-01-01: 6_000
+
+metadata:
+  type: single_amount
+  threshold_unit: child-dependents
+  rate_unit: /1
+  threshold_period: year
+  label: Louisiana refundbale childcare credit income multiplier
+  reference:
+  - title: 2022 Louisiana Refundable Child Care Credit Worksheet
+    href: https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf
