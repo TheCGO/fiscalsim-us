@@ -25,7 +25,7 @@ class in_unemployment_compensation_deduction(Variable):
         reduced_agi_haircut = p.unemployment_compensation.reduced_agi_haircut
         in_taxable_unemployment_compensation = min_(
             (reduced_agi_haircut * reduced_agi),
-            unemployment_compensation_in_federal_agi
+            unemployment_compensation_in_federal_agi,
         )
         return (
             unemployment_compensation_in_federal_agi
