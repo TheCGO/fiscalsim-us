@@ -1,0 +1,16 @@
+description: Multiplier for the amount of the federal EITC that Louisiana allows taxfiliers for a refundable credit
+values:
+  2018-01-01: 0.035
+  2019-01-01: 0.05
+
+metadata:
+  period: year
+  unit: /1
+  label: Louisiana EITC multiplier
+  reference:
+  - title: Louisiana legal code| RS 47:297.8, part (A)
+    href: https://www.legis.la.gov/legis/Law.aspx?d=453085
+  - title: Louisiana State Inncome Tax Form IT-540 2021
+    href: "https://revenue.louisiana.gov/TaxForms/IT540WEB(2021)%20F.pdf"
+  - title: Louisiana State Inncome Tax Form IT-540 2022
+    href: "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf"

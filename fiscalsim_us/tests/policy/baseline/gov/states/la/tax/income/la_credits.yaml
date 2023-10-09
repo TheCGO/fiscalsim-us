@@ -1,0 +1,166 @@
+- name: Federal EITC of $500 and no qualifying children, LA EITC should be $25
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    earned_income_tax_credit: 500
+    state_code: LA
+  output:
+    la_eitc: 25
+
+- name: LA refundable childcare credit over $25,000 income limit
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    people:
+      person1:
+        age: 33
+        employment_income: 100_000
+      person2:
+        age: 35
+        employment_income: 50_000
+      dependent1:
+        age: 8
+        is_tax_unit_dependent: true
+    tax_units:
+      tax_unit:
+        members: [person1, person2, dependent1]
+        tax_unit_childcare_expenses: 1_000
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2, dependent1]
+        state_code: LA
+  output:
+    la_refundable_childcare: 0
+
+- name: LA refundable childcare credit one child
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    people:
+      person1:
+        age: 33
+        employment_income: 10_000
+      person2:
+        age: 35
+        employment_income: 10_000
+      dependent1:
+        age: 8
+        is_tax_unit_dependent: true
+    tax_units:
+      tax_unit:
+        members: [person1, person2, dependent1]
+        tax_unit_childcare_expenses: 4_000
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2, dependent1]
+        state_code: LA
+  output:
+    la_refundable_childcare: 480
+
+- name: LA refundable childcare credit 3 children
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    people:
+      person1:
+        age: 33
+        employment_income: 10_000
+      person2:
+        age: 35
+        employment_income: 10_000
+      dependent1:
+        age: 8
+        is_tax_unit_dependent: true
+      dependent2:
+        age: 9
+        is_tax_unit_dependent: true
+      dependent3:
+        age: 7
+        is_tax_unit_dependent: true
+    tax_units:
+      tax_unit:
+        members: [person1, person2, dependent1, dependent2, dependent3]
+        tax_unit_childcare_expenses: 7_000
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2, dependent1, dependent2, dependent3]
+        state_code: LA
+  output:
+    la_refundable_childcare: 960
+
+- name: LA refundable childcare credit one child spouse income below expenses
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    people:
+      person1:
+        age: 33
+        employment_income: 18_000
+      person2:
+        age: 35
+        employment_income: 2_000
+      dependent1:
+        age: 8
+        is_tax_unit_dependent: true
+    tax_units:
+      tax_unit:
+        members: [person1, person2, dependent1]
+        tax_unit_childcare_expenses: 4_000
+        filing_status: JOINT
+    households:
+      household:
+        members: [person1, person2, dependent1]
+        state_code: LA
+  output:
+    la_refundable_childcare: 320
+
+- name: LA nonrefundable child care credit below income floor ($0 nonrefundable)
+  period: 2022
+  input:
+    adjusted_gross_income: 23_000
+    cdcc: 2_000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 0
+
+- name: LA nonrefundable child care credit 
+  period: 2022
+  input:
+    adjusted_gross_income: 30_000
+    cdcc: 2_000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 600
+
+- name: LA nonrefundable child care credit above income threshold
+  period: 2022
+  input:
+    adjusted_gross_income: 60_001
+    cdcc: 200
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 20 
+
+- name: LA nonrefundable child care credit above income threshold with credit limit
+  period: 2022
+  input:
+    adjusted_gross_income: 60_001
+    cdcc: 1000
+    state_code: LA
+  output:
+    la_nonrefundable_childcare: 25
+
+- name: Addition of p2 refundable credits
+  period: 2022
+  absolute_error_margin: 0
+  input:
+    state_code: LA
+    earned_income_tax_credit: 500
+    la_refundable_school_ready: 100
+    la_refundable_childcare: 200
+    la_other_refundable_p2: 100
+  output:
+    la_refundable_priority_2_credits: 425
