@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Updated two files `la_nonrefundable_childcare.py` and `in_unemployment_compensation_deduction.py` that need a `min()` reference updated to `min_()`
+- Updates two files `la_nonrefundable_childcare.py` and `in_unemployment_compensation_deduction.py` that need a `min()` reference updated to `min_()`
 
 ## [0.2.0] - 2023-10-09 01:30:00
 
