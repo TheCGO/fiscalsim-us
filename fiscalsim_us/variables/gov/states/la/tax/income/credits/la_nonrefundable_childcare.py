@@ -31,6 +31,6 @@ class la_nonrefundable_childcare(Variable):
         # fed_cdcc * income_mult and the limit for above the threshold
         return where(
             agi > p.income_threshold,
-            min(credit, p.above_threshold_max),
+            min_(credit, p.above_threshold_max),
             credit,
         )
