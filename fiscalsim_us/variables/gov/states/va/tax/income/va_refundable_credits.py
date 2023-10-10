@@ -27,4 +27,12 @@ class va_refundable_credits(Variable):
 
         line_24 = tax_unit("va_credits_from_enclosed_schedule_cr", period)
 
-        return line_19 + line_19b + line_20 + line_21 + line_22 + line_24 + line_23
+        return (
+            line_19
+            + line_19b
+            + line_20
+            + line_21
+            + line_22
+            + line_24
+            + line_23
+        )

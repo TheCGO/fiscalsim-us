@@ -93,11 +93,18 @@ class va_age_deduction(Variable):
                 filing_status == filing_statuses.SINGLE
                 or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
                 or filing_status == filing_statuses.WIDOW
-                or (filing_status == filing_statuses.SEPARATE and age_of_spouse < 65)
                 or (
-                    filing_status == filing_statuses.JOINT and age_of_spouse < 65
+                    filing_status == filing_statuses.SEPARATE
+                    and age_of_spouse < 65
+                )
+                or (
+                    filing_status == filing_statuses.JOINT
+                    and age_of_spouse < 65
                 )  # the form has you divide the total by 2, but then if your filing jointly, you'd have to add it back together, so it ends up being the undivided amount
             ):
                 return line14
-            elif filing_status == filing_statuses.SEPARATE and age_of_spouse >= 65:
+            elif (
+                filing_status == filing_statuses.SEPARATE
+                and age_of_spouse >= 65
+            ):
                 return line14 / 2

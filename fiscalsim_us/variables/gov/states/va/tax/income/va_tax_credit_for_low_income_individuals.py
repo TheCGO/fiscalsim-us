@@ -42,9 +42,9 @@ class va_tax_credit_for_low_income_individuals(Variable):
 
         # logic to determine if the person qualifies for the EITC
 
-        threshold = parameters(period).gov.states.va.tax.income.va_eitc_threshold.calc(
-            total_num_exemptions
-        )
+        threshold = parameters(
+            period
+        ).gov.states.va.tax.income.va_eitc_threshold.calc(total_num_exemptions)
 
         # threshold = 12880 + (4540*(total_num_exemptions-1))
 

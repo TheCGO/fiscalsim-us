@@ -19,7 +19,8 @@ class va_additions_to_federal_agi(Variable):
         )
 
         additions_to_fed_agi = (
-            income_from_obligations_fed_exempt + fixed_date_conformity_additions
+            income_from_obligations_fed_exempt
+            + fixed_date_conformity_additions
         )
 
         return additions_to_fed_agi

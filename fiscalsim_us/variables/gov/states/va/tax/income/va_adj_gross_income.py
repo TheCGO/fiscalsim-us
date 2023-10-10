@@ -17,7 +17,9 @@ class va_adj_gross_income(Variable):
         filing_status = tax_unit("filing_status", period)
         filing_statuses = filing_status.possible_values
 
-        threshold = parameters(period).gov.states.va.tax.income.va_adjusted_gross_income
+        threshold = parameters(
+            period
+        ).gov.states.va.tax.income.va_adjusted_gross_income
         single = threshold.SINGLE
         joint = threshold.JOINT
 
