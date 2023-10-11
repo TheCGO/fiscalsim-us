@@ -13,23 +13,14 @@ class va_standard_deduction(Variable):
         filing_status = tax_unit("filing_status", period)
         filing_statuses = filing_status.possible_values
 
-        if (
-            filing_status == filing_statuses.SINGLE
-            or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-            or filing_status == filing_statuses.WIDOW
-        ):
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
-            )
-
-        if filing_status == filing_statuses.JOINT:
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.JOINT
-            )
-
-        if filing_status == filing_statuses.SEPARATE:
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
-            )
+        standard_deduction = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+            (filing_status == filing_statuses.WIDOW)|
+            (filing_status == filing_statuses.SEPARATE),
+            parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            where(filing_status == filing_statuses.JOINT, parameters.gov.states.va.tax.income.va_standard_deduction.JOINT, parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE)
+        )
 
         return standard_deduction
+

@@ -10,33 +10,28 @@ class calc_line_14(Variable):
     defined_for = StateCode.VA
 
     def formula(tax_unit, period, parameters):
-        # line_11  = tax_unit("va_standard_deduction",period)
-
         filing_status = tax_unit("filing_status", period)
         filing_statuses = filing_status.possible_values
 
-        # for single, head of household, widow filing status
-        if (
-            filing_status == filing_statuses.SINGLE
-            or filing_status == filing_statuses.WIDOW
-            or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-        ):
-            va_standard_deduction = parameters(
-                period
-            ).gov.states.va.tax.income.va_standard_deduction.SINGLE
-
-        if filing_status == filing_statuses.JOINT:
-            va_standard_deduction = parameters(
-                period
-            ).gov.states.va.tax.income.va_standard_deduction.JOINT
-
-        if filing_status == filing_statuses.SEPARATE:
-            va_standard_deduction = parameters(
-                period
-            ).gov.states.va.tax.income.va_standard_deduction.SEPARATE
+        va_standard_deduction = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.WIDOW) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
+            parameters(period).gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            where(
+                filing_status == filing_statuses.JOINT,
+                parameters(period).gov.states.va.tax.income.va_standard_deduction.JOINT,
+                where(
+                    filing_status == filing_statuses.SEPARATE,
+                    parameters(period).gov.states.va.tax.income.va_standard_deduction.SEPARATE,
+                    0  # Default value if none of the conditions are met
+                )
+            )
+        )
 
         line_12 = tax_unit("va_exemptions", period)
 
         subtotal = va_standard_deduction + line_12
 
         return subtotal
+

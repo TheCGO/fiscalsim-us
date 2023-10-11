@@ -20,91 +20,99 @@ class va_age_deduction(Variable):
         spouse_fdca = 0  # change this
         you_fdcs = tax_unit("fixed_date_conformity_subtractions", period)
         spouse_fdcs = 0  # change this
-        if age_of_head > 65:
-            if (
-                filing_status == filing_statuses.SINGLE
-                or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-                or filing_status == filing_status == filing_statuses.WIDOW
-            ):
-                age_deduction_count = 1
-                total_agi = federal_agi
-            elif (
-                filing_status == filing_statuses.JOINT
-                or filing_status == filing_statuses.SEPARATE
-            ) & age_of_spouse > 65:
-                age_deduction_count = 2
-            else:
-                total_agi = federal_agi + spouse_agi
 
-            if (
-                filing_status == filing_statuses.SINGLE
-                or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-                or filing_status == filing_statuses.WIDOW
-            ):
-                total_fda = you_fdca
-                total_fds = you_fdcs
-            else:
-                total_fda = you_fdca + spouse_fdca
-                total_fds = you_fdcs + spouse_fdcs
+        age_deduction_count = where(
+            (age_of_head > 65) &
+            (
+                (filing_status == filing_statuses.SINGLE) |
+                (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+                (filing_status == filing_statuses.WIDOW)
+            ),
+            1,
+            where(
+                (filing_status == filing_statuses.JOINT) & (age_of_spouse > 65),
+                2,
+                0  # Default value if none of the conditions are met
+            )
+        )
 
-            line4 = total_agi + total_fda
-            line6 = line4 - total_fds
-            line7 = 0  # Taxable benefits from the tax return, change this.
-            line8 = line6 - line7
+        total_agi = where(
+            age_deduction_count > 0,
+            federal_agi + spouse_agi,
+            federal_agi
+        )
 
-            if (
-                filing_status == filing_statuses.SINGLE
-                or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-                or filing_status == filing_statuses.WIDOW
-            ):
-                threshold_ln9 = (
-                    parameters.gov.states.va.tax.income.va_age_deduction_threshold.single
-                )
-            elif filing_status == filing_statuses.JOINT:
-                threshold_ln9 = (
-                    parameters.gov.states.va.tax.income.va_age_deduction_threshold.joint
-                )
-            elif filing_status == filing_statuses.SEPARATE:
-                threshold_ln9 = (
-                    parameters.gov.states.va.tax.income.va_age_deduction_threshold.separate
-                )
+        total_fda = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+            (filing_status == filing_statuses.WIDOW),
+            you_fdca,
+            you_fdca + spouse_fdca
+        )
 
-            if line8 >= threshold_ln9:
-                line11 = line8 - threshold_ln9
-            elif (
-                filing_status == filing_statuses.SINGLE
-                or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-                or filing_status == filing_statuses.WIDOW
-                or filing_status == filing_statuses.SEPARATE
-            ):
-                return 12_000
-            elif filing_status == filing_statuses.JOINT:
-                return 24_000
+        total_fds = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+            (filing_status == filing_statuses.WIDOW),
+            you_fdcs,
+            you_fdcs + spouse_fdcs
+        )
 
-            line12 = age_deduction_count * 12_000
+        line4 = total_agi + total_fda
+        line6 = line4 - total_fds
+        line7 = 0  # Taxable benefits from the tax return, change this.
+        line8 = line6 - line7
 
-            if line11 >= line12:
-                return 0
+        threshold_ln9 = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+            (filing_status == filing_statuses.WIDOW),
+            parameters.gov.states.va.tax.income.va_age_deduction_threshold.single,
+            where(
+                filing_status == filing_statuses.JOINT,
+                parameters.gov.states.va.tax.income.va_age_deduction_threshold.joint,
+                parameters.gov.states.va.tax.income.va_age_deduction_threshold.separate
+            )
+        )
 
-            if line11 < line12:
-                line14 = line12 - line11
+        line11 = where(
+            line8 >= threshold_ln9,
+            line8 - threshold_ln9,
+            where(
+                (filing_status == filing_statuses.SINGLE) |
+                (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+                (filing_status == filing_statuses.WIDOW) |
+                (filing_status == filing_statuses.SEPARATE),
+                12_000,
+                where(filing_status == filing_statuses.JOINT, 24_000, 0)
+            )
+        )
 
-            if (
-                filing_status == filing_statuses.SINGLE
-                or filing_status == filing_statuses.HEAD_OF_HOUSEHOLD
-                or filing_status == filing_statuses.WIDOW
-                or (
-                    filing_status == filing_statuses.SEPARATE
-                    and age_of_spouse < 65
-                )
-                or (
-                    filing_status == filing_statuses.JOINT
-                    and age_of_spouse < 65
-                )  # the form has you divide the total by 2, but then if your filing jointly, you'd have to add it back together, so it ends up being the undivided amount
-            ):
-                return line14
-            elif (
-                filing_status == filing_statuses.SEPARATE
-                and age_of_spouse >= 65
-            ):
-                return line14 / 2
+        line12 = age_deduction_count * 12_000
+
+        line14 = where(line11 < line12, line12 - line11, 0)
+
+        result = where(
+            (filing_status == filing_statuses.SINGLE) |
+            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
+            (filing_status == filing_statuses.WIDOW) |
+            (
+                (filing_status == filing_statuses.SEPARATE) & (age_of_spouse < 65)
+            ) |
+            (
+                (filing_status == filing_statuses.JOINT) & (age_of_spouse < 65)
+            ),
+            line14,
+            where(
+                (filing_status == filing_statuses.SEPARATE) & (age_of_spouse >= 65),
+                line14 / 2,
+                0
+            )
+        )
+
+        # Check if age_of_head is less than 65 and set result to 0 in that case
+        result = where(age_of_head < 65, 0, result)
+
+        return result
+
+
