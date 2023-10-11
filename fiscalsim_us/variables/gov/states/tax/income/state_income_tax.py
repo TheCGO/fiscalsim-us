@@ -10,7 +10,7 @@ class state_income_tax(Variable):
     adds = [
         # state income tax variables listed in alphabetical order:
         "ca_income_tax",
-        # "ia_income_tax",  --- activating will cause circular logic errors
+        "ia_income_tax",
         "il_income_tax",
         "ks_income_tax",
         "la_income_tax",
@@ -21,8 +21,8 @@ class state_income_tax(Variable):
         "mt_income_tax",
         # "mo_income_tax",  --- activating will cause circular logic errors
         "nc_income_tax",
-        # "nd_income_tax",  --- activating will cause circular logic errors
-        # "ne_income_tax",  --- activating will cause circular logic errors
+        "nd_income_tax",
+        "ne_income_tax",
         "nh_income_tax",
         "nj_income_tax",
         "ny_income_tax",
