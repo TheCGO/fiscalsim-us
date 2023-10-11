@@ -11,11 +11,14 @@ class sales_or_prior_year_state_and_local_income_tax_paid(Variable):
     def formula(tax_unit, period, parameters):
         # Only sales or income tax can be itemized, but not both.
         prior_year_income_tax = add(
-            tax_unit, period, ["prior_year_state_income_tax_paid", 
-                               "prior_year_local_income_tax_paid"]
+            tax_unit,
+            period,
+            [
+                "prior_year_state_income_tax_paid",
+                "prior_year_local_income_tax_paid",
+            ],
         )
         sales_tax = add(
-            tax_unit, period, ["state_sales_tax", 
-                               "local_sales_tax"]
+            tax_unit, period, ["state_sales_tax", "local_sales_tax"]
         )
         return max_(prior_year_income_tax, sales_tax)
