@@ -14,13 +14,16 @@ class va_standard_deduction(Variable):
         filing_statuses = filing_status.possible_values
 
         standard_deduction = where(
-            (filing_status == filing_statuses.SINGLE) |
-            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) |
-            (filing_status == filing_statuses.WIDOW)|
-            (filing_status == filing_statuses.SEPARATE),
+            (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
+            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SEPARATE),
             parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
-            where(filing_status == filing_statuses.JOINT, parameters.gov.states.va.tax.income.va_standard_deduction.JOINT, parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE)
+            where(
+                filing_status == filing_statuses.JOINT,
+                parameters.gov.states.va.tax.income.va_standard_deduction.JOINT,
+                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            ),
         )
 
         return standard_deduction
-

@@ -14,19 +14,25 @@ class calc_line_14(Variable):
         filing_statuses = filing_status.possible_values
 
         va_standard_deduction = where(
-            (filing_status == filing_statuses.SINGLE) |
-            (filing_status == filing_statuses.WIDOW) |
-            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
-            parameters(period).gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
+            parameters(
+                period
+            ).gov.states.va.tax.income.va_standard_deduction.SINGLE,
             where(
                 filing_status == filing_statuses.JOINT,
-                parameters(period).gov.states.va.tax.income.va_standard_deduction.JOINT,
+                parameters(
+                    period
+                ).gov.states.va.tax.income.va_standard_deduction.JOINT,
                 where(
                     filing_status == filing_statuses.SEPARATE,
-                    parameters(period).gov.states.va.tax.income.va_standard_deduction.SEPARATE,
-                    0  # Default value if none of the conditions are met
-                )
-            )
+                    parameters(
+                        period
+                    ).gov.states.va.tax.income.va_standard_deduction.SEPARATE,
+                    0,  # Default value if none of the conditions are met
+                ),
+            ),
         )
 
         line_12 = tax_unit("va_exemptions", period)
@@ -34,4 +40,3 @@ class calc_line_14(Variable):
         subtotal = va_standard_deduction + line_12
 
         return subtotal
-

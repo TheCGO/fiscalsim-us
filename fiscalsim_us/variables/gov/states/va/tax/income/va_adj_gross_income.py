@@ -15,24 +15,25 @@ class va_adj_gross_income(Variable):
         filing_status = tax_unit("filing_status", period)
         filing_statuses = filing_status.possible_values
 
-        threshold = parameters(period).gov.states.va.tax.income.va_adjusted_gross_income
+        threshold = parameters(
+            period
+        ).gov.states.va.tax.income.va_adjusted_gross_income
         single = threshold.SINGLE
         joint = threshold.JOINT
 
         subtotal = line3 - line8
 
         tax_owed = where(
-            (filing_status == filing_statuses.SINGLE) | 
-            (filing_status == filing_statuses.SEPARATE) | 
-            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD) | 
-            (filing_status == filing_statuses.WIDOW),
+            (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.SEPARATE)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
+            | (filing_status == filing_statuses.WIDOW),
             where(subtotal < single, 0, subtotal),
             where(
                 filing_status == filing_statuses.JOINT,
                 where(subtotal < joint, 0, subtotal),
-                subtotal
-            )
+                subtotal,
+            ),
         )
 
         return tax_owed
-

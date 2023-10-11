@@ -17,12 +17,12 @@ class va_tax_credit_for_low_income_individuals(Variable):
         net_tax = tax_unit("va_income_tax_before_refundable_credits", period)
 
         spouse_if_filing_jointly = where(
-            (filing_status == filing_statuses.SEPARATE) |
-            (filing_status == filing_statuses.SINGLE) |
-            (filing_status == filing_statuses.WIDOW) |
-            (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
+            (filing_status == filing_statuses.SEPARATE)
+            | (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
             0,
-            where(filing_status == filing_statuses.JOINT, 1, 0)
+            where(filing_status == filing_statuses.JOINT, 1, 0),
         )
 
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
@@ -30,7 +30,9 @@ class va_tax_credit_for_low_income_individuals(Variable):
         total_num_exemptions = spouse_if_filing_jointly + dependents + 1
         total_agi = agi + spouse_agi
         eitc_rate = parameters(period).gov.states.va.tax.income.va_eitc_rate
-        threshold = parameters(period).gov.states.va.tax.income.va_eitc_threshold.calc(total_num_exemptions)
+        threshold = parameters(
+            period
+        ).gov.states.va.tax.income.va_eitc_threshold.calc(total_num_exemptions)
 
         line_13 = where(total_agi < threshold, total_num_exemptions * 300, 0)
         line_14 = fed_eitc
@@ -39,4 +41,3 @@ class va_tax_credit_for_low_income_individuals(Variable):
         line_17 = where(net_tax > line_16, line_16, 0)
 
         return line_17
-

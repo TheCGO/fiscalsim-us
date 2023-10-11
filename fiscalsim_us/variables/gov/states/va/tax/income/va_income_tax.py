@@ -17,4 +17,3 @@ class va_income_tax(Variable):
         refund = where(net_tax < line_26, (line_26 - net_tax) * -1, 0)
 
         return owed_tax + refund
-

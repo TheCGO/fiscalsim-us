@@ -16,4 +16,3 @@ class va_income_tax_before_refundable_credits(Variable):
         net_tax = where(taxable_inc > 0, rates.calc(taxable_inc), 0)
 
         return net_tax
-
