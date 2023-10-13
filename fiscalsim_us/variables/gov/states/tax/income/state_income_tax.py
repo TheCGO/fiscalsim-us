@@ -29,10 +29,10 @@ class state_income_tax(Variable):
         "ne_income_tax",
         "nh_income_tax",
         "nj_income_tax",
-        # "nm_income_tax",  --- activating will cause circular logic errors
-        # "ny_income_tax",  --- activating will cause circular logic errors
-        # "ok_income_tax",  --- activating will cause circular logic errors
-        # "or_income_tax",  --- activating will cause circular logic errors
+        "nm_income_tax",
+        "ny_income_tax",
+        "ok_income_tax",
+        "or_income_tax",
         "pa_income_tax",
         "ri_income_tax",
         # "va_income_tax",  --- temporarily deactivated until change if to where
