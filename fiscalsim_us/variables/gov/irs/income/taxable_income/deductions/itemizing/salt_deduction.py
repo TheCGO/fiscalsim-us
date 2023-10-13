@@ -15,7 +15,7 @@ class salt_deduction(Variable):
             tax_unit,
             period,
             [
-                "sales_or_prior_year_state_and_local_income_tax_paid",
+                "statelocal_sales_or_prior_inctax",
                 "real_estate_taxes",
             ],
         )
