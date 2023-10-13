@@ -36,7 +36,7 @@ class sc_state_tax_addback(Variable):
             0, federal_itemized_deduction - federal_standard_deduction
         )
         # line 4
-        salt = tax_unit("state_and_local_sales_or_income_tax", period)
+        salt = tax_unit("statelocal_sales_or_prior_inctax", period)
         # line 5
         real_estate_and_property_taxes = add(
             tax_unit, period, ["real_estate_taxes"]

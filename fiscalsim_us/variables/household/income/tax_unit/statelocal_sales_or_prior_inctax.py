@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class sales_or_prior_year_state_and_local_income_tax_paid(Variable):
+class statelocal_sales_or_prior_inctax(Variable):
     value_type = float
     entity = TaxUnit
     definition_period = YEAR

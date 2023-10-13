@@ -21,7 +21,7 @@ class nm_itemized_deductions(Variable):
 
         # tax/income, federal Schedule A, line 5a. 1
         salt_sales_or_income = tax_unit(
-            "state_and_local_sales_or_income_tax", period
+            "statelocal_sales_or_prior_inctax", period
         )
         # state_and_local_tax, line 5d. 2
         total_salt = (
