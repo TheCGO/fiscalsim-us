@@ -4,7 +4,7 @@
   input:
     filing_status: SINGLE
     tax_unit_itemizes: True
-    state_and_local_sales_or_income_tax: 5_000
+    statelocal_sales_or_prior_inctax: 5_000
     real_estate_taxes: 7_500
     standard_deduction: 5_000
     state_code: NM
@@ -17,7 +17,7 @@
   input:
     filing_status: SINGLE
     tax_unit_itemizes: True
-    state_and_local_sales_or_income_tax: 5_000
+    statelocal_sales_or_prior_inctax: 5_000
     real_estate_taxes: 0
     standard_deduction: 2_000
     state_code: NM
@@ -30,7 +30,7 @@
   input:
     filing_status: SEPARATE
     tax_unit_itemizes: True
-    state_and_local_sales_or_income_tax: 7_500
+    statelocal_sales_or_prior_inctax: 7_500
     real_estate_taxes: 0
     standard_deduction: 2_000
     state_code: NM
@@ -43,7 +43,7 @@
   input:
     filing_status: SINGLE
     tax_unit_itemizes: True
-    state_and_local_sales_or_income_tax: 0
+    statelocal_sales_or_prior_inctax: 0
     real_estate_taxes: 0
     standard_deduction: 2_000
     state_code: NM
@@ -56,7 +56,7 @@
   input:
     filing_status: SINGLE
     tax_unit_itemizes: False
-    state_and_local_sales_or_income_tax: 7_500
+    statelocal_sales_or_prior_inctax: 7_500
     real_estate_taxes: 0
     standard_deduction: 2_000
     state_code: NM
