@@ -14,7 +14,7 @@
       tax_unit:
         members: [person1, person2]
         interest_deduction: 17_000
-        state_and_local_sales_or_income_tax: 8_000
+        statelocal_sales_or_prior_inctax: 8_000
     households:
       household:
         members: [person1, person2]
