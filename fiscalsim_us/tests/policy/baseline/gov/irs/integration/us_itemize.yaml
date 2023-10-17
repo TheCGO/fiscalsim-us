@@ -52,6 +52,6 @@
     state_income_tax: 4_576.44
     adjusted_gross_income: 100_000
     taxable_income_deductions_if_not_itemizing: 12_550
-    taxable_income_deductions_if_itemizing: 8_000 + 10_000
+    taxable_income_deductions_if_itemizing: 8_000 + 6_000
     tax_unit_itemizes: true
-    taxable_income: 100_000 - 18_000
+    taxable_income: 100_000 - 14_000
