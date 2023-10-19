@@ -1,0 +1,72 @@
+description: Idaho individual income tax rates for married filing jointly filers.
+brackets:
+  - threshold:
+      2022-01-01: 0
+      2021-01-01: 0
+      2020-01-01: 0
+      2019-01-01: 0
+    rate:
+      2022-01-01: 0.010
+      2021-01-01: 0.010
+      2020-01-01: 0.01125
+      2019-01-01: 0.01125
+  - threshold:
+      2022-01-01: 3_324
+      2021-01-01: 3_176
+      2020-01-01: 3_136
+      2019-01-01: 3_082
+    rate:
+      2022-01-01: 0.030
+      2021-01-01: 0.031
+      2020-01-01: 0.03125
+      2019-01-01: 0.03125
+  - threshold:
+      2022-01-01: 9_974
+      2021-01-01: 9_526
+      2020-01-01: 6_272
+      2019-01-01: 6_162
+    rate:
+      2022-01-01: 0.045
+      2021-01-01: 0.045
+      2020-01-01: 0.03625
+      2019-01-01: 0.03625
+  - threshold:
+      2022-01-01: 16_622
+      2021-01-01: 12_702
+      2020-01-01: 9_408
+      2019-01-01: 9_244
+    rate:
+      2022-01-01: 0.060
+      2021-01-01: 0.055
+      2020-01-01: 0.04625
+      2019-01-01: 0.04625
+  - threshold:
+      2021-01-01: 15_878
+      2020-01-01: 12_544
+      2019-01-01: 12_324
+    rate:
+      2021-01-01: 0.065
+      2020-01-01: 0.05625
+      2019-01-01: 0.05625
+  - threshold:
+      2020-01-01: 15_680
+      2019-01-01: 15_406
+    rate:
+      2020-01-01: 0.06625
+      2019-01-01: 0.06625
+  - threshold:
+      2020-01-01: 23_520
+      2019-01-01: 23_108
+    rate:
+      2020-01-01: 0.06925
+      2019-01-01: 0.06925
+
+metadata:
+  threshold_unit: currency_USD
+  rate_unit: /1
+  threshold_period: year
+  type: marginal_rate
+  label: Idaho joint income tax rates
+  reference:
+  - title: Idaho State Tax Commission, Individual Income Tax Rate Schedule
+    href: https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/

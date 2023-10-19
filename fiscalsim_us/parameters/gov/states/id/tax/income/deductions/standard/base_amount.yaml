@@ -1,0 +1,22 @@
+description: Idaho provides this base standard deduction.
+metadata:
+  label: Idaho base standard deduction
+  period: year
+  unit: currency-USD
+  breakdown:
+  - filing_status
+  reference:
+  - title: Form 40 2022 Individual Income Tax Return Instructions Page 20 Standard Deduction Worksheet
+    href: https://tax.idaho.gov/wp-content/uploads/forms/EIN00046/EIN00046_03-01-2023.pdf
+
+# Do I need separate .py file for if taxpayer can be claimed as dependent? Or is that logic included in F-AGI file?
+JOINT:
+  2013-01-01: 25_900
+HEAD_OF_HOUSEHOLD:
+  2022-01-01: 19_400
+WIDOW:
+  2022-01-01: 25_900
+SINGLE:
+  2022-01-01: 12_950
+SEPARATE:
+  2022-01-01: 12_950

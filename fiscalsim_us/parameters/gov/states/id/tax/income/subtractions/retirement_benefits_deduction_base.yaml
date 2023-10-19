@@ -1,0 +1,14 @@
+description: Idaho retirement benefits deduction base amount.
+metadata:
+  period: year
+  unit: currency-USD
+  breakdown:
+  - filing status
+  reference:
+  - title: Form 39R 2022 Residential Supplemental Schedule, Part B Line 8
+    href: https://tax.idaho.gov/wp-content/uploads/forms/EFO00088/EFO00088_12-30-2022.pdf
+
+SINGLE:
+  2022-01-01: 40_140
+JOINT:
+  2022-01-01: 60_210
