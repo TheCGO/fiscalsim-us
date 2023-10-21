@@ -134,3 +134,26 @@
     added:
       - Updated `README.md` and its badges.
   date: 2023-09-20 17:00:00
+- bump: minor
+  changes:
+    added:
+      - Updates the Python version to 3.10 in `environment.yml`, `setup.py`, `README.md`, `build_and_test.yml`, `deploy_docs.yml`, `docs_check.yml`, and `publish_to_pypi.yml`.
+      - Adds back the Windows CI tests to `build_and_test.yml`. See Issue 49.
+      - Updates to `numpy>=1.24,<1.24` and `policyengine-core>=2.8,<3` in `setup.py`. This change is what enabled the update to Python 3.10 and came from PR 117 to `policyengine-core`.
+  date: 2023-10-09 01:30:00
+- bump: patch
+  changes:
+    added:
+      - Updates two files `la_nonrefundable_childcare.py` and `in_unemployment_compensation_deduction.py` that need a `min()` reference updated to `min_()`
+  date: 2023-10-09 02:00:00
+- bump: patch
+  changes:
+    added:
+      - Updates files from PolicyEngine-US v0.500.0 (e4a95733baafca0a7bec9ae79e96797416a4d237)
+  date: 2023-10-13 03:30:00
+- bump: patch
+  changes:
+    added:
+      - adjusted `salt_deduction.py` to calculate based on the added variables
+      - Adds three files `prior_year_state_income_tax_paid.py`, `prior_year_local_income_tax_paid.py`, and `sales_or_prior_year_state_and_local_income_tax.py`
+  date: 2023-10-13 16:00:00

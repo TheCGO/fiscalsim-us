@@ -3,7 +3,7 @@
 | | |
 | --- | --- |
 | Org | [![CGO cataloged](https://img.shields.io/badge/CGO-catalogued-9cf)](https://github.com/TheCGO) [![OS License: AGPL-3.0](https://img.shields.io/badge/OS%20License-AGPL%203.0-yellow)](https://github.com/TheCGO/fiscalsim-us/blob/main/LICENSE) |
-| Package | [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-3916/) [![PyPI Latest Release](https://img.shields.io/pypi/v/fiscalsim-us.svg)](https://pypi.org/project/fiscalsim-us/) [![PyPI Downloads](https://img.shields.io/pypi/dm/fiscalsim-us.svg?label=PyPI%20downloads)](https://pypi.org/project/fiscalsim-us/) |
+| Package | [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-31013/) [![PyPI Latest Release](https://img.shields.io/pypi/v/fiscalsim-us.svg)](https://pypi.org/project/fiscalsim-us/) [![PyPI Downloads](https://img.shields.io/pypi/dm/fiscalsim-us.svg?label=PyPI%20downloads)](https://pypi.org/project/fiscalsim-us/) |
 | Testing | ![example event parameter](https://github.com/TheCGO/fiscalsim-us/actions/workflows/build_and_test.yml/badge.svg?branch=main) ![example event parameter](https://github.com/TheCGO/fiscalsim-us/actions/workflows/deploy_docs.yml/badge.svg?branch=main) ![example event parameter](https://github.com/TheCGO/fiscalsim-us/actions/workflows/check_format.yml/badge.svg?branch=main) [![Codecov](https://codecov.io/gh/TheCGO/fiscalsim-us/branch/main/graph/badge.svg)](https://codecov.io/gh/TheCGO/fiscalsim-us) |
 
 

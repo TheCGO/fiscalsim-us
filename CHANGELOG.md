@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.3] - 2023-10-13 16:00:00
+
+### Added
+
+- added three files `prior_year_state_income_tax_paid.py`, `prior_year_local_income_tax_paid.py`, and `sales_or_prior_year_state_and_local_income_tax.py`
+- adjusted `salt_deduction.py` to calculate based on the added variables above
+
+## [0.2.2] - 2023-10-13 03:30:00
+
+### Added
+
+- Updates files from PolicyEngine-US v0.500.0 (e4a95733baafca0a7bec9ae79e96797416a4d237)
+
+## [0.2.1] - 2023-10-09 02:00:00
+
+### Added
+
+- Updates two files `la_nonrefundable_childcare.py` and `in_unemployment_compensation_deduction.py` that need a `min()` reference updated to `min_()`
+
+## [0.2.0] - 2023-10-09 01:30:00
+
+### Added
+
+- Updates the Python version to 3.10 in `environment.yml`, `setup.py`, `README.md`, `build_and_test.yml`, `deploy_docs.yml`, `docs_check.yml`, and `publish_to_pypi.yml`.
+- Adds back the Windows CI tests to `build_and_test.yml`. See Issue #49.
+- Updates to `numpy>=1.24,<1.24` and `policyengine-core>=2.8,<3` in `setup.py`. This change is what enabled the update to Python 3.10 and came from [PR #117](https://github.com/PolicyEngine/policyengine-core/pull/117) to `policyengine-core`.
+
 ## [0.1.5] - 2023-09-20 17:00:00
 
 ### Added
@@ -144,19 +171,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
-
-[0.1.2]: https://github.com/TheCGO/fiscalsim-us/compare/0.1.1...0.1.2
-[0.1.1]: https://github.com/TheCGO/fiscalsim-us/compare/0.1.0...0.1.1
-[0.1.0]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.12...0.1.0
-[0.0.12]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.11...0.0.12
-[0.0.11]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.10...0.0.11
-[0.0.10]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.9...0.0.10
-[0.0.9]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.8...0.0.9
-[0.0.8]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.7...0.0.8
-[0.0.7]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.6...0.0.7
-[0.0.6]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.5...0.0.6
-[0.0.5]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.4...0.0.5
-[0.0.4]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.3...0.0.4
-[0.0.3]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.2...0.0.3
-[0.0.2]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.1...0.0.2
-[0.0.1]: https://github.com/TheCGO/fiscalsim-us/compare/0.0.0...0.0.1
+[0.2.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.2...v0.2.3
+[0.2.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.5...v0.2.0
+[0.1.5]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.4...v0.1.5
+[0.1.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.2...v0.1.3
+[0.1.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.12...v0.1.0
+[0.0.12]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.11...v0.0.12
+[0.0.11]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.10...v0.0.11
+[0.0.10]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.9...v0.0.10
+[0.0.9]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.8...v0.0.9
+[0.0.8]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.7...v0.0.8
+[0.0.7]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.6...v0.0.7
+[0.0.6]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.5...v0.0.6
+[0.0.5]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.1...v0.0.2
+[0.0.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.0.0...v0.0.1
