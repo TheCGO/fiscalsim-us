@@ -157,3 +157,9 @@
       - adjusted `salt_deduction.py` to calculate based on the added variables
       - Adds three files `prior_year_state_income_tax_paid.py`, `prior_year_local_income_tax_paid.py`, and `sales_or_prior_year_state_and_local_income_tax.py`
   date: 2023-10-13 16:00:00
+- bump: patch
+  changes:
+    added:
+      - Fixed circularity in CO tax logic
+      - Fixed circularity in MO tax logic
+  date: 2023-10-24 10:00:00
