@@ -16,9 +16,9 @@ class va_age_deduction(Variable):
         filing_statuses = filing_status.possible_values
         federal_agi = tax_unit("adjusted_gross_income", period)
         spouse_agi = tax_unit("spouse_separate_adjusted_gross_income", period)
-        you_fdca = tax_unit("fixed_date_conformity_additions", period)
+        you_fdca = tax_unit("va_fixed_date_conformity_additions", period)
         spouse_fdca = 0  # change this
-        you_fdcs = tax_unit("fixed_date_conformity_subtractions", period)
+        you_fdcs = tax_unit("va_fixed_date_conformity_subtractions", period)
         spouse_fdcs = 0  # change this
 
         age_deduction_count = where(

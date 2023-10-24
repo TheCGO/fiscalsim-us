@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class calc_line_14(Variable):
+class va_calc_line_14(Variable):
     value_type = float
     entity = TaxUnit
     label = "VA interim step to get to total virginia taxable income, line 14 on form 760 https://www.tax.virginia.gov/sites/default/files/taxforms/individual-income-tax/2021/760-2021.pdf"

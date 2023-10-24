@@ -11,11 +11,11 @@ class va_additions_to_federal_agi(Variable):
 
     def formula(tax_unit, period, parameters):
         income_from_obligations_fed_exempt = tax_unit(
-            "income_from_obligations_fed_exempt", period
+            "va_income_from_obligations_fed_exempt", period
         )
 
         fixed_date_conformity_additions = tax_unit(
-            "fixed_date_conformity_additions", period
+            "va_fixed_date_conformity_additions", period
         )
 
         additions_to_fed_agi = (
