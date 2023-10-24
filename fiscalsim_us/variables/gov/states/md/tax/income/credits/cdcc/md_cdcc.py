@@ -1,5 +1,4 @@
 from fiscalsim_us.model_api import *
-import numpy as np
 
 
 class md_cdcc(Variable):

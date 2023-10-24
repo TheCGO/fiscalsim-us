@@ -2,7 +2,6 @@ from fiscalsim_us.model_api import *
 from fiscalsim_us.variables.household.demographic.geographic.county.county_enum import (
     County,
 )
-import numpy as np
 
 
 class county(Variable):
