@@ -20,7 +20,9 @@ class mo_net_state_income_taxes(Variable):
         p = parameters(period).gov.irs.deductions.itemized
         salt_cap = p.salt_and_real_estate.cap[filing_status]
 
-        uncapped_itax = max_(0, add(tax_unit, period, ["statelocal_sales_or_prior_inctax"]))
+        uncapped_itax = max_(
+            0, add(tax_unit, period, ["prior_year_state_income_tax_paid"])
+        )
         uncapped_ptax = add(tax_unit, period, ["real_estate_taxes"])
         uncapped_salt = uncapped_itax + uncapped_ptax
 
