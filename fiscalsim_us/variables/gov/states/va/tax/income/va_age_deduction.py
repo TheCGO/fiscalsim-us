@@ -66,11 +66,17 @@ class va_age_deduction(Variable):
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
             | (filing_status == filing_statuses.WIDOW),
-            parameters(period).gov.states.va.tax.income.va_age_deduction_threshold.SINGLE,
+            parameters(
+                period
+            ).gov.states.va.tax.income.va_age_deduction_threshold.SINGLE,
             where(
                 filing_status == filing_statuses.JOINT,
-                parameters(period).gov.states.va.tax.income.va_age_deduction_threshold.JOINT,
-                parameters(period).gov.states.va.tax.income.va_age_deduction_threshold.SEPARATE,
+                parameters(
+                    period
+                ).gov.states.va.tax.income.va_age_deduction_threshold.JOINT,
+                parameters(
+                    period
+                ).gov.states.va.tax.income.va_age_deduction_threshold.SEPARATE,
             ),
         )
 
