@@ -11,10 +11,9 @@ class va_adj_gross_income(Variable):
 
     def formula(tax_unit, period, parameters):
         line3 = tax_unit("va_calc_line_3", period)
-
         line8 = tax_unit("va_calc_line_8", period)
-
         filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
 
         threshold = parameters(
             period
@@ -24,18 +23,17 @@ class va_adj_gross_income(Variable):
 
         subtotal = line3 - line8
 
-        if filing_status == 1 or filing_status == 3:
-            if subtotal < single:
-                tax_owed = 0
+        tax_owed = where(
+            (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.SEPARATE)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
+            | (filing_status == filing_statuses.WIDOW),
+            where(subtotal < single, 0, subtotal),
+            where(
+                filing_status == filing_statuses.JOINT,
+                where(subtotal < joint, 0, subtotal),
+                subtotal,
+            ),
+        )
 
-                return tax_owed
-
-        if filing_status == 2:
-            if subtotal < joint:
-                tax_owed = 0
-
-                return tax_owed
-
-        va_adj_gross_income = subtotal
-
-        return va_adj_gross_income
+        return tax_owed
