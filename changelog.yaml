@@ -168,4 +168,4 @@
     added:
       - Updated environment.yml and build_and_test.yml to allow for python 3.11
       - Updated Virginia tax logic with correct mapping from federal filing status to state filing status.
-  date: 2023-10-24 20:00:00
+  date: 2023-10-24 22:00:00
