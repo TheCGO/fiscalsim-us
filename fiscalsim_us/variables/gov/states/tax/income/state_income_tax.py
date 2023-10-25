@@ -35,7 +35,7 @@ class state_income_tax(Variable):
         "or_income_tax",
         "pa_income_tax",
         "ri_income_tax",
-        # "va_income_tax",  --- temporarily deactivated until change if to where
+        "va_income_tax",
         "ut_income_tax",
         "wa_income_tax",
         "wi_income_tax",
