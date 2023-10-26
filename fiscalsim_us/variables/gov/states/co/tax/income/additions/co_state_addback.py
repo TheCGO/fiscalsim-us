@@ -8,25 +8,27 @@ class co_state_addback(Variable):
     unit = USD
     definition_period = YEAR
     reference = (
-        "https://tax.colorado.gov/sites/tax/files/documents/DR_104_Book_2021.pdf#page=5"
-        "https://tax.colorado.gov/sites/tax/files/documents/DR_104_Book_2022.pdf#page=5"
+        "https://tax.colorado.gov/sites/tax/files/documents/DR_104_Book_2021.pdf#page=5",
+        "https://tax.colorado.gov/sites/tax/files/documents/DR_104_Book_2022.pdf#page=5",
+        "https://tax.colorado.gov/sites/tax/files/documents/ITT_State_Income_Tax_Addback_Jan_2023.pdf",
     )
     defined_for = StateCode.CO
 
     def formula(tax_unit, period, parameters):
         federal_itemizer = tax_unit("tax_unit_itemizes", period)
-        state_inctax = max_(0, tax_unit("state_income_tax", period))
-        property_taxes = add(tax_unit, period, ["real_estate_taxes"])
-        # follow worksheet on page 5 of 2021 Book cited above:
-        irs_schA_line_5d = state_inctax + property_taxes
-        irs_schA_line_5e = tax_unit("salt_deduction", period)
-        ws_line_a = where(
-            irs_schA_line_5d > irs_schA_line_5e,
-            max_(0, irs_schA_line_5e - property_taxes),
-            state_inctax,
+
+        salt_deduct = tax_unit("salt_deduction", period)
+        local_taxes = add(
+            tax_unit, period, ["prior_year_local_income_tax_paid"]
         )
+        property_taxes = add(tax_unit, period, ["real_estate_taxes"])
+        state_addback = max_(0, salt_deduct - local_taxes - property_taxes)
+
+        # return the max between the "extra" itemized deductions above the std
+        # and the state taxes included in the SALT deduction
         p = parameters(period).gov.irs.deductions
-        ws_line_b = add(tax_unit, period, p.itemized_deductions)
-        ws_line_c = tax_unit("standard_deduction", period)
-        ws_line_d = max_(0, ws_line_b - ws_line_c)
-        return federal_itemizer * min_(ws_line_a, ws_line_d)
+        item_deducts = add(tax_unit, period, p.itemized_deductions)
+        std_deducts = tax_unit("standard_deduction", period)
+        alt_addback = max_(0, item_deducts - std_deducts)
+
+        return federal_itemizer * min_(state_addback, alt_addback)

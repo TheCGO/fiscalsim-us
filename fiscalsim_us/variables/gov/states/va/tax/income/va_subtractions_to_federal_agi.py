@@ -11,15 +11,15 @@ class va_subtractions_to_federal_agi(Variable):
 
     def formula(tax_unit, period, parameters):
         income_from_obligations_state_exempt = tax_unit(
-            "income_from_obligations_state_exempt", period
+            "va_income_from_obligations_state_exempt", period
         )
 
         fixed_date_conformity_subtractions = tax_unit(
-            "fixed_date_conformity_subtractions", period
+            "va_fixed_date_conformity_subtractions", period
         )
 
         disability_income_reported_as_wages = tax_unit(
-            "disability_income_reported_as_wages", period
+            "va_disability_income_reported_as_wages", period
         )
 
         subtractions_to_fed_agi = (
