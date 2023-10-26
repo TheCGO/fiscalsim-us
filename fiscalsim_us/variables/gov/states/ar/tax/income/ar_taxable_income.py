@@ -2,6 +2,7 @@ from fiscalsim_us.model_api import *
 
 
 class ar_taxable_income(Variable):
+    "Line 28 of Form AR1000F"
     value_type = float
     entity = TaxUnit
     label = "Arkansas taxable income"
