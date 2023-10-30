@@ -1,8 +1,8 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_income_tax_before_non_refundable_credits(Variable):
-    "Line 7A - 7D of form AR1000F"
+class ar_personal_credits(Variable):
+    "Line 7A - 7D, 34 of form AR1000F"
     value_type = float
     entity = TaxUnit
     label = "Arkansas personal tax credit"
@@ -13,14 +13,49 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
     def formula(tax_unit, period, parameters):
         personal_credit_amount = parameters(period).gov.states.ar.tax.income.credits.personal.personal_credit_amount
-        boxes_checked = tax_unit("placeholder", period)
-        personal_credit = personal_credit_amount * boxes_checked
+        filing_status = tax_unit("filing_status", period)
+        married_status = filing_status.possible_values.JOINT
+        self_and_spouse_credit = where(filing_status == married_status, 2, 1) * personal_credit_amount
+
+
+        blind_head = tax_unit("blind_head", period).astype(int)
+        blind_spouse = tax_unit("blind_spouse", period) * 1
+        blind_credit = (blind_head + blind_spouse) * personal_credit_amount
+
+        age_threshold = parameters(period).gov.states.ar.tax.income.credits.personal.age_threshold
+        aged_head = where(tax_unit("age_head", period).astype(int)>age_threshold,1,0)
+        aged_spouse = where(tax_unit("age_spouse", period).astype(int)>age_threshold,1,0)
+        aged_credit = (aged_head + aged_spouse) * personal_credit_amount
+
+        retirement_income = parameters(period).gov.states.ar.tax.income.retirement_sources
+        aged_special_head = where(aged_head == 1 and retirement_income > 0, 1, 0)
+        aged_special_spouse = where(aged_spouse == 1 and retirement_income > 0, 1, 0)
+
+        aged_special_credit = (aged_special_head + aged_special_spouse) * personal_credit_amount
+
+
+        # I created "is_deaf", "deaf_head", and "deaf_spouse" myself
+        deaf_head = tax_unit("deaf_head", period).astype(int)
+        deaf_spouse = tax_unit("deaf_spouse", period) * 1
+        deaf_credit = (deaf_head + deaf_spouse) * personal_credit_amount
+
+
+        #Need to add "surviving spouse" status to this too
+        hoh_status = filing_status.possible_values.HEAD_OF_HOUSEHOLD
+        hoh_credit = where(filing_status == hoh_status, 1, 0) * personal_credit_amount
+
+
+        personal_credit = self_and_spouse_credit + blind_credit + aged_credit + aged_special_credit + deaf_credit + hoh_credit
+
+
+
+
 
         dependents = tax_unit("tax_unit_dependents", period)
         dependent_credit_amount  = parameters(period).gov.states.ar.tax.income.credits.personal.dependents
         dependent_credit = dependents *dependent_credit_amount
 
-        
+
         qual_dependents = tax_unit("placeholder", period)
         qual_dependent_credit_amount  = parameters(period).gov.states.ar.tax.income.credits.personal.qual_dependents
         qual_dependent_credit = qual_dependent_credit_amount * qual_dependents

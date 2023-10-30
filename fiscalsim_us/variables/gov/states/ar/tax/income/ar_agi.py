@@ -10,3 +10,6 @@ class ar_agi(Variable):
     definition_period = YEAR
     # Arkansas Code
     reference = "https://law.justia.com/codes/arkansas/2019/title-26/subtitle-5/chapter-51/subchapter-4/section-26-51-403/"
+
+    adds = ["ar_total_income"]
+    subtracts = ["ar_income_adjustments"]
