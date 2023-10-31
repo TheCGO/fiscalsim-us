@@ -1,6 +1,7 @@
 description: Montana provides a standard deduction equal to this percentage of Montana adjusted gross income, subject to minimum and maximum values.
 values:
   2021-01-01: 0.2
+  2022-01-01: 0.2
 metadata:
   period: year
   unit: /1

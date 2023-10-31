@@ -1,4 +1,7 @@
 description: Montana provides this maximum standard deduction amount, based on filing status.
+
+#This refers to line 3 of the standard deduction worksheet on Montana tax form 2
+
 metadata:
   label: Montana standard deduction max amount
   period: year

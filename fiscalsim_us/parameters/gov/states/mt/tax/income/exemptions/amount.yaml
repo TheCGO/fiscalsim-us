@@ -1,5 +1,6 @@
 description: Montana deducts this amount for each eligible exemption when computing taxable income.
 values:
+  # Defined in the law as $1900 beginning after December 31, 2004, indexed by inflation. (Repealed effective January 1, 2024)
   2021-01-01: 2_580
   2022-01-01: 2_710
 metadata:

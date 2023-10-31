@@ -1,6 +1,7 @@
 description: Montana provides an additional tax exemption to filers this age or older.
 values:
   2021-01-01: 65
+  2022-01-01: 65
 metadata:
   reference:
     - title: "2022 Montana Form Instructions | Exemptions"
