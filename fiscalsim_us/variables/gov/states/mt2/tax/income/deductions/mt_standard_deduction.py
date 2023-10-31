@@ -17,7 +17,7 @@ class mt_standard_deduction(Variable):
     def formula(tax_unit, period, parameters):
         p = parameters(period).gov.states.mt.tax.income.deductions
         filing_status = tax_unit("filing_status", period)
-        line2 = mt_adjusted_gross_income * 0.2
+        line2 = mt_adjusted_gross_income * p.sd_rate
         line3 = p.standard_deducation_max[filing_status]
         line4 = min(line2, line3)
         line5 = p.standard_deducation_min[filing_status]
