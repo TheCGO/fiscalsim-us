@@ -1,0 +1,9 @@
+description: Montana cap that the political contributions and limited by per taxpayer
+values:
+  2022-01-01: 100
+metadata:
+  unit: year
+  label: Montana political contributions cap
+  reference:
+    title: Montana Individual Tax Return Form 2 | Itemized Deductions Scedule | Line 16
+    href: https://mtrevenue.gov/wp-content/uploads/dlm_uploads/2023/05/Montana-Idividiual-Income-Tax-Return-Form-2-2022v6.2.pdf

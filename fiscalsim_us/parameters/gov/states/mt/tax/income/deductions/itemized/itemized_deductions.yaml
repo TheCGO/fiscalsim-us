@@ -1,0 +1,24 @@
+description: Montana deductions from taxable income if itemizing (that are not available if not itemizing).
+values:
+  2022-01-01:
+    - mt_medical_and_dental_expenses_deduction
+    - mt_medical_premiums_deduction
+    - mt_long_term_care_premiums_deduction
+    - mt_federal_income_tax_deduction
+    - mt_state_local_tax_deduction
+    - mt_light_vehicle_registration_deduction
+    - mt_per_capita_livestock_deduction
+    - mt_other_taxes_paid_deduction
+    - mt_home_mortage_interest_deduction
+    - mt_investment_interest_deduction
+    - mt_charitable_cash_deduction
+    - mt_charitable_noncash_deduction
+    - mt_charitable_carryover_deduction
+    - mt_child_care_expense_deduction
+    - mt_casualty_loss_deduction
+    - mt_political_contributions_deduction
+    - mt_gambling_loss_deduction
+    - mt_other_deduction
+metadata:
+  unit: variable
+  label: montana itemized deductions

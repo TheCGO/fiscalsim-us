@@ -4,6 +4,7 @@ from fiscalsim_us.model_api import *
 class mt_itemized_deduction(Variable):
     """
     See itemized deduction schedule on page 7 of the Montana individual tax return form 2 for how to calculate
+    Line 15 on Montana individual tax return form 2
     """
 
     value_type = float
@@ -17,3 +18,5 @@ class mt_itemized_deduction(Variable):
         "https://mtrevenue.gov/wp-content/uploads/dlm_uploads/2022/12/Form-2-2022-Instructions.pdf"
     )
     defined_for = StateCode.MT
+
+    adds = "gov.states.mt.tax.income.deductions.itemized.itemized_deductions"
