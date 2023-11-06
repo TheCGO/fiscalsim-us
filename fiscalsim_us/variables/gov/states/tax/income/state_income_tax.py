@@ -9,6 +9,7 @@ class state_income_tax(Variable):
     definition_period = YEAR
     adds = [
         # state income tax variables listed in alphabetical order:
+        "az_income_tax",
         "ca_income_tax",
         "co_income_tax",
         "dc_income_tax",
