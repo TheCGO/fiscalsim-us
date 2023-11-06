@@ -1,0 +1,19 @@
+description: Progressive rate schedule for single or seperate filers in AZ.
+metadata:
+  type: marginal_rate
+  threshold_unit: currency-USD
+  rate_unit: /1
+  name: az_income_tax_rate_single
+  label: AZ state income tax rates for single filers
+  reference:
+    - title: AZ form 140, page 14
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-calculating
+brackets:
+  - threshold:
+      2022-01-01: 0
+    rate:
+      2022-01-01: 0.0255
+  - threshold:
+      2022-01-01: 28_653
+    rate:
+      2022-01-01: 0.0298

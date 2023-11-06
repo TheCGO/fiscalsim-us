@@ -1,0 +1,26 @@
+description: Kansas provides this base standard deduction.
+metadata:
+  label: Arizona standard deduction
+  period: year
+  unit: currency-USD
+  breakdown:
+  - filing_status
+  reference:
+  - title: AZ 2022 For 140 Instructions, page 20
+    href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-calculating
+  
+JOINT:
+  2022-01-01: 25_900
+HEAD_OF_HOUSEHOLD:
+  2022-01-01: 19_400
+SINGLE:
+  2022-01-01: 12_950
+SEPARATE:
+  2022-01-01: 12_950
+WIDOW:
+  # The standard deduction chart on page 20 does not specify
+  # a deduction amount of widow filers. Page 5 indicates that 
+  # if a filer files as a widow on their federal return, they
+  # may file as head of household on their AZ return.
+  # Therefore, the deduction is the same as head of household.
+  2022-01-01: 19_400
