@@ -19,3 +19,4 @@ class ar_total_income(Variable):
             # Add positive values only - losses are deducted later.
             total += not_dependent * max_(0, add(person, period, [source]))
         return total
+    

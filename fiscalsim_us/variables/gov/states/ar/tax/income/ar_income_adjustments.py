@@ -13,3 +13,4 @@ class ar_income_adjustments(Variable):
         "https://law.justia.com/codes/arkansas/2019/title-26/subtitle-5/chapter-51/subchapter-4/section-26-51-403/"
     )
     defined_for = StateCode.AR
+    
