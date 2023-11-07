@@ -10,4 +10,5 @@ class az_prior_year_carryover(Variable):
     reference = "https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form"
     defined_for = StateCode.AZ
 
+
 # line 3C from page 3 of 2022 Form 140

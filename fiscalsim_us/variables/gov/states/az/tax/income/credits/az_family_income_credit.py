@@ -6,12 +6,9 @@ class az_family_income_credit(Variable):
     entity = TaxUnit
     label = "AZ Family Income Tax Credit"
     unit = USD
-    documentation = (
-        "AZ Family Income Tax Credit on line 50 of form 140"
-    )
+    documentation = "AZ Family Income Tax Credit on line 50 of form 140"
     reference = "https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form"
     definition_period = YEAR
-
 
     def formula(tax_unit, period, parameters):
         person = tax_unit.members
@@ -22,7 +19,7 @@ class az_family_income_credit(Variable):
         other = tax_unit("az_other_exemptions", period)
         parents = tax_unit("az_parents_grandparents_exemption", period)
         az_agi = tax_unit("az_agi", period)
-        worksheet_1 = aged_blind + other + parents +  az_agi
+        worksheet_1 = aged_blind + other + parents + az_agi
 
         p = parameters(period).gov.states.az.tax.income.credits.family_income
         filing_status = tax_unit("filing_status", period)
@@ -50,7 +47,7 @@ class az_family_income_credit(Variable):
                 separate.calc(dep_count),
             ],
         )
-        
+
         worksheet_2_line_2 = where(
             filing_status == filing_status.possible_values.JOINT,
             2,
@@ -60,17 +57,16 @@ class az_family_income_credit(Variable):
         worksheet_2_line_3 = dep_count + worksheet_2_line_2
         worksheet_2_line_4 = worksheet_2_line_3 * 40
         worksheet_2_line_5 = where(
-            filing_status == status.JOINT or
-            filing_status == status.WIDOW or
-            filing_status == status.HEAD_OF_HOUSEHOLD,
+            filing_status == status.JOINT
+            or filing_status == status.WIDOW
+            or filing_status == status.HEAD_OF_HOUSEHOLD,
             240,
             120,
         )
-        worksheet_2_line_6 = min_(worksheet_2_line_4, worksheet_2_line_5)    
+        worksheet_2_line_6 = min_(worksheet_2_line_4, worksheet_2_line_5)
 
-        return  where(
+        return where(
             worksheet_1 <= qualifies_limit,
             worksheet_2_line_6,
             0,
         )
-    

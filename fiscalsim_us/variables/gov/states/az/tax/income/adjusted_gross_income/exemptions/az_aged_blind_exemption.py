@@ -13,7 +13,6 @@ class az_aged_blind_exemption(Variable):
     definition_period = YEAR
 
     def formula(tax_unit, period, parameters):
-
         # Aged/blind exemption
         p = parameters(period).gov.states["az"].tax.income.exemptions
         blind_head = tax_unit("blind_head", period).astype(int)

@@ -10,6 +10,7 @@ class az_contribution_credits(Variable):
     reference = "https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form"
     defined_for = StateCode.AZ
 
+
 # line 5C from page 3 of 2022 Form 140
 # This variable reduces the amount of standard
 # deduction increase from charitable contributions

@@ -10,5 +10,7 @@ class az_agi_subtractions(Variable):
     reference = "https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form"
     definition_period = YEAR
 
-    adds = ["az_capital_gains_subtractions",
-            "tax_unit_taxable_social_security"]
+    adds = [
+        "az_capital_gains_subtractions",
+        "tax_unit_taxable_social_security",
+    ]

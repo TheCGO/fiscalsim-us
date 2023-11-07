@@ -32,8 +32,10 @@ class az_dependent_credit(Variable):
 
         credit_after_adjustment = where(
             filing_status == filing_status.possible_values.JOINT,
-            p.adjustment_table.calc(joint_difference) * credit_before_adjustment,
-            p.adjustment_table.calc(other_difference) * credit_before_adjustment,
+            p.adjustment_table.calc(joint_difference)
+            * credit_before_adjustment,
+            p.adjustment_table.calc(other_difference)
+            * credit_before_adjustment,
         )
 
         return credit_after_adjustment

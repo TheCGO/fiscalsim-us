@@ -15,5 +15,10 @@ class az_standard_deduction(Variable):
             period
         ).gov.states.az.tax.income.deductions
         filing_status = tax_unit("filing_status", period)
-        charitable_deduction_increase = tax_unit("az_sd_increase_charitable_contributions", period)
-        return standard_deduction.standard[filing_status] + charitable_deduction_increase
+        charitable_deduction_increase = tax_unit(
+            "az_sd_increase_charitable_contributions", period
+        )
+        return (
+            standard_deduction.standard[filing_status]
+            + charitable_deduction_increase
+        )
