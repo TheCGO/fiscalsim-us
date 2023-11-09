@@ -6,7 +6,7 @@ metadata:
   name: high_dep_inc_tax_credit_phaseout_rate
   reference:
     - title: Arkansas Code Title 26. Taxation § 26-51-301. Subsection f
-    href: https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-301/
+      href: https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-301/
   
   breakdown:
     - filing_status

@@ -4,7 +4,7 @@ values:
 metadata:
   reference:
     - title: 2022 ARKANSAS INDIVIDUAL INCOME TAX CHILD AND DEPENDENT CARE EXPENSES (Line 20)
-    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2441_Child_andDependentCareExpenses.pdf
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2441_Child_andDependentCareExpenses.pdf
   unit: currency-USD
   period: year
   label: Arkansas Dependent Care Deductible Benefits Max for married filing separately on different returns.

@@ -6,6 +6,6 @@ metadata:
   name: high_income_reduction_amount
   reference:
     - title: Arkansas Code Title 26. Taxation § 26-51-201. Subsection a 10
-    href: https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2022S3%2FPublic%2FACT2.pdf
+      href: https://www.arkleg.state.ar.us/Home/FTPDocument?path=%2FACTS%2F2022S3%2FPublic%2FACT2.pdf
   values:
     2022-01-01: 460
