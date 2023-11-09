@@ -25,5 +25,5 @@ metadata:
   unit: currency-USD
   label: Gross income sources
   reference:
-   - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
+  - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
