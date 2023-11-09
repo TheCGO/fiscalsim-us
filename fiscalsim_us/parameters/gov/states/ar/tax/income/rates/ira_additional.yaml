@@ -5,7 +5,7 @@ metadata:
   reference:
     - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 32)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
-     - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident Instructions (line 32)
+    - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident Instructions (line 32)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_and_AR1000NR_Instructions.pdf
   period: year
   label: AR employer Pension Plan/Qualified IRA income exemption amount
