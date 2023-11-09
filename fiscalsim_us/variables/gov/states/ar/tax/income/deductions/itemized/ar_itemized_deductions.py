@@ -23,6 +23,7 @@ class ar_itemized_deductions(Variable):
         real_estate_taxes = add(tax_unit, period, ["real_estate_taxes"])
 
         # Line 6
+        other_taxes = tax_unit('ar_other_taxes', period)
 
         interest_expense = tax_unit('interest_expense', period)
 
@@ -42,4 +43,6 @@ class ar_itemized_deductions(Variable):
 
         misc_deductions = max(0, line_22 - misc_limit)
 
-        return medical_deduction +real_estate_taxes+ interest_expense + charitable_deduction + casualty_loss
+        other_misc_deductions = tax_unit('ar_other_misc_deductions', period)
+
+        return medical_deduction +real_estate_taxes+ other_taxes + interest_expense + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions

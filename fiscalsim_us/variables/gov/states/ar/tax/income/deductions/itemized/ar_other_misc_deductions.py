@@ -1,14 +1,19 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_unreimbursed_employee_expenses(Variable):
+class ar_other_misc_expenses(Variable):
     """
-    Line 20 of 2022 AR3, Arkansas Itemized Deductions
+    Line 29 of 2022 AR3, Arkansas Itemized Deductions
+
+    Deductions include:
+    Volunteer firefighter expenses
+    Gambling Losses
+    Other miscellaneous deductions
     """
 
     value_type = float
     entity = TaxUnit
-    label = "AR unreimbursed employee expenses"
+    label = "AR other miscellaneous deductions"
     unit = USD
     reference = 'https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf'
     definition_period = YEAR
