@@ -16,10 +16,28 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         taxable_income = tax_unit("ar_taxable_income", period)
         high_income_threshold = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max
         litc = tax_unit('ar_income_tax_credit', period)
+        high_income_reduction = tax_unit('ar_high_income_reduction', period)
+
+        def round_to_nearest_50(num):
+            # Calculate the nearest multiple of 100
+            nearest_multiple_of_100 = round(num / 100) * 100
+            
+            # Get the last two digits
+            last_two_digits = num % 100
+            
+            # Determine the closest ending in "50"
+            if last_two_digits <= 50:
+                rounded_income = nearest_multiple_of_100 + 50
+                return rounded_income
+            else:
+                rounded_income = nearest_multiple_of_100 - 50
+                return rounded_income
+            
+        rounded_taxable_income = round_to_nearest_50(taxable_income)
 
         rate = where(taxable_income < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
         
-        tax = rate.calc(taxable_income) - litc
+        tax = rate.calc(rounded_taxable_income) - litc - high_income_reduction
 
 
 

@@ -2,6 +2,7 @@ from fiscalsim_us.model_api import *
 
 
 class ar_total_income(Variable):
+    "Line 23 of AR1000F"
     value_type = float
     entity = Person
     label = "Total income"
