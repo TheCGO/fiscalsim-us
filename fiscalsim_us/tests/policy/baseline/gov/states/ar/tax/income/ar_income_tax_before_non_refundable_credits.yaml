@@ -4,7 +4,7 @@
   input:
     ar_taxable_income: 5_100
     filing_status: JOINT
-    dependents: 1
+    tax_unit_count_dependents: 1
     state_code: AR
   output:
     #round(5_100 * 0.00)
@@ -16,7 +16,9 @@
   input:
     ar_taxable_income: 11_180
     filing_status: SINGLE
-    dependents: 1
+    tax_unit_count_dependents: 1
+    litc: 104
+    high_income_reduction: 0
     state_code: AR
   output:
     # (10_000-5_101) * 0.02
@@ -28,7 +30,7 @@
   input:
     ar_taxable_income: 22_702
     filing_status: JOINT
-    dependents: 2
+    tax_unit_count_dependents: 2
     state_code: AR
   output:
     # (10_000-5_101) * 0.02
@@ -40,7 +42,7 @@
   input:
     ar_taxable_income: 51_075
     filing_status: HEAD_OF_HOUSEHOLD
-    dependents: 2
+    tax_unit_count_dependents: 2
     state_code: AR
   output:
     # 104 + round((11_000 - 10_301)* 0.03)
@@ -52,7 +54,7 @@
   input:
     ar_taxable_income: 88_000
     filing_status: JOINT
-    dependents: 0
+    tax_unit_count_dependents: 0
     state_code: AR
   output:
   # 236 + round((20_000 - 14_701)* 0.034)
