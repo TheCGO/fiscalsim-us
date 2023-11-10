@@ -1,6 +1,6 @@
 from fiscalsim_us.model_api import *
 
-class ar_low_income_credit(Variable):
+class ar_high_income_reduction(Variable):
     
     value_type = float
     entity = TaxUnit
