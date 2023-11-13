@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+from numpy import round
 
 
 class ar_income_tax_before_non_refundable_credits(Variable):
@@ -40,3 +41,10 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         tax = rate.calc(rounded_taxable_income) - litc - high_income_reduction
 
         return tax
+        # lump_sum_dist_tax = tax_unit('ar_lump_sum_dist_tax', period)
+
+        # # Additional tax on IRA and qualified plan withdrawal and overpayment 
+    
+        # total_tax = tax + lump_sum_dist_tax
+
+        # return total_tax
