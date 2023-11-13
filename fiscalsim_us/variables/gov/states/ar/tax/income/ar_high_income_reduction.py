@@ -19,7 +19,7 @@ class ar_high_income_reduction(Variable):
 
         def round_to_nearest_50(num):
             # Calculate the nearest multiple of 100
-            nearest_multiple_of_100 = round(num / 100) * 100
+            nearest_multiple_of_100 = round(num / 100,0) * 100
             
             # Get the last two digits
             last_two_digits = num % 100

@@ -20,7 +20,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
         def round_to_nearest_50(num):
             # Calculate the nearest multiple of 100
-            nearest_multiple_of_100 = round(num / 100) * 100
+            nearest_multiple_of_100 = round(num / 100,0) * 100
             
             # Get the last two digits
             last_two_digits = num % 100
@@ -38,7 +38,5 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         rate = where(taxable_income < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
         
         tax = rate.calc(rounded_taxable_income) - litc - high_income_reduction
-
-
 
         return tax
