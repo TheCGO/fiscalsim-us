@@ -12,9 +12,9 @@ class ar_high_income_reduction(Variable):
 
     def formula(tax_unit, period, parameters):
         
-        full_reduction= parameters(period).gov.states.ar.tax.income.credits.high_income_reduction.high_income_reduction_amount
+        full_reduction= parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_amount
         min_income = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max + 1
-        phaseout_rate = parameters(period).gov.states.ar.tax.income.credits.high_income_reduction.high_income_reduction_phaseout
+        phaseout_rate = parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_phaseout
         agi = tax_unit('ar_agi', period)
 
         def round_to_nearest_50(num):
