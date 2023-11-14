@@ -9,7 +9,7 @@
     ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    #
+    # 0 = 5,100 * 0
     ar_income_tax_before_non_refundable_credits: 0
 
 - name: AR income tax rates - taxable income from $5,101 to $10,300, single
@@ -23,7 +23,7 @@
     ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    # 
+    # 26 = (5099*0) + (5199*0.02) + (882*0.03) - 104
     ar_income_tax_before_non_refundable_credits: 26
 
 - name: AR income tax rates - taxable income from $14,700 to $24,299, agi $27502 JOINT 2 dependents

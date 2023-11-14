@@ -38,11 +38,11 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         rounded_taxable_income = round_to_nearest_50(taxable_income)
 
         
-        tax = where(
+        tax = round(where(
                 taxable_income < high_income_threshold,
                 p.rates.calc(rounded_taxable_income),
                 p.high_income_rates.calc(rounded_taxable_income)
-                )
+                ) - litc - high_income_reduction,0)
         
         # rate = where(taxable_income < high_income_threshold, p.rates, p.high_income_rates)
         
