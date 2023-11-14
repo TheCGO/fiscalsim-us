@@ -5,13 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<<<<<<< HEAD
-## [0.1.6] - 2023-10-03 20:00:00
+## [0.2.6] - 2023-11-14 17:00:00
 
 ### Added
 
-- Adds Montana tax logic.
-=======
+- Updates Montana tax logic.
+
 ## [0.2.3] - 2023-10-13 16:00:00
 
 ### Added
@@ -38,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updates the Python version to 3.10 in `environment.yml`, `setup.py`, `README.md`, `build_and_test.yml`, `deploy_docs.yml`, `docs_check.yml`, and `publish_to_pypi.yml`.
 - Adds back the Windows CI tests to `build_and_test.yml`. See Issue #49.
 - Updates to `numpy>=1.24,<1.24` and `policyengine-core>=2.8,<3` in `setup.py`. This change is what enabled the update to Python 3.10 and came from [PR #117](https://github.com/PolicyEngine/policyengine-core/pull/117) to `policyengine-core`.
->>>>>>> origin/main
 
 ## [0.1.5] - 2023-09-20 17:00:00
 
@@ -179,6 +177,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
+[0.2.6]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.5...v0.2.6
 [0.2.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.0...v0.2.1
