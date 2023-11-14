@@ -165,5 +165,17 @@
 - bump: patch
   changes:
     added:
+      - Fixed circularity in CO tax logic
+      - Fixed circularity in MO tax logic
+  date: 2023-10-24 10:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated environment.yml and build_and_test.yml to allow for python 3.11
+      - Updated Virginia tax logic with correct mapping from federal filing status to state filing status.
+  date: 2023-10-24 22:00:00
+- bump: patch
+  changes:
+    added:
       - Updates Montana tax logic
   date: 2023-11-14 17:00:00

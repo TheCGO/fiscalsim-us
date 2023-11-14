@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class fixed_date_conformity_additions(Variable):
+class va_fixed_date_conformity_additions(Variable):
     value_type = float
     entity = TaxUnit
     label = "Va fixed date conformity additions https://www.tax.virginia.gov/sites/default/files/taxforms/individual-income-tax/2021/schedule-adj-2021.pdf"
