@@ -6,9 +6,10 @@
     filing_status: JOINT
     ar_low_income_credit: 0
     ar_high_income_reduction: 0
+    ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    #round(5_100 * 0.00)
+    #
     ar_income_tax_before_non_refundable_credits: 0
 
 - name: AR income tax rates - taxable income from $5,101 to $10,300, single
@@ -19,9 +20,10 @@
     filing_status: SINGLE
     ar_low_income_credit: 104
     ar_high_income_reduction: 0
+    ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    # (10_000-5_101) * 0.02
+    # 
     ar_income_tax_before_non_refundable_credits: 26
 
 - name: AR income tax rates - taxable income from $14,700 to $24,299, agi $27502 JOINT 2 dependents
@@ -32,9 +34,10 @@
     filing_status: JOINT
     ar_low_income_credit: 384
     ar_high_income_reduction: 0
+    ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    # (10_000-5_101) * 0.02
+    # 
     ar_income_tax_before_non_refundable_credits: 133
 
 - name: AR income tax rates - Reg Income, Head of houehold, 2 dependents
@@ -45,9 +48,10 @@
     filing_status: HEAD_OF_HOUSEHOLD
     ar_low_income_credit: 0
     ar_high_income_reduction: 0
+    ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-    # 104 + round((11_000 - 10_301)* 0.03)
+    # 
     ar_income_tax_before_non_refundable_credits: 1_873
 
 - name: AR income tax rates - high income w/ reduction, joint, 0 dependents
@@ -58,8 +62,9 @@
     filing_status: JOINT
     ar_low_income_credit: 0
     ar_high_income_reduction: 110
+    ar_lump_sum_dist_tax: 0
     state_code: AR
   output:
-  # 236 + round((20_000 - 14_701)* 0.034)
+  # 
     ar_income_tax_before_non_refundable_credits: 3_762
 

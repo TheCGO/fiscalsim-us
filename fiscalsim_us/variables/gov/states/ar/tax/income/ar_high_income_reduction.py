@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+from numpy import round
 
 class ar_high_income_reduction(Variable):
     

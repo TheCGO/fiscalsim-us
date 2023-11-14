@@ -14,8 +14,9 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
     def formula(tax_unit, period, parameters):
 
+        p = parameters(period).gov.states.ar.tax.income.rates
         taxable_income = tax_unit("ar_taxable_income", period)
-        high_income_threshold = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max
+        high_income_threshold = p.regular_bracket_max
         litc = tax_unit('ar_low_income_credit', period)
         high_income_reduction = tax_unit('ar_high_income_reduction', period)
 
@@ -36,15 +37,14 @@ class ar_income_tax_before_non_refundable_credits(Variable):
             
         rounded_taxable_income = round_to_nearest_50(taxable_income)
 
-        rate = where(taxable_income < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
+        rate = where(taxable_income < high_income_threshold, p.rates, p.high_income_rates)
         
         tax = rate.calc(rounded_taxable_income) - litc - high_income_reduction
 
-        return tax
-        # lump_sum_dist_tax = tax_unit('ar_lump_sum_dist_tax', period)
+        lump_sum_dist_tax = tax_unit('ar_lump_sum_dist_tax', period)
 
-        # # Additional tax on IRA and qualified plan withdrawal and overpayment 
+        # Additional tax on IRA and qualified plan withdrawal and overpayment 
     
-        # total_tax = tax + lump_sum_dist_tax
+        total_tax = tax + lump_sum_dist_tax
 
-        # return total_tax
+        return total_tax
