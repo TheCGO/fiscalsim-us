@@ -134,13 +134,11 @@
     added:
       - Updated `README.md` and its badges.
   date: 2023-09-20 17:00:00
-<<<<<<< HEAD
 - bump: patch
   changes:
     added:
       - Adds Montana tax logic
   date: 2023-10-03 20:00:00
-=======
 - bump: minor
   changes:
     added:
@@ -164,4 +162,8 @@
       - adjusted `salt_deduction.py` to calculate based on the added variables
       - Adds three files `prior_year_state_income_tax_paid.py`, `prior_year_local_income_tax_paid.py`, and `sales_or_prior_year_state_and_local_income_tax.py`
   date: 2023-10-13 16:00:00
->>>>>>> origin/main
+- bump: patch
+  changes:
+    added:
+      - Updates Montana tax logic
+  date: 2023-11-14 17:00:00
