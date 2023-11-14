@@ -7,11 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-<<<<<<< HEAD
-    version="0.1.6",
-=======
-    version="0.2.3",
->>>>>>> origin/main
+    version="0.2.6",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
