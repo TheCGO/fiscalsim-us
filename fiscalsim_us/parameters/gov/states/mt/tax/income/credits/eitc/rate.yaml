@@ -1,7 +1,6 @@
 description: Montana provides this rate to match the federal EITC.
 values:
   2021-01-01: 0.03
-  2022-01-01: 0.03
 metadata:
   unit: year
   label: Montana EITC Rate

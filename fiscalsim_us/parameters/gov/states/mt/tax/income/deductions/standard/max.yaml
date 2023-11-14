@@ -1,7 +1,5 @@
 description: Montana provides this maximum standard deduction amount, based on filing status.
 
-#This refers to line 3 of the standard deduction worksheet on Montana tax form 2
-
 metadata:
   label: Montana standard deduction max amount
   period: year
@@ -11,7 +9,7 @@ metadata:
   reference:
     - title: MT Code, Income Tax - Deductions, § 42-15-523 (2)
       href: https://rules.mt.gov/gateway/RuleNo.asp?RN=42%2E15%2E523
-    - title: Montana Tax Form 2022 | Standard Deduction | Line 3
+    - title: This refers to line 3 of the standard deduction worksheet on Montana tax form 2. | Montana Tax Form 2022 | Standard Deduction | Line 3
       href: https://mtrevenue.gov/wp-content/uploads/dlm_uploads/2023/05/Montana-Idividiual-Income-Tax-Return-Form-2-2022v6.2.pdf#page=7
     - title: Montana Tax Form 2021 | Standard Deduction | Line 3
       href: https://mtrevenue.gov/wp-content/uploads/mdocs/form%202%202021.pdf#page=7
