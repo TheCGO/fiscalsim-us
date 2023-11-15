@@ -1,9 +1,10 @@
 from fiscalsim_us.model_api import *
 
 
-class mt_adjusted_gross_income(Variable):
+class mt_agi(Variable):
     """
-    Line 14 on Montana individual income tax return form 2
+    Montana adjusted gross income. Line 14 on Montana individual income tax
+    return form 2
     """
 
     value_type = float
