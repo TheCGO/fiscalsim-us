@@ -5,7 +5,6 @@ class mt_charitable_noncash_deduction(Variable):
     """
     Line 12 on Montana itemized deductions schedule
     """
-
     value_type = float
     entity = TaxUnit
     label = "Montana charitable non-cash donation deduction"
