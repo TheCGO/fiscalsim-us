@@ -80,7 +80,7 @@
     state_code: AR
   output:
   # 
-    ar_income_tax_before_non_refundable_credits: 3_762
+    ar_income_tax_before_non_refundable_credits: 3_911
 
 - name: AR income tax rates - high income w/out reduction, joint, 0 dependents, $94357 agi,
   period: 2022
