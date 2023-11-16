@@ -1,4 +1,4 @@
-- name: Single household with $101,002 taxable income 
+- name: Single household with $11,180 taxable income 
   period: 2022
   input:
     state_code: AR
@@ -9,7 +9,7 @@
     ar_itemized_deductions: 200
     ar_agi: 13_450
   output:
-    ar_inflation_relief_credit: 104
+    ar_low_income_credit: 104
 
 - name: Separate household with $20,000 taxable income - not eligible
   period: 2022
@@ -22,7 +22,7 @@
     ar_itemized_deductions: 200
     ar_agi: 20_000
   output:
-    ar_inflation_relief_credit: 0
+    ar_low_income_credit: 0
 
 - name: Joint with $26,000 taxable income, itemized deductions
   period: 2022
@@ -35,7 +35,7 @@
     ar_itemized_deductions: 5_000
     ar_agi: 31_000
   output:
-    ar_inflation_relief_credit: 0
+    ar_low_income_credit: 0
 
 - name: Joint household with $26,460 taxable income - 3 dependents
   period: 2022
@@ -48,7 +48,7 @@
     ar_itemized_deductions: 500
     ar_agi: 31_000
   output:
-    ar_inflation_relief_credit: 149
+    ar_low_income_credit: 149
 
 - name: Widow household with $26,000 taxable income - 2 dependents
   period: 2022
@@ -61,4 +61,4 @@
     ar_itemized_deductions: 500
     ar_agi: 26_000
   output:
-    ar_inflation_relief_credit: 13
+    ar_low_income_credit: 13
