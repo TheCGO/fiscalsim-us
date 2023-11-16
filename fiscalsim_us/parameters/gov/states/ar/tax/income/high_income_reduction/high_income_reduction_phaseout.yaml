@@ -1,5 +1,6 @@
-description: Arkansas custs the high income tax reduction by this amount
+description: Arkansas cuts the high income tax reduction by this amount for each 100 in income over the high_income_threshold
 metadata:
+  type: single_amount
   period: year
   unit: currency-USD
   label: Arkansas high income tax reduction phaseout amount

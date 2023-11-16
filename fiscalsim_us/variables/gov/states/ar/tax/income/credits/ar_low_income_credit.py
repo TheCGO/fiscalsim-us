@@ -17,8 +17,8 @@ class ar_low_income_credit(Variable):
         adjustment = parameters(period).gov.states.ar.tax.income.rates.adjustment
         credit_rate= parameters(period).gov.states.ar.tax.income.credits.low_income_credit.income_tax_credit_pct
         num_dependents = tax_unit('tax_unit_dependents', period)
-        min_income = where(num_dependents<2,parameters(period).gov.states.ar.tax.income.credits.low_dep_inc_tax_credit_min_income, parameters(period).gov.states.ar.tax.income.credits.high_dep_inc_tax_credit_min_income )
-        phaseout_rate = where(num_dependents<2, parameters(period).gov.states.ar.tax.income.credits.low_dep_inc_tax_credit_phaseout_rate[filing_status],parameters(period).gov.states.ar.tax.income.credits.high_dep_inc_tax_credit_phaseout_rate[filing_status])
+        min_income = where(num_dependents<2,parameters(period).gov.states.ar.tax.income.credits.low_income_credit.low_dep_inc_tax_credit_min_income, parameters(period).gov.states.ar.tax.income.credits.low_income_credit.high_dep_inc_tax_credit_min_income )
+        phaseout_rate = where(num_dependents<2, parameters(period).gov.states.ar.tax.income.credits.low_income_credit.low_dep_inc_tax_credit_phaseout_rate[filing_status],parameters(period).gov.states.ar.tax.income.credits.low_income_credit.high_dep_inc_tax_credit_phaseout_rate[filing_status])
         agi = tax_unit('ar_agi', period)
 
         def round_to_nearest_50(num):
