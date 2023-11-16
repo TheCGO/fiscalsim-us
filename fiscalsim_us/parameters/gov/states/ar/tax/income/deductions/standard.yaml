@@ -1,5 +1,6 @@
 description: Arkansas provides a standard deduction of this amount, based on filing status.
 metadata:
+  type: single_amount
   label: Arkansas standard deduction
   period: year
   unit: currency-USD

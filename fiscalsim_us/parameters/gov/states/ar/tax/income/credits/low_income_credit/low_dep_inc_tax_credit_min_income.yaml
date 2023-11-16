@@ -1,5 +1,6 @@
 description: This is the minimum amount at which an Arkansas Resident is not exempt from taxes, for each filing status, 1 or fewer dependents
 metadata:
+  type: single_amount
   period: year
   unit: currency-USD
   label: Arkansas income-tax credit minimum income

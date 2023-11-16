@@ -1,5 +1,6 @@
 description: Arkansas's low income tax credit is reduced by this amount for each additional $100 in income. Units with one or fewer dependents
 metadata:
+  type: single_amount
   period: year
   unit: currency-USD
   label: Arkansas income-tax credit phaseout rate

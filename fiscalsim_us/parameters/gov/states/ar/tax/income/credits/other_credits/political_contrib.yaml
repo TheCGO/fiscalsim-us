@@ -2,6 +2,7 @@ description: Arkansas Other Tax Credits - Political Contribution Credit (per Tax
 values:
   2022-01-01: 50
 metadata:
+  type: single_amount
   reference:
     - title: AR1000TC Arkansas Individual Income Tax Credits (Line 1)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits.pdf

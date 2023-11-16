@@ -2,6 +2,7 @@ description: AR1113 PHENYLKETONURIA DISORDER AND OTHER METABOLIC DISORDERS MAX C
 values:
   2022-01-01: 2_400
 metadata:
+  type: single_amount
   reference:
     - title: 2022 AR1113 PHENYLKETONURIA DISORDER AND OTHER METABOLIC DISORDERS CREDIT (line 4)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1113_PhenylketonuriaOtherMetabolicDisordersCredit.pdf
