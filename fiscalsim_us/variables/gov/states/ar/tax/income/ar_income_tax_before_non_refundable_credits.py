@@ -50,8 +50,9 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
         lump_sum_dist_tax = tax_unit('ar_lump_sum_dist_tax', period)
 
-        # Additional tax on IRA and qualified plan withdrawal and overpayment 
+        # Additional tax on IRA and qualified plan withdrawal and overpayment
+        additional_ira_tax = tax_unit('ar_additional_ira_tax', period)
     
-        total_tax = tax + lump_sum_dist_tax
+        total_tax = tax + lump_sum_dist_tax + additional_ira_tax
 
         return total_tax

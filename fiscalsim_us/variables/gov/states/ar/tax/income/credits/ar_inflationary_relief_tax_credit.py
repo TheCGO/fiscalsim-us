@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+import numpy as np
 
 
 class ar_inflation_relief_credit(Variable):
@@ -21,7 +22,7 @@ class ar_inflation_relief_credit(Variable):
         reduction_start = p.reduction.start[filing_status]
         increment = p.reduction.increment[filing_status]
         reduction_per_increment = p.reduction.amount[filing_status]
-        excess = max_(income - reduction_start, 0)
+        excess = max(income - reduction_start, 0)
         increments = np.ceil(excess / increment)
         total_reduction_amount = increments * reduction_per_increment
-        return max_(max_amount - total_reduction_amount, 0)
+        return max(max_amount - total_reduction_amount, 0)

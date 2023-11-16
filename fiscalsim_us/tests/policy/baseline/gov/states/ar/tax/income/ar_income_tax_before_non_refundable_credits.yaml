@@ -7,6 +7,7 @@
     ar_low_income_credit: 0
     ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
     # 0 = 5,100 * 0
@@ -21,6 +22,7 @@
     ar_low_income_credit: 104
     ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
     # 26 = (5099*0) + (5199*0.02) + (882*0.03) - 104
@@ -35,6 +37,7 @@
     ar_low_income_credit: 384
     ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
     # 
@@ -49,6 +52,7 @@
     ar_low_income_credit: 0
     ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
     # 
@@ -63,6 +67,7 @@
     ar_low_income_credit: 0
     ar_high_income_reduction: 120
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
   # 
@@ -77,6 +82,7 @@
     ar_low_income_credit: 0
     ar_high_income_reduction: 20
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
   # 
@@ -91,6 +97,7 @@
     ar_low_income_credit: 0
     ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
+    ar_additional_ira_tax: 0
     state_code: AR
   output:
   # 
