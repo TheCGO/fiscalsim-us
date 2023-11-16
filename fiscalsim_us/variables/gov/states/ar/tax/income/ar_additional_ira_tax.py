@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_additional_ira_(Variable):
+class ar_additional_ira_tax(Variable):
     "2022 AR 1000F instructions Line 32, 10% of federal amount from form 5329"
 
     value_type = float
