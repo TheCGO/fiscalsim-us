@@ -24,8 +24,7 @@
   output:
     ar_inflation_relief_credit: 0
 
-- name: Joint with $26
-,000 taxable income, itemized deductions
+- name: Joint with $26,000 taxable income, itemized deductions
   period: 2022
   input:
     state_code: AR
