@@ -5,6 +5,7 @@ class mt_casualty_loss_deduction(Variable):
     """
     Line 15 on Montana itemized deductions schedule
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana casualty and theft losses"

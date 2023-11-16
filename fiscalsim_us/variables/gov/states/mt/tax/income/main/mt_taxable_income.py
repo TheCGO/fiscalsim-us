@@ -21,5 +21,5 @@ def formula(tax_unit, period, parameters):
     exemptions = tax_unit("mt_exemptions", period)
     return max(
         0,
-        tax_unit("mt_adjusted_gross_income", period) - deductions - exemptions,
+        tax_unit("mt_agi", period) - deductions - exemptions,
     )

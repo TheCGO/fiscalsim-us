@@ -5,6 +5,7 @@ class mt_child_care_expense_deduction(Variable):
     """
     Line 14 on Montana itemized deductions schedule
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana child and dependent care expenses"

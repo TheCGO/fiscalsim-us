@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Updates Montana tax logic.
+
 ## [0.2.5] - 2023-10-24 22:00:00
 
 ### Added

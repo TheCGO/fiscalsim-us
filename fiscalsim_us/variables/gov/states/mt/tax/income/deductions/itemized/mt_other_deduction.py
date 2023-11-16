@@ -5,6 +5,7 @@ class mt_other_deduction(Variable):
     """
     Line 18 on itemized deductions schedule
     """
+
     value_type = float
     entity = TaxUnit
     label = "Montana other deductions"
