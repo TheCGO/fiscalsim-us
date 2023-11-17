@@ -51,8 +51,8 @@ class ar_high_income_reduction(Variable):
         reduction_amount = full_reduction - phaseout_reduction
 
         # Ensure credit_amount does not go below 0 and that those who itemize do not take the credit
-        where(reduction_amount < 0,
-            reduction_amount = 0)
+        reduction_amount = where(reduction_amount < 0,
+            0, reduction_amount)
         
         reduction_amount = round(reduction_amount,0)
         

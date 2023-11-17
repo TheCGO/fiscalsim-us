@@ -64,7 +64,7 @@ class ar_low_income_credit(Variable):
         credit_amount -= phaseout_reduction
 
         # Ensure credit_amount does not go below 0 and that those who itemize do not take the credit
-        where(credit_amount < 0 | std_ded<itm_ded | filing_status == "SEPARATE",
+        where(credit_amount < 0 or std_ded<itm_ded or filing_status == "SEPARATE",
             credit_amount = 0)
         
         credit_amount = round(credit_amount,0)
