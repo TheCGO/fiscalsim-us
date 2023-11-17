@@ -1,4 +1,4 @@
-description: This is the minimum amount at which an Arkansas Resident is not exempt from taxes, for each filing status, 1 or fewer dependents
+description: This is the minimum amount at which an Arkansas Resident is not exempt from taxes, for each filing status, 2 or more dependents
 metadata:
   type: single_amount
   period: year
