@@ -54,11 +54,11 @@
   period: 2022
   input:
     state_code: AR
-    ar_taxable_income: 21_550
-    tax_unit_dependents: 1
+    ar_taxable_income: 23_730
+    tax_unit_dependents: 2
     filing_status: WIDOW
     ar_standard_deduction: 2_270
     ar_itemized_deductions: 500
     ar_agi: 26_000
   output:
-    ar_low_income_credit: 13
+    ar_low_income_credit: 62
