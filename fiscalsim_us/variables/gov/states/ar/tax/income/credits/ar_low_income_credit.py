@@ -57,7 +57,7 @@ class ar_low_income_credit(Variable):
         credit_amount = tax_liability * credit_rate
 
         # Calculate the phaseout reduction for each $100 over min_income
-        excess_income = agi_less_ded - min_inc_less_ded
+        excess_income = rounded_income - rounded_min_income
         phaseout_count = where(excess_income % 100 > 0, excess_income // 100 +1, excess_income // 100)
         phaseout_reduction = phaseout_count * phaseout_rate
 
