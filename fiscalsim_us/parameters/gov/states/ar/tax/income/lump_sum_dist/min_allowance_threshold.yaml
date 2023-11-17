@@ -2,8 +2,8 @@ description: If the Total taxable amount in line 3 is greater than this amount, 
 values:
   2022-01-01: 70_000
 metadata:
+  type: single_amount
   reference:
-    type: single_amount
     - title: 2022 AR1000TD ARKANSAS INDIVIDUAL INCOME TAX LUMP-SUM DISTRIBUTION AVERAGING (Part II line 3)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TD_LumpSumDistributionAveraging.pdf
   unit: currency-USD
