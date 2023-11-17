@@ -51,10 +51,10 @@ class ar_high_income_reduction(Variable):
         reduction_amount = full_reduction - phaseout_reduction
 
         # Ensure credit_amount does not go below 0
-        # reduction_amount = where(reduction_amount < 0 or excess_income<0,
-        #     0, reduction_amount)
+        reduction_amount = where(reduction_amount < 0 or excess_income <0 ,
+            0, reduction_amount)
         
         reduction_amount = round(reduction_amount,0)
         
 
-        return reduction_amount
+        return phaseout_rate
