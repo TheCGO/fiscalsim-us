@@ -2,8 +2,8 @@ description: Multiply the amount in line 5 by this amount - part of Lump Sum Ave
 values:
   2022-01-01: 0.2
 metadata:
-  reference:
   type: single_amount
+  reference:
     - title: 2022 AR1000TD ARKANSAS INDIVIDUAL INCOME TAX LUMP-SUM DISTRIBUTION AVERAGING (Part II line 6)
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TD_LumpSumDistributionAveraging.pdf
   unit: currency-USD
