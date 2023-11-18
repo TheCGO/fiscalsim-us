@@ -157,3 +157,20 @@
       - adjusted `salt_deduction.py` to calculate based on the added variables
       - Adds three files `prior_year_state_income_tax_paid.py`, `prior_year_local_income_tax_paid.py`, and `sales_or_prior_year_state_and_local_income_tax.py`
   date: 2023-10-13 16:00:00
+- bump: patch
+  changes:
+    added:
+      - Fixed circularity in CO tax logic
+      - Fixed circularity in MO tax logic
+  date: 2023-10-24 10:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated environment.yml and build_and_test.yml to allow for python 3.11
+      - Updated Virginia tax logic with correct mapping from federal filing status to state filing status.
+  date: 2023-10-24 22:00:00
+- bump: patch
+  changes:
+    added:
+      - Updates Montana tax logic
+  date: 2023-11-14 17:00:00

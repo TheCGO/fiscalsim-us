@@ -1,0 +1,9 @@
+description: Montana percentage of adjusted gross income that your medical and dental expenses are subject to.
+values:
+  2022-01-01: 0.075
+metadata:
+  unit: year
+  label: Montana itemized medical and dental rate
+  reference:
+    title: Montana Individual Tax Return Form 2 | Itemized Deductions Scedule | Line 1c
+    href: https://mtrevenue.gov/wp-content/uploads/dlm_uploads/2023/05/Montana-Idividiual-Income-Tax-Return-Form-2-2022v6.2.pdf
