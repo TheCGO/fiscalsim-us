@@ -10,4 +10,4 @@ class id_agi(Variable):
     defined_for = StateCode.ID
 
     adds = ["id_additions", "adjusted_gross_income"]
-    subtracts = ["id_subtractions"]
+    subtracts = ["id_subtractions", "alt_energy_device_deduction"]

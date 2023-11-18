@@ -14,4 +14,4 @@ class id_income_tax_before_refundable_credits(Variable):
             "id_income_tax_before_non_refundable_credits", period
         )
         non_refundable_credits = tax_unit("id_non_refundable_credits", period)
-        return max_(before_non_refundable_credits - non_refundable_credits, 0)
+        return max(before_non_refundable_credits - non_refundable_credits, 0)
