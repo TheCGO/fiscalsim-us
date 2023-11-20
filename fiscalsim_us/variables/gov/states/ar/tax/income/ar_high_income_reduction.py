@@ -57,4 +57,4 @@ class ar_high_income_reduction(Variable):
         reduction_amount = round(reduction_amount,0)
         
 
-        return phaseout_reduction
+        return reduction_amount
