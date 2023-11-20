@@ -62,3 +62,15 @@
     ar_agi: 26_000
   output:
     ar_low_income_credit: 62
+- name: Widow household with $21,000 taxable income - 2 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 21_730
+    tax_unit_dependents: 2
+    filing_status: WIDOW
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 500
+    ar_agi: 24_000
+  output:
+    ar_low_income_credit: 242
