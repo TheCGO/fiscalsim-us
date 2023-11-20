@@ -23,7 +23,7 @@
 - name: AR High Income Reduction if above threshold
   period: 2022
   input:
-    ar_agi: 90_040
+    ar_agi: 90_041
     ar_standard_deduction: 4_540
     ar_itemized_deductions: 1_000
     filing_status: JOINT

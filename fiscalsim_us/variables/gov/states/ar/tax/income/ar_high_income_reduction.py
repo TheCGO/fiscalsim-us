@@ -44,7 +44,7 @@ class ar_high_income_reduction(Variable):
 
         # Calculate the phaseout reduction for each $100 over min_income
         excess_income = rounded_income - rounded_min_income
-        phaseout_reduction = where( excess_income % 1000 == 0, (excess_income // 1000) * phaseout_rate, ((excess_income // 1000) + 1) * phaseout_rate)
+        phaseout_reduction = where( excess_income % 100 == 0, (excess_income // 100) * phaseout_rate, ((excess_income // 100) + 1) * phaseout_rate)
 
         # Reduce the credit amount based on the phaseout reduction
         reduction_amount = full_reduction - phaseout_reduction
