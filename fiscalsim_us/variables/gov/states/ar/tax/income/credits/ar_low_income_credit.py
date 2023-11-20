@@ -47,7 +47,7 @@ class ar_low_income_credit(Variable):
         min_inc_less_ded = min_income - deduction
 
         rounded_income = round_to_nearest_50(agi_less_ded)
-        rounded_min_income = round_to_nearest_50(min_inc_less_ded)
+        rounded_min_income = round_to_nearest_50(min_income)
         
         # Calculate the tax liability on min_income
         tax_liability = tax_rate.calc(rounded_min_income)
