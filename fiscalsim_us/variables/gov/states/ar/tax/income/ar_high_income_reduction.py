@@ -38,20 +38,19 @@ class ar_high_income_reduction(Variable):
         deduction = where(itm_ded > std_ded, itm_ded, std_ded)
 
         agi_less_ded = agi - deduction
-        min_inc_less_ded = min_income - deduction
 
         rounded_income = round_to_nearest_50(agi_less_ded)
-        rounded_min_income = round_to_nearest_50(min_inc_less_ded)
+        rounded_min_income = round_to_nearest_50(min_income)
 
         # Calculate the phaseout reduction for each $100 over min_income
         excess_income = rounded_income - rounded_min_income
-        phaseout_reduction = excess_income // 100 * phaseout_rate
+        phaseout_reduction = where( excess_income % 1000 < 0, (excess_income // 1000) * phaseout_rate, (excess_income // 1000) * phaseout_rate +1)
 
         # Reduce the credit amount based on the phaseout reduction
-        reduction_amount = phaseout_reduction - full_reduction
+        reduction_amount = full_reduction - phaseout_reduction
 
         # Ensure credit_amount does not go below 0
-        reduction_amount = where(reduction_amount < 0 or excess_income <0 ,
+        reduction_amount = where(reduction_amount < 0 or excess_income < 0 ,
             0, reduction_amount)
         
         reduction_amount = round(reduction_amount,0)
