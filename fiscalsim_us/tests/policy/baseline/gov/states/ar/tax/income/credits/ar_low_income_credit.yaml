@@ -41,14 +41,14 @@
   period: 2022
   input:
     state_code: AR
-    ar_taxable_income: 21,661
+    ar_taxable_income: 26_460
     tax_unit_dependents: 3
     filing_status: JOINT
     ar_standard_deduction: 4_540
     ar_itemized_deductions: 500
-    ar_agi: 26_201
+    ar_agi: 31_000
   output:
-    ar_low_income_credit: 65
+    ar_low_income_credit: 149
 
 - name: Widow household with $26,000 taxable income - 2 dependents
   period: 2022
@@ -62,7 +62,7 @@
     ar_agi: 26_000
   output:
     ar_low_income_credit: 62
-    
+
 - name: Widow household with $21,000 taxable income - 2 dependents
   period: 2022
   input:
@@ -75,3 +75,16 @@
     ar_agi: 24_000
   output:
     ar_low_income_credit: 242
+
+- name: Joint household with $21,000 taxable income - 1 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 18_310
+    tax_unit_dependents: 1
+    filing_status: JOINT
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 500
+    ar_agi: 22_850
+  output:
+    ar_low_income_credit: 268
