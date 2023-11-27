@@ -27,7 +27,7 @@ class ar_personal_credits(Variable):
         aged_spouse = where(tax_unit("age_spouse", period).astype(int)>age_threshold,1,0)
         aged_credit = (aged_head + aged_spouse) * personal_credit_amount
 
-        retirement_income = parameters(period).gov.states.ar.tax.income.retirement_sources
+        retirement_income = tax_unit('ar_retirement_income', period)
         aged_special_head = where(aged_head == 1 and retirement_income > 0, 1, 0)
         aged_special_spouse = where(aged_spouse == 1 and retirement_income > 0, 1, 0)
 
@@ -40,8 +40,7 @@ class ar_personal_credits(Variable):
         deaf_credit = (deaf_head + deaf_spouse) * personal_credit_amount
 
 
-        #Need to add "surviving spouse" status to this too
-        hoh_status = filing_status.possible_values.HEAD_OF_HOUSEHOLD
+        hoh_status = filing_status.possible_values.HEAD_OF_HOUSEHOLD or filing_status.possible_values.WIDOW
         hoh_credit = where(filing_status == hoh_status, 1, 0) * personal_credit_amount
 
 
@@ -56,7 +55,7 @@ class ar_personal_credits(Variable):
         dependent_credit = dependents *dependent_credit_amount
 
 
-        qual_dependents = tax_unit("placeholder", period)
+        qual_dependents = tax_unit("ar_qual_dependents", period)
         qual_dependent_credit_amount  = parameters(period).gov.states.ar.tax.income.credits.personal.qual_dependents
         qual_dependent_credit = qual_dependent_credit_amount * qual_dependents
 
