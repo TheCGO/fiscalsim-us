@@ -28,8 +28,8 @@ class ar_personal_credits(Variable):
         aged_credit = (aged_head + aged_spouse) * personal_credit_amount
 
         retirement_income = tax_unit('ar_retirement_income', period)
-        aged_special_head = where(aged_head == 1 and retirement_income > 0, 1, 0)
-        aged_special_spouse = where(aged_spouse == 1 and retirement_income > 0, 1, 0)
+        aged_special_head = where(aged_head == 1 and retirement_income < 0, 1, 0)
+        aged_special_spouse = where(aged_spouse == 1 and retirement_income < 0, 1, 0)
 
         aged_special_credit = (aged_special_head + aged_special_spouse) * personal_credit_amount
 
