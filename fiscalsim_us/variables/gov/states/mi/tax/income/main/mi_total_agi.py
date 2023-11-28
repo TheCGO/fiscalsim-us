@@ -14,4 +14,3 @@ class mi_total_agi(Variable):
     defined_for = StateCode.MI
 
     adds = ["adjusted_gross_income", "mi_additions"]
-    

@@ -13,4 +13,4 @@ class mi_total_tax_liability(Variable):
     definition_period = YEAR
     defined_for = StateCode.MI
 
-    adds = ["mi_income_tax", "mi_voluntary_contributions","mi_use_tax"]
+    adds = ["mi_income_tax", "mi_voluntary_contributions", "mi_use_tax"]

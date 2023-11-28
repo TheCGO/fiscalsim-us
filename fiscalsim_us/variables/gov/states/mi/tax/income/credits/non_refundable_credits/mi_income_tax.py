@@ -14,8 +14,8 @@ class mi_income_tax(Variable):
     defined_for = StateCode.MI
 
     def formula(tax_unit, period, parameters):
-    imposed = tax_unit("mi_income_tax_imposed_by_other_gov_credit", period)
-    historic = tax_unit("mi_historic_preservation_amount", period)
-    tax = tax_unit("mi_income_tax_before_credits", period)
+    imposed = tax_unit("mi_income_tax_imposed_by_other_gov_credit")
+    historic = tax_unit("mi_historic_preservation_amount")
+    tax = tax_unit("mi_income_tax_before_credits")
     credit = imposed + historic
     return max(0, credit - tax)
