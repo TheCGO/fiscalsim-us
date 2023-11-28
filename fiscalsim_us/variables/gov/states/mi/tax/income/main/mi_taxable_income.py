@@ -10,6 +10,6 @@ class mi_taxable_income(Variable):
     definition_period = YEAR
 
     def formula(tax_unit, period, parameters):
-    income = tax_unit("mi_income_subject_to_tax")
-    exemption = tax_unit("mi_exemptions")
-    return max(0,exemption-income)
+        income = tax_unit("mi_income_subject_to_tax")
+        exemption = tax_unit("mi_exemptions")
+        return max(0,exemption-income)
