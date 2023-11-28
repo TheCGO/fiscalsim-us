@@ -7,7 +7,8 @@
     blind_spouse: 0
     age_head: 50
     age_spouse: 0
-    ar_retirement_income: 0
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
     deaf_head: 0 
     deaf_spouse: 0
     tax_unit_dependents: 0
@@ -23,7 +24,8 @@
     blind_spouse: 0
     age_head: 50
     age_spouse: 56
-    ar_retirement_income: 0
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
     deaf_head: 0 
     deaf_spouse: 0
     tax_unit_dependents: 1
@@ -39,7 +41,8 @@
     blind_spouse: 0
     age_head: 70
     age_spouse: 87
-    ar_retirement_income: 0
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
     deaf_head: 0 
     deaf_spouse: 0
     tax_unit_dependents: 0
@@ -55,7 +58,8 @@
     blind_spouse: 0
     age_head: 70
     age_spouse: 87
-    ar_retirement_income: 40_000
+    ar_head_retirement_income: 20_000
+    ar_spouse_retirement_income: 20_000
     deaf_head: 0 
     deaf_spouse: 0
     tax_unit_dependents: 0
@@ -71,7 +75,8 @@
     blind_spouse: 1
     age_head: 42
     age_spouse: 39
-    ar_retirement_income: 0
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
     deaf_head: 0 
     deaf_spouse: 1
     tax_unit_dependents: 2

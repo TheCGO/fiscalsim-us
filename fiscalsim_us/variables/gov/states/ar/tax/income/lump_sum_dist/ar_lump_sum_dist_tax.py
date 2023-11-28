@@ -17,7 +17,7 @@ class ar_lump_sum_dist_tax(Variable):
 
     # Pull in distribution amount here
         income = tax_unit('ar_distribution_income', period)
-        actuarial_value = tax_unit('ar_actualrial_value', period)
+        actuarial_value = tax_unit('ar_actuarial_value', period)
         taxable_dist = income + actuarial_value
 
         line_4_max = p.min_allowance_multiple1_max

@@ -1,0 +1,24 @@
+- name: Distribution income of 1000, actuarial value of 100,000 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 1_000
+    ar_actuarial_value: 100_000
+  output:
+    ar_lump_sum_dist_tax: 140
+- name: Distribution income of 75000, actuarial value of 2,000,000 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 1_000
+    ar_actuarial_value: 2_000_000
+  output:
+    ar_lump_sum_dist_tax: 22_620
+- name: Distribution income of 80000, actuarial value of 0 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 80_000
+    ar_actuarial_value: 0
+  output:
+    ar_lump_sum_dist_tax: 580
