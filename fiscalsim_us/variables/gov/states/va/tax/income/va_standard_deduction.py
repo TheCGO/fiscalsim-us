@@ -11,20 +11,19 @@ class va_standard_deduction(Variable):
 
     def formula(tax_unit, period, parameters):
         filing_status = tax_unit("filing_status", period)
+        filing_statuses = filing_status.possible_values
 
-        if filing_status == 1:
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
-            )
-
-        if filing_status == 2:
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.JOINT
-            )
-
-        if filing_status == 3:
-            standard_deduction = (
-                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE
-            )
+        standard_deduction = where(
+            (filing_status == filing_statuses.SINGLE)
+            | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
+            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SEPARATE),
+            parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            where(
+                filing_status == filing_statuses.JOINT,
+                parameters.gov.states.va.tax.income.va_standard_deduction.JOINT,
+                parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
+            ),
+        )
 
         return standard_deduction
