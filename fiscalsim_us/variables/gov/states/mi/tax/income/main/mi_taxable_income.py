@@ -12,4 +12,4 @@ class mi_taxable_income(Variable):
     def formula(tax_unit, period, parameters):
         income = tax_unit("mi_income_subject_to_tax")
         exemption = tax_unit("mi_exemptions")
-        return max(0,exemption-income)
+        return max(0, exemption - income)

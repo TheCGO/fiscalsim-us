@@ -16,5 +16,5 @@ class mi_income_subject_to_tax(Variable):
     def formula(tax_unit, period, parameters):
         total = tax_unit("mi_total_agi")
         subtractions = tax_unit("mi_subtractions")
-    
+
         return max(0, subtractions - total)
