@@ -8,3 +8,8 @@ class mi_taxable_income(Variable):
     defined_for = StateCode.MI
     unit = USD
     definition_period = YEAR
+
+    def formula(tax_unit, period, parameters):
+    income = tax_unit("mi_income_subject_to_tax", period)
+    exemption = tax_unit("mi_exemptions", period)
+    return max(0,exemption-income)
