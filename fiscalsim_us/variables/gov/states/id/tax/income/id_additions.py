@@ -11,13 +11,11 @@ class id_additions(Variable):
     * Idaho college savings account withdrawal
     * Bonus Depreciation
     """
-    
+
     value_type = float
     entity = TaxUnit
     label = "Idaho additions"
     unit = USD
     definition_period = YEAR
-    reference = (
-        "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_12-30-2022.pdf"
-    )
+    reference = "https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_12-30-2022.pdf"
     defined_for = StateCode.ID

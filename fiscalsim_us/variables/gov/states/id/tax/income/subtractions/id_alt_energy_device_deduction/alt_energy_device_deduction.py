@@ -9,7 +9,9 @@ class alt_energy_device_deduction(Variable):
     definition_period = YEAR
 
     def formula(tax_unit, period, parameters):
-        p = parameters(period).gov.states.id.tax.income.subtractions.id_alt_energy_device_deduction
+        p = parameters(
+            period
+        ).gov.states.id.tax.income.subtractions.id_alt_energy_device_deduction
         limit = p.alt_energy_device_deduction_limit
         cost_19 = tax_unit("alt_energy_device_cost_2019", period)
         cost_20 = tax_unit("alt_energy_device_cost_2020", period)
@@ -22,5 +24,7 @@ class alt_energy_device_deduction(Variable):
         deduction_2020 = cost_20 * portion_deductible
         deduction_2021 = cost_21 * portion_deductible
         deduction_2022 = cost_22 * portion_deductible
-        deduction_total = deduction_2019 + deduction_2020 + deduction_2021 + deduction_2022
+        deduction_total = (
+            deduction_2019 + deduction_2020 + deduction_2021 + deduction_2022
+        )
         return min(deduction_total, limit)

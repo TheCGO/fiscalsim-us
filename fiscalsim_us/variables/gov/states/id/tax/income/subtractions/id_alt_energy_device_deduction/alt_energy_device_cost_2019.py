@@ -1,5 +1,6 @@
 from fiscalsim_us.model_api import *
 
+
 class alt_energy_device_cost_2019(Variable):
     value_type = float
     entity = TaxUnit

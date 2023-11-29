@@ -1,5 +1,6 @@
 from fiscalsim_us.model_api import *
 
+
 class alt_energy_device_2022(Variable):
     value_type = bool
     entity = TaxUnit
