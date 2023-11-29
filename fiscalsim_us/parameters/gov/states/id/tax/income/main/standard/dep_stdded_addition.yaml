@@ -1,0 +1,10 @@
+description: Idaho addition to earned income to calculate standard deduction if you can be claimed as a dependent and earned income is more than $750.
+values:
+  2022-01-01: 400
+metadata:
+  unit: currency-USD
+  period: year
+  label: Dependent earned income addition for standard deduction
+  reference:
+    - title: Idaho Form 40, Individual Income Tax Return and Instructions 2022, page 8
+      href: https://tax.idaho.gov/wp-content/uploads/forms/EFO00089/EFO00089_12-30-2022.pdf

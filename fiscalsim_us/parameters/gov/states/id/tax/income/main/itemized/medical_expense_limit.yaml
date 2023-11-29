@@ -1,0 +1,10 @@
+description: Idaho deductible medical expenses must be greater than this percentage rate of an individual's income.
+values:
+  2022-01-01: 0.075
+metadata:
+  label: Idaho minimum medical expense rate
+  period: year
+  unit: currency-USD
+  reference:
+  - title: Itemized Deduction Worksheet for Idaho, Line 1
+    href: https://tax.idaho.gov/wp-content/uploads/forms/EIS00407/EIS00407_01-05-2023.pdf
