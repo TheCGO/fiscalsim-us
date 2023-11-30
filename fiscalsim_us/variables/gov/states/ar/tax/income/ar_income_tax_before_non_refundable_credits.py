@@ -39,7 +39,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
         
         tax = round(where(
-                taxable_income < high_income_threshold,
+                taxable_income <= high_income_threshold,
                 p.rates.calc(rounded_taxable_income),
                 p.high_income_rates.calc(rounded_taxable_income)
                 ) - litc - high_income_reduction,0)
