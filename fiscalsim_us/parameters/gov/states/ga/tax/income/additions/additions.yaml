@@ -2,6 +2,8 @@ description: Georgia adds these variables to the federal taxable income when com
 values:
   2021-01-01:
     - form_4972_lumpsum_distributions
+    - ga_nol_carryover_addition
+    - ga_other_additions
 
 metadata:
   unit: list
