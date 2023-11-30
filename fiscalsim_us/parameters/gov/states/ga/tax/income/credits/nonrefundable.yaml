@@ -1,0 +1,14 @@
+description: Georgia nonrefundable credits
+values:
+  2021-01-01:
+    - ga_low_income_credit
+    - ga_other_nonrefundable_credits
+    - ga_cdcc
+    - ga_series100_nonrefundable_credits
+
+metadata:
+  unit: list
+  label: Georgia nonrefundable credits
+  reference:
+    - title: 2022 Form 500 Instructions
+      href: https://apps.dor.ga.gov/FillableForms/PDFViewer/Index?form=2022GA500

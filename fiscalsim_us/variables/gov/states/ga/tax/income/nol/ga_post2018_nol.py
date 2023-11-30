@@ -4,7 +4,7 @@ from fiscalsim_us.model_api import *
 class ga_post2018_nol(Variable):
     value_type = float
     entity = TaxUnit
-    label = "Georgia Net Operating Loss (carryover) from years after 2018"
+    label = "Georgia Net Operating Loss (carryover) from years 2018 and after"
     unit = USD
     definition_period = YEAR
     reference = (
