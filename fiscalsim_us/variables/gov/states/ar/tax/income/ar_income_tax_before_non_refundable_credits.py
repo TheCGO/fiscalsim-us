@@ -28,7 +28,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
             last_two_digits = num % 100
             
             # Determine the closest ending in "50"
-            if last_two_digits <= 50:
+            if last_two_digits <= 50 and last_two_digits >= 1:
                 rounded_income = nearest_multiple_of_100 + 50
                 return rounded_income
             else:
