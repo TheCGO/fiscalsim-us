@@ -16,7 +16,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
 
         p = parameters(period).gov.states.ar.tax.income.rates
         taxable_income = tax_unit("ar_taxable_income", period)
-        high_income_threshold = p.regular_bracket_max
+        high_income_threshold = p.regular_bracket_max +1
         litc = tax_unit('ar_low_income_credit', period)
         high_income_reduction = tax_unit('ar_high_income_reduction', period)
 
