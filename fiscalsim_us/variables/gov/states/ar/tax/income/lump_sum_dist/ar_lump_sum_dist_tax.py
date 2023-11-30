@@ -14,6 +14,8 @@ class ar_lump_sum_dist_tax(Variable):
     def formula(tax_unit, period, parameters):
 
         p = parameters(period).gov.states.ar.tax.income.lump_sum_dist
+        taxable_income = tax_unit('ar_taxable_income', period)
+        high_income_threshold = parameters(period).gov.states.ar.tax.income
 
     # Pull in distribution amount here
         income = tax_unit('ar_distribution_income', period)
