@@ -29,4 +29,4 @@
     filing_status: JOINT
     state_code: AR
   output:
-    ar_high_income_reduction: 360
+    ar_high_income_reduction: 160
