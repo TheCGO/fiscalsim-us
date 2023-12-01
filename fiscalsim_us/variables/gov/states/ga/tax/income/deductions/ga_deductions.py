@@ -6,9 +6,7 @@ class ga_deductions(Variable):
     entity = TaxUnit
     label = "Georgia deductions"
     unit = USD
-    reference = (
-        "https://dor.georgia.gov/it-511-individual-income-tax-booklet"
-    )
+    reference = "https://dor.georgia.gov/it-511-individual-income-tax-booklet"
     definition_period = YEAR
     defined_for = StateCode.GA
 

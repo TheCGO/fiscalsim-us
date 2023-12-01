@@ -10,10 +10,10 @@ class ga_series100_refundable_credits(Variable):
     Currently (in 2022) the only refundable series 100 tax credit
     is the Timber Tax Credit (145).
     """
+
     value_type = float
     entity = TaxUnit
     label = "Georgia series 100 refundable credits"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.GA
-

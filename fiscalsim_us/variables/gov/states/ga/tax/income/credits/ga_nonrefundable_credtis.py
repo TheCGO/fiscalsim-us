@@ -20,6 +20,7 @@ class ga_nonrefundable_credits(Variable):
     Years Beginning on or After January 1, 2021
     - Teacher Recruitment and Retention Credit
     """
+
     value_type = float
     entity = TaxUnit
     label = "Georgia nonrefundable credits"

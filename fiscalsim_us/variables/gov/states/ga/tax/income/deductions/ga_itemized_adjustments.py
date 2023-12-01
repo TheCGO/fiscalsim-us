@@ -8,7 +8,7 @@ class ga_itemized_adjustments(Variable):
     unit = USD
     reference = (
         "https://apps.dor.ga.gov/FillableForms/PDFViewer/Index?form=2022GA500"
-        )
+    )
     definition_period = YEAR
     defined_for = StateCode.GA
 

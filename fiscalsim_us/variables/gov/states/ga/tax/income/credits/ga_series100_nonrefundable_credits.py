@@ -57,10 +57,11 @@ class ga_series100_nonrefundable_credits(Variable):
     148 - Life Sciences Manufacturing Job Tax Credit
     149 - Historic Rehabilitation Tax Credit for Historic Homes and other Certified Structure
     """
+
     value_type = float
     entity = TaxUnit
     label = "Georgia series 100 nonrefundable credits"
-    reference = ("https://dor.georgia.gov/it-511-individual-income-tax-booklet")
+    reference = "https://dor.georgia.gov/it-511-individual-income-tax-booklet"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.GA
