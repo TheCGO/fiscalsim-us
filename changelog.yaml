@@ -174,3 +174,7 @@
     added:
       - Updates Montana tax logic
   date: 2023-11-14 17:00:00
+- bump: patch
+  changes:
+    added:
+      - Updates Georgia tax logic for credits and additions/ subtractions
