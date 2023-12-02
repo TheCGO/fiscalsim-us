@@ -1,0 +1,11 @@
+description: Georgia refundable credits
+values:
+  2021-01-01:
+    - ga_series100_refundable_credits
+
+metadata:
+  unit: list
+  label: Georgia refundable credits
+  reference:
+    - title: 2022 Form 500 Instructions
+      href: https://apps.dor.ga.gov/FillableForms/PDFViewer/Index?form=2022GA500

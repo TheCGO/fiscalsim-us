@@ -1,0 +1,10 @@
+description: Georgia only allows subtraction for NOL up to this limit of taxable income after personal deductions and exemptions
+values:
+  2019-01-01: .8
+metadata:
+  period: year
+  unit: /1
+  label: Georgia NOL limit
+  reference:
+  - title: 2022 Form 500 Instructions
+    href: https://houpl.org/wp-content/uploads/2023/01/2022-IT-511_Individual_Income_Tax_-Booklet-compressed.pdf#page=12

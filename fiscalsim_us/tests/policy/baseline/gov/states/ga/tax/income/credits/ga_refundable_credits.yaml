@@ -1,0 +1,21 @@
+- name: Only refundable credits
+  period: 2022
+  input:
+    ga_taxable_income: 3_000
+    ga_nonrefundable_credits: 0
+    ga_refundable_credits: 100
+    filing_status: SINGLE
+    state_code: GA
+  output:
+    ga_income_tax: -40
+
+- name: Both nonrefundable and refundable credits
+  period: 2022
+  input:
+    ga_taxable_income: 3_000
+    ga_nonrefundable_credits: 100
+    ga_refundable_credits: 100
+    filing_status: SINGLE
+    state_code: GA
+  output:
+    ga_income_tax: -100
