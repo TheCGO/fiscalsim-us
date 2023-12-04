@@ -14,10 +14,8 @@ class ar_lump_sum_dist_tax(Variable):
     def formula(tax_unit, period, parameters):
 
         p = parameters(period).gov.states.ar.tax.income.lump_sum_dist
-        taxable_income = tax_unit('ar_taxable_income', period)
         high_income_threshold = parameters(period).gov.states.ar.tax.income
 
-    # Pull in distribution amount here
         income = tax_unit('ar_distribution_income', period)
         actuarial_value = tax_unit('ar_actuarial_value', period)
         taxable_dist = income + actuarial_value
@@ -43,9 +41,9 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_9 = line_8 * line_9_multiple
 
-        rate = where(taxable_income < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
+        rate_line_9 = where(line_9 < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
         
-        line_9_tax = rate.calc(line_9)
+        line_9_tax = rate_line_9.calc(line_9)
 
         line_11_multiple = p.line11_multiple
 
@@ -61,7 +59,9 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_15 = line_14 * line_15_multiple
 
-        line_15_tax = rate.calc(line_15)
+        rate_line_15 = where(line_15 < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
+
+        line_15_tax = rate_line_15.calc(line_15)
 
         line_17_multiple = p.Line17_multiple
 
