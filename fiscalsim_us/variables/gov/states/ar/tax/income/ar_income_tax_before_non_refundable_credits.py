@@ -43,10 +43,6 @@ class ar_income_tax_before_non_refundable_credits(Variable):
                 p.rates.calc(rounded_taxable_income),
                 p.high_income_rates.calc(rounded_taxable_income)
                 ) - litc - high_income_reduction,0)
-        
-        # rate = where(taxable_income < high_income_threshold, p.rates, p.high_income_rates)
-        
-        # tax = rate.calc(rounded_taxable_income) - litc - high_income_reduction
 
         lump_sum_dist_tax = tax_unit('ar_lump_sum_dist_tax', period)
 

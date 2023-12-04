@@ -63,7 +63,7 @@
   output:
     ar_low_income_credit: 62
 
-- name: Widow household with $21,000 taxable income - 2 dependents
+- name: Widow household with $21,730 taxable income - 2 dependents
   period: 2022
   input:
     state_code: AR
@@ -76,7 +76,7 @@
   output:
     ar_low_income_credit: 242
 
-- name: Joint household with $21,000 taxable income - 1 dependents
+- name: Joint household with $18,310 taxable income - 1 dependents
   period: 2022
   input:
     state_code: AR

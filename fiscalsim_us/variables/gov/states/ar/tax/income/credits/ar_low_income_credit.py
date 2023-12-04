@@ -46,13 +46,12 @@ class ar_low_income_credit(Variable):
         agi_less_ded = agi - deduction
         min_inc_less_ded = min_income - deduction
 
-        rounded_income = round_to_nearest_50(agi_less_ded)
-        rounded_min_income = round_to_nearest_50(min_inc_less_ded)
+        rounded_income = round_to_nearest_50(agi)
+        rounded_min_income = round_to_nearest_50(min_income)
         
         # Calculate the tax liability on min_income
         tax_liability = tax_rate.calc(rounded_min_income)
 
-        
         # Calculate the credit amount
         credit_amount = tax_liability * credit_rate
 
@@ -64,7 +63,7 @@ class ar_low_income_credit(Variable):
         # Reduce the credit amount based on the phaseout reduction
         credit_amount -= phaseout_reduction
 
-        # Ensure credit_amount does not go below 0 and that those who itemize do not take the credit
+        # Ensure credit_amount does not go below 0 and that those who itemize or are married filing separately do not take the credit
         credit_amount = where(credit_amount < 0 or std_ded<itm_ded or filing_status == "SEPARATE",
             0, credit_amount)
         
