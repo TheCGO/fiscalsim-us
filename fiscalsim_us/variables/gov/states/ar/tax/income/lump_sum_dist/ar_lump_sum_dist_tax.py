@@ -14,7 +14,7 @@ class ar_lump_sum_dist_tax(Variable):
     def formula(tax_unit, period, parameters):
 
         p = parameters(period).gov.states.ar.tax.income.lump_sum_dist
-        high_income_threshold = parameters(period).gov.states.ar.tax.income
+        high_income_threshold = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max
 
         income = tax_unit('ar_distribution_income', period)
         actuarial_value = tax_unit('ar_actuarial_value', period)
