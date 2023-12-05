@@ -46,11 +46,16 @@ class ar_low_income_credit(Variable):
         agi_less_ded = agi - deduction
         min_inc_less_ded = min_income - deduction
 
-        rounded_income = round_to_nearest_50(agi)
-        rounded_min_income = round_to_nearest_50(min_income)
+        rounded_income = round_to_nearest_50(agi_less_ded)
+        rounded_min_income = round_to_nearest_50(min_inc_less_ded)
+
+        print('rounded income is:', rounded_income)
+        print('Rounded min income is: ', rounded_min_income)
         
         # Calculate the tax liability on min_income
         tax_liability = tax_rate.calc(rounded_min_income)
+
+        print('Tax liability of minimum: ',tax_liability )
 
         # Calculate the credit amount
         credit_amount = tax_liability * credit_rate
@@ -60,6 +65,7 @@ class ar_low_income_credit(Variable):
         phaseout_count = where(excess_income % 100 > 0, excess_income // 100 +1, excess_income // 100)
         phaseout_reduction = phaseout_count * phaseout_rate
 
+        print('Phaseout reduction is: ', phaseout_reduction)
         # Reduce the credit amount based on the phaseout reduction
         credit_amount -= phaseout_reduction
 
@@ -68,6 +74,8 @@ class ar_low_income_credit(Variable):
             0, credit_amount)
         
         credit_amount = round(credit_amount, 0)
+
+        print('credit amount is', credit_amount)
         
 
         return credit_amount
