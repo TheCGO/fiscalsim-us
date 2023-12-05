@@ -46,8 +46,8 @@ class ar_low_income_credit(Variable):
         agi_less_ded = agi - deduction
         min_inc_less_ded = min_income - deduction
 
-        rounded_income = round_to_nearest_50(agi_less_ded)
-        rounded_min_income = round_to_nearest_50(min_inc_less_ded)
+        rounded_income = round_to_nearest_50(agi)
+        rounded_min_income = round_to_nearest_50(min_income)
 
         print('rounded income is:', rounded_income)
         print('Rounded min income is: ', rounded_min_income)
