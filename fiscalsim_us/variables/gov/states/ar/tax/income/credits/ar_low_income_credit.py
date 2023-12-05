@@ -54,7 +54,7 @@ class ar_low_income_credit(Variable):
         print('Rounded min income is: ', rounded_min_income)
         
         # Calculate the tax liability on min_income
-        tax_liability = round(tax_rate.calc(rounded_min_income_less_ded),0)
+        tax_liability = tax_rate.calc(rounded_min_income_less_ded)
 
         print('Tax liability of minimum: ',tax_liability )
 
