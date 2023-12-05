@@ -54,7 +54,7 @@ class ar_low_income_credit(Variable):
         print('Rounded min income is: ', rounded_min_income)
         
         # Calculate the tax liability on min_income
-        tax_liability = tax_rate.calc(rounded_min_income_less_ded)
+        tax_liability = round(tax_rate.calc(rounded_min_income_less_ded),0)
 
         print('Tax liability of minimum: ',tax_liability )
 
@@ -65,7 +65,7 @@ class ar_low_income_credit(Variable):
 
         # Calculate the phaseout reduction for each $100 over min_income
         excess_income = rounded_income - rounded_min_income
-        phaseout_count = where(excess_income % 100 > 0, excess_income // 100, excess_income // 100)
+        phaseout_count = where(excess_income % 100 > 0, excess_income // 100 +1, excess_income // 100)
         phaseout_reduction = phaseout_count * phaseout_rate
 
         print('Phaseout reduction is: ', phaseout_reduction)
