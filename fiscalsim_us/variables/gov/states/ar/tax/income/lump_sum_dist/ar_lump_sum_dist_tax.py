@@ -13,8 +13,54 @@ class ar_lump_sum_dist_tax(Variable):
 
     def formula(tax_unit, period, parameters):
 
+        def high_income_reduction(income):
+            
+            full_reduction= parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_amount
+            min_income = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max + 1
+            phaseout_rate = parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_phaseout
+
+            def round_to_nearest_50(num):
+                # Calculate the nearest multiple of 100
+                nearest_multiple_of_100 = round(num / 100,0) * 100
+                
+                # Get the last two digits
+                last_two_digits = num % 100
+                
+                # Determine the closest ending in "50"
+                if last_two_digits <= 50 and last_two_digits >= 1:
+                    rounded_income = nearest_multiple_of_100 + 50
+                    return rounded_income
+                else:
+                    rounded_income = nearest_multiple_of_100 - 50
+                    return rounded_income
+
+            std_ded = tax_unit("ar_standard_deduction", period)
+            itm_ded = tax_unit("ar_itemized_deductions", period)
+            deduction = where(itm_ded > std_ded, itm_ded, std_ded)
+
+            income_less_ded = income - deduction
+
+            rounded_income = round_to_nearest_50(income_less_ded)
+            rounded_min_income = round_to_nearest_50(min_income)
+
+            # Calculate the phaseout reduction for each $100 over min_income
+            excess_income = rounded_income - rounded_min_income
+            phaseout_reduction = where( excess_income % 100 == 0, (excess_income // 100) * phaseout_rate, ((excess_income // 100) + 1) * phaseout_rate)
+
+            # Reduce the credit amount based on the phaseout reduction
+            reduction_amount = full_reduction - phaseout_reduction
+
+            # Ensure credit_amount does not go below 0
+            reduction_amount = where(reduction_amount < 0 or excess_income < 0 ,
+                0, reduction_amount)
+            
+            reduction_amount = round(reduction_amount,0)
+
+            return reduction_amount
+
+
         p = parameters(period).gov.states.ar.tax.income.lump_sum_dist
-        high_income_threshold = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max
+        high_income_threshold = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max +1
 
         income = tax_unit('ar_distribution_income', period)
         actuarial_value = tax_unit('ar_actuarial_value', period)
@@ -41,9 +87,12 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_9 = line_8 * line_9_multiple
 
-        rate_line_9 = where(line_9 < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
-        
-        line_9_tax = rate_line_9.calc(line_9)
+        line_9_reduction = high_income_reduction(line_9)
+
+        line_9_tax = round(where(
+                line_9 <= high_income_threshold,
+                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_9),
+                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_9)) - line_9_reduction,0)
 
         line_11_multiple = p.line11_multiple
 
@@ -59,9 +108,12 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_15 = line_14 * line_15_multiple
 
-        rate_line_15 = where(line_15 < high_income_threshold, parameters(period).gov.states.ar.tax.income.rates.rates, parameters(period).gov.states.ar.tax.income.rates.high_income_rates)
+        line_15_reduction = high_income_reduction(line_15)
 
-        line_15_tax = rate_line_15.calc(line_15)
+        line_15_tax =round(where(
+                line_15 <= high_income_threshold,
+                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_15),
+                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_15)) - line_15_reduction,0)
 
         line_17_multiple = p.Line17_multiple
 
