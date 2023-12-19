@@ -1,0 +1,10 @@
+description: Arizona provides an exeption for each filer and spouse who is blind.
+values:
+  2022-01-01: 1_500
+metadata:
+  period: year
+  unit: currency-USD
+  label: Arizona blind exemption
+  reference:
+    - title: 2022 Arizona Income Tax Form 140
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form  

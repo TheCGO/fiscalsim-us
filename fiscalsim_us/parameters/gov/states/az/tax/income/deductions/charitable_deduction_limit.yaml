@@ -1,0 +1,10 @@
+description: Arizona allows 27% of charitable contributions to be added to the standard deduction.
+values:
+  2022-01-01: 0.27
+metadata:
+  period: year
+  unit: currency-USD
+  label: Arizona blind exemption
+  reference:
+    - title: 2022 Arizona Income Tax Form 140
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form  

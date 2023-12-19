@@ -1,0 +1,10 @@
+description: Income limitation for Arizona joint filers for dependent tax credit
+values:
+  2022-01-01: 400_000
+metadata:
+  period: year
+  unit: currency-USD
+  label: Income limitation for Arizona joint filers for dependent tax credit
+  reference:
+    - title: 2022 Arizona Income Tax Form 140
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form  

@@ -1,0 +1,18 @@
+description: Arizona Family Income Tax Credit income limitations for single and seperate filers
+
+brackets:
+- threshold:
+      2022-01-01: 0
+  amount: 
+      2022-01-01: 10_000
+
+
+metadata:
+  threshold_unit: /1
+  amount_unit: currency-USD
+  threshold_period: year
+  type: single_amount
+  label: Arizona Family Income Tax Credit income limitations for single and seperate filers
+  reference:
+    - title: 2022 Arizona Income Tax Form 140
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form  

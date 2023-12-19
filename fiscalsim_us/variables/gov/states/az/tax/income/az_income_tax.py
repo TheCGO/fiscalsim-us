@@ -7,6 +7,7 @@ class az_income_tax(Variable):
     label = "Arizona income tax"
     unit = USD
     definition_period = YEAR
+    reference = "https://azdor.gov/forms/individual/resident-personal-income-tax-return-non-calculating-fillable"
     defined_for = StateCode.AZ
 
     adds = ["az_income_tax_before_refundable_credits"]

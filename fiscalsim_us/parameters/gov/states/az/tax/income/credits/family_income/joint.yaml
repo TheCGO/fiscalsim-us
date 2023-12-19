@@ -1,0 +1,31 @@
+description: Arizona Family Income Tax Credit income limitations for joint filers
+
+brackets:
+- threshold:
+      2022-01-01: 0
+  amount: 
+      2022-01-01: 20_000
+- threshold:
+      2022-01-01: 2
+  amount: 
+      2022-01-01: 23_600
+- threshold:
+      2022-01-01: 3
+  amount: 
+      2022-01-01: 27_300
+- threshold:
+      2022-01-01: 4
+  amount: 
+      2022-01-01: 31_000
+
+
+
+metadata:
+  threshold_unit: /1
+  amount_unit: currency-USD
+  threshold_period: year
+  type: single_amount
+  label: Arizona Family Income Tax Credit income limitations for joint filers
+  reference:
+    - title: 2022 Arizona Income Tax Form 140
+      href: https://azdor.gov/forms/individual/form-140-resident-personal-income-tax-form-non-fillable-form  
