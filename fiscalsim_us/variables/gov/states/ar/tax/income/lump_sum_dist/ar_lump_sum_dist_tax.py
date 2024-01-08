@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+from numpy import round
 
 
 class ar_lump_sum_dist_tax(Variable):
@@ -65,6 +66,7 @@ class ar_lump_sum_dist_tax(Variable):
         income = tax_unit('ar_distribution_income', period)
         actuarial_value = tax_unit('ar_actuarial_value', period)
         taxable_dist = income + actuarial_value
+        min_allowance_threshold = p.min_allowance_threshold
 
         line_4_max = p.min_allowance_multiple1_max
         line_4_multiple = p.min_allowance_multiple1
@@ -81,7 +83,7 @@ class ar_lump_sum_dist_tax(Variable):
 
         min_allowance = line_6 - line_4
 
-        line_8 = taxable_dist - min_allowance
+        line_8 = where(taxable_dist < min_allowance_threshold,taxable_dist - min_allowance, min_allowance_threshold)
 
         line_9_multiple = p.Line9_multiple
 
