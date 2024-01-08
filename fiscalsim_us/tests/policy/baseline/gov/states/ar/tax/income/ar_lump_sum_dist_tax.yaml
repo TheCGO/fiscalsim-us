@@ -7,7 +7,7 @@
     ar_standard_deduction: 4_540
     ar_itemized_deductions: 0
   output:
-    ar_lump_sum_dist_tax: 140
+    ar_lump_sum_dist_tax: 20
 - name: Distribution income of 1000, actuarial value of 2,000,000 
   period: 2022
   input:
