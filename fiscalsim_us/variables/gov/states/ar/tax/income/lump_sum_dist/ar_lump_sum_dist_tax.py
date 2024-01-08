@@ -68,10 +68,14 @@ class ar_lump_sum_dist_tax(Variable):
         taxable_dist = income + actuarial_value
         min_allowance_threshold = p.min_allowance_threshold
 
+        std_ded = tax_unit("ar_standard_deduction", period)
+        itm_ded = tax_unit("ar_itemized_deductions", period)
+        deduction = where(itm_ded > std_ded, itm_ded, std_ded)
+
         line_4_max = p.min_allowance_multiple1_max
         line_4_multiple = p.min_allowance_multiple1
 
-        line_4 = max(line_4_max, taxable_dist * line_4_multiple)
+        line_4 = min(line_4_max, taxable_dist * line_4_multiple)
 
         min_allowance_subtraction = p.min_allowance_subtract
 
@@ -81,7 +85,7 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_6 = line_5 * line_6_multiple
 
-        min_allowance = where(taxable_dist < min_allowance_threshold,line_6 - line_4,0)
+        min_allowance = where(taxable_dist < min_allowance_threshold,line_4 - line_6,0)
 
         line_8 = where(taxable_dist < min_allowance_threshold,taxable_dist - min_allowance, taxable_dist)
 
@@ -93,8 +97,8 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_9_tax = round(where(
                 line_9 <= high_income_threshold,
-                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_9),
-                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_9)) - line_9_reduction,0)
+                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_9 - deduction),
+                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_9 - deduction)) - line_9_reduction,0)
         
         print("tax on Line 9", line_9_tax)
 
@@ -116,8 +120,8 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_15_tax =round(where(
                 line_15 <= high_income_threshold,
-                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_15),
-                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_15)) - line_15_reduction,0)
+                parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_15 - deduction),
+                parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_15 - deduction)) - line_15_reduction,0)
         
         print("tax on Line 15", line_15_tax)
 
