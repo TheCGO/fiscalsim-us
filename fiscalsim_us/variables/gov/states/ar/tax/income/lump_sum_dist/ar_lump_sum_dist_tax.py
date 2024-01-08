@@ -96,7 +96,7 @@ class ar_lump_sum_dist_tax(Variable):
                 parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_9),
                 parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_9)) - line_9_reduction,0)
 
-        line_11_multiple = p.line11_multiple
+        line_11_multiple = p.Line11_multiple
 
         line_11 = line_9_tax * line_11_multiple
 
