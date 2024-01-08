@@ -83,7 +83,7 @@ class ar_lump_sum_dist_tax(Variable):
 
         min_allowance = where(taxable_dist < min_allowance_threshold,line_6 - line_4,0)
 
-        line_8 = where(taxable_dist < min_allowance_threshold,taxable_dist - min_allowance, min_allowance_threshold)
+        line_8 = where(taxable_dist < min_allowance_threshold,taxable_dist - min_allowance, taxable_dist)
 
         line_9_multiple = p.Line9_multiple
 
