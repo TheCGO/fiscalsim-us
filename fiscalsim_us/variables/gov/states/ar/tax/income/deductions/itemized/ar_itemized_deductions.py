@@ -37,6 +37,8 @@ class ar_itemized_deductions(Variable):
 
         line_22 = employee_expenses + other_limited_expenses
 
+        education_deduction = tax_unit('ar_post_secondary_education_tuition_deduction', period)
+
         misc_limit_pct = parameters(period).gov.states.ar.tax.income.deductions.itemized.miscellaneous
         
         misc_limit = agi - misc_limit_pct
@@ -45,4 +47,4 @@ class ar_itemized_deductions(Variable):
 
         other_misc_deductions = tax_unit('ar_other_misc_deductions', period)
 
-        return medical_deduction +real_estate_taxes+ other_taxes + interest_expense + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions
+        return medical_deduction +real_estate_taxes+ other_taxes + interest_expense + education_deduction + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions
