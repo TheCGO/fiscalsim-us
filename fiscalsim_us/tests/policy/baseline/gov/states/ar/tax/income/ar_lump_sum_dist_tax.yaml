@@ -12,12 +12,12 @@
   period: 2022
   input:
     state_code: AR
-    ar_distribution_income: 1_000
+    ar_distribution_income: 10_000
     ar_actuarial_value: 2_000_000
     ar_standard_deduction: 4_540
     ar_itemized_deductions: 0
   output:
-    ar_lump_sum_dist_tax: 22_620
+    ar_lump_sum_dist_tax: 440
 - name: Distribution income of 80000, actuarial value of 0 
   period: 2022
   input:
