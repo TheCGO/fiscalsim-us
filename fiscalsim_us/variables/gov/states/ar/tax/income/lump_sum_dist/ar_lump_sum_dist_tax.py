@@ -134,6 +134,6 @@ class ar_lump_sum_dist_tax(Variable):
         line_17 = line_15_tax * line_17_multiple
         print("Line 17 value: ", line_17)
 
-        tax = where(actuarial_value > 0,line_17 - line_11,0)
+        tax = where(actuarial_value > 0,line_11 - line_17,0)
 
         return tax
