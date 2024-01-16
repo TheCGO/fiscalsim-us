@@ -1,6 +1,6 @@
 description: AGI thresholds and rates for the Arkansas Child Care Tax Credit
 metadata:
-  type: single_amount
+  type: marginal_rate
   threshold_unit: currency-USD
   rate_unit: /1
   label: Arkansas Child and Dependent Care Tax Credit

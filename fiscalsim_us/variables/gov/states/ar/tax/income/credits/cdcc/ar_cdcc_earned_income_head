@@ -1,0 +1,11 @@
+from fiscalsim_us.model_api import *
+
+class ar_cdcc_earned_income_head(Variable):
+    "Line 4 of Arkansas CHILD AND DEPENDENT CARE EXPENSES Form AR2441"
+    value_type = float
+    entity = TaxUnit
+    label = "Qualified Child and Dependent Care Expenses"
+    unit = USD
+    definition_period = YEAR
+    reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TD_LumpSumDistributionAveraging.pdf"
+    defined_for = StateCode.AR
