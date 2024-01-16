@@ -1,4 +1,5 @@
 description: Montana provides a minimum standard deduction of this amount, based on filing status.
+
 metadata:
   label: Montana minimum standard deduction
   period: year
@@ -6,9 +7,13 @@ metadata:
   breakdown:
     - filing_status
   reference:
+    - title: Increase each year with inflation (repealed effective January 1, 2024)
+      href: https://leg.mt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0320/0150-0300-0210-0320.html
+    - title: Title 15 Chapter 30 Individual Income Tax Part 21. Rate and General Provisions, Standard Deduction Rule 15-30-2132
+      href: https://leg.mt.gov/bills/mca/title_0150/chapter_0300/part_0210/section_0320/0150-0300-0210-0320.html
     - title: MT Code, Income Tax - Deductions, § 42-15-523 (2)
       href: https://rules.mt.gov/gateway/RuleNo.asp?RN=42%2E15%2E523
-    - title: Montana Tax Form 2022 | Standard Deduction | Line 5
+    - title: This refers to line 5 of the standard deduction worksheet on Montana tax form 2 | Montana Tax Form 2022 | Standard Deduction | Line 5
       href: https://mtrevenue.gov/wp-content/uploads/dlm_uploads/2023/05/Montana-Idividiual-Income-Tax-Return-Form-2-2022v6.2.pdf#page=7
     - title: Montana Tax Form 2021 | Standard Deduction | Line 5
       href: https://mtrevenue.gov/wp-content/uploads/mdocs/form%202%202021.pdf#page=7

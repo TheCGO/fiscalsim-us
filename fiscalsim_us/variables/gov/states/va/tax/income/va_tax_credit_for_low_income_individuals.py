@@ -38,6 +38,6 @@ class va_tax_credit_for_low_income_individuals(Variable):
         line_14 = fed_eitc
         line_15 = line_14 * eitc_rate
         line_16 = where(line_15 > line_13, line_15, line_13)
-        line_17 = where(net_tax > line_16, line_16, 0)
+        line_17 = where(net_tax > line_16, line_16, net_tax)
 
-        return line_17
+        return where(total_agi < threshold, line_17, 0)
