@@ -53,12 +53,15 @@ class ar_low_income_credit(Variable):
         print('Rounded min income is: ', rounded_min_income)
         
         # Calculate the tax liability on min_income
-        tax_liability = tax_rate.calc(rounded_min_income)
+        min_tax_liability = tax_rate.calc(rounded_min_income)
+        print('unrounded tax liability of min', min_tax_liability)
+        
+        min_tax_liability = round(min_tax_liability,1)
 
-        print('Tax liability of minimum: ',tax_liability )
+        print('Tax liability of minimum: ', min_tax_liability )
 
         # Calculate the credit amount
-        credit_amount = tax_liability * credit_rate
+        credit_amount = min_tax_liability * credit_rate
 
         print("highest credit amount is: ", credit_amount)
 
@@ -76,6 +79,7 @@ class ar_low_income_credit(Variable):
             0, credit_amount)
         
         credit_amount = round(credit_amount, 0)
+        
 
         print('credit amount is', credit_amount)
         

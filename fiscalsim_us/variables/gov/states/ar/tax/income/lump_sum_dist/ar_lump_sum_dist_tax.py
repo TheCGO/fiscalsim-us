@@ -88,12 +88,10 @@ class ar_lump_sum_dist_tax(Variable):
         min_allowance = where(taxable_dist < min_allowance_threshold,line_4 - line_6,0)
 
         line_8 = where(taxable_dist < min_allowance_threshold,taxable_dist - min_allowance, taxable_dist)
-        print("Line 8 value: ", line_8)
 
         line_9_multiple = p.Line9_multiple
 
         line_9 = line_8 * line_9_multiple
-        print("Line 9 value: ", line_9)
 
         line_9_reduction = high_income_reduction(line_9)
 
@@ -101,15 +99,12 @@ class ar_lump_sum_dist_tax(Variable):
                 line_9 <= high_income_threshold,
                 parameters(period).gov.states.ar.tax.income.rates.rates.calc((line_9 - deduction)),
                 parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc((line_9 - deduction))) - line_9_reduction,0)
-        
-        print("tax on Line 9", line_9_tax)
 
         line_11_multiple = p.Line11_multiple
 
         line_11 = line_9_tax * line_11_multiple
 
         line_12 = actuarial_value / taxable_dist
-        print("Line 12 value: ", line_12)
 
         line_13 = min_allowance * line_12
 
@@ -118,7 +113,6 @@ class ar_lump_sum_dist_tax(Variable):
         line_15_multiple = p.Line15_multiple
 
         line_15 = line_14 * line_15_multiple
-        print("Line 15 value: ", line_15)
 
         line_15_reduction = high_income_reduction(line_15)
 
@@ -126,13 +120,10 @@ class ar_lump_sum_dist_tax(Variable):
                 line_15 <= high_income_threshold,
                 parameters(period).gov.states.ar.tax.income.rates.rates.calc(line_15 - deduction),
                 parameters(period).gov.states.ar.tax.income.rates.high_income_rates.calc(line_15 - deduction)) - line_15_reduction,0)
-        
-        print("tax on Line 15", line_15_tax)
 
         line_17_multiple = p.Line17_multiple
 
         line_17 = line_15_tax * line_17_multiple
-        print("Line 17 value: ", line_17)
 
         tax = where(actuarial_value > 0,line_11 - line_17,0)
 
