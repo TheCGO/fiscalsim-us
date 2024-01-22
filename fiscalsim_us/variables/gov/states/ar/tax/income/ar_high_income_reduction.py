@@ -5,7 +5,7 @@ class ar_high_income_reduction(Variable):
     
     value_type = float
     entity = TaxUnit
-    label = "Arkansas low income tax credit"
+    label = "Arkansas high income reduction"
     unit = USD
     definition_period = YEAR
     reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_TaxTables.pdf"

@@ -15,7 +15,7 @@ class ar_total_income(Variable):
     def formula(person, period, parameters):
         sources = parameters(period).gov.states.ar.tax.income.income_sources
         total = 0
-        not_dependent = ~person("is_tax_unit_dependent", period)
+        not_dependent = ~person("is_tax_unit_dependent", period) #Is this necessary here?
         for source in sources:
             # Add positive values only - losses are deducted later.
             total += not_dependent * max_(0, add(person, period, [source]))

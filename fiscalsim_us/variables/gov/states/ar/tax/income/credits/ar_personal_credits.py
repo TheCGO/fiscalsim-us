@@ -19,15 +19,15 @@ class ar_personal_credits(Variable):
 
 
         blind_head = tax_unit("blind_head", period).astype(int)
-        blind_spouse = tax_unit("blind_spouse", period) * 1
+        blind_spouse = tax_unit("blind_spouse", period).astype(int) * 1
         blind_credit = (blind_head + blind_spouse) * personal_credit_amount
 
         age_threshold = parameters(period).gov.states.ar.tax.income.credits.personal.age_threshold
-        aged_head = where(tax_unit("age_head", period).astype(int)>age_threshold,1,0)
-        aged_spouse = where(tax_unit("age_spouse", period).astype(int)>age_threshold,1,0)
+        aged_head = where(tax_unit("age_head", period).astype(int)>=age_threshold,1,0)
+        aged_spouse = where(tax_unit("age_spouse", period).astype(int)>=age_threshold,1,0)
         aged_credit = (aged_head + aged_spouse) * personal_credit_amount
 
-        head_retirement_income = tax_unit('ar_head_retirement_income', period)
+        head_retirement_income = tax_unit('ar_head_retirement_income', period) # Probably not implemented correctly
         spouse_retirement_income = tax_unit('ar_spouse_retirement_income', period)
         aged_special_head = where(aged_head == 1 and head_retirement_income <= 0, 1, 0)
         aged_special_spouse = where(aged_spouse == 1 and spouse_retirement_income <= 0, 1, 0)
@@ -37,7 +37,7 @@ class ar_personal_credits(Variable):
 
         # I created "is_deaf", "deaf_head", and "deaf_spouse" myself
         deaf_head = tax_unit("deaf_head", period).astype(int)
-        deaf_spouse = tax_unit("deaf_spouse", period) * 1
+        deaf_spouse = tax_unit("deaf_spouse", period).astype(int) * 1
         deaf_credit = (deaf_head + deaf_spouse) * personal_credit_amount
 
 
@@ -56,7 +56,7 @@ class ar_personal_credits(Variable):
         dependent_credit = dependents *dependent_credit_amount
 
 
-        qual_dependents = tax_unit("ar_qual_dependents", period)
+        qual_dependents = tax_unit("ar_qual_dependents", period) # Probably not implemented correctly
         qual_dependent_credit_amount  = parameters(period).gov.states.ar.tax.income.credits.personal.qual_dependents
         qual_dependent_credit = qual_dependent_credit_amount * qual_dependents
 
