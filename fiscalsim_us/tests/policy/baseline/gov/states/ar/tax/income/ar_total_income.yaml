@@ -1,0 +1,30 @@
+- name: AR gross income unit test 1
+  period: 2022
+  input:
+    employment_income: 600
+    primary_pension_qual_ira: 6_000
+    spouse_pension_qual_ira: 6_000
+    state_code: AR
+  output:
+    ar_gross_income: 600
+- name: AR gross income unit test 2
+  period: 2022
+  input:
+    employment_income: 50_000
+    primary_pension_qual_ira: 0
+    spouse_pension_qual_ira: 6_000
+    state_code: AR
+  output:
+    ar_gross_income: 50_000
+- name: AR gross income unit test 2
+  period: 2022
+  input:
+    employment_income: 600_000
+    primary_pension_qual_ira: 0
+    spouse_pension_qual_ira: 0
+    farm_income: 20_000
+    capital_gains: 5_678
+    state_code: AR
+  output:
+    ar_gross_income: 625_678
+

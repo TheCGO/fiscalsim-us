@@ -11,7 +11,7 @@ values:
     - capital_gains
     - other_gains
     - taxable_pension_income 
-    # Pension income includes annuities and endowment contracts, non-qualified IRAs
+    # Pension income includes annuities and endowment contracts, non-qualified IRAs, Line 16
     - military_retirement
     - primary_pension_qual_ira
     - spouse_pension_qual_ira

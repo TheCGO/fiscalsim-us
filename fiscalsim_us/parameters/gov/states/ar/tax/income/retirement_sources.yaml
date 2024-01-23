@@ -1,8 +1,8 @@
 description: Arkansas counts these income sources for in line 18
 values:
   2022-01-01:
-    - taxable_pension_income
-    - qualified_ira_distributions
+    - primary_pension_qual_ira
+    - spouse_pension_qual_ira
 metadata:
   unit: list
   label: Arkansas Retirement Income Sources Line 18

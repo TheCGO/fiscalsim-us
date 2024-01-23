@@ -1,6 +1,7 @@
 description: Amount over which a taxpayer must use the alternative tax table
 values:
   2022-01-01: 87_000
+  2023-01-01: 89_600
 metadata:
   type: single_amount
   reference:
