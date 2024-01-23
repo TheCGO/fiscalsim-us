@@ -2,10 +2,10 @@
   period: 2022
   input:
     employment_income: 600
-    primary_pension_qual_ira: 6_000
+    pension_qual_ira: 6_000
     state_code: AR
   output:
-    ar_gross_income: 600
+    ar_total_income: 600
 - name: AR gross income unit test 2
   period: 2022
   input:
@@ -13,7 +13,7 @@
     pension_qual_ira: 12_000
     state_code: AR
   output:
-    ar_gross_income: 56_000
+    ar_total_income: 56_000
 - name: AR gross income unit test 3
   period: 2022
   input:
@@ -22,5 +22,5 @@
     capital_gains: 5_678
     state_code: AR
   output:
-    ar_gross_income: 625_678
+    ar_total_income: 625_678
 
