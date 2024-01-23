@@ -1,3 +1,9 @@
+metadata:
+  unit: currency-USD
+  label: Gross income sources
+  reference:
+  - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
 description: Income sources counted as gross income for tax purposes.
 values:
   2010-01-01:
@@ -13,17 +19,10 @@ values:
     - taxable_pension_income 
     # Pension income includes annuities and endowment contracts, non-qualified IRAs, Line 16
     - military_retirement
-    - primary_pension_qual_ira
-    - spouse_pension_qual_ira
+    - pension_qual_ira
     - rental_income
     # Royalties included in rental income
     - farm_income
     - farm_rent_income
     - taxable_unemployment_compensation
     - miscellaneous_income
-metadata:
-  unit: currency-USD
-  label: Gross income sources
-  reference:
-  - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
-    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
