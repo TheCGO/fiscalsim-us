@@ -192,6 +192,7 @@ brackets:
       2022-01-01: 91_701
   - amount:
       2022-01-01: 0
+metadata:
   type: single_amount
   period: year
   threshold_unit: currency-USD
