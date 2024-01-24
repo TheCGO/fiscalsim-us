@@ -41,7 +41,7 @@ class ar_test_high_income_reduction(Variable):
         rounded_income = round_to_nearest_50(agi_less_ded)
         rounded_min_income = round_to_nearest_50(min_income)
 
-        reduction_amount =  reduction.calc(rounded_income)
+        reduction_amount =  reduction[rounded_income]
 
 
 
