@@ -1,11 +1,11 @@
 from fiscalsim_us.model_api import *
 from numpy import round
 
-class ar_high_income_reduction(Variable):
+class ar_test_high_income_reduction(Variable):
     
     value_type = float
     entity = TaxUnit
-    label = "Arkansas high income reduction"
+    label = "Arkansas test high income reduction"
     unit = USD
     definition_period = YEAR
     reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_TaxTables.pdf"
