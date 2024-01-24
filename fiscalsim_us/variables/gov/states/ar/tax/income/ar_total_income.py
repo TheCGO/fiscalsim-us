@@ -20,7 +20,7 @@ class ar_total_income(Variable):
         not_dependent = ~person("is_tax_unit_dependent", period)
         for source in sources:
             # Add positive values only - losses are deducted later.
-           total += where(source in retirement_sources,  not_dependent * max_(0, add(person, period, [source])-ira_exemption),not_dependent * max_(0, add(person, period, [source])))
+            total += not_dependent * max_(0, add(person, period, [source]))
+           # total += where(source in retirement_sources,  not_dependent * max_(0, add(person, period, [source])-ira_exemption),not_dependent * max_(0, add(person, period, [source])))
             
         return total
-    
