@@ -2,8 +2,8 @@
   period: 2022
   input:
     employment_income: 600
-    pension_qual_ira: 6_000
     military_pay: 1
+    pension_qual_ira: 6_000
     state_code: AR
   output:
     ar_total_income: 601
