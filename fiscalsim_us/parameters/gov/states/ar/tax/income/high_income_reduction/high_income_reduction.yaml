@@ -2,195 +2,195 @@ description: Arkansas reduces the tax liability of taxpayers using the high inco
 brackets:
   - threshold:
       2022-01-01: 0
-  - amount:
+    amount:
       2022-01-01: 0
   - threshold:
       2022-01-01: 87_001
-  - amount:
+    amount:
       2022-01-01: 460
   - threshold:
       2022-01-01: 87_101
-  - amount:
+    amount:
       2022-01-01: 450
   - threshold:
       2022-01-01: 87_201
-  - amount:
+    amount:
       2022-01-01: 440
   - threshold:
       2022-01-01: 87_301
-  - amount:
+    amount:
       2022-01-01: 430
   - threshold:
       2022-01-01: 87_401
-  - amount:
+    amount:
       2022-01-01: 420
   - threshold:
       2022-01-01: 87_601
-  - amount:
+    amount:
       2022-01-01: 410
   - threshold:
       2022-01-01: 87_701
-  - amount:
+    amount:
       2022-01-01: 400
   - threshold:
       2022-01-01: 87_801
-  - amount:
+    amount:
       2022-01-01: 390
   - threshold:
       2022-01-01: 87_901
-  - amount:
+    amount:
       2022-01-01: 380
   - threshold:
       2022-01-01: 88_001
-  - amount:
+    amount:
       2022-01-01: 370
   - threshold:
       2022-01-01: 88_101
-  - amount:
+    amount:
       2022-01-01: 360
   - threshold:
       2022-01-01: 88_201
-  - amount:
+    amount:
       2022-01-01: 350
   - threshold:
       2022-01-01: 88_301
-  - amount:
+    amount:
       2022-01-01: 340
   - threshold:
       2022-01-01: 88_401
-  - amount:
+    amount:
       2022-01-01: 330
   - threshold:
       2022-01-01: 88_501
-  - amount:
+    amount:
       2022-01-01: 320
   - threshold:
       2022-01-01: 88_601
-  - amount:
+    amount:
       2022-01-01: 310
   - threshold:
       2022-01-01: 88_701
-  - amount:
+    amount:
       2022-01-01: 300
   - threshold:
       2022-01-01: 88_801
-  - amount:
+    amount:
       2022-01-01: 290
   - threshold:
       2022-01-01: 88_901
-  - amount:
+    amount:
       2022-01-01: 280
   - threshold:
       2022-01-01: 89_001
-  - amount:
+    amount:
       2022-01-01: 270
   - threshold:
       2022-01-01: 89_101
-  - amount:
+    amount:
       2022-01-01: 260
   - threshold:
       2022-01-01: 89_201
-  - amount:
+    amount:
       2022-01-01: 250
   - threshold:
       2022-01-01: 89_301
-  - amount:
+    amount:
       2022-01-01: 240
   - threshold:
       2022-01-01: 89_401
-  - amount:
+    amount:
       2022-01-01: 230
   - threshold:
       2022-01-01: 89_501
-  - amount:
+    amount:
       2022-01-01: 220
   - threshold:
       2022-01-01: 89_601
-  - amount:
+    amount:
       2022-01-01: 210
   - threshold:
       2022-01-01: 89_701
-  - amount:
+    amount:
       2022-01-01: 200
   - threshold:
       2022-01-01: 89_801
-  - amount:
+    amount:
       2022-01-01: 190
   - threshold:
       2022-01-01: 89_901
-  - amount:
+    amount:
       2022-01-01: 180
   - threshold:
       2022-01-01: 90_001
-  - amount:
+    amount:
       2022-01-01: 170
   - threshold:
       2022-01-01: 90_101
-  - amount:
+    amount:
       2022-01-01: 160
   - threshold:
       2022-01-01: 90_201
-  - amount:
+    amount:
       2022-01-01: 150
   - threshold:
       2022-01-01: 90_301
-  - amount:
+    amount:
       2022-01-01: 140
   - threshold:
       2022-01-01: 90_401
-  - amount:
+    amount:
       2022-01-01: 130
   - threshold:
       2022-01-01: 90_501
-  - amount:
+    amount:
       2022-01-01: 120
   - threshold:
       2022-01-01: 90_601
-  - amount:
+    amount:
       2022-01-01: 110
   - threshold:
       2022-01-01: 90_701
-  - amount:
+    amount:
       2022-01-01: 100
   - threshold:
       2022-01-01: 90_801
-  - amount:
+    amount:
       2022-01-01: 90
   - threshold:
       2022-01-01: 90_901
-  - amount:
+    amount:
       2022-01-01: 80
   - threshold:
       2022-01-01: 91_001
-  - amount:
+    amount:
       2022-01-01: 70
   - threshold:
       2022-01-01: 91_101
-  - amount:
+    amount:
       2022-01-01: 60
   - threshold:
       2022-01-01: 91_201
-  - amount:
+    amount:
       2022-01-01: 50
   - threshold:
       2022-01-01: 91_301
-  - amount:
+    amount:
       2022-01-01: 40
   - threshold:
       2022-01-01: 91_401
-  - amount:
+    amount:
       2022-01-01: 30
   - threshold:
       2022-01-01: 91_501
-  - amount:
+    amount:
       2022-01-01: 20
   - threshold:
       2022-01-01: 91_601
-  - amount:
+    amount:
       2022-01-01: 10
   - threshold:
       2022-01-01: 91_701
-  - amount:
+    amount:
       2022-01-01: 0
 metadata:
   type: single_amount
