@@ -5,11 +5,11 @@ brackets:
   - amount:
       2022-01-01: 0
   - threshold:
-      2022-01-01: 87_000
+      2022-01-01: 87_001
   - amount:
       2022-01-01: 460
   - threshold:
-      2022-01-01: 87_100
+      2022-01-01: 87_101
   - amount:
       2022-01-01: 450
   - threshold:
@@ -197,6 +197,7 @@ metadata:
   period: year
   threshold_unit: currency-USD
   amount_unit: currency-USD
+  threshold_period: year
   label: Arkansas high income tax reduction amount
   name: high_income_reduction_amount
   reference:
