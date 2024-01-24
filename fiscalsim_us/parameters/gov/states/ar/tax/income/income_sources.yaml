@@ -10,12 +10,10 @@ values:
     - partnership_s_corp_income
     - capital_gains
     - other_gains
-    - taxable_pension_income 
-    # Pension income includes annuities and endowment contracts, non-qualified IRAs, Line 16
+    - taxable_pension_income # Pension income includes annuities and endowment contracts, non-qualified IRAs, Line 16
     - military_retirement
-    - pension_qual_ira
+    - pension_qual_ira    # Royalties included in rental income
     - rental_income
-    # Royalties included in rental income
     - farm_income
     - farm_rent_income
     - taxable_unemployment_compensation
