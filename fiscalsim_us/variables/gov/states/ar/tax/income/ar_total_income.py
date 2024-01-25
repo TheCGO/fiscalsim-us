@@ -13,13 +13,9 @@ class ar_total_income(Variable):
     defined_for = StateCode.AR
 
     def formula(person, period, parameters):
-        p = parameters(period).gov.states.ar.tax.income
-        income = 0
-        for source in p.income_sources:
-            # gross income includes only positive amounts (i.e., no losses)
-            income += max_(0, add(person, period, [source]))
-        return income
 
+        adds = "gov.states.ar.tax.income.gross_income_sources"
+        
         # sources = parameters(period).gov.states.ar.tax.income.income_sources
         # ira_exemption = parameters(period).gov.states.ar.tax.income.rates.ira_exemption
         # retirement_sources = parameters(period).gov.states.ar.tax.income.retirement_sources
