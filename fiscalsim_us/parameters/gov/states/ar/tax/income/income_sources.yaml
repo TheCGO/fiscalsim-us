@@ -26,7 +26,7 @@ values:
     - alimony_income # Line 12
     - capital_gains # Line 13
     - regular_ira_distributions # Line 16
-    #- taxable_pension_income # Line 18
+    - taxable_pension_income # Line 18
     - rental_income # Line 19
     - farm_rent_income # Line 20
     - unemployment_compensation # Line 21
