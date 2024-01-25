@@ -13,14 +13,20 @@ class ar_total_income(Variable):
     defined_for = StateCode.AR
 
     def formula(person, period, parameters):
-        sources = parameters(period).gov.states.ar.tax.income.income_sources
-        ira_exemption = parameters(period).gov.states.ar.tax.income.rates.ira_exemption
-        retirement_sources = parameters(period).gov.states.ar.tax.income.retirement_sources
-        total = 0
-        not_dependent = ~person("is_tax_unit_dependent", period)
-        for source in sources:
-            # Add positive values only - losses are deducted later.
-            total += not_dependent * max_(0, add(person, period, [source]))
-           # total += where(source in retirement_sources,  not_dependent * max_(0, add(person, period, [source])-ira_exemption),not_dependent * max_(0, add(person, period, [source])))
+        p = parameters(period).gov.states.ar.tax.income
+        income = 0
+        for source in p.income_sources:
+            # gross income includes only positive amounts (i.e., no losses)
+            income += max_(0, add(person, period, [source]))
+        return income
+
+        # sources = parameters(period).gov.states.ar.tax.income.income_sources
+        # ira_exemption = parameters(period).gov.states.ar.tax.income.rates.ira_exemption
+        # retirement_sources = parameters(period).gov.states.ar.tax.income.retirement_sources
+        # total = 0
+        # not_dependent = ~person("is_tax_unit_dependent", period)
+        # for source in sources:
+        #     # Add positive values only - losses are deducted later.
+        #    total += where(source in retirement_sources,  not_dependent * max_(0, add(person, period, [source])-ira_exemption),not_dependent * max_(0, add(person, period, [source])))
             
-        return total
+        # return total
