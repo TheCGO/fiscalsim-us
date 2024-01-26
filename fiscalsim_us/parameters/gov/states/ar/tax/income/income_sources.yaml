@@ -33,6 +33,7 @@ values:
     # - ar_military_retirement_income_person # Line 17
 
 metadata:
+  unit: currency-USD
   label: Gross income sources
   reference:
   - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
