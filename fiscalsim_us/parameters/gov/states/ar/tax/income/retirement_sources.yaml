@@ -1,7 +1,7 @@
 description: Arkansas counts these income sources for in line 18
 values:
   2022-01-01:
-    - taxable_pension_income
+    # - taxable_pension_income
 metadata:
   label: Arkansas Retirement Income Sources Line 18
   reference:
