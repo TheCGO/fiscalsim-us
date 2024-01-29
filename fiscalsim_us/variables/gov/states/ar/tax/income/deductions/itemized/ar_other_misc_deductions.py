@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_other_misc_expenses(Variable):
+class ar_other_misc_deductions(Variable):
     """
     Line 29 of 2022 AR3, Arkansas Itemized Deductions
 
