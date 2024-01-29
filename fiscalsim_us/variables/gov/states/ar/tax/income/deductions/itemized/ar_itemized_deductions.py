@@ -18,7 +18,7 @@ class ar_itemized_deductions(Variable):
 
         agi_portion = max(0, agi * medical_threshold)
 
-        medical_deduction = medical_expense - agi_portion
+        medical_deduction = max(0,medical_expense - agi_portion)
 
         real_estate_tax = add(tax_unit, period, ["real_estate_taxes"])
 
