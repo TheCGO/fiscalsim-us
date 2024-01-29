@@ -5,7 +5,7 @@
     ar_agi: 50_000
     real_estate_taxes: 1_500
     ar_other_taxes: 0
-    interest_expense: 1_000
+    interest_deduction: 1_000
     charitable_deduction: 1_300
     casualty_loss: 0
     ar_post_secondary_education_tuition_deduction: 4_712
@@ -23,7 +23,7 @@
     ar_agi: 60_000
     real_estate_taxes: 1_000
     ar_other_taxes: 0
-    interest_expense: 5_000
+    interest_deduction: 5_000
     charitable_deduction: 0
     casualty_loss: 100
     ar_post_secondary_education_tuition_deduction: 0
