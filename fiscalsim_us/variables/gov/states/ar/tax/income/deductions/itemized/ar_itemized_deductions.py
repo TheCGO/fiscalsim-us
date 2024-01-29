@@ -25,7 +25,7 @@ class ar_itemized_deductions(Variable):
         # Line 6
         other_taxes = tax_unit('ar_other_taxes', period)
 
-        interest_expense = tax_unit('interest_expense', period)
+        interest_expense = tax_unit('interest_deduction', period)
 
         charitable_deduction = tax_unit("charitable_deduction", period)
 
