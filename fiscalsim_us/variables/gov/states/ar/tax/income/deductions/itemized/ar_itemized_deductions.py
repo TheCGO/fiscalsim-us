@@ -20,7 +20,7 @@ class ar_itemized_deductions(Variable):
 
         medical_deduction = medical_expense - agi_portion
 
-        real_estate_taxes = add(tax_unit, period, ["real_estate_taxes"])
+        real_estate_tax = add(tax_unit, period, ["real_estate_taxes"])
 
         # Line 6
         other_taxes = tax_unit('ar_other_taxes', period)
@@ -47,6 +47,6 @@ class ar_itemized_deductions(Variable):
 
         other_misc_deductions = tax_unit('ar_other_misc_deductions', period)
 
-        print(medical_deduction +''+ real_estate_taxes +''+ other_taxes +''+ interest_expense +''+ education_deduction +''+ charitable_deduction +''+ casualty_loss +''+ misc_deductions +''+ other_misc_deductions)
+        print(medical_deduction +''+ real_estate_tax +''+ other_taxes +''+ interest_expense +''+ education_deduction +''+ charitable_deduction +''+ casualty_loss +''+ misc_deductions +''+ other_misc_deductions)
 
-        return medical_deduction + real_estate_taxes + other_taxes + interest_expense + education_deduction + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions
+        return medical_deduction + real_estate_tax + other_taxes + interest_expense + education_deduction + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions
