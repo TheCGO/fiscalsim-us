@@ -31,17 +31,17 @@ class ar_itemized_deductions(Variable):
 
         casualty_loss = add(tax_unit, period, ["casualty_loss"])
 
+        education_deduction = tax_unit('ar_post_secondary_education_tuition_deduction', period)
+
         # Miscellaneous deductions subject to AGI limit
         employee_expenses = tax_unit('ar_unreimbursed_employee_expenses', period)
         other_limited_expenses = tax_unit('ar_other_limited_expenses', period)
 
         line_22 = employee_expenses + other_limited_expenses
 
-        education_deduction = tax_unit('ar_post_secondary_education_tuition_deduction', period)
-
-        misc_limit_pct = parameters(period).gov.states.ar.tax.income.deductions.itemized.miscellaneous
+        misc_limit_pct = parameters(period).gov.states.ar.tax.income.deductions.itemized.miscellaneous_limit
         
-        misc_limit = agi - misc_limit_pct
+        misc_limit = agi * misc_limit_pct
 
         misc_deductions = max(0, line_22 - misc_limit)
 
