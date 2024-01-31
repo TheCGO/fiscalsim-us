@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class mt_charitable_carryover_deduction(Variable):
+class ar_metabolic_credit_carryover(Variable):
     """
     Line 2 on AR1113 PHENYLKETONURIA DISORDER AND OTHER METABOLIC DISORDERS CREDIT
     """
@@ -13,4 +13,4 @@ class mt_charitable_carryover_deduction(Variable):
     )
     unit = USD
     definition_period = YEAR
-    defined_for = StateCode.MT
+    defined_for = StateCode.AR
