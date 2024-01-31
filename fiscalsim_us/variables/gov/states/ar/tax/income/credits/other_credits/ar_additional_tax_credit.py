@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_inflation_relief_credit(Variable):
+class ar_additional_tax_credit(Variable):
     value_type = float
     entity = TaxUnit
     label = "Arkansas additional tax credit for qualified individuals"
