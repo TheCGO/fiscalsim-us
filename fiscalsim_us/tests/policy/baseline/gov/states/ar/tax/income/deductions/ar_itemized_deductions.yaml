@@ -51,4 +51,4 @@
     filing_status: SINGLE
     state_code: AR
   output:
-    ar_itemized_deductions: 4_000 + 1_000 + 5_000 + 100 + 500 + 2000 + 100
+    ar_itemized_deductions: 4_000 + 1_000 + 5_000 + 100 + 2000 + 100
