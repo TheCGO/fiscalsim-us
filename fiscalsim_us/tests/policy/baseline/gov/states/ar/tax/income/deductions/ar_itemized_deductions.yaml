@@ -9,7 +9,7 @@
     charitable_deduction: 1_300
     casualty_loss: 0
     ar_post_secondary_education_tuition_deduction: 4_712
-    ar_unreimbursed_employee_expenses: 500
+    ar_unreimbursed_employee_expenses_deduction: 500
     ar_other_limited_expenses: 200
     ar_other_misc_deductions: 100
     filing_status: SINGLE
@@ -27,7 +27,7 @@
     charitable_deduction: 0
     casualty_loss: 100
     ar_post_secondary_education_tuition_deduction: 0
-    ar_unreimbursed_employee_expenses: 1_500
+    ar_unreimbursed_employee_expenses_deduction: 1_500
     ar_other_limited_expenses: 200
     ar_other_misc_deductions: 100
     filing_status: SINGLE

@@ -1,0 +1,12 @@
+description: AR allows taxpayers to deduct this percentage of unreimbursed employee expenses
+values:
+  2022-01-01: 0.5
+metadata:
+  type: single_amount
+  reference:
+    - title: AR3 Arkansas Individual income Tax Itemized Deductions (Line 24)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf
+    - title: AR2106 ARKANSAS INDIVIDUAL INCOME TAX EMPLOYEE BUSINESS EXPENSES
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2106_EmployeeBusinessExpenses.pdf
+  period: year
+  label: AR Unreimbursed employee expenses multiple

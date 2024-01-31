@@ -34,7 +34,7 @@ class ar_itemized_deductions(Variable):
         education_deduction = tax_unit('ar_post_secondary_education_tuition_deduction', period)
 
         # Miscellaneous deductions subject to AGI limit
-        employee_expenses = tax_unit('ar_unreimbursed_employee_expenses', period)
+        employee_expenses = tax_unit('ar_unreimbursed_employee_expenses_deduction', period)
         other_limited_expenses = tax_unit('ar_other_limited_expenses', period)
 
         line_22 = employee_expenses + other_limited_expenses
