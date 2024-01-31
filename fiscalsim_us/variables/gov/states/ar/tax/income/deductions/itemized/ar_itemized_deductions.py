@@ -47,6 +47,4 @@ class ar_itemized_deductions(Variable):
 
         other_misc_deductions = tax_unit('ar_other_misc_deductions', period)
 
-        print(medical_deduction, '', real_estate_tax, '', other_taxes, '', interest_expense, '', education_deduction, '',charitable_deduction, '',casualty_loss, '',misc_deductions, '',other_misc_deductions)
-
         return medical_deduction + real_estate_tax + other_taxes + interest_expense + education_deduction + charitable_deduction + casualty_loss + misc_deductions + other_misc_deductions

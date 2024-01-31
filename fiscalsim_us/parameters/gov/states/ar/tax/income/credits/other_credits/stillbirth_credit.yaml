@@ -10,5 +10,5 @@ metadata:
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits_Instructions.pdf
   unit: /1
   period: year
-  name: ar_stillbirth_credit_max
+  name: ar_stillbirth_credit
   label: AR Max Allowable Stillbirth Tax Credit Amount
