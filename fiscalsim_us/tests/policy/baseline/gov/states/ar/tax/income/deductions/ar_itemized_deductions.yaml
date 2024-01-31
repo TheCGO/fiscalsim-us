@@ -34,7 +34,7 @@
     state_code: AR
   output:
     ar_itemized_deductions: 4_000 + 1_000 + 5_000 + 100 + 500 + 100
-  - name: AR Itemized deductions test 3
+- name: AR Itemized deductions test 3
   period: 2022
   input:
     medical_expense: 10_000
