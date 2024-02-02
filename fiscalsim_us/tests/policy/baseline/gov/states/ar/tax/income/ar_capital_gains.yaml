@@ -2,7 +2,6 @@
   period: 2022
   absolute_error_margin: 1
   input:
-    filing_status: JOINT
     long_term_capital_gains: 0
     non_sch_d_capital_gains: 0
     ar_lt_dep_adjustment: 0 
