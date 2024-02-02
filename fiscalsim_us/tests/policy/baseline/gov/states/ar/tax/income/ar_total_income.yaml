@@ -20,7 +20,7 @@
   input:
     employment_income: 600_000
     farm_rent_income: 20_000
-    capital_gains: 5_678
+    ar_capital_gains: 5_678
     state_code: AR
   output:
     ar_total_income: 625_678

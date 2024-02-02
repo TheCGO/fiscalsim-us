@@ -13,9 +13,8 @@ class ar_high_income_reduction(Variable):
 
     def formula(tax_unit, period, parameters):
         
-        full_reduction= parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_amount
+        reduction = parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction
         min_income = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max + 1
-        phaseout_rate = parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction_phaseout
         agi = tax_unit('ar_agi', period)
 
         def round_to_nearest_50(num):
@@ -42,17 +41,10 @@ class ar_high_income_reduction(Variable):
         rounded_income = round_to_nearest_50(agi_less_ded)
         rounded_min_income = round_to_nearest_50(min_income)
 
-        # Calculate the phaseout reduction for each $100 over min_income
-        excess_income = rounded_income - rounded_min_income
-        phaseout_reduction = where( excess_income % 100 == 0, (excess_income // 100) * phaseout_rate, ((excess_income // 100) + 1) * phaseout_rate)
+        print("Rounded income: ", rounded_income)
 
-        # Reduce the credit amount based on the phaseout reduction
-        reduction_amount = full_reduction - phaseout_reduction
+        reduction_amount =  reduction.calc(rounded_income, right = True)
 
-        # Ensure credit_amount does not go below 0
-        reduction_amount = where(reduction_amount < 0 or excess_income < 0 ,
-            0, reduction_amount)
-        
-        reduction_amount = round(reduction_amount,0)
+        print("reduction amount: ", reduction_amount)
 
         return reduction_amount

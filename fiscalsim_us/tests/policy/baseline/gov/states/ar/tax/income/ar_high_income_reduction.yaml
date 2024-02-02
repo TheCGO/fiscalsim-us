@@ -8,7 +8,6 @@
     state_code: AR
   output:
     ar_high_income_reduction: 0
-
 - name: AR High Income Reduction if at threshold
   period: 2022
   input:
@@ -19,7 +18,6 @@
     state_code: AR
   output:
     ar_high_income_reduction: 460
-
 - name: AR High Income Reduction if above threshold
   period: 2022
   input:
@@ -29,4 +27,4 @@
     filing_status: JOINT
     state_code: AR
   output:
-    ar_high_income_reduction: 160
+    ar_high_income_reduction: 170

@@ -1,0 +1,13 @@
+- name: AR taxable capital gains test 1 - 0
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    filing_status: JOINT
+    long_term_capital_gains: 0
+    non_sch_d_capital_gains: 0
+    ar_lt_dep_adjustment: 0 
+    short_term_capital_gains: 0
+    ar_st_dep_adjustment: 0
+    state_code: AR
+  output:
+    ar_capital_gains: 0
