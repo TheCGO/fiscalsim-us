@@ -18,7 +18,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         taxable_income = tax_unit("ar_taxable_income", period)
         high_income_threshold = p.regular_bracket_max
         litc = tax_unit('ar_low_income_credit', period)
-        high_income_reduction = tax_unit('ar_test_high_income_reduction', period)
+        high_income_reduction = tax_unit('ar_high_income_reduction', period)
 
         def round_to_nearest_50(num):
             # Calculate the nearest multiple of 100

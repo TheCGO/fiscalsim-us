@@ -5,7 +5,7 @@
     ar_taxable_income: 5_100
     filing_status: JOINT
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 0
+    ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -20,7 +20,7 @@
     ar_taxable_income: 11_180
     filing_status: SINGLE
     ar_low_income_credit: 104
-    ar_test_high_income_reduction: 0
+    ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -35,7 +35,7 @@
     ar_taxable_income: 22_962
     filing_status: JOINT
     ar_low_income_credit: 384
-    ar_test_high_income_reduction: 0
+    ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -50,7 +50,7 @@
     ar_taxable_income: 51_075
     filing_status: HEAD_OF_HOUSEHOLD
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 0
+    ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -65,7 +65,7 @@
     ar_taxable_income: 88_000
     filing_status: JOINT
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 380
+    ar_high_income_reduction: 380
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -80,7 +80,7 @@
     ar_taxable_income: 89_000
     filing_status: JOINT
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 280
+    ar_high_income_reduction: 280
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -95,7 +95,7 @@
     ar_taxable_income: 87_024
     filing_status: JOINT
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 460
+    ar_high_income_reduction: 460
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR
@@ -110,7 +110,7 @@
     ar_taxable_income: 92_087
     filing_status: SINGLE
     ar_low_income_credit: 0
-    ar_test_high_income_reduction: 0
+    ar_high_income_reduction: 0
     ar_lump_sum_dist_tax: 0
     ar_additional_ira_tax: 0
     state_code: AR

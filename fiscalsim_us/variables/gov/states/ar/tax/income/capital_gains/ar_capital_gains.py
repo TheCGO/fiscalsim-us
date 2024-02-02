@@ -3,16 +3,16 @@ from fiscalsim_us.model_api import *
 class ar_capital_gains(Variable):
     
     value_type = float
-    entity = TaxUnit
+    entity = Person
     label = "Arkansas taxable capital gains"
     unit = USD
     definition_period = YEAR
     reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000D_CapitalGains.pdf"
     defined_for = StateCode.AR
 
-    def formula(tax_unit, period, parameters):
+    def formula(person, period, parameters):
 
-        filing_status = tax_unit('filing_status', period)
+        filing_status = person('filing_status', period)
         
         p = parameters(period).gov.states.ar.tax.income.capital_gains
 
@@ -22,17 +22,17 @@ class ar_capital_gains(Variable):
 
         cap_loss_cap = p.capital_loss_cap
 
-        lt_gains = tax_unit("long_term_capital_gains", period)
+        lt_gains = person("long_term_capital_gains", period)
 
-        non_d_gains = tax_unit("non_sch_d_capital_gains", period)
+        non_d_gains = person("non_sch_d_capital_gains", period)
 
-        lt_dep_adjustment = tax_unit('ar_lt_dep_adjustment', period)
+        lt_dep_adjustment = person('ar_lt_dep_adjustment', period)
 
         ar_lt_gain = lt_gains + non_d_gains + lt_dep_adjustment
 
         st_gain = ("short_term_capital_gains", period)
 
-        st_dep_adjustment = tax_unit('ar_st_dep_adjustment', period)
+        st_dep_adjustment = person('ar_st_dep_adjustment', period)
 
         ar_st_gain = st_gain + st_dep_adjustment
 
