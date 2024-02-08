@@ -3,7 +3,7 @@ from fiscalsim_us.model_api import *
 class ar_st_dep_adjustment(Variable):
     
     value_type = float
-    entity = TaxUnit
+    entity = Person
     label = "Arkansas difference in short term capital gains depreciation from federal amount"
     unit = USD
     definition_period = YEAR

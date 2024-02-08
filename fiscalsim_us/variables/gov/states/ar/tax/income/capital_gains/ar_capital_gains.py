@@ -12,7 +12,7 @@ class ar_capital_gains(Variable):
 
     def formula(person, period, parameters):
 
-        filing_status = person('filing_status', period)
+        # filing_status = person('filing_status', period)
         
         p = parameters(period).gov.states.ar.tax.income.capital_gains
 
@@ -56,9 +56,9 @@ class ar_capital_gains(Variable):
             ar_taxable_amount
         )
 
-        total_taxable = where(
-            total_taxable <= 0, min(total_taxable, cap_loss_cap[filing_status])
-        )
+        # total_taxable = where(
+        #     total_taxable <= 0, min(total_taxable, cap_loss_cap[filing_status])
+        # )
 
         return total_taxable
 
