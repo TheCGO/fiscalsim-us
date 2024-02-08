@@ -30,7 +30,7 @@ class ar_capital_gains(Variable):
 
         ar_lt_gain = lt_gains + non_d_gains + lt_dep_adjustment
 
-        st_gain = ("short_term_capital_gains", period)
+        st_gain = person("short_term_capital_gains", period)
 
         st_dep_adjustment = person('ar_st_dep_adjustment', period)
 
