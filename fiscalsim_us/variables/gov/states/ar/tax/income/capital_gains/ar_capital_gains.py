@@ -20,8 +20,6 @@ class ar_capital_gains(Variable):
 
         ar_lt_taxable_pct = p.long_term_cap_gain_taxable_pct
 
-        cap_loss_cap = p.capital_loss_cap
-
         lt_gains = person("long_term_capital_gains", period)
 
         non_d_gains = person("non_sch_d_capital_gains", period)
@@ -55,10 +53,6 @@ class ar_capital_gains(Variable):
             ar_st_gain >=0, ar_st_gain + ar_taxable_amount,
             ar_taxable_amount
         )
-
-        # total_taxable = where(
-        #     total_taxable <= 0, min(total_taxable, cap_loss_cap[filing_status])
-        # )
 
         return total_taxable
 
