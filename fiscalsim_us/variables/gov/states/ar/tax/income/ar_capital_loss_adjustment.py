@@ -18,7 +18,7 @@ class ar_capital_loss_adjustment(Variable):
         not_dependent = ~person("is_tax_unit_dependent", period)
        
         capital_gains = 0
-        capital_gains += not_dependent * add(person, period, 'ar_capital_gains')
+        capital_gains += not_dependent * add(person, period, ['ar_capital_gains'])
             
 
         capital_gains = tax_unit.sum(capital_gains)
