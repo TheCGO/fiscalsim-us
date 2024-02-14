@@ -25,7 +25,8 @@ class ar_total_income(Variable):
             print("Processing source:", source)
             print("Is source in retirement_sources?", source in retirement_sources)
             # Add positive values only - losses are deducted later.
-            amount = add(person, period, source)
+            # amount = add(person, period, [source])
+            amount = person(source, period)
             total += where(source in retirement_sources,  not_dependent * max_(0, amount -ira_exemption),not_dependent * max_(0,amount))
             print("total: ", total)
 
