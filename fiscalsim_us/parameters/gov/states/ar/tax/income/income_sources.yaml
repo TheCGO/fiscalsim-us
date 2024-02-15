@@ -2,18 +2,20 @@ description: Income sources counted as gross income for tax purposes.
 values:
   2010-01-01:
     - employment_income # Line 8
-    - self_employment_income # Line 8
     - military_service_income # Line 9
     - interest_income # Line 10
     - dividend_income # Line 11
     - alimony_income # Line 12
-    #- ar_capital_gains # Line 13, not working yet
-    - regular_ira_distributions # Line 16
+    - self_employment_income # Line 13
+    - ar_capital_gains # Line 14, not working yet
+    - other_net_gains # Line 15
+    - ar_nonqualified_ira_distributions # Line 16
+    - military_retirement_pay # Line 17
     - taxable_pension_income # Line 18
     - rental_income # Line 19
     - farm_rent_income # Line 20
     - unemployment_compensation # Line 21
-    # - ar_military_retirement_income_person # Line 17
+    - ar_other_income # Line 22
 
 metadata:
   unit: currency-USD
