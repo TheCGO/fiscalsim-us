@@ -5,7 +5,7 @@ class ar_nonqualified_ira_distributions(Variable):
     AR1000F Line 16
     """
     value_type = float
-    entity = TaxUnit
+    entity = Person
     label = "Arkansas nonqualified ira and annuity distributions"
     unit = USD
     definition_period = YEAR
