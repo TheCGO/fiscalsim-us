@@ -28,4 +28,3 @@ class ar_capital_loss_adjustment(Variable):
         adjustment = where(capital_gains < -cap_loss_cap, -capital_gains - cap_loss_cap, 0)
 
         return adjustment
-
