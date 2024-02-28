@@ -9,7 +9,7 @@
     ar_itemized_deductions: 200
     ar_agi: 13_450
   output:
-    ar_low_income_credit: 104
+    ar_low_income_credit: 103
 
 - name: Separate household with $20,000 taxable income - not eligible
   period: 2022

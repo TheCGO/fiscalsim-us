@@ -1,16 +1,17 @@
 from fiscalsim_us.model_api import *
 
 
-class ar_cdcc(Variable):
+class ar_nonrefundable_cdcc(Variable):
     value_type = float
     entity = TaxUnit
-    label = "Arkansas Child and Dependent Care Credit"
+    label = "Arkansas Child and Dependent Care Credit Nonrefundable Portion"
     unit = USD
     documentation = "https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-502/"
     definition_period = YEAR
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        p = parameters(period).gov.states.ar.tax.income.credits.cdcc
-        cdcc = tax_unit("cdcc", period)
-        return cdcc * p.match
+        cdcc = tax_unit('ar_cdcc', period)
+        refundable_pct = tax_unit('ar_cdcc_refundable_pct', period)
+
+        return cdcc * (1- refundable_pct)

@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+import numpy as np
 from numpy import round
 
 
@@ -49,28 +50,19 @@ class ar_low_income_credit(Variable):
         rounded_income = round_to_nearest_50(agi_less_ded)
         rounded_min_income = round_to_nearest_50(min_inc_less_ded)
 
-        print('rounded income is:', rounded_income)
-        print('Rounded min income is: ', rounded_min_income)
-        
         # Calculate the tax liability on min_income
         min_tax_liability = tax_rate.calc(rounded_min_income)
-        print('unrounded tax liability of min', min_tax_liability)
         
-        min_tax_liability = round_(min_tax_liability,0)
-
-        print('Tax liability of minimum: ', min_tax_liability )
+        min_tax_liability = round(min_tax_liability)
 
         # Calculate the credit amount
         credit_amount = min_tax_liability * credit_rate
-
-        print("highest credit amount is: ", credit_amount)
 
         # Calculate the phaseout reduction for each $100 over min_income
         excess_income = rounded_income - rounded_min_income
         phaseout_count = where(excess_income % 100 > 0, excess_income // 100 +1, excess_income // 100)
         phaseout_reduction = phaseout_count * phaseout_rate
 
-        print('Phaseout reduction is: ', phaseout_reduction)
         # Reduce the credit amount based on the phaseout reduction
         credit_amount -= phaseout_reduction
 
@@ -79,9 +71,6 @@ class ar_low_income_credit(Variable):
             0, credit_amount)
         
         credit_amount = round(credit_amount, 0)
-        
-
-        print('credit amount is', credit_amount)
         
 
         return credit_amount

@@ -10,6 +10,7 @@ values:
     - ar_adoption_expense_credit
     - ar_additional_tax_credit
     - ar_business_credits
+    - ar_nonrefundable_cdcc
 metadata:
   reference:
     - title: Inflationary relief income-tax credit worksheet
