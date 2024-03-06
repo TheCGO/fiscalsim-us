@@ -17,7 +17,6 @@ class ar_total_income(Variable):
         sources = parameters(period).gov.states.ar.tax.income.income_sources
         ira_exemption = parameters(period).gov.states.ar.tax.income.rates.ira_exemption
         retirement_sources = parameters(period).gov.states.ar.tax.income.retirement_sources
-        loss_cap = parameters(period).gov.states.ar.tax.income.capital_gains.capital_loss_cap
         total = 0
         not_dependent = ~person("is_tax_unit_dependent", period)
         for source in sources:

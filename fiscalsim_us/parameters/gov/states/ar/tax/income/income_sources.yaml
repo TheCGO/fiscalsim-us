@@ -7,7 +7,7 @@ values:
     - dividend_income # Line 11
     - alimony_income # Line 12
     - self_employment_income # Line 13
-    - ar_capital_gains # Line 14, not working yet
+    - ar_capital_gains # Line 14
     - ar_other_net_gains # Line 15
     - ar_nonqualified_ira_distributions # Line 16
     - military_retirement_pay # Line 17
