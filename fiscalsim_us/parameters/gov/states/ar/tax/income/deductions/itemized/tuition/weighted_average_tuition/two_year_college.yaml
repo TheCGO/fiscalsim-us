@@ -2,6 +2,7 @@ description: Arkansas defines the weighted average tuition for four-year college
 values:
   2021-01-01: 2_141
   2022-01-01: 2_272
+  2023-01-01: 2_405
 
 
 metadata:
@@ -9,6 +10,8 @@ metadata:
   unit: currency-USD
   label: Arkansas post secondary eduction tuition deduction two-year college weighted average tuition
   reference:
+    - title: Arkansas Individual Income Tax Return Deduction for Tution Paid to Post-Secondary Educational Institutions AR1075 Rev.2023
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/AR1075_2023.pdf
     - title: Arkansas Individual Income Tax Return Deduction for Tution Paid to Post-Secondary Educational Institutions AR1075 Rev.2022
       href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/AR1075_2022.pdf#page=1
     - title: Arkansas Individual Income Tax Return Deduction for Tution Paid to Post-Secondary Educational Institutions AR1075 Rev.2021
