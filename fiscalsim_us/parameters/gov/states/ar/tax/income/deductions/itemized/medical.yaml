@@ -1,0 +1,10 @@
+description: AR allows taxpayers to deduct the portion of medical and dental expenses that are over this percentage of their AGI
+values:
+  2022-01-01: 0.10
+metadata:
+  type: single_amount
+  reference:
+    - title: AR3 Arkansas Individual income Tax Itemized Deductions (Line 3)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf
+  period: year
+  label: AR Medical Expenses Deduction Income Percentage Threshold

@@ -1,0 +1,10 @@
+description: Arkansas provides the aged deduction amount to filers at or above this age.
+values:
+  2021-01-01: 65
+metadata:
+  unit: year
+  period: year
+  label: Arkansas additional aged deduction age eligibility 
+  reference:
+    - title: 2021 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 7B)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2021_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf

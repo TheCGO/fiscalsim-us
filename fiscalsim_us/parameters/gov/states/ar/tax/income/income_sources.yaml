@@ -1,0 +1,25 @@
+description: Income sources counted as gross income for tax purposes.
+values:
+  2010-01-01:
+    - employment_income # Line 8
+    - military_service_income # Line 9
+    - interest_income # Line 10
+    - dividend_income # Line 11
+    - alimony_income # Line 12
+    - self_employment_income # Line 13
+    - ar_capital_gains # Line 14
+    - ar_other_net_gains # Line 15
+    - ar_nonqualified_ira_distributions # Line 16
+    - military_retirement_pay # Line 17
+    - taxable_pension_income # Line 18
+    - rental_income # Line 19
+    - farm_rent_income # Line 20
+    - unemployment_compensation # Line 21
+    - ar_other_income # Line 22
+
+metadata:
+  unit: currency-USD
+  label: Gross income sources
+  reference:
+  - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (lines 8 - 22)
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf

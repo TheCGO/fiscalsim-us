@@ -1,0 +1,11 @@
+description: If the Total taxable amount in line 3 is greater than this amount, the taxpayer does not qualify for the minimum distribution allowance.
+values:
+  2022-01-01: 70_000
+metadata:
+  type: single_amount
+  reference:
+    - title: 2022 AR1000TD ARKANSAS INDIVIDUAL INCOME TAX LUMP-SUM DISTRIBUTION AVERAGING (Part II line 3)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TD_LumpSumDistributionAveraging.pdf
+  unit: currency-USD
+  period: year
+  label: AR LUMP-SUM DISTRIBUTION AVERAGING Minimum Distribution Allowance threshold

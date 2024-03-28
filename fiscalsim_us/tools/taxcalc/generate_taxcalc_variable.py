@@ -62,9 +62,11 @@ def create_taxcalc_alias(name: str, variable: Type[Variable]):
         dict(
             entity=TaxUnit,
             definition_period=YEAR,
-            label=variable.label + " (Tax-Calculator)"
-            if hasattr(variable, "label")
-            else name + "(Tax-Calculator)",
+            label=(
+                variable.label + " (Tax-Calculator)"
+                if hasattr(variable, "label")
+                else name + "(Tax-Calculator)"
+            ),
             unit=variable.unit if hasattr(variable, "unit") else None,
             documentation=documentation,
             value_type=variable.value_type,

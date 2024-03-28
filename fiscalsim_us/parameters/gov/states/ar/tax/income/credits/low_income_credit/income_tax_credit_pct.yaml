@@ -1,0 +1,12 @@
+description: Arkansas' low income tax credit is this percentage of the tax due on the lowest amount of income at which one is not exempt from taxes for each filing status.
+values:
+  2022-01-01: 0.8
+metadata:
+  type: single_amount
+  reference:
+    - title: Arkansas Code Title 26. Taxation § 26-51-301. Subsection f
+      href: https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-301/
+  unit: /1
+  period: year
+  name: income_tax_credit_pct
+  label: AR low income tax credit percent

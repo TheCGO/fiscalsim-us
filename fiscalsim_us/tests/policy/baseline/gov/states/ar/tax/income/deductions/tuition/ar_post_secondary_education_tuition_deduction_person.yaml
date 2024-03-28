@@ -1,0 +1,30 @@
+- name: AR post secondary tuition deduction tech
+  period: 2022
+  input:
+    qualified_tuition_expenses: 8_000
+    technical_institution_student: true
+    four_year_college_student: false
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_post_secondary_education_tuition_deduction_person: 780
+- name: AR post secondary tuition deduction four year
+  period: 2022
+  input:
+    qualified_tuition_expenses: 10_000
+    technical_institution_student: false
+    four_year_college_student: true
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_post_secondary_education_tuition_deduction_person: 4_712
+- name: AR post secondary tuition deduction two year
+  period: 2022
+  input:
+    qualified_tuition_expenses: 1_000
+    technical_institution_student: false
+    four_year_college_student: false
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_post_secondary_education_tuition_deduction_person: 500

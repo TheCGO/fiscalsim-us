@@ -1,0 +1,14 @@
+description: Arkansas multiplies the additional tax credit for qualifying individuals by this amount if the filing status is JOINT.
+values:
+  2022-01-01: 2
+metadata:
+  type: single_amount
+  reference:
+    - title: AR1000TC Arkansas Individual Income Tax Credits (Line 6)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits.pdf
+    - title: ADDITIONAL TAX CREDIT FOR QUALIFIED INDIVIDUALS WORKSHEET
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_Final_AdditionalTaxCreditforQualifiedIndividuals_FI.pdf
+  unit: /1
+  period: year
+  name: additional_credit_joint_multiple
+  label: AR additional credit joint multiple

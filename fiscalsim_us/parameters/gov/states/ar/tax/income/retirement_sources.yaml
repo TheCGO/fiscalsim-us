@@ -1,0 +1,12 @@
+description: Arkansas counts these income sources for in line 18
+values:
+  2022-01-01:
+    - taxable_pension_income
+metadata:
+  unit: currency-USD
+  label: Arkansas Retirement Income Sources Line 18
+  reference:
+    - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 18)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+    - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident Instructions (line 18) 
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_and_AR1000NR_Instructions.pdf

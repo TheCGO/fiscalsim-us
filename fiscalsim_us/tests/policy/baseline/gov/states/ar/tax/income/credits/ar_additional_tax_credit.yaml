@@ -1,0 +1,32 @@
+- name: Joint, $18,000 income
+  period: 2022
+  input:
+    filing_status: JOINT
+    ar_taxable_income: 18_000
+    state_code: AR
+  output: 
+    ar_additional_tax_credit: 120
+- name: Single, $18,000 income
+  period: 2022
+  input:
+    filing_status: SINGLE
+    ar_taxable_income: 18_000
+    state_code: AR
+  output: 
+    ar_additional_tax_credit: 60
+- name: Single, $25,201 income
+  period: 2022
+  input:
+    filing_status: SINGLE
+    ar_taxable_income: 25_201
+    state_code: AR
+  output: 
+    ar_additional_tax_credit: 10
+- name: Single, $26,000 income
+  period: 2022
+  input:
+    filing_status: SINGLE
+    ar_taxable_income: 26_000
+    state_code: AR
+  output: 
+    ar_additional_tax_credit: 0

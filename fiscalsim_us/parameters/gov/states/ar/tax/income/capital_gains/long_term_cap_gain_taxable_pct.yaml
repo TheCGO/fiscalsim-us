@@ -1,0 +1,10 @@
+description: Arkansas considers this percentage of long term capital gains to be taxable
+values:
+  2022-01-01: .5
+metadata:
+  type: single-amount
+  period: year
+  label: Arkansas Long Term Capital Gains Cap
+  reference:
+    - title: 2022 AR1000D ARKANSAS INDIVIDUAL INCOME TAX Capital Gains Line 8
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000D_CapitalGains.pdf
