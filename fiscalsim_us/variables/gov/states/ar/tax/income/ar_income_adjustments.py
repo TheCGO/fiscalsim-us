@@ -2,7 +2,6 @@ from fiscalsim_us.model_api import *
 
 
 class ar_income_adjustments(Variable):
-
     """Line 24 of Form AR1000F
     Adjustments include:
         Border city/Texarkana exemption
