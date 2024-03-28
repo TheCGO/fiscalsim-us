@@ -11,7 +11,7 @@ class ar_nonrefundable_cdcc(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        cdcc = tax_unit('ar_cdcc', period)
-        refundable_pct = tax_unit('ar_cdcc_refundable_pct', period)
+        cdcc = tax_unit("ar_cdcc", period)
+        refundable_pct = tax_unit("ar_cdcc_refundable_pct", period)
 
-        return cdcc * (1- refundable_pct)
+        return cdcc * (1 - refundable_pct)

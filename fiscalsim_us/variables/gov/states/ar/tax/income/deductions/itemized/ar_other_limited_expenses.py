@@ -18,6 +18,6 @@ class ar_other_limited_expenses(Variable):
     entity = TaxUnit
     label = "AR other limited expenses"
     unit = USD
-    reference = 'https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf'
+    reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf"
     definition_period = YEAR
     defined_for = StateCode.AR

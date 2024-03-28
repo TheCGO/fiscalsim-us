@@ -10,6 +10,6 @@ class ar_other_taxes(Variable):
     entity = TaxUnit
     label = "AR personal property and other taxes"
     unit = USD
-    reference = 'https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf'
+    reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR3_ItemizedDeduction.pdf"
     definition_period = YEAR
     defined_for = StateCode.AR

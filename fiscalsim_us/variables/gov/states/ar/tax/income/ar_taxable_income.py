@@ -15,14 +15,9 @@ class ar_taxable_income(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-
-        agi = tax_unit('ar_agi', period)
+        agi = tax_unit("ar_agi", period)
         std_ded = tax_unit("ar_standard_deduction", period)
         itm_ded = tax_unit("ar_itemized_deductions", period)
         deduction = where(itm_ded > std_ded, itm_ded, std_ded)
 
         return agi - deduction
-
-
-
-

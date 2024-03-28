@@ -1,8 +1,8 @@
 from fiscalsim_us.model_api import *
 from numpy import round
 
+
 class ar_high_income_reduction(Variable):
-    
     value_type = float
     entity = TaxUnit
     label = "Arkansas high income reduction"
@@ -12,18 +12,24 @@ class ar_high_income_reduction(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        
-        reduction = parameters(period).gov.states.ar.tax.income.high_income_reduction.high_income_reduction
-        min_income = parameters(period).gov.states.ar.tax.income.rates.regular_bracket_max + 1
-        agi = tax_unit('ar_agi', period)
+        reduction = parameters(
+            period
+        ).gov.states.ar.tax.income.high_income_reduction.high_income_reduction
+        min_income = (
+            parameters(
+                period
+            ).gov.states.ar.tax.income.rates.regular_bracket_max
+            + 1
+        )
+        agi = tax_unit("ar_agi", period)
 
         def round_to_nearest_50(num):
             # Calculate the nearest multiple of 100
-            nearest_multiple_of_100 = round(num / 100,0) * 100
-            
+            nearest_multiple_of_100 = round(num / 100, 0) * 100
+
             # Get the last two digits
             last_two_digits = num % 100
-            
+
             # Determine the closest ending in "50"
             if last_two_digits <= 50 and last_two_digits >= 1:
                 rounded_income = nearest_multiple_of_100 + 50
@@ -41,6 +47,6 @@ class ar_high_income_reduction(Variable):
         rounded_income = round_to_nearest_50(agi_less_ded)
         rounded_min_income = round_to_nearest_50(min_income)
 
-        reduction_amount =  reduction.calc(rounded_income, right = True)
+        reduction_amount = reduction.calc(rounded_income, right=True)
 
         return reduction_amount

@@ -3,7 +3,8 @@ from fiscalsim_us.model_api import *
 
 class ar_actuarial_value(Variable):
     """Line 31 of form AR1000F
-        Line 2 of form AR1000TD"""
+    Line 2 of form AR1000TD"""
+
     value_type = float
     entity = TaxUnit
     label = "Arkansas Lump Sum Distribution - Actuarial Value"

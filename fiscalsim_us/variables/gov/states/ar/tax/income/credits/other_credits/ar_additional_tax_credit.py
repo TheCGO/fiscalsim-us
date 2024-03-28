@@ -10,12 +10,10 @@ class ar_additional_tax_credit(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        filing_status= tax_unit('filing_status', period)
+        filing_status = tax_unit("filing_status", period)
 
         income = tax_unit("ar_taxable_income", period)
-        p = parameters(
-            period
-        ).gov.states.ar.tax.income.credits.other_credits
+        p = parameters(period).gov.states.ar.tax.income.credits.other_credits
 
         amount = p.additional_amount
 
@@ -23,11 +21,10 @@ class ar_additional_tax_credit(Variable):
 
         credit = amount.calc(income)
 
-        credit = where(filing_status == filing_status.possible_values.JOINT, credit * joint_multiple, credit)
+        credit = where(
+            filing_status == filing_status.possible_values.JOINT,
+            credit * joint_multiple,
+            credit,
+        )
 
         return credit
-
-        
-
-
-

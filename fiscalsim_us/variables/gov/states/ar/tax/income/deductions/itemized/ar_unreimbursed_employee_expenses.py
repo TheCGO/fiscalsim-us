@@ -10,6 +10,6 @@ class ar_unreimbursed_employee_expenses(Variable):
     entity = TaxUnit
     label = "AR unreimbursed employee expenses"
     unit = USD
-    reference = 'https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2106_EmployeeBusinessExpenses.pdf'
+    reference = "https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR2106_EmployeeBusinessExpenses.pdf"
     definition_period = YEAR
     defined_for = StateCode.AR

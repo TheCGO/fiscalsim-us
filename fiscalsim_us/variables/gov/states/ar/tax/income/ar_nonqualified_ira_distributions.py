@@ -1,9 +1,11 @@
 from fiscalsim_us.model_api import *
 
+
 class ar_nonqualified_ira_distributions(Variable):
-    """ 
+    """
     AR1000F Line 16
     """
+
     value_type = float
     entity = Person
     label = "Arkansas nonqualified ira and annuity distributions"

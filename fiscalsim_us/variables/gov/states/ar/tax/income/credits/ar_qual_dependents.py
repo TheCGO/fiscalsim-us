@@ -11,7 +11,6 @@ class ar_qual_dependents(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-
         person = tax_unit.members
         is_dependent = ~person("is_tax_unit_dependent", period)
         is_disabled = ~person("is_disabled", period)

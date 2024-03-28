@@ -8,9 +8,7 @@ class ar_metabolic_credit_carryover(Variable):
 
     value_type = float
     entity = TaxUnit
-    label = (
-        "Arkansas metabolic credit carryover from previous year"
-    )
+    label = "Arkansas metabolic credit carryover from previous year"
     unit = USD
     definition_period = YEAR
     defined_for = StateCode.AR
