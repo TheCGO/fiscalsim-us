@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.7] - 2024-04-10 16:00:00
+
+### Added
+
+- Limits the policyengine-core dependency in `setup.py` to be less than v. 2.9.
+
 ## [0.2.6] - 2023-11-14 17:00:00
 
 ### Added
@@ -191,6 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
+[0.2.7]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.3...v0.2.4
