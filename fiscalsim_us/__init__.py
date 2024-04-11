@@ -7,6 +7,7 @@ contains simulation variables (source code) and legislation parameters (data).
 
 See https://openfisca.org/doc/key-concepts/tax_and_benefit_system.html
 """
+
 from fiscalsim_us.system import (
     CountryTaxBenefitSystem,
     Simulation,
