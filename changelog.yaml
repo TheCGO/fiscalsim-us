@@ -184,3 +184,10 @@
     added:
       - Limits `build_and_test.yml` GH Action to pull requests and no pushes on merge. It also limits the codecov run to the Linux-OS tests on the latest version of Python (currently Python 3.11).
   date: 2024-04-10 22:30:00
+- bump: patch
+  changes:
+    added:
+      - Reinstates running `build_and_test.yml` on push after merge.
+      - Limits `docs_check.yml` to only run on pull request commits.
+      - Updates some tags in `README.md.`
+  date: 2024-04-11 00:30:00
