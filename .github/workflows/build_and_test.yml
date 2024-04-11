@@ -1,5 +1,5 @@
 name: Build and test
-on: [pull_request]
+on: [push]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
