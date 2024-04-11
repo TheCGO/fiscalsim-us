@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Reinstates running `build_and_test.yml` on push after merge.
 - Limits `docs_check.yml` to only run on pull request commits.
+- Updates some tags in `README.md.`
 
 ## [0.2.8] - 2024-04-10 22:30:00
 

@@ -189,4 +189,5 @@
     added:
       - Reinstates running `build_and_test.yml` on push after merge.
       - Limits `docs_check.yml` to only run on pull request commits.
+      - Updates some tags in `README.md.`
   date: 2024-04-11 00:30:00
