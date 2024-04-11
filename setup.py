@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.2.7",
+    version="0.2.8",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
@@ -41,6 +41,7 @@ setup(
         "policyengine-core>=2.8,<2.9",
         "pytest",
         "pytest-dependency",
+        "pytest-cov",
         "pyyaml",
         "requests",
         "synthimpute",
