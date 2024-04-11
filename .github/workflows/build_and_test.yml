@@ -1,5 +1,5 @@
 name: Build and test
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -22,7 +22,7 @@ jobs:
       - name: Run tests
         run: make test
       - name: Upload coverage to Codecov
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.python-version == "3.11" }}
+        if: matrix.os == 'ubuntu-latest'
         uses: codecov/codecov-action@v4
         with:
           files: ./coverage.xml
