@@ -1,0 +1,19 @@
+description: Idaho alternative energy device deduction percentages.
+metadata:
+  period: year
+  unit: currency-USD
+  breakdown:
+  - year aquired
+  reference:
+  - title: Form 39R 2022 Residential Supplemental Schedule, Part B Line 5 
+    href: https://tax.idaho.gov/wp-content/uploads/forms/EFO00088/EFO00088_12-30-2022.pdf
+
+# Sum amounts and take minimimum of deduction or $5,000
+2022:
+  2022-01-01: .40
+2021:
+  2022-01-01: .20
+2020:
+  2022-01-01: .20
+2019:
+  2022-01-01: .20

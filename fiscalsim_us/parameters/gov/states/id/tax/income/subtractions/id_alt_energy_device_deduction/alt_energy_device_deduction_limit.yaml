@@ -1,0 +1,10 @@
+description: Idaho alternative energy device deduction limit.
+values:
+  2022-01-01: 5000
+metadata:
+  unit: currency-USD
+  period: year
+  label: Idaho deduction limit for alternative energy device deduction
+  reference:
+    - title: Idaho Form 39R, Residential Supplemental Schedule and Instructions 2022
+      href: https://tax.idaho.gov/wp-content/uploads/forms/EFO00088/EFO00088_12-30-2022.pdf
