@@ -1,8 +1,7 @@
 name: Build and test
 on:
   pull_request:
-    branches:
-      - [main]
+    branches: [main]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
