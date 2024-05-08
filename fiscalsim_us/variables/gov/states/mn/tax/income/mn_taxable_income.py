@@ -17,7 +17,10 @@ class mn_taxable_income(Variable):
 
     def formula(tax_unit, period, parameters):
         ADDS = ["adjusted_gross_income", "mn_additions"]
-        SUBTRACTS = ["mn_subtractions", "mn_exemptions", "mn_deductions"]
+        SUBTRACTS = [
+            "mn_subtractions", "mn_prev_year_state_refund", "mn_exemptions",
+            "mn_deductions"
+        ]
 
         income = add(tax_unit, period, ADDS) - add(tax_unit, period, SUBTRACTS)
         return max_(0, income)
