@@ -2,6 +2,10 @@ from fiscalsim_us.model_api import *
 
 
 class mn_income_tax(Variable):
+    """
+    Minnesota income tax is either line 24 (if negative tax liability, refund)
+    or line 26 (if positive tax liability, payment) on form M1 (2023).
+    """
     value_type = float
     entity = TaxUnit
     label = "Minnesota income tax"
