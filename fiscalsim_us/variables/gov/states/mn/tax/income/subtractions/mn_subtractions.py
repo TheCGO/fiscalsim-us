@@ -5,6 +5,7 @@ class mn_subtractions(Variable):
     """
     Line 7 of form M1 (2023)
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota subtractions from federal AGI"

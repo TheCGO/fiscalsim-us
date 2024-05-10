@@ -6,6 +6,7 @@ class mn_refundable_credits(Variable):
     Line 22 of form M1 (2023) is the sum of refundable credits. These are
     listed and calculated on form M1REF (2023).
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota refundable income tax credits"

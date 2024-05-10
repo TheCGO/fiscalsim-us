@@ -5,6 +5,7 @@ class mn_income_tax_before_refundable_credits(Variable):
     """
     Minnesota income tax before refundable credits, line 17 on form M1 (2023)
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota income tax before refundable credits"

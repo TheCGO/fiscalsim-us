@@ -5,6 +5,7 @@ class mn_social_security_subtraction(Variable):
     """
     Line 12 on Schedule M1M (2023)
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota social security subtraction"

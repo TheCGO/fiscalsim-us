@@ -7,6 +7,7 @@ class mn_amt(Variable):
     Line 11 of Form M1 (2023) and line 29 from form M1MT (2023). This amount is
     reported as the liability above the basic tax liability calculation.
     """
+
     value_type = float
     entity = TaxUnit
     label = "MN alternative minimum tax (amount above basic tax)"

@@ -5,6 +5,7 @@ class mn_basic_tax(Variable):
     """
     Line 10 from form M1 (2023)
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota basic tax calculated using tax rate schedules"

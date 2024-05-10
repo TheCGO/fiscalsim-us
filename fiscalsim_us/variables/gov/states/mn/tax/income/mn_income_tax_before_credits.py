@@ -5,6 +5,7 @@ class mn_income_tax_before_credits(Variable):
     """
     Line 15 from form M1 (2023)
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota income tax before credits"

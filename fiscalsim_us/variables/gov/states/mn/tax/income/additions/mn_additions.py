@@ -6,6 +6,7 @@ class mn_additions(Variable):
     Line 2 of form M1 (2023) andline 10 of schedule M1M and line 9 of Schedule
     M1MB
     """
+
     value_type = float
     entity = TaxUnit
     label = "Minnesota additions to federal AGI"
