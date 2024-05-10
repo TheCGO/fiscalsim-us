@@ -6,10 +6,12 @@ from policyengine_core.periods import instant
 """
 In US nationwide simulations, use reported state income tax liabilities
 """
+
+
 def use_reported_state_income_tax(parameters):
     parameters.simulation.reported_state_income_tax.update(
-        start=instant("2024-01-01"), stop=instant("2100-12-31"),
-        value=True)
+        start=instant("2024-01-01"), stop=instant("2100-12-31"), value=True
+    )
     return parameters
 
 
@@ -26,9 +28,7 @@ def test_microsim_runs_cps():
         "household_income_decile", period=2024, map_to="person"
     )
     assert np.all(hidecile >= 1) and np.all(hidecile <= 10)
-    sidecile = sim.calc(
-        "spm_unit_income_decile", period=2024, map_to="person"
-    )
+    sidecile = sim.calc("spm_unit_income_decile", period=2024, map_to="person")
     assert np.all(sidecile >= 1) and np.all(sidecile <= 10)
     idecile = sim.calc("income_decile", period=2024, map_to="person")
     assert np.all(idecile >= 1) and np.all(idecile <= 10)
