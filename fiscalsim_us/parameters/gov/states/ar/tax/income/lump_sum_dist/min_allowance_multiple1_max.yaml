@@ -1,0 +1,11 @@
+description: The maximum amount that can be entered in Line 4
+values:
+  2022-01-01: 10_000
+metadata:
+  type: single_amount
+  reference:
+    - title: 2022 AR1000TD ARKANSAS INDIVIDUAL INCOME TAX LUMP-SUM DISTRIBUTION AVERAGING (Part II line 4)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TD_LumpSumDistributionAveraging.pdf
+  unit: currency-USD
+  period: year
+  label: AR LUMP-SUM DISTRIBUTION AVERAGING Minimum Distribution Allowance First Multiple Maximum Amount

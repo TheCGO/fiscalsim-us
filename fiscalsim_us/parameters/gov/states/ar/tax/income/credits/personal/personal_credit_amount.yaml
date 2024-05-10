@@ -1,0 +1,14 @@
+description: AR provides this credit amount for the taxpayer or spouse, with additiounal instances if they are 65 or over, 65 Special, blind, deaf, or Head of household/surviving spouse
+values:
+  2021-01-01: 29
+  2022-01-01: 29
+metadata:
+  type: single_amount
+  reference:
+    - title: 2021 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 7A)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2021_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+    - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 7A)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+  unit: currency-USD
+  period: year
+  label: AR personal tax credit amount
