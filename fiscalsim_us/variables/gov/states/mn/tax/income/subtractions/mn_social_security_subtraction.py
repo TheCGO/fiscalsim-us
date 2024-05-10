@@ -2,6 +2,9 @@ from fiscalsim_us.model_api import *
 
 
 class mn_social_security_subtraction(Variable):
+    """
+    Line 12 on Schedule M1M (2023)
+    """
     value_type = float
     entity = TaxUnit
     label = "Minnesota social security subtraction"
@@ -10,6 +13,7 @@ class mn_social_security_subtraction(Variable):
     reference = (
         "https://www.taxformfinder.org/forms/2021/2021-minnesota-form-m1m.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1m_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2023-12/m1m-23.pdf"
     )
     defined_for = StateCode.MN
 

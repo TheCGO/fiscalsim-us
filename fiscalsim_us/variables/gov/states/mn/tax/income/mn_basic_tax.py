@@ -2,6 +2,9 @@ from fiscalsim_us.model_api import *
 
 
 class mn_basic_tax(Variable):
+    """
+    Line 10 from form M1 (2023)
+    """
     value_type = float
     entity = TaxUnit
     label = "Minnesota basic tax calculated using tax rate schedules"
@@ -10,6 +13,7 @@ class mn_basic_tax(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2024-02/m1-inst-23.pdf"
     )
     defined_for = StateCode.MN
 
