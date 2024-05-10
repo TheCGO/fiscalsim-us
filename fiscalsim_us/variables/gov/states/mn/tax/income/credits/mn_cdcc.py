@@ -10,6 +10,7 @@ class mn_cdcc(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-02/m1cd_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1cd_22_0.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2023-12/m1cd-23.pdf"
     )
     defined_for = StateCode.MN
 

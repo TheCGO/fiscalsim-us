@@ -3,7 +3,7 @@ from fiscalsim_us.model_api import *
 
 class mn_unreimbursed_employee_deduction(Variable):
     """
-    Line 23 of 2022 M1SA, Minnesota Itemized Deductions
+    Line 20 of 2023 M1SA, Minnesota Itemized Deductions
     """
 
     value_type = float

@@ -4,7 +4,7 @@ from fiscalsim_us.model_api import *
 class mn_other_nonrefundable_credits(Variable):
     """
     Other nonrefundable credits that haven't been implemented in other vars.
-    Other nonrefundable credits from Line 16 on Minnesota 2022
+    Other nonrefundable credits from Lines 2-20 on Minnesota 2023 on Form M1C
     Indivual Tax Return from M1 not yet implemented
     * Credit for long term care insurcance premiums paid
     * Credit for taxes paid to another state
@@ -17,6 +17,9 @@ class mn_other_nonrefundable_credits(Variable):
     * Beginning Farmer Management Credit
     * Film Production Credit
     * Tax Credit for Owners of Agricultural Assets
+    * Credit for Sales of Manufactured Home Parks to Cooperatives
+    * Short Line Railroad Infrastructure Modernization Credit
+    * Housing Tax Credit
     * Credit for increasing research activities
     * Carryforward of previous year Farmer Management Credits
     * Carryforward of previous year Owners of Agricultural Assets Credits
@@ -34,5 +37,6 @@ class mn_other_nonrefundable_credits(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1c_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1c_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2024-01/m1c-23.pdf"
     )
     defined_for = StateCode.MN

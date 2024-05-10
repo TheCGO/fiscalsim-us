@@ -3,7 +3,7 @@ from fiscalsim_us.model_api import *
 
 class mn_standard_deduction(Variable):
     """
-    Line 4 of Minnesota 2022 Individual Income Tax return from M1.
+    Line 4 of Minnesota 2023 Individual Income Tax return from M1.
     """
 
     value_type = float

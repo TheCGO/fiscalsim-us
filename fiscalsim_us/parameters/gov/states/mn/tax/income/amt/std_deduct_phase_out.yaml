@@ -5,12 +5,14 @@ metadata:
   breakdown:
     - filing_status
   name: mn_amt_standard_deduct_phase_out
-  label: MN alternative minimum tax standard deduction phase out 
+  label: MN alternative minimum tax standard deduction phase out
   reference:
   - title: 2021 Minnesota Schedule M1MT form, Line 22
     href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1mt_21.pdf#page=1
   - title: 2022 Minnesota Schedule M1MT form, Line 22
     href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1mt_22.pdf#page=1
+  - title: 2023 Minnesota Schedule M1MT form, Line 22
+    href: https://www.revenue.state.mn.us/sites/default/files/2023-12/m1mt-23.pdf#page=1
 
 SINGLE:
   2021-01-01: 112_500

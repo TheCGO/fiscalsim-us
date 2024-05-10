@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.2.9",
+    version="0.2.10",
     author="Center for Growth and Opportunity at Utah State University (CGO)",
     author_email="fiscalsim@thecgo.org",
     long_description=readme,
@@ -35,7 +35,8 @@ setup(
         "click==8.1.3",
         "h5py",
         "microdf_python",
-        "numpy>=1.24, <1.25",
+        "numpy>=1.24",
+        "scipy==1.10.1",
         "pandas",
         "pathlib",
         "policyengine-core>=2.8,<2.9",

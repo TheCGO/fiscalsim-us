@@ -14,6 +14,10 @@ metadata:
     href: https://www.revisor.mn.gov/statutes/cite/290.0671
   - title: 2022 Inflation-Adjusted Amounts in Minnesota Statutes
     href: https://www.revenue.state.mn.us/sites/default/files/2021-12/Inflation_Adjustments_TY_2022.pdf#page=2
+  - title: 2023 Minnesota Statutes, section 290.0671
+    href: https://www.revisor.mn.gov/statutes/cite/290.0671
+  - title: 2023 Inflation-Adjusted Amounts in Minnesota Statutes
+    href: https://www.revenue.state.mn.us/sites/default/files/2023-12/inflation-adjustments-ty-2023-update.pdf#page=3
 
 brackets:
   - threshold:
@@ -21,18 +25,22 @@ brackets:
     amount:
       2021-01-01: 7_340
       2022-01-01: 7_570
+      2023-01-01: 8_750
   - threshold:
       2021-01-01: 1
     amount:
       2021-01-01: 12_270
       2022-01-01: 12_650
+      2023-01-01: 9_675
   - threshold:
       2021-01-01: 2
     amount:
       2021-01-01: 20_120
       2022-01-01: 20_750
+      2023-01-01: 10_850
   - threshold:
       2021-01-01: 3
     amount:
       2021-01-01: 20_530
       2022-01-01: 21_170
+      2023-01-01: 11_250

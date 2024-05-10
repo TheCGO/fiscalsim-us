@@ -10,6 +10,7 @@ class mn_charity_subtraction(Variable):
     reference = (
         "https://www.taxformfinder.org/forms/2021/2021-minnesota-form-m1m.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1m_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2023-12/m1m-23.pdf"
     )
     defined_for = StateCode.MN
 
@@ -18,4 +19,4 @@ class mn_charity_subtraction(Variable):
         itemizing = tax_unit("mn_itemizing", period)
         p = parameters(period).gov.states.mn.tax.income.subtractions.charity
         subtraction_amount = p.fraction * max_(0, charity - p.threshold)
-        return where(itemizing, 0, subtraction_amount)
+        return where(itemizing, subtraction_amount, 0)

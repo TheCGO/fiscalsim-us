@@ -3,9 +3,8 @@ from fiscalsim_us.model_api import *
 
 class mn_personal_property_tax(Variable):
     """
-    State and local personal propery tax (non real estate)
-    that for taxes based on value alone
-    Line 10 of 2022 M1SA, Minnesota Itemized Deductions
+    State and local personal propery tax (non real estate) that for taxes based
+    on value alone, Line 6 of 2023 M1SA, Minnesota Itemized Deductions
     Line 5c of Federal Schedule A
     """
 

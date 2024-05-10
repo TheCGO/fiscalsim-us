@@ -191,3 +191,8 @@
       - Limits `docs_check.yml` to only run on pull request commits.
       - Updates some tags in `README.md.`
   date: 2024-04-11 00:30:00
+- bump: patch
+  changes:
+    added:
+      - Updates Minnesota tax logic to 2023 law
+  date: 2024-05-10 04:30:00
