@@ -4,7 +4,7 @@ from fiscalsim_us.model_api import *
 class mn_other_refundable_credits(Variable):
     """
     Other refundable credits that haven't been implemented in other vars.
-    Other refundable credits from Line 22 on Minnesota 2022
+    Other refundable credits from Lines 3-10 on Minnesota 2023 form M1REF
 
     * K-12 Education Credit
     * Credit for Parents of Stillborn Children
@@ -26,5 +26,6 @@ class mn_other_refundable_credits(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1c_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1c_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2024-04/m1ref-23.pdf"
     )
     defined_for = StateCode.MN
