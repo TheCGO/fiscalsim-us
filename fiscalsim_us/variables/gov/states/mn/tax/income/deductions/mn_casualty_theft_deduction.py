@@ -4,7 +4,7 @@ from fiscalsim_us.model_api import *
 class mn_casualty_theft_deduction(Variable):
     """
     Minnesota casulaty/ theft deduction
-    Line 19 of 2022 M1SA, Minnesota Itemized Deductions
+    Line 19 of 2023 M1SA, Minnesota Itemized Deductions
     """
 
     value_type = float

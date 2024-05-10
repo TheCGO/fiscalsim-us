@@ -3,7 +3,7 @@ from fiscalsim_us.model_api import *
 
 class mn_taxes_paid_deducion(Variable):
     """
-    Line 10 of 2022 M1SA, Minnesota Itemized Deductions
+    Line 9 of 2023 M1SA, Minnesota Itemized Deductions
     """
 
     value_type = float

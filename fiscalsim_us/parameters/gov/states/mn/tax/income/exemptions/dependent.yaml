@@ -1,6 +1,7 @@
 description: MN dependent exemption amount.
 values:
   2021-01-01: 4_450
+  2023-01-01: 4_800
 metadata:
   unit: currency-USD
   period: year
@@ -11,3 +12,5 @@ metadata:
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf
     - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_22.pdf
+    - title: 2023 Minnesota Form M1 instructions, Worksheet for Line 5
+      href: https://www.revenue.state.mn.us/sites/default/files/2024-02/m1-inst-23.pdf#page=14

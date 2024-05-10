@@ -1,14 +1,19 @@
 description: MN state income to start phase out for dependent exemption
 SINGLE:
   2021-01-01: 206_050
+  2023-01-01: 220_650
 JOINT:
   2021-01-01: 309_050
+  2023-01-01: 330_950
 SEPARATE:
   2021-01-01: 154_525
+  2023-01-01: 165_475
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 257_550
+  2023-01-01: 275_800
 WIDOW:
   2021-01-01: 309_050
+  2023-01-01: 330_950
 metadata:
   unit: currency-USD
   period: year
@@ -21,3 +26,5 @@ metadata:
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf
     - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions, Page 13
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_22.pdf
+    - title: 2023 Minnesota Form M1 instructions, Worksheet for Line 5
+      href: https://www.revenue.state.mn.us/sites/default/files/2024-02/m1-inst-23.pdf#page=14
