@@ -1,2 +1,3 @@
 # Minnesota
+* We exclude contribution to Nongame Wildlife Fund (line 18, form M1)
 * We exclude any code logic for Minnesota income tax withheld (line 20, form M1) and Minnesota estimated tax and extension payments (line 21, form M1)
