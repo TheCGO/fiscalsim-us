@@ -15,15 +15,15 @@ class co_state_supplement_eligible(Variable):
         age = person("age", period)
         p = parameters(period).gov.states.co.ssa.state_supplement
 
-        # Handle potential None values
-        ssi_eligible = ssi_eligible.fillna(False)
-        is_disabled = is_disabled.fillna(False)
-        is_blind = is_blind.fillna(False)
+        # Handle potential None or NaN values
+        ssi_eligible = np.nan_to_num(ssi_eligible, nan=False)
+        is_disabled = np.nan_to_num(is_disabled, nan=False)
+        is_blind = np.nan_to_num(is_blind, nan=False)
         
         disabled_or_blind = is_disabled | is_blind
         in_age_range = p.age_range.calc(age)
         
-        # Handle potential None in in_age_range
-        in_age_range = in_age_range.fillna(False)
+        # Handle potential None or NaN in in_age_range
+        in_age_range = np.nan_to_num(in_age_range, nan=False)
 
         return disabled_or_blind & ssi_eligible & in_age_range
