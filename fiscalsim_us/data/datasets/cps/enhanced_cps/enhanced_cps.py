@@ -9,7 +9,7 @@ class EnhancedCPS_2023(Dataset):
     data_format = Dataset.ARRAYS
     time_period = "2023"
     url = (
-        "release://policyengine/fiscalsim-us/enhanced-cps-2023/enhanced_cps.h5"
+        "release://policyengine/policyengine-us/enhanced-cps-2023/enhanced_cps.h5"
     )
 
     def generate(self):
