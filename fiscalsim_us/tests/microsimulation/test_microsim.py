@@ -1,3 +1,7 @@
+import pytest
+
+
+@pytest.mark.local
 def test_microsim_runs_cps():
     import numpy as np
     from fiscalsim_us import Microsimulation
