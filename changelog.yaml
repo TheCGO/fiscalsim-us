@@ -191,3 +191,9 @@
       - Limits `docs_check.yml` to only run on pull request commits.
       - Updates some tags in `README.md.`
   date: 2024-04-11 00:30:00
+- bump: minor
+  changes:
+    added:
+      - Updates South Carolina tax logic and tests.
+      - Replaces Mambaforge Python installer with Miniforge in GH Actions
+  date: 2024-10-02 02:00:00

@@ -7,9 +7,9 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.2.9",
-    author="Center for Growth and Opportunity at Utah State University (CGO)",
-    author_email="fiscalsim@thecgo.org",
+    version="0.3.0",
+    author="Richard W. Evans",
+    author_email="rick@abundance.institute",
     long_description=readme,
     long_description_content_type="text/markdown",
     classifiers=[
