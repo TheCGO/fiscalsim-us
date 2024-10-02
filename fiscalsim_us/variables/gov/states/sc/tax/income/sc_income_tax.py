@@ -6,6 +6,7 @@ class sc_income_tax(Variable):
     South Carolina income tax liability, from line 30 or line 34 of form SC1040
     2023 Individual Income Tax Return
     """
+
     value_type = float
     entity = TaxUnit
     label = "South Carolina income tax"

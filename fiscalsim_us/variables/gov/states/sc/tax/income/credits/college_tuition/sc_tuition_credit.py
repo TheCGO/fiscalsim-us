@@ -6,6 +6,7 @@ class sc_tuition_credit(Variable):
     Tuition tax credit, refundable credit, line 21 on SC1040 2023
     Invidual Income Tax Return (see form I-319)
     """
+
     value_type = float
     entity = Person
     label = "South Carolina Tuition Credit"

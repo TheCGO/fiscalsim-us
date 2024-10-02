@@ -5,6 +5,7 @@ class sc_cdcc(Variable):
     """
     South Carolina Child and Dependent Care Credit, line 11 on form SC1040
     """
+
     value_type = float
     entity = TaxUnit
     label = "South Carolina CDCC"
@@ -56,7 +57,7 @@ class sc_cdcc(Variable):
             max_expense, p_sc.rate * tax_unit("cdcc", period)
         )
         sc_tot_cdcc_match = (
-            pre_2023 * sc_pre2023_tot_cdcc_match +
-            (not pre_2023) * sc_post2023_tot_cdcc_match
+            pre_2023 * sc_pre2023_tot_cdcc_match
+            + (not pre_2023) * sc_post2023_tot_cdcc_match
         )
         return sc_tot_cdcc_match

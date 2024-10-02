@@ -5,6 +5,7 @@ class sc_taxable_income(Variable):
     """
     South Carolina income subject to tax, line 5 on SC1040 2023
     """
+
     value_type = float
     entity = TaxUnit
     label = "South Carolina taxable income"

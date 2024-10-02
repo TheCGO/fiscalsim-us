@@ -6,6 +6,7 @@ class sc_income_tax_before_refundable_credits(Variable):
     South Carolina income tax before refundable credits, line 15 on form SC1040
     2023 Individual Income Tax Return
     """
+
     value_type = float
     entity = TaxUnit
     label = "South Carolina income tax before refundable credits"
