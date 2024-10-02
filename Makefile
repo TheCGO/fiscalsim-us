@@ -4,7 +4,11 @@ format:
 	linecheck . --fix
 install:
 	pip install -e .[dev]
-test:
+test_GH:
+	coverage run -a --branch -m policyengine_core.scripts.policyengine_command test fiscalsim_us/tests/policy/ -c fiscalsim_us
+	coverage xml -i
+	pytest "not local" fiscalsim_us/tests/ --maxfail=0
+test_local:
 	coverage run -a --branch -m policyengine_core.scripts.policyengine_command test fiscalsim_us/tests/policy/ -c fiscalsim_us
 	coverage xml -i
 	pytest fiscalsim_us/tests/ --maxfail=0

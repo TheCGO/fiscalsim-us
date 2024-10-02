@@ -20,7 +20,7 @@ jobs:
       - name: Install package
         run: make install
       - name: Run tests
-        run: make test
+        run: make test_GH
       - name: Upload coverage to Codecov
         if: matrix.os == 'ubuntu-latest'
         uses: codecov/codecov-action@v4
