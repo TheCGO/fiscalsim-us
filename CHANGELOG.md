@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Updates South Carolina tax logic and tests.
+- Updates South Carolina tax logic and tests
 - Replaces Mambaforge Python installer with Miniforge in GH Actions
 
 ## [0.2.9] - 2024-04-11 00:30:00
