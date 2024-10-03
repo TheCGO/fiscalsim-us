@@ -196,4 +196,4 @@
     added:
       - Updates South Carolina tax logic and tests.
       - Replaces Mambaforge Python installer with Miniforge in GH Actions
-  date: 2024-10-02 02:00:00
+  date: 2024-10-03 02:00:00
