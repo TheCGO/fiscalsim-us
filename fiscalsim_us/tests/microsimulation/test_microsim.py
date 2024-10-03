@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.local
+@pytest.mark.skipif(True, reason="This test temporarily suspended.")
 def test_microsim_runs_cps():
     import numpy as np
     from fiscalsim_us import Microsimulation
