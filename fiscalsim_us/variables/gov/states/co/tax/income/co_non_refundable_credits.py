@@ -10,4 +10,4 @@ class co_non_refundable_credits(Variable):
     defined_for = StateCode.CO
 
 
-# Colorado non refundable credits currently not modeled in PolicyEngine
+# Colorado non refundable credits currently not modeled in FiscalSim

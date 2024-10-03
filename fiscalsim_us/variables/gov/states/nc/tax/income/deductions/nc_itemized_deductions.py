@@ -29,7 +29,8 @@ class nc_itemized_deductions(Variable):
             mortgage_interest + property_taxes, pco.mortgage_and_property_tax
         )
 
-        # North Carolina specifies a state and local tax deduction cap which is currently not modeled in PolicyEngine
+        # North Carolina specifies a state and local tax deduction cap which is
+        # currently not modeled in FiscalSim
 
         other_deductions = add(
             tax_unit,

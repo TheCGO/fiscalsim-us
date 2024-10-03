@@ -57,7 +57,7 @@ def add_silver_plan_cost(self, cps: h5py.File, year: int):
         cps (h5py.File): The CPS dataset file.
         year (int): The year of the data.
     """
-    from policyengine_us import Microsimulation
+    from fiscalsim_us import Microsimulation
 
     sim = Microsimulation(dataset=self)
     slspc = sim.calc("second_lowest_silver_plan_cost", year).values
@@ -374,5 +374,5 @@ CPS_2023 = UpratedCPS.from_dataset(
     "cps_2023",
     "CPS 2023",
     STORAGE_FOLDER / "cps_2023.h5",
-    new_url="release://policyengine/policyengine-us/cps-2023/cps_2023.h5",
+    new_url="release://TheCGO/fiscalsim-us/v0.2.9/cps_2023.h5",
 )

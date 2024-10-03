@@ -155,9 +155,10 @@ class RawCPS(Dataset):
                 "Received a 404 response when fetching the data."
             )
         try:
-            with BytesIO() as file, pd.HDFStore(
-                self.file_path, mode="w"
-            ) as storage:
+            with (
+                BytesIO() as file,
+                pd.HDFStore(self.file_path, mode="w") as storage,
+            ):
                 content_length_actual = 0
                 for data in response.iter_content(int(1e6)):
                     progress_bar.update(len(data))
