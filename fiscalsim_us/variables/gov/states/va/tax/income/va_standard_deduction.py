@@ -16,7 +16,7 @@ class va_standard_deduction(Variable):
         standard_deduction = where(
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE)
             | (filing_status == filing_statuses.SEPARATE),
             parameters.gov.states.va.tax.income.va_standard_deduction.SINGLE,
             where(

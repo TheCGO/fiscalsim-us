@@ -16,7 +16,7 @@ class taxsim_mstat(Variable):
                 marital_status == marital.HEAD_OF_HOUSEHOLD,
                 marital_status == marital.JOINT,
                 marital_status == marital.SEPARATE,
-                marital_status == marital.WIDOW,
+                marital_status == marital.SURVIVING_SPOUSE,
             ],
             [
                 1,
