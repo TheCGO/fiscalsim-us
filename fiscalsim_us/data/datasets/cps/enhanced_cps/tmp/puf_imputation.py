@@ -127,9 +127,12 @@ with col1:
     mars = st.selectbox(
         "MARS",
         [
-            "SINGLE", "JOINT", "SURVIVING_SPOUSE", "SEPARATE",
-            "HEAD_OF_HOUSEHOLD"
-        ]
+            "SINGLE",
+            "JOINT",
+            "SURVIVING_SPOUSE",
+            "SEPARATE",
+            "HEAD_OF_HOUSEHOLD",
+        ],
     )
     child_dependents = st.number_input(
         "Child dependents", min_value=0, max_value=10, value=0
