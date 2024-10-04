@@ -302,7 +302,7 @@ VALUE_RENAMES = {
         2: "JOINT",
         3: "SEPARATE",
         4: "HEAD_OF_HOUSEHOLD",
-        5: "WIDOW",
+        5: "SURVIVING_SPOUSE",
     }
 }
 

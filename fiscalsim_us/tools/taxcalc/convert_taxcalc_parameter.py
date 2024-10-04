@@ -11,7 +11,7 @@ MARS_map = {
     "mjoint": "JOINT",
     "mseparate": "SEPARATE",
     "headhh": "HEAD_OF_HOUSEHOLD",
-    "widow": "WIDOW",
+    "widow": "SURVIVING_SPOUSE",
 }
 
 

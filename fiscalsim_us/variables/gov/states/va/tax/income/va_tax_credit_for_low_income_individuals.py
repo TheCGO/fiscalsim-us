@@ -19,7 +19,7 @@ class va_tax_credit_for_low_income_individuals(Variable):
         spouse_if_filing_jointly = where(
             (filing_status == filing_statuses.SEPARATE)
             | (filing_status == filing_statuses.SINGLE)
-            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
             0,
             where(filing_status == filing_statuses.JOINT, 1, 0),

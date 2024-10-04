@@ -44,7 +44,7 @@ RENAMES = dict(
     filing_status={
         "SINGLE": 1,
         "JOINT": 2,
-        "WIDOW": 2,
+        "SURVIVING_SPOUSE": 2,
         "SEPARATE": 3,
         "HEAD_OF_HOUSEHOLD": 4,
     }
@@ -125,7 +125,11 @@ col1, col2 = st.columns(2)
 
 with col1:
     mars = st.selectbox(
-        "MARS", ["SINGLE", "JOINT", "WIDOW", "SEPARATE", "HEAD_OF_HOUSEHOLD"]
+        "MARS",
+        [
+            "SINGLE", "JOINT", "SURVIVING_SPOUSE", "SEPARATE",
+            "HEAD_OF_HOUSEHOLD"
+        ]
     )
     child_dependents = st.number_input(
         "Child dependents", min_value=0, max_value=10, value=0

@@ -19,15 +19,15 @@
   input:
     filing_status: JOINT
     state_code: MS
-  output:  
+  output:
     ms_standard_deduction: 4_600
 
 - name: MS Standard deduction if widow filter
   period: 2020
   input:
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
     state_code: MS
-  output:  
+  output:
     ms_standard_deduction: 4_600
 
 - name: MS Standard deduction if married filing separately
@@ -35,5 +35,5 @@
   input:
     filing_status: SEPARATE
     state_code: MS
-  output:  
+  output:
     ms_standard_deduction: 2_300

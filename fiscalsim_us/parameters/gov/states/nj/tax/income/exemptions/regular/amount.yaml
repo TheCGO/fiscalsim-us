@@ -2,7 +2,7 @@ description: NJ provides a regular exemption of $1k for individuals and $2k for 
 metadata:
   unit: currency-USD
   label: NJ Regular Exemption
-  reference: 
+  reference:
     - title: New Jersey State 54A 3-1(a)
       href: https://casetext.com/statute/new-jersey-statutes/title-54a-new-jersey-gross-income-tax-act/chapter-54a3-personal-exemptions-and-deductions/section-54a3-1-personal-exemptions-and-deductions
     - title: 2021 New Jersey NJ-1040 Resident Return
@@ -19,5 +19,5 @@ HEAD_OF_HOUSEHOLD:
   2021-01-01: 1_000
 JOINT:
   2021-01-01: 2_000
-WIDOW:
+SURVIVING_SPOUSE:
   2021-01-01: 1_000

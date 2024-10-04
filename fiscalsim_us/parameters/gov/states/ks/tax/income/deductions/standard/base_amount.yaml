@@ -17,7 +17,7 @@ JOINT:
 HEAD_OF_HOUSEHOLD:
   2013-01-01: 5_500
   2021-01-01: 6_000
-WIDOW:
+SURVIVING_SPOUSE:
   # The K-40 instructions on page 6 read as follows:
   # If your federal filing status is Qualifying Widow(er) with
   # Dependent Child, check the Head of Household box.
