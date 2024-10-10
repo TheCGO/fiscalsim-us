@@ -197,9 +197,14 @@
       - Updates South Carolina tax logic and tests.
       - Replaces Mambaforge Python installer with Miniforge in GH Actions
   date: 2024-10-03 02:00:00
-- bump: minor
+- bump: patch
   changes:
     added:
       - Updates IRS rate threshholds and standard deduction amounts in `parameters.gov.irs.income.bracket.yaml` and in `parameters.gov.irs.deductions.standard.amount.yaml`
       - Renames `WIDOW` filer type to `SURVIVING_SPOUSE`
   date: 2024-10-04 12:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated 4 files to remove type errors.
+  date: 2024-10-10 3:00:00
