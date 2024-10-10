@@ -1,6 +1,7 @@
 from fiscalsim_us.model_api import *
 import numpy as np
 
+
 class co_state_supplement_eligible(Variable):
     value_type = bool
     entity = Person
