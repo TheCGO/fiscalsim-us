@@ -238,7 +238,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
-[0.3.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.3...v0.3.4
 [0.3.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.2...v0.3.3
 [0.3.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.1...v0.3.2
 [0.3.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.0...v0.3.1
