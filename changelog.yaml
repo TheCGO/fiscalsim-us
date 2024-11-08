@@ -208,3 +208,9 @@
     added:
       - Updated 4 files to remove type errors.
   date: 2024-10-10 3:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated and fixed Kentucky, Maryland, and Vermont parameters, variables and tests.
+      - Removed `tools/taxcalc/` directory
+  date: 2024-11-07 23:30:00
