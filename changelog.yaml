@@ -212,4 +212,5 @@
   changes:
     added:
       - Updated and fixed Kentucky, Maryland, and Vermont parameters, variables and tests.
+      - Removed `tools/taxcalc/` directory
   date: 2024-11-07 23:30:00
