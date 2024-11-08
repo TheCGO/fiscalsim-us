@@ -37,7 +37,6 @@ setup(
         "microdf_python",
         "numpy>=1.24, <1.25",
         "pandas",
-        "matplotlib",
         "pathlib",
         "policyengine-core>=2.8,<2.9",
         "pytest",
