@@ -26,7 +26,7 @@ class va_age_deduction(Variable):
             & (
                 (filing_status == filing_statuses.SINGLE)
                 | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-                | (filing_status == filing_statuses.WIDOW)
+                | (filing_status == filing_statuses.SURVIVING_SPOUSE)
             ),
             1,
             where(
@@ -44,7 +44,7 @@ class va_age_deduction(Variable):
         total_fda = where(
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW),
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE),
             you_fdca,
             you_fdca + spouse_fdca,
         )
@@ -52,7 +52,7 @@ class va_age_deduction(Variable):
         total_fds = where(
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW),
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE),
             you_fdcs,
             you_fdcs + spouse_fdcs,
         )
@@ -65,7 +65,7 @@ class va_age_deduction(Variable):
         threshold_ln9 = where(
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW),
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE),
             parameters(
                 period
             ).gov.states.va.tax.income.va_age_deduction_threshold.SINGLE,
@@ -86,7 +86,7 @@ class va_age_deduction(Variable):
             where(
                 (filing_status == filing_statuses.SINGLE)
                 | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-                | (filing_status == filing_statuses.WIDOW)
+                | (filing_status == filing_statuses.SURVIVING_SPOUSE)
                 | (filing_status == filing_statuses.SEPARATE),
                 12_000,
                 where(filing_status == filing_statuses.JOINT, 24_000, 0),
@@ -100,7 +100,7 @@ class va_age_deduction(Variable):
         result = where(
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE)
             | (
                 (filing_status == filing_statuses.SEPARATE)
                 & (age_of_spouse < 65)

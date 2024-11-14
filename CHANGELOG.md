@@ -5,6 +5,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.3.4] - 2024-11-14 00:30:00
+
+### Added
+
+- Updated and fixed Louisiana parameters, variables and tests.
+
+## [0.3.3] - 2024-11-07 23:30:00
+
+### Added
+
+- Updated and fixed Kentucky, Maryland, and Vermont parameters, variables and tests.
+- Removed `tools/taxcalc/` directory
+
+## [0.3.2] - 2024-10-10 3:00:00
+
+### Added
+
+- Updated 4 files to remove type errors.
+
+## [0.3.1] - 2024-10-04 12:00:00
+
+### Added
+
+- Updates IRS rate threshholds and standard deduction amounts in `parameters.gov.irs.income.bracket.yaml` and in `parameters.gov.irs.deductions.standard.amount.yaml`
+- Renames `WIDOW` filer type to `SURVIVING_SPOUSE`
+
+## [0.3.0] - 2024-10-03 02:00:00
+
+### Added
+
+- Updates South Carolina tax logic and tests
+- Replaces Mambaforge Python installer with Miniforge in GH Actions
+
+## [0.2.9] - 2024-04-11 00:30:00
+
+### Added
+
+- Reinstates running `build_and_test.yml` on push after merge.
+- Limits `docs_check.yml` to only run on pull request commits.
+- Updates some tags in `README.md.`
+
+## [0.2.8] - 2024-04-10 22:30:00
+
+### Added
+
+- Limits `build_and_test.yml` GH Action to pull requests and no pushes on merge. It also limits the codecov run to the Linux-OS tests on the latest version of Python (currently Python 3.11).
+
+## [0.2.7] - 2024-04-10 16:00:00
+
+### Added
+
+- Limits the policyengine-core dependency in `setup.py` to be less than v. 2.9.
+
 ## [0.2.6] - 2023-11-14 17:00:00
 
 ### Added
@@ -191,6 +245,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
+[0.3.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.3...v0.3.4
+[0.3.3]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.2...v0.3.3
+[0.3.2]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.1...v0.3.2
+[0.3.1]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.9...v0.3.0
+[0.2.9]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.8...v0.2.9
+[0.2.8]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.7...v0.2.8
+[0.2.7]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.6...v0.2.7
 [0.2.6]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.5...v0.2.6
 [0.2.5]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.2.3...v0.2.4

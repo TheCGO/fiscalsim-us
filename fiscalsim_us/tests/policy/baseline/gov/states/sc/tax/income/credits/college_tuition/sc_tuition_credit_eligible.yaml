@@ -1,0 +1,12 @@
+- name: Basic calculation, not eligible
+  period: 2022
+  input:
+    people:
+      person1:
+        is_tax_unit_head: true
+    households:
+      household:
+        members: [person1]
+        state_code: TX
+  output:
+    sc_tuition_credit_eligible: false

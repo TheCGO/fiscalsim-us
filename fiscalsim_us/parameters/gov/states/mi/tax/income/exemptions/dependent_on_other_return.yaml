@@ -1,11 +1,11 @@
-description: Michigan provides this exemption amount for a taxpayer who can be claimed as a dependent on someone else’s return. 
+description: Michigan provides this exemption amount for a taxpayer who can be claimed as a dependent on someone else’s return.
 SINGLE:
   2021-01-01: 1_500
 JOINT:
   2021-01-01: 3_000
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 1_500
-WIDOW:
+SURVIVING_SPOUSE:
   2021-01-01: 1_500
 SEPARATE:
   2021-01-01: 1_500

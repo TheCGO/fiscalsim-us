@@ -1,0 +1,12 @@
+- name: Test case 1  # SALT has a cap of 5000 for seperate
+  period: 2021
+  input:
+    filing_status: SEPARATE
+    tax_unit_itemizes: true
+    medical_expense_deduction: 6_000  # Goes into itemized_taxable_income_deductions
+    standard_deduction: 4_000
+    real_estate_taxes: 3_000
+    prior_year_state_income_tax_paid: 1_000
+    state_code: SC
+  output:
+    sc_additions: 1_000

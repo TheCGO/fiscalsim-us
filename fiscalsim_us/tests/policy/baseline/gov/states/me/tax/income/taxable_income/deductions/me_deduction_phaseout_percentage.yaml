@@ -54,7 +54,7 @@
   input:
     state_code: ME
     me_agi: 171_699
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
   output:
     me_deduction_phaseout_percentage: 0
 
@@ -104,7 +104,7 @@
   input:
     state_code: ME
     me_agi: 195_700
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
   output:
     me_deduction_phaseout_percentage: 0.16 # (195,700-171,700)/150,000
 
@@ -154,6 +154,6 @@
   input:
     state_code: ME
     me_agi: 321_701
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
   output:
     me_deduction_phaseout_percentage: 1
