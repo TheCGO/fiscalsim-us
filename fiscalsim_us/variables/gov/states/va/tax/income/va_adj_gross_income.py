@@ -27,7 +27,7 @@ class va_adj_gross_income(Variable):
             (filing_status == filing_statuses.SINGLE)
             | (filing_status == filing_statuses.SEPARATE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD)
-            | (filing_status == filing_statuses.WIDOW),
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE),
             where(subtotal < single, 0, subtotal),
             where(
                 filing_status == filing_statuses.JOINT,

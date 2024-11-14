@@ -5,7 +5,7 @@ metadata:
   breakdown:
     - filing_status
   label: New Mexico property tax rebate max amount
-  reference: 
+  reference:
     - title: NM 2022 PIT-RC instructions
       href: https://klvg4oyd4j.execute-api.us-west-2.amazonaws.com/prod/PublicFiles/34821a9573ca43e7b06dfad20f5183fd/1afc56af-ea90-4d48-82e5-1f9aeb43255a/PITbook2022.pdf#page=58
     - title: 2021 PIT-RC NEW MEXICO REBATE AND CREDIT SCHEDULE
@@ -17,7 +17,7 @@ JOINT:
   2021-01-01: 250
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 250
-WIDOW:
+SURVIVING_SPOUSE:
   2021-01-01: 250
 SINGLE:
   2021-01-01: 250

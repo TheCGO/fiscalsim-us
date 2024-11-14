@@ -1,4 +1,4 @@
-- name: Single household with $101,002 taxable income 
+- name: Single household with $101,002 taxable income
   period: 2022
   input:
     state_code: AR
@@ -39,6 +39,6 @@
   input:
     state_code: AR
     ar_taxable_income: 80_000
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
   output:
     ar_inflation_relief_credit: 150

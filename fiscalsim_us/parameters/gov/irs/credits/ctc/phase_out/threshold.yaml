@@ -15,7 +15,7 @@ HEAD_OF_HOUSEHOLD:
   2013-01-01: 75_000
   2018-01-01: 200_000
   2026-01-01: 75_000
-WIDOW:
+SURVIVING_SPOUSE:
   2013-01-01: 75_000
   2018-01-01: 400_000
   2026-01-01: 75_000
@@ -31,4 +31,3 @@ metadata:
     # TCJA:
     - title: U.S.C 26 U.S. Code § 24(h)(3)
       href: https://www.law.cornell.edu/uscode/text/26/24#h_3
-    

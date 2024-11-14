@@ -27,7 +27,7 @@ class hud_income_level(Variable):
         ami = spm_unit("ami", period)
         # avoid array divide-by-zero warning by not using where() function
         # see following GitHub issue for more details:
-        # https://github.com/PolicyEngine/fiscalsim-us/issues/2496
+        # https://github.com/PolicyEngine/policyengine-us/issues/2496
         income_ami_ratio = np.zeros_like(ami)
         mask = ami != 0
         income_ami_ratio[mask] = annual_income[mask] / ami[mask]

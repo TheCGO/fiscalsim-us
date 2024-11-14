@@ -15,7 +15,7 @@ class va_calc_line_14(Variable):
 
         va_standard_deduction = where(
             (filing_status == filing_statuses.SINGLE)
-            | (filing_status == filing_statuses.WIDOW)
+            | (filing_status == filing_statuses.SURVIVING_SPOUSE)
             | (filing_status == filing_statuses.HEAD_OF_HOUSEHOLD),
             parameters(
                 period
