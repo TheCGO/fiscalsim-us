@@ -7,7 +7,7 @@ with open("README.md", "r") as readme_file:
 
 setup(
     name="fiscalsim-us",
-    version="0.3.3",
+    version="0.3.4",
     author="Richard W. Evans",
     author_email="rick@abundance.institute",
     long_description=readme,
@@ -18,6 +18,7 @@ setup(
         "Operating System :: POSIX",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Scientific/Engineering :: Information Analysis",
     ],
     description="FiscalSim federal and state individual tax and benefit system for the US",
