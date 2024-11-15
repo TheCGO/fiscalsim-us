@@ -59,7 +59,7 @@ class ar_personal_credits(Variable):
 
         hoh_status = (
             filing_status.possible_values.HEAD_OF_HOUSEHOLD
-            or filing_status.possible_values.WIDOW
+            or filing_status.possible_values.SURVIVING_SPOUSE
         )
         hoh_credit = (
             where(filing_status == hoh_status, 1, 0) * personal_credit_amount
