@@ -1,0 +1,50 @@
+- name: Distribution income of 1000, actuarial value of 100,000
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 1_000
+    ar_actuarial_value: 100_000
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 0
+  output:
+    ar_lump_sum_dist_tax: 20
+- name: Distribution income of 1000, actuarial value of 2,000,000 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 10_000
+    ar_actuarial_value: 2_000_000
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 0
+  output:
+    ar_lump_sum_dist_tax: 490
+- name: Distribution income of 80000, actuarial value of 0 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 80_000
+    ar_actuarial_value: 0
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 0
+  output:
+    ar_lump_sum_dist_tax: 0
+- name: Distribution income of 15_000, actuarial value of 20_000 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 15_000
+    ar_actuarial_value: 20_000
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 0
+  output:
+    ar_lump_sum_dist_tax: 0
+- name: Distribution income of 50_000, actuarial value of 15_000 
+  period: 2022
+  input:
+    state_code: AR
+    ar_distribution_income: 50_000
+    ar_actuarial_value: 15_000
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 0
+  output:
+    ar_lump_sum_dist_tax: 0

@@ -1,5 +1,6 @@
 description: Arkansas reduces the inflationary relief tax credit for each of these increments of taxable income above the threshold, based on filing status.
 metadata:
+  type: single_amount
   period: year
   unit: currency-USD
   label: Arkansas income reduction increment

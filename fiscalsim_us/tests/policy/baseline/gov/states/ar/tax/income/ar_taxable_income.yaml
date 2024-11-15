@@ -1,0 +1,48 @@
+- name: AR taxable income - 92000 agi
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    ar_agi: 92_000
+    filing_status: SINGLE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 1_500
+    state_code: AR
+  output:
+  # 92000 - 2270 = 89730
+    ar_taxable_income: 89_730
+- name: AR taxable income - 24000 agi JOINT
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    ar_agi: 24_000
+    filing_status: JOINT
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 500
+    state_code: AR
+  output:
+  # 24000 - 4540 = 19460
+    ar_taxable_income: 19_460
+- name: AR taxable income - 92000 agi itemized
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    ar_agi: 92_000
+    filing_status: SINGLE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 3_000
+    state_code: AR
+  output:
+  # 92000 - 3000 = 89730
+    ar_taxable_income: 89_000
+- name: AR taxable income - 56728 agi itemized
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    ar_agi: 56728
+    filing_status: JOINT
+    ar_standard_deduction: 4540
+    ar_itemized_deductions: 5000
+    state_code: AR
+  output:
+  # 56728 - 5000 = 51728
+    ar_taxable_income: 51_728

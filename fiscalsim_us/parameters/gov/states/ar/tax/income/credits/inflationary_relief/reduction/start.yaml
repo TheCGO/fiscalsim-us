@@ -1,5 +1,6 @@
 description: Arkansas provides inflationary relief tax credit to filers with taxable income above this amount, based on filing status.
 metadata:
+  type: single_amount
   reference:
     # The inflation relief credit is not mentioned in the Arkansas statutes
     - title: Arkansas 2022 Individual Income Tax Forms and Instructions
@@ -16,11 +17,16 @@ metadata:
     - filing_status
 JOINT:
   2022-01-01: 174_000
+  2023-01-01: 179_200
 SURVIVING_SPOUSE:
   2022-01-01: 87_000
+  2023-01-01: 89_600
 HEAD_OF_HOUSEHOLD:
   2022-01-01: 87_000
+  2023-01-01: 89_600
 SINGLE:
   2022-01-01: 87_000
+  2023-01-01: 89_600
 SEPARATE:
   2022-01-01: 87_000
+  2023-01-01: 89_600

@@ -1,0 +1,30 @@
+- name: AR High Income Reduction if Below Threshold
+  period: 2022
+  input:
+    ar_agi: 80_000
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 1_000
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_high_income_reduction: 0
+- name: AR High Income Reduction if at threshold
+  period: 2022
+  input:
+    ar_agi: 91_541
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 1_000
+    filing_status: JOINT
+    state_code: AR
+  output:
+    ar_high_income_reduction: 460
+- name: AR High Income Reduction if above threshold
+  period: 2022
+  input:
+    ar_agi: 94_581
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 1_000
+    filing_status: JOINT
+    state_code: AR
+  output:
+    ar_high_income_reduction: 170

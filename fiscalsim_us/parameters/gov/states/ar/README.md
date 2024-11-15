@@ -1,0 +1,5 @@
+# Arkansas
+* The Arkansas code gives the Arkansas DFA significant control over how the tax code is implemented. In our model, we follow the DFA's interpretation in most cases for that reason.
+* We do not model Line 32 on AR1000F, because federal form 5329 is not modeled on the federal level.
+* We do not model full or part-year resident status
+* We calculate the low income tax credit slightly differently than the Arkansas DFA does. The DFA rounds the unrounded tax liability to the nearest tenth before rounding the result to the nearest whole number. It then proceeds with the formula using that result. We find this to be incorrect mathematically and simply round the tax liability to the nearest whole number before proceeding with the rest of the formula. Usually, this doesn't change the result, but it occasionally results in the DFA's calculation overestimating the credit by 1.

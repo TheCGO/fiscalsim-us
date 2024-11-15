@@ -1,0 +1,48 @@
+- name: AR taxable capital gains test 1 - 0
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    long_term_capital_gains: 0
+    non_sch_d_capital_gains: 0
+    ar_lt_dep_adjustment: 0 
+    short_term_capital_gains: 0
+    ar_st_dep_adjustment: 0
+    state_code: AR
+  output:
+    ar_capital_gains: 0
+- name: AR taxable capital gains test 2 - $10,000 in LTG, $1,000 in STL
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    long_term_capital_gains: 10_000
+    non_sch_d_capital_gains: 0
+    ar_lt_dep_adjustment: 0 
+    short_term_capital_gains: -1_000
+    ar_st_dep_adjustment: 0
+    state_code: AR
+  output:
+    ar_capital_gains: 4_500
+- name: AR taxable capital gains test 3 - $11,000,000 in LTG, $10,000 in STL
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    long_term_capital_gains: 11_000_000
+    non_sch_d_capital_gains: 0
+    ar_lt_dep_adjustment: 0 
+    short_term_capital_gains: -10_000
+    ar_st_dep_adjustment: 0
+    state_code: AR
+  output:
+    ar_capital_gains: 5_000_000
+- name: AR taxable capital gains test 2 - $1,000 in LTG, $5,000 in STL
+  period: 2022
+  absolute_error_margin: 1
+  input:
+    long_term_capital_gains: 1_000
+    non_sch_d_capital_gains: 0
+    ar_lt_dep_adjustment: 0 
+    short_term_capital_gains: -5_000
+    ar_st_dep_adjustment: 0
+    state_code: AR
+  output:
+    ar_capital_gains: -4_000

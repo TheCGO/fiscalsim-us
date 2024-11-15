@@ -1,0 +1,14 @@
+description: Arkansas matches up to this share of the federal Adoption Expense Credit.
+values:
+  2022-01-01: 0.20
+metadata:
+  type: single_amount
+  reference:
+    - title: AR1000TC Arkansas Individual Income Tax Credits (Line 3)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits.pdf
+    - title: AR1000TC Arkansas Individual Income Tax Credits Instructions (Line 3)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits_Instructions.pdf
+  unit: /1
+  period: year
+  name: ar_adoption_credit
+  label: AR percent of federal Adoption Expense Credit

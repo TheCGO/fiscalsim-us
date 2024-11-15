@@ -1,0 +1,14 @@
+description: AR qualifying dependents with disabilities tax credit amount.
+values:
+  2021-01-01: 500
+  2022-01-01: 500
+metadata:
+  type: single_amount
+  reference:
+    - title: 2021 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 7C)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2021_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+    - title: 2022 AR1000F ARKANSAS INDIVIDUAL INCOME TAX RETURN Full Year Resident (line 7C)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+  unit: currency-USD
+  period: year
+  label: AR qualifying dependents tax credit amount
