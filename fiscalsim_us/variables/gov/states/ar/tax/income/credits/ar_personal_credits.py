@@ -13,123 +13,39 @@ class ar_personal_credits(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        personal_credit_amount = parameters(
-            period
-        ).gov.states.ar.tax.income.credits.personal.personal_credit_amount
+        p = parameters(period).gov.states.ar.tax.income.credits.personal
+        personal_credit_amount = p.personal_credit_amount
+        person = tax_unit.members
+        aged = person("age", period) >= p.age_threshold
+        receives_retirement_or_disability_exemption = (
+            person(
+                "ar_retirement_or_disability_benefits_exemption_person", period
+            )
+            > 0
+        )
+        aged_special = aged & ~receives_retirement_or_disability_exemption
+        # Only head and spouse are eligible for the personal credit amounts
+        head_or_spouse = person("is_tax_unit_head_or_spouse", period)
+        # Blind filers get an additional personal tax credit amount
+        blind = person("is_blind", period)
+        # Deaf filers get an additional personal tax credit amount
+        deaf = person("is_deaf", period)
+
+        # Widowed and head of household filers receive an additional credit
+        # amount
         filing_status = tax_unit("filing_status", period)
-        married_status = filing_status.possible_values.JOINT
-        if np.isscalar(filing_status):
-            self_and_spouse_credit = (
-                where(filing_status == married_status, 2, 1)
-                * personal_credit_amount
-            )
-        else:
-            self_and_spouse_credit = np.zeros_like(filing_status)
-            self_and_spouse_credit[filing_status == married_status] = (
-                2 * personal_credit_amount
-            )
-            self_and_spouse_credit[
-                ~(filing_status == married_status)
-            ] = personal_credit_amount
+        statuses = filing_status.possible_values
+        widow = filing_status == statuses.SURVIVING_SPOUSE
+        hoh = filing_status == statuses.HEAD_OF_HOUSEHOLD
+        whoh_filing_status_eligible = widow | hoh
 
-        blind_head = tax_unit("blind_head", period).astype(int)
-        blind_spouse = tax_unit("blind_spouse", period).astype(int) * 1
-        blind_credit = (blind_head + blind_spouse) * personal_credit_amount
-
-        age_threshold = parameters(
-            period
-        ).gov.states.ar.tax.income.credits.personal.age_threshold
-        if np.isscalar(tax_unit("age_head", period).astype(int)):
-            aged_head = where(
-                tax_unit("age_head", period).astype(int) >= age_threshold, 1, 0
+        personal_credit_count = tax_unit.sum(
+            head_or_spouse * (
+                1 + aged.astype(int) + blind.astype(int) + deaf.astype(int) + aged_special.astype(int)
             )
-        else:
-            aged_head = np.zeros_like(tax_unit("age_head", period).astype(int))
-            aged_head[
-                tax_unit("age_head", period).astype(int) >= age_threshold
-            ] = 1
-            aged_head[
-                tax_unit("age_head", period).astype(int) < age_threshold
-            ] = 0
-        if np.isscalar(tax_unit("age_spouse", period).astype(int)):
-            aged_spouse = where(
-                tax_unit("age_spouse", period).astype(int) >= age_threshold,
-                1,
-                0,
-            )
-        else:
-            aged_spouse = np.zeros_like(
-                tax_unit("age_spouse", period).astype(int)
-            )
-            aged_spouse[
-                tax_unit("age_spouse", period).astype(int) >= age_threshold
-            ] = 1
-            aged_spouse[
-                tax_unit("age_spouse", period).astype(int) < age_threshold
-            ] = 0
+        ) + whoh_filing_status_eligible.astype(int)
 
-        aged_credit = (aged_head + aged_spouse) * personal_credit_amount
-
-        head_retirement_income = tax_unit("ar_head_retirement_income", period)
-        spouse_retirement_income = tax_unit(
-            "ar_spouse_retirement_income", period
-        )
-        if np.isscalar(aged_head):
-            aged_special_head = where(
-                aged_head == 1 and head_retirement_income <= 0, 1, 0
-            )
-        else:
-            aged_special_head = np.zeros_like(aged_head)
-            aged_special_head[
-                (aged_head == 1) & (head_retirement_income <= 0)
-            ] = 1
-            aged_special_head[
-                ~(aged_head == 0) | (head_retirement_income > 0)
-            ] = 0
-        if np.isscalar(aged_spouse):
-            aged_special_spouse = where(
-                aged_spouse == 1 and spouse_retirement_income <= 0, 1, 0
-            )
-        else:
-            aged_special_spouse = np.zeros_like(aged_spouse)
-            aged_special_spouse[
-                (aged_spouse == 1) & (spouse_retirement_income <= 0)
-            ] = 1
-            aged_special_spouse[
-                ~(aged_spouse == 0) | (spouse_retirement_income > 0)
-            ] = 0
-
-        aged_special_credit = (
-            aged_special_head + aged_special_spouse
-        ) * personal_credit_amount
-
-        # I created "is_deaf", "deaf_head", and "deaf_spouse" myself
-        deaf_head = tax_unit("deaf_head", period).astype(int)
-        deaf_spouse = tax_unit("deaf_spouse", period).astype(int) * 1
-        deaf_credit = (deaf_head + deaf_spouse) * personal_credit_amount
-
-        hoh_status = (
-            filing_status.possible_values.HEAD_OF_HOUSEHOLD
-            or filing_status.possible_values.SURVIVING_SPOUSE
-        )
-        if np.isscalar(filing_status):
-            hoh_credit = (
-                where(filing_status == hoh_status, 1, 0)
-                * personal_credit_amount
-            )
-        else:
-            hoh_credit = np.zeros_like(filing_status)
-            hoh_credit[filing_status == hoh_status] = personal_credit_amount
-            hoh_credit[~(filing_status == hoh_status)] = 0
-
-        personal_credit = (
-            self_and_spouse_credit
-            + blind_credit
-            + aged_credit
-            + aged_special_credit
-            + deaf_credit
-            + hoh_credit
-        )
+        personal_credit = personal_credit_count * personal_credit_amount
 
         dependents = tax_unit("tax_unit_dependents", period)
         dependent_credit_amount = parameters(
