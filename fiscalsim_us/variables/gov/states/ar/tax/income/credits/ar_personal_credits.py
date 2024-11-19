@@ -26,10 +26,10 @@ class ar_personal_credits(Variable):
         else:
             self_and_spouse_credit = np.zeros_like(filing_status)
             self_and_spouse_credit[filing_status == married_status] = (
-                2 * personal_credit_amount[filing_status == married_status]
+                2 * personal_credit_amount
             )
             self_and_spouse_credit[filing_status != married_status] = (
-                1 * personal_credit_amount[filing_status != married_status]
+                personal_credit_amount
             )
 
         blind_head = tax_unit("blind_head", period).astype(int)
@@ -53,7 +53,9 @@ class ar_personal_credits(Variable):
             ] = 0
         if np.isscalar(tax_unit("age_spouse", period).astype(int)):
             aged_spouse = where(
-                tax_unit("age_spouse", period).astype(int) >= age_threshold, 1, 0
+                tax_unit("age_spouse", period).astype(int) >= age_threshold,
+                1,
+                0,
             )
         else:
             aged_spouse = np.zeros_like(
@@ -110,16 +112,14 @@ class ar_personal_credits(Variable):
             filing_status.possible_values.HEAD_OF_HOUSEHOLD
             or filing_status.possible_values.SURVIVING_SPOUSE
         )
-        if np.isscalar(personal_credit_amount):
+        if np.isscalar(filing_status):
             hoh_credit = (
-                where(filing_status == hoh_status, 1, 0) *
-                personal_credit_amount
+                where(filing_status == hoh_status, 1, 0)
+                * personal_credit_amount
             )
         else:
-            hoh_credit = np.zeros_like(personal_credit_amount)
-            hoh_credit[filing_status == hoh_status] = personal_credit_amount[
-                filing_status == hoh_status
-            ]
+            hoh_credit = np.zeros_like(filing_status)
+            hoh_credit[filing_status == hoh_status] = personal_credit_amount
             hoh_credit[filing_status != hoh_status] = 0
 
         personal_credit = (
