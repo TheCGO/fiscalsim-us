@@ -48,7 +48,7 @@ class ar_income_tax_before_non_refundable_credits(Variable):
                     (last_two_digits > 50) | (last_two_digits < 1)
                 ] = (
                     nearest_multiple_of_100[
-                        (last_two_digits > 50) & (last_two_digits < 1)
+                        (last_two_digits > 50) | (last_two_digits < 1)
                     ]
                     - 50
                 )
