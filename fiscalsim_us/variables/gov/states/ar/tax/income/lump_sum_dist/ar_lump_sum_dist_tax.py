@@ -108,7 +108,7 @@ class ar_lump_sum_dist_tax(Variable):
         # line_9_reduction = high_income_reduction(line_9)
         line_9_reduction = high_income_reduction.calc(line_9)
 
-        line_9_tax = round(
+        line_9_tax = round_(
             where(
                 line_9 <= high_income_threshold,
                 parameters(period).gov.states.ar.tax.income.rates.rates.calc(
@@ -140,7 +140,7 @@ class ar_lump_sum_dist_tax(Variable):
 
         line_15_reduction = high_income_reduction.calc(line_15)
 
-        line_15_tax = round(
+        line_15_tax = round_(
             where(
                 line_15 <= high_income_threshold,
                 parameters(period).gov.states.ar.tax.income.rates.rates.calc(
