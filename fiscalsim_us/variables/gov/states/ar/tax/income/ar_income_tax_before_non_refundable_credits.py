@@ -74,18 +74,24 @@ class ar_income_tax_before_non_refundable_credits(Variable):
                     rounded_taxable_income[
                         taxable_income <= high_income_threshold
                     ]
-                ) - litc[taxable_income <= high_income_threshold] -
-                high_income_reduction[taxable_income <= high_income_threshold],
-                0
+                )
+                - litc[taxable_income <= high_income_threshold]
+                - high_income_reduction[
+                    taxable_income <= high_income_threshold
+                ],
+                0,
             )
             tax[taxable_income > high_income_threshold] = np.round(
                 p.high_income_rates.calc(
                     rounded_taxable_income[
                         taxable_income > high_income_threshold
                     ]
-                ) - litc[taxable_income > high_income_threshold] -
-                high_income_reduction[taxable_income > high_income_threshold],
-                0
+                )
+                - litc[taxable_income > high_income_threshold]
+                - high_income_reduction[
+                    taxable_income > high_income_threshold
+                ],
+                0,
             )
 
         lump_sum_dist_tax = tax_unit("ar_lump_sum_dist_tax", period)
