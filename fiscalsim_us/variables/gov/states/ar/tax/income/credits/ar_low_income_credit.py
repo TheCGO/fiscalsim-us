@@ -65,10 +65,10 @@ class ar_low_income_credit(Variable):
             else:
                 rounded_income = np.zeros_like(num)
                 rounded_income[last_two_digits <= 50] = (
-                    nearest_multiple_of_100 + 50
+                    nearest_multiple_of_100[last_two_digits <= 50] + 50
                 )
                 rounded_income[last_two_digits > 50] = (
-                    nearest_multiple_of_100 - 50
+                    nearest_multiple_of_100[last_two_digits > 50] - 50
                 )
                 return rounded_income
 
