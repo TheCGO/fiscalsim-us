@@ -1,6 +1,5 @@
 from fiscalsim_us.model_api import *
 import numpy as np
-from numpy import round
 
 
 class ar_low_income_credit(Variable):
@@ -85,7 +84,7 @@ class ar_low_income_credit(Variable):
         # Calculate the tax liability on min_income
         min_tax_liability = tax_rate.calc(rounded_min_income)
 
-        min_tax_liability = round(min_tax_liability)
+        min_tax_liability = np.round(min_tax_liability)
 
         # Calculate the credit amount
         credit_amount = min_tax_liability * credit_rate
@@ -103,14 +102,23 @@ class ar_low_income_credit(Variable):
         credit_amount -= phaseout_reduction
 
         # Ensure credit_amount does not go below 0 and that those who itemize or are married filing separately do not take the credit
-        credit_amount = where(
-            credit_amount < 0
-            or std_ded < itm_ded
-            or filing_status == "SEPARATE",
-            0,
-            credit_amount,
-        )
+        if np.isscalar(credit_amount):
+            credit_amount = where(
+                credit_amount < 0
+                or std_ded < itm_ded
+                or filing_status == "SEPARATE",
+                0,
+                credit_amount,
+            )
+        else:
+            credit_amount[
+                (
+                    (credit_amount < 0) |
+                    (std_ded < itm_ded) |
+                    (filing_status == "SEPARATE")
+                )
+            ] = 0
 
-        credit_amount = round(credit_amount, 0)
+        credit_amount = np.round(credit_amount, 0)
 
         return credit_amount
