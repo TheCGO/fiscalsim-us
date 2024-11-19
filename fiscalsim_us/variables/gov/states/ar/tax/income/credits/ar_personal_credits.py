@@ -1,4 +1,5 @@
 from fiscalsim_us.model_api import *
+import numpy as np
 
 
 class ar_personal_credits(Variable):
@@ -17,10 +18,19 @@ class ar_personal_credits(Variable):
         ).gov.states.ar.tax.income.credits.personal.personal_credit_amount
         filing_status = tax_unit("filing_status", period)
         married_status = filing_status.possible_values.JOINT
-        self_and_spouse_credit = (
-            where(filing_status == married_status, 2, 1)
-            * personal_credit_amount
-        )
+        if np.isscalar(filing_status):
+            self_and_spouse_credit = (
+                where(filing_status == married_status, 2, 1)
+                * personal_credit_amount
+            )
+        else:
+            self_and_spouse_credit = np.zeros_like(filing_status)
+            self_and_spouse_credit[filing_status == married_status] = (
+                2 * personal_credit_amount[filing_status == married_status]
+            )
+            self_and_spouse_credit[filing_status != married_status] = (
+                1 * personal_credit_amount[filing_status != married_status]
+            )
 
         blind_head = tax_unit("blind_head", period).astype(int)
         blind_spouse = tax_unit("blind_spouse", period).astype(int) * 1
@@ -29,24 +39,63 @@ class ar_personal_credits(Variable):
         age_threshold = parameters(
             period
         ).gov.states.ar.tax.income.credits.personal.age_threshold
-        aged_head = where(
-            tax_unit("age_head", period).astype(int) >= age_threshold, 1, 0
-        )
-        aged_spouse = where(
-            tax_unit("age_spouse", period).astype(int) >= age_threshold, 1, 0
-        )
+        if np.isscalar(tax_unit("age_head", period).astype(int)):
+            aged_head = where(
+                tax_unit("age_head", period).astype(int) >= age_threshold, 1, 0
+            )
+        else:
+            aged_head = np.zeros_like(tax_unit("age_head", period).astype(int))
+            aged_head[
+                tax_unit("age_head", period).astype(int) >= age_threshold
+            ] = 1
+            aged_head[
+                tax_unit("age_head", period).astype(int) < age_threshold
+            ] = 0
+        if np.isscalar(tax_unit("age_spouse", period).astype(int)):
+            aged_spouse = where(
+                tax_unit("age_spouse", period).astype(int) >= age_threshold, 1, 0
+            )
+        else:
+            aged_spouse = np.zeros_like(
+                tax_unit("age_spouse", period).astype(int)
+            )
+            aged_spouse[
+                tax_unit("age_spouse", period).astype(int) >= age_threshold
+            ] = 1
+            aged_spouse[
+                tax_unit("age_spouse", period).astype(int) < age_threshold
+            ] = 0
+
         aged_credit = (aged_head + aged_spouse) * personal_credit_amount
 
         head_retirement_income = tax_unit("ar_head_retirement_income", period)
         spouse_retirement_income = tax_unit(
             "ar_spouse_retirement_income", period
         )
-        aged_special_head = where(
-            aged_head == 1 and head_retirement_income <= 0, 1, 0
-        )
-        aged_special_spouse = where(
-            aged_spouse == 1 and spouse_retirement_income <= 0, 1, 0
-        )
+        if np.isscalar(aged_head):
+            aged_special_head = where(
+                aged_head == 1 and head_retirement_income <= 0, 1, 0
+            )
+        else:
+            aged_special_head = np.zeros_like(aged_head)
+            aged_special_head[
+                (aged_head == 1) & (head_retirement_income <= 0)
+            ] = 1
+            aged_special_head[
+                (aged_head != 0) | (head_retirement_income > 0)
+            ] = 0
+        if np.isscalar(aged_spouse):
+            aged_special_spouse = where(
+                aged_spouse == 1 and spouse_retirement_income <= 0, 1, 0
+            )
+        else:
+            aged_special_spouse = np.zeros_like(aged_spouse)
+            aged_special_spouse[
+                (aged_spouse == 1) & (spouse_retirement_income <= 0)
+            ] = 1
+            aged_special_spouse[
+                (aged_spouse != 0) | (spouse_retirement_income > 0)
+            ] = 0
 
         aged_special_credit = (
             aged_special_head + aged_special_spouse
@@ -61,9 +110,17 @@ class ar_personal_credits(Variable):
             filing_status.possible_values.HEAD_OF_HOUSEHOLD
             or filing_status.possible_values.SURVIVING_SPOUSE
         )
-        hoh_credit = (
-            where(filing_status == hoh_status, 1, 0) * personal_credit_amount
-        )
+        if np.isscalar(personal_credit_amount):
+            hoh_credit = (
+                where(filing_status == hoh_status, 1, 0) *
+                personal_credit_amount
+            )
+        else:
+            hoh_credit = np.zeros_like(personal_credit_amount)
+            hoh_credit[filing_status == hoh_status] = personal_credit_amount[
+                filing_status == hoh_status
+            ]
+            hoh_credit[filing_status != hoh_status] = 0
 
         personal_credit = (
             self_and_spouse_credit
