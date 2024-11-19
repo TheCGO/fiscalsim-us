@@ -81,11 +81,11 @@ class ar_lump_sum_dist_tax(Variable):
         line_4_max = p.min_allowance_multiple1_max
         line_4_multiple = p.min_allowance_multiple1
 
-        line_4 = min(line_4_max, taxable_dist * line_4_multiple)
+        line_4 = min_(line_4_max, taxable_dist * line_4_multiple)
 
         min_allowance_subtraction = p.min_allowance_subtract
 
-        line_5 = max(0, taxable_dist - min_allowance_subtraction)
+        line_5 = max_(0, taxable_dist - min_allowance_subtraction)
 
         line_6_multiple = p.min_allowance_multiple2
 

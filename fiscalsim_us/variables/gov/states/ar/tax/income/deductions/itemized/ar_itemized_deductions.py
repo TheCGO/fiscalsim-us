@@ -17,9 +17,9 @@ class ar_itemized_deductions(Variable):
             period
         ).gov.states.ar.tax.income.deductions.itemized.medical
 
-        agi_portion = max(0, agi * medical_threshold)
+        agi_portion = max_(0, agi * medical_threshold)
 
-        medical_deduction = max(0, medical_expense - agi_portion)
+        medical_deduction = max_(0, medical_expense - agi_portion)
 
         real_estate_tax = add(tax_unit, period, ["real_estate_taxes"])
 
@@ -50,7 +50,7 @@ class ar_itemized_deductions(Variable):
 
         misc_limit = agi * misc_limit_pct
 
-        misc_deductions = max(0, line_22 - misc_limit)
+        misc_deductions = max_(0, line_22 - misc_limit)
 
         other_misc_deductions = tax_unit("ar_other_misc_deductions", period)
 
