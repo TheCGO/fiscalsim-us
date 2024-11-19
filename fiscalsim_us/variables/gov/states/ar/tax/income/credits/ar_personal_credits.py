@@ -40,8 +40,13 @@ class ar_personal_credits(Variable):
         whoh_filing_status_eligible = widow | hoh
 
         personal_credit_count = tax_unit.sum(
-            head_or_spouse * (
-                1 + aged.astype(int) + blind.astype(int) + deaf.astype(int) + aged_special.astype(int)
+            head_or_spouse
+            * (
+                1
+                + aged.astype(int)
+                + blind.astype(int)
+                + deaf.astype(int)
+                + aged_special.astype(int)
             )
         ) + whoh_filing_status_eligible.astype(int)
 
