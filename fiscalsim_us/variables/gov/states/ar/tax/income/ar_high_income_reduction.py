@@ -45,14 +45,16 @@ class ar_high_income_reduction(Variable):
                 ] = (
                     nearest_multiple_of_100[
                         (last_two_digits <= 50) & (last_two_digits >= 1)
-                    ] + 50
+                    ]
+                    + 50
                 )
                 rounded_income[
                     (last_two_digits > 50) | (last_two_digits < 1)
                 ] = (
                     nearest_multiple_of_100[
                         (last_two_digits > 50) & (last_two_digits < 1)
-                    ] - 50
+                    ]
+                    - 50
                 )
                 return rounded_income
 

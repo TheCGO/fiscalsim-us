@@ -41,14 +41,16 @@ class ar_income_tax_before_non_refundable_credits(Variable):
                 ] = (
                     nearest_multiple_of_100[
                         (last_two_digits <= 50) & (last_two_digits >= 1)
-                    ] + 50
+                    ]
+                    + 50
                 )
                 rounded_income[
                     (last_two_digits > 50) | (last_two_digits < 1)
                 ] = (
                     nearest_multiple_of_100[
                         (last_two_digits > 50) & (last_two_digits < 1)
-                    ] - 50
+                    ]
+                    - 50
                 )
                 return rounded_income
 
@@ -68,12 +70,16 @@ class ar_income_tax_before_non_refundable_credits(Variable):
         else:
             tax = np.zeros_like(rounded_taxable_income)
             tax[taxable_income <= high_income_threshold] = np.round(
-                p.rates.calc(rounded_taxable_income) - litc -
-                high_income_reduction, 0
+                p.rates.calc(rounded_taxable_income)
+                - litc
+                - high_income_reduction,
+                0,
             )
             tax[taxable_income > high_income_threshold] = np.round(
-                p.high_income_rates.calc(rounded_taxable_income) - litc -
-                high_income_reduction, 0
+                p.high_income_rates.calc(rounded_taxable_income)
+                - litc
+                - high_income_reduction,
+                0,
             )
 
         lump_sum_dist_tax = tax_unit("ar_lump_sum_dist_tax", period)

@@ -113,9 +113,9 @@ class ar_low_income_credit(Variable):
         else:
             credit_amount[
                 (
-                    (credit_amount < 0) |
-                    (std_ded < itm_ded) |
-                    (filing_status == "SEPARATE")
+                    (credit_amount < 0)
+                    | (std_ded < itm_ded)
+                    | (filing_status == "SEPARATE")
                 )
             ] = 0
 
