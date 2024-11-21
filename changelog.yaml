@@ -219,3 +219,8 @@
     added:
       - Updated and fixed Louisiana parameters, variables and tests.
   date: 2024-11-14 00:30:00
+- bump: patch
+  changes:
+    added:
+      - Updated and fixed Arkansas parameters, variables and tests.
+  date: 2024-11-21 00:30:00
