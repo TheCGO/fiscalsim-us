@@ -23,7 +23,7 @@ def formula(tax_unit, period, parameters):
 
     total_available = expenses + carryover
 
-    total_allowable_credit = min(maximum_credit, total_available)
+    total_allowable_credit = min_(maximum_credit, total_available)
 
     tax_due = tax_unit("ar_income_tax_before_non_refundable_credits", period)
     -tax_unit("ar_personal_credits", period) - tax_unit(
@@ -40,6 +40,6 @@ def formula(tax_unit, period, parameters):
         - tax_unit("ar_cdcc", period)
     )
 
-    credit = min(total_allowable_credit, tax_due)
+    credit = min_(total_allowable_credit, tax_due)
 
     return credit

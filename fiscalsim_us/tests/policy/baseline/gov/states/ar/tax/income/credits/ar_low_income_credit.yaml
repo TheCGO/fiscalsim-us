@@ -1,4 +1,4 @@
-- name: Single household with $11,180 taxable income 
+- name: Single household with $11,180 taxable income
   period: 2022
   input:
     state_code: AR
@@ -56,7 +56,7 @@
     state_code: AR
     ar_taxable_income: 23_730
     tax_unit_dependents: 2
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
     ar_standard_deduction: 2_270
     ar_itemized_deductions: 500
     ar_agi: 26_000
@@ -69,7 +69,7 @@
     state_code: AR
     ar_taxable_income: 21_730
     tax_unit_dependents: 2
-    filing_status: WIDOW
+    filing_status: SURVIVING_SPOUSE
     ar_standard_deduction: 2_270
     ar_itemized_deductions: 500
     ar_agi: 24_000

@@ -19,7 +19,7 @@ def formula(tax_unit, period, parameters):
     itm_ded = tax_unit("mt_itemized_deductions", period)
     deductions = where(itm_ded > std_ded, itm_ded, std_ded)
     exemptions = tax_unit("mt_exemptions", period)
-    return max(
+    return max_(
         0,
         tax_unit("mt_agi", period) - deductions - exemptions,
     )

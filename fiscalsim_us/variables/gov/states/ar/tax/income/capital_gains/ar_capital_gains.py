@@ -41,10 +41,10 @@ class ar_capital_gains(Variable):
             ar_st_gain < 0,
             where(
                 ar_lt_gain + ar_st_gain >= 0,
-                min(max_taxable_gain, ar_lt_gain + ar_st_gain),
+                min_(max_taxable_gain, ar_lt_gain + ar_st_gain),
                 ar_lt_gain + ar_st_gain,
             ),
-            min(ar_lt_gain, max_taxable_gain),
+            min_(ar_lt_gain, max_taxable_gain),
         )
 
         ar_taxable_amount = where(

@@ -12,7 +12,7 @@ class ar_stillborn_child_credit(Variable):
     defined_for = StateCode.AR
 
     def formula(tax_unit, period, parameters):
-        p = parameters(period).gov.states.ar.income.credits.other_credits
+        p = parameters(period).gov.states.ar.tax.income.credits.other_credits
 
         amount = p.stillbirth_credit
 

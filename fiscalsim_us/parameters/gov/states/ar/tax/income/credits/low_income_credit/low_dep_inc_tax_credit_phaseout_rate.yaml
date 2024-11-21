@@ -8,12 +8,12 @@ metadata:
   reference:
     - title: Arkansas Code Title 26. Taxation § 26-51-301. Subsection f
       href: https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-301/
-  
+
   breakdown:
     - filing_status
 JOINT:
   2022-01-01: 7
-WIDOW:
+SURVIVING_SPOUSE:
   2022-01-01: 6
 HEAD_OF_HOUSEHOLD:
   2022-01-01: 6

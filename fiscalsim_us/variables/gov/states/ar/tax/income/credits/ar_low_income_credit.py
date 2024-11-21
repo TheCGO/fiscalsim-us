@@ -1,6 +1,5 @@
 from fiscalsim_us.model_api import *
 import numpy as np
-from numpy import round
 
 
 class ar_low_income_credit(Variable):
@@ -49,17 +48,27 @@ class ar_low_income_credit(Variable):
 
         def round_to_nearest_50(num):
             # Calculate the nearest multiple of 100
-            nearest_multiple_of_100 = round(num / 100) * 100
+            nearest_multiple_of_100 = np.round(num / 100) * 100
 
             # Get the last two digits
             last_two_digits = num % 100
 
             # Determine the closest ending in "50"
-            if last_two_digits <= 50:
-                rounded_income = nearest_multiple_of_100 + 50
-                return rounded_income
+            if np.isscalar(num):
+                if last_two_digits <= 50:
+                    rounded_income = nearest_multiple_of_100 + 50
+                    return rounded_income
+                else:
+                    rounded_income = nearest_multiple_of_100 - 50
+                    return rounded_income
             else:
-                rounded_income = nearest_multiple_of_100 - 50
+                rounded_income = np.zeros_like(num)
+                rounded_income[last_two_digits <= 50] = (
+                    nearest_multiple_of_100[last_two_digits <= 50] + 50
+                )
+                rounded_income[last_two_digits > 50] = (
+                    nearest_multiple_of_100[last_two_digits > 50] - 50
+                )
                 return rounded_income
 
         std_ded = tax_unit("ar_standard_deduction", period)
@@ -75,7 +84,7 @@ class ar_low_income_credit(Variable):
         # Calculate the tax liability on min_income
         min_tax_liability = tax_rate.calc(rounded_min_income)
 
-        min_tax_liability = round(min_tax_liability)
+        min_tax_liability = np.round(min_tax_liability)
 
         # Calculate the credit amount
         credit_amount = min_tax_liability * credit_rate
@@ -93,14 +102,23 @@ class ar_low_income_credit(Variable):
         credit_amount -= phaseout_reduction
 
         # Ensure credit_amount does not go below 0 and that those who itemize or are married filing separately do not take the credit
-        credit_amount = where(
-            credit_amount < 0
-            or std_ded < itm_ded
-            or filing_status == "SEPARATE",
-            0,
-            credit_amount,
-        )
+        if np.isscalar(credit_amount):
+            credit_amount = where(
+                credit_amount < 0
+                or std_ded < itm_ded
+                or filing_status == "SEPARATE",
+                0,
+                credit_amount,
+            )
+        else:
+            credit_amount[
+                (
+                    (credit_amount < 0)
+                    | (std_ded < itm_ded)
+                    | (filing_status == "SEPARATE")
+                )
+            ] = 0
 
-        credit_amount = round(credit_amount, 0)
+        credit_amount = np.round(credit_amount, 0)
 
         return credit_amount
