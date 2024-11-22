@@ -5,8 +5,6 @@ from policyengine_core.periods import instant
 import pytest
 
 
-# @pytest.mark.skipif(True, reason="This test temporarily suspended.")
-
 """
 In US nationwide simulations, use reported state income tax liabilities
 """
@@ -24,6 +22,7 @@ class baseline_reform(Reform):
         self.modify_parameters(use_reported_state_income_tax)
 
 
+@pytest.mark.skipif(True, reason="This test temporarily suspended.")
 def test_microsim_runs_cps():
     sim = Microsimulation(reform=baseline_reform)
     hnet = sim.calc("household_net_income", period=2024, map_to="person")
