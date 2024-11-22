@@ -1,0 +1,90 @@
+- name: Single household with $11,180 taxable income
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 11_180
+    tax_unit_dependents: 1
+    filing_status: SINGLE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 200
+    ar_agi: 13_450
+  output:
+    ar_low_income_credit: 103
+
+- name: Separate household with $20,000 taxable income - not eligible
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 17_730
+    tax_unit_dependents: 3
+    filing_status: SEPARATE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 200
+    ar_agi: 20_000
+  output:
+    ar_low_income_credit: 0
+
+- name: Joint with $26,000 taxable income, itemized deductions
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 26_460
+    tax_unit_dependents: 3
+    filing_status: JOINT
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 5_000
+    ar_agi: 31_000
+  output:
+    ar_low_income_credit: 0
+
+- name: Joint household with $26,460 taxable income - 3 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 26_460
+    tax_unit_dependents: 3
+    filing_status: JOINT
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 500
+    ar_agi: 31_000
+  output:
+    ar_low_income_credit: 149
+
+- name: Widow household with $26,000 taxable income - 2 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 23_730
+    tax_unit_dependents: 2
+    filing_status: SURVIVING_SPOUSE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 500
+    ar_agi: 26_000
+  output:
+    ar_low_income_credit: 60
+
+- name: Widow household with $21,730 taxable income - 2 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 21_730
+    tax_unit_dependents: 2
+    filing_status: SURVIVING_SPOUSE
+    ar_standard_deduction: 2_270
+    ar_itemized_deductions: 500
+    ar_agi: 24_000
+  output:
+    ar_low_income_credit: 240
+
+- name: Joint household with $18,310 taxable income - 1 dependents
+  period: 2022
+  input:
+    state_code: AR
+    ar_taxable_income: 18_310
+    tax_unit_dependents: 1
+    filing_status: JOINT
+    ar_standard_deduction: 4_540
+    ar_itemized_deductions: 500
+    ar_agi: 22_850
+  output:
+    ar_low_income_credit: 268

@@ -49,7 +49,7 @@
     earned_income_tax_credit: 0  # too much investment income to be eligible
     income_tax: -9648
     # expected CA results:
-    ca_income_tax_before_credits: 164.14  # this is a PolicyEngineUS output
+    ca_income_tax_before_credits: 164.14  # this is a FiscalSimUS output
     ca_exemptions: 1_058  # treated as a nonrefundable credit
     ca_income_tax_before_refundable_credits: 0
     ca_eitc: 0  # too much investment income to be CalEITC eligible

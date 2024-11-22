@@ -1,0 +1,22 @@
+description: Arkansas's low income tax credit is reduced by this amount for each additional $100 in income. Units with 2 or more dependents
+metadata:
+  type: single_amount
+  period: year
+  unit: currency-USD
+  label: Arkansas income-tax credit phaseout rate
+  name: high_dep_inc_tax_credit_phaseout_rate
+  reference:
+    - title: Arkansas Code Title 26. Taxation § 26-51-301. Subsection f
+      href: https://codes.findlaw.com/ar/title-26-taxation/ar-code-sect-26-51-301/
+  breakdown:
+    - filing_status
+JOINT:
+  2022-01-01: 7
+SURVIVING_SPOUSE:
+  2022-01-01: 9
+HEAD_OF_HOUSEHOLD:
+  2022-01-01: 9
+SINGLE:
+  2022-01-01: 4
+SEPARATE:
+  2022-01-01: 0

@@ -7,13 +7,11 @@ class la_income_tax_before_refundable_credits(Variable):
     label = "Louisiana income tax before refundable credits"
     unit = USD
     definition_period = YEAR
-    reference = (
-        "https://revenue.louisiana.gov/TaxForms/IT540WEB(2022)%20F%20D2.pdf",
-        "https://revenue.louisiana.gov/TaxForms/IT540iWEB(2022)D1.pdf",
-    )
     defined_for = StateCode.LA
 
     def formula(tax_unit, period, parameters):
-        itax_before_credits = tax_unit("la_income_tax_before_credits", period)
-        nonrefundable_credits = tax_unit("la_nonrefundable_credits", period)
-        return max_(0, itax_before_credits - nonrefundable_credits)
+        before_non_refundable_credits = tax_unit(
+            "la_income_tax_before_non_refundable_credits", period
+        )
+        non_refundable_credits = tax_unit("la_non_refundable_credits", period)
+        return max_(before_non_refundable_credits - non_refundable_credits, 0)

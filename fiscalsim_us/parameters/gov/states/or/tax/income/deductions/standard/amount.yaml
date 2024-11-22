@@ -7,9 +7,9 @@ metadata:
     - filing_status
   reference:
     - title: Chapter 316 - Personal Income Tax
-      href: https://www.oregonlegislature.gov/bills_laws/ors/ors316.html #316.695 (1)(B) 
+      href: https://www.oregonlegislature.gov/bills_laws/ors/ors316.html #316.695 (1)(B)
     - title: 2021 Oregon Income Tax Form OR-40 Instructions
-      href: https://www.oregon.gov/dor/forms/FormsPubs/form-or-40-inst_101-040-1_2021.pdf#page=15  
+      href: https://www.oregon.gov/dor/forms/FormsPubs/form-or-40-inst_101-040-1_2021.pdf#page=15
     - title: 2021 Publication OR-17, Oregon Individual Income Tax Guide
       href: https://www.oregon.gov/dor/forms/FormsPubs/publication-or-17_101-431_2021.pdf#page=142
     - title: 2022 Oregon Income Tax Form OR-40 Instructions
@@ -30,7 +30,7 @@ HEAD_OF_HOUSEHOLD:
   2020-01-01: 3_725
   2021-01-01: 3_780
   2022-01-01: 3_895
-WIDOW:
+SURVIVING_SPOUSE:
   2003-01-01: 3_280
   # Rose with inflation, not all dates documented.
   2018-01-01: 4_435

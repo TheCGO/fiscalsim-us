@@ -5,7 +5,7 @@ JOINT:
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 199_850
   2022-01-01: 206_050
-WIDOW:
+SURVIVING_SPOUSE:
   2021-01-01: 199_850
   2022-01-01: 206_050
 SINGLE:
@@ -26,4 +26,3 @@ metadata:
       href: https://www.revenue.state.mn.us/sites/default/files/2023-02/m1sa_21.pdf
     - title: 2022 M1SA, Minnesota Itemized Deductions, Line 26 Worksheet
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1sa_22.pdf
-

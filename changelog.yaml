@@ -191,8 +191,41 @@
       - Limits `docs_check.yml` to only run on pull request commits.
       - Updates some tags in `README.md.`
   date: 2024-04-11 00:30:00
+- bump: minor
+  changes:
+    added:
+      - Updates South Carolina tax logic and tests.
+      - Replaces Mambaforge Python installer with Miniforge in GH Actions
+  date: 2024-10-03 02:00:00
+- bump: patch
+  changes:
+    added:
+      - Updates IRS rate threshholds and standard deduction amounts in `parameters.gov.irs.income.bracket.yaml` and in `parameters.gov.irs.deductions.standard.amount.yaml`
+      - Renames `WIDOW` filer type to `SURVIVING_SPOUSE`
+  date: 2024-10-04 12:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated 4 files to remove type errors.
+  date: 2024-10-10 3:00:00
+- bump: patch
+  changes:
+    added:
+      - Updated and fixed Kentucky, Maryland, and Vermont parameters, variables and tests.
+      - Removed `tools/taxcalc/` directory
+  date: 2024-11-07 23:30:00
+- bump: patch
+  changes:
+    added:
+      - Updated and fixed Louisiana parameters, variables and tests.
+  date: 2024-11-14 00:30:00
+- bump: patch
+  changes:
+    added:
+      - Updated and fixed Arkansas parameters, variables and tests.
+  date: 2024-11-21 00:30:00
 - bump: patch
   changes:
     added:
       - Updates Minnesota tax logic to 2023 law
-  date: 2024-05-10 04:30:00
+  date: 2024-11-21 18:30:00

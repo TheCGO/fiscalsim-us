@@ -1,7 +1,16 @@
 description: Arkansas provides these nonrefundable income tax credits.
 values:
   2022-01-01:
-    - ar_inflation_relief_credit
+    - ar_inflationary_relief_tax_credit
+    - ar_personal_credits
+    - ar_stillborn_child_credit
+    - ar_political_contribution_credit
+    - ar_other_state_credit
+    - ar_metabolic_disorder_credit
+    - ar_adoption_expense_credit
+    - ar_additional_tax_credit
+    - ar_business_credits
+    - ar_nonrefundable_cdcc
 metadata:
   reference:
     - title: Inflationary relief income-tax credit worksheet

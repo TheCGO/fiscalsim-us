@@ -1,0 +1,54 @@
+- name: AR Itemized deductions test 1
+  period: 2022
+  input:
+    medical_expense: 1_000
+    ar_agi: 50_000
+    real_estate_taxes: 1_500
+    ar_other_taxes: 0
+    interest_deduction: 1_000
+    charitable_deduction: 1_300
+    casualty_loss: 0
+    ar_post_secondary_education_tuition_deduction: 4_712
+    ar_unreimbursed_employee_expenses_deduction: 500
+    ar_other_limited_expenses: 200
+    ar_other_misc_deductions: 100
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_itemized_deductions: 1_500 + 1_000 + 1_300 + 4_712 + 100
+- name: AR Itemized deductions test 2
+  period: 2022
+  input:
+    medical_expense: 10_000
+    ar_agi: 60_000
+    real_estate_taxes: 1_000
+    ar_other_taxes: 0
+    interest_deduction: 5_000
+    charitable_deduction: 0
+    casualty_loss: 100
+    ar_post_secondary_education_tuition_deduction: 0
+    ar_unreimbursed_employee_expenses_deduction: 1_500
+    ar_other_limited_expenses: 200
+    ar_other_misc_deductions: 100
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_itemized_deductions: 4_000 + 1_000 + 5_000 + 100 + 500 + 100
+- name: AR Itemized deductions test 3
+  period: 2022
+  input:
+    medical_expense: 10_000
+    ar_agi: 60_000
+    real_estate_taxes: 1_000
+    ar_other_taxes: 0
+    interest_deduction: 5_000
+    charitable_deduction: 0
+    casualty_loss: 100
+    ar_post_secondary_education_tuition_deduction: 0
+    ar_unreimbursed_employee_expenses_deduction: 3_000
+    ar_other_limited_expenses: 200
+    ar_other_misc_deductions: 100
+    filing_status: SINGLE
+    state_code: AR
+  output:
+    ar_itemized_deductions: 4_000 + 1_000 + 5_000 + 100 + 2000 + 100

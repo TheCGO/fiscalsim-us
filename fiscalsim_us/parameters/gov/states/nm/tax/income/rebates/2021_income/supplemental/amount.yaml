@@ -5,7 +5,7 @@ metadata:
   breakdown:
     - filing_status
   label: New Mexico supplemental 2021 income tax rebate amount
-  reference: 
+  reference:
     - title: New Mexico Statutes, Chapter 7 - Taxation, 7-2-7.5. Supplemental 2021 income tax rebates.
       href: https://nmonesource.com/nmos/nmsa/en/item/4340/index.do#!fragment/zoupio-_Toc140503706/BQCwhgziBcwMYgK4DsDWszIQewE4BUBTADwBdoAvbRABwEtsBaAfX2zgEYAWABgFYeAZgDsPAGwBKADTJspQhACKiQrgCe0AOSapEQmFwJlqjdt37DIAMp5SAIQ0AlAKIAZZwDUAggDkAws5SpGAARtCk7BISQA
     - title: New Mexico Session Laws, Laws 2022 (3rd S.S.) - 3rd Special Session, Fifty-Fifth Legislature, Chapter 2 Section 1 Laws 2022 (3rd S.S.)
@@ -17,7 +17,7 @@ JOINT:
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 1_000 # two payments of $500
   2022-01-01: 0
-WIDOW:
+SURVIVING_SPOUSE:
   2021-01-01: 1_000 # two payments of $500
   2022-01-01: 0
 SINGLE:

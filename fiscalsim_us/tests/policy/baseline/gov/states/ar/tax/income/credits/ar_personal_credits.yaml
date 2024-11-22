@@ -1,0 +1,85 @@
+- name: Single household, below 65, no dependents or disabilities
+  period: 2022
+  input:
+    state_code: AR
+    filing_status: SINGLE
+    blind_head: 0
+    blind_spouse: 0
+    age_head: 50
+    age_spouse: 0
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
+    deaf_head: 0
+    deaf_spouse: 0
+    tax_unit_dependents: 0
+    ar_qual_dependents: 0
+  output:
+    ar_personal_credits: 29
+- name: Joint household, below 65, 1 dependent, no disabilities
+  period: 2022
+  input:
+    state_code: AR
+    filing_status: JOINT
+    blind_head: 0
+    blind_spouse: 0
+    age_head: 50
+    age_spouse: 56
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
+    deaf_head: 0
+    deaf_spouse: 0
+    tax_unit_dependents: 1
+    ar_qual_dependents: 0
+  output:
+    ar_personal_credits: 58
+- name: Joint household, above 65, 0 dependents, no disabilities, no retirement income
+  period: 2022
+  input:
+    state_code: AR
+    filing_status: JOINT
+    blind_head: 0
+    blind_spouse: 0
+    age_head: 70
+    age_spouse: 87
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
+    deaf_head: 0
+    deaf_spouse: 0
+    tax_unit_dependents: 0
+    ar_qual_dependents: 0
+  output:
+    ar_personal_credits: 29
+- name: Joint household, above 65, 0 dependents, no disabilities, with retirement income
+  period: 2022
+  input:
+    state_code: AR
+    filing_status: JOINT
+    blind_head: 0
+    blind_spouse: 0
+    age_head: 70
+    age_spouse: 87
+    ar_head_retirement_income: 20_000
+    ar_spouse_retirement_income: 20_000
+    deaf_head: 0
+    deaf_spouse: 0
+    tax_unit_dependents: 0
+    ar_qual_dependents: 0
+  output:
+    ar_personal_credits: 29
+- name: Joint household, below 65, 2 dependents, 1 with disabilities, spouse is blind and deaf
+  period: 2022
+  input:
+    state_code: AR
+    filing_status: JOINT
+    blind_head: 0
+    blind_spouse: 1
+    age_head: 42
+    age_spouse: 39
+    ar_head_retirement_income: 0
+    ar_spouse_retirement_income: 0
+    deaf_head: 0
+    deaf_spouse: 1
+    tax_unit_dependents: 2
+    ar_qual_dependents: 1
+  output:
+    ar_personal_credits: 587

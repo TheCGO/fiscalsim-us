@@ -1,5 +1,6 @@
 description: Arkansas provides a standard deduction of this amount, based on filing status.
 metadata:
+  type: single_amount
   label: Arkansas standard deduction
   period: year
   unit: currency-USD
@@ -17,19 +18,24 @@ JOINT:
   # $4,400 in 2015 + COLA, rounded by $10.
   2021-01-01: 4_400
   2022-01-01: 4_540
+  2023-01-01: 4_680
 SINGLE:
   # $2_200 in 2015 + COLA, rounded by $10.
   2021-01-01: 2_200
   2022-01-01: 2_270
+  2023-01-01: 2_340
 SEPARATE:
   # $2,200 in 2015 + COLA, rounded by $10.
   2021-01-01: 2_200
   2022-01-01: 2_270
+  2023-01-01: 2_340
 HEAD_OF_HOUSEHOLD:
  # $2,200 in 2015 + COLA, rounded by $10.
   2021-01-01: 2_200
   2022-01-01: 2_270
-WIDOW: 
+  2023-01-01: 2_340 
+SURVIVING_SPOUSE:
  # $2,200 in 2015 + COLA, rounded by $10.
   2021-01-01: 2_200
   2022-01-01: 2_270
+  2023-01-01: 2_340

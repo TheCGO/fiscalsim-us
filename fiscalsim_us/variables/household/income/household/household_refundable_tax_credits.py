@@ -8,40 +8,42 @@ class household_refundable_tax_credits(Variable):
     definition_period = YEAR
     unit = USD
     adds = [
-        "income_tax_refundable_credits",  # Federal.
-        "ca_refundable_credits",  # California.
-        "co_refundable_credits",  # Colorado.
-        "dc_refundable_credits",  # District of Columbia.
-        "ia_refundable_credits",  # Iowa.
-        "il_refundable_credits",  # Illinois.
-        "in_refundable_credits",  # Indiana.
-        "ks_refundable_credits",  # Kansas.
-        "ky_refundable_credits",  # Kentucky.
-        "la_refundable_credits",  # Louisiana.
-        "ma_refundable_credits",  # Massachusetts.
-        "me_refundable_credits",  # Maine.
-        "md_refundable_credits",  # Maryland.
-        "mn_refundable_credits",  # Minnesota.
-        "mt_refundable_credits",  # Montana.
-        "mo_refundable_credits",  # Missouri.
-        # Skip NC, which has no refundable credits.
-        "nd_refundable_credits",  # North Dakota.
-        "ne_refundable_credits",  # Nebraska.
-        "nh_refundable_credits",  # New Hampshire.
-        "nj_refundable_credits",  # New Jersey.
-        "nm_refundable_credits",  # New Mexico.
-        "ny_refundable_credits",  # New York.
-        "ok_refundable_credits",  # Oklahoma.
-        "or_refundable_credits",  # Oregon.
-        # Skip PA, which has no refundable credits.
-        "ri_refundable_credits",  # Rhode Island.
-        "ut_refundable_credits",  # Utah.
-        "va_refundable_credits",  # Virginia.
-        "vt_refundable_credits",  # Vermont.
-        "wa_refundable_credits",  # Washington.
-        "wi_refundable_credits",  # Wisconsin.
+        "income_tax_refundable_credits",  # Federal
+        "ar_refundable_credits",  # Arkansas
+        "ca_refundable_credits",  # California
+        "co_refundable_credits",  # Colorado
+        "dc_refundable_credits",  # District of Columbia
+        "ia_refundable_credits",  # Iowa
+        "il_refundable_credits",  # Illinois
+        "in_refundable_credits",  # Indiana
+        "ks_refundable_credits",  # Kansas
+        "ky_refundable_credits",  # Kentucky
+        "la_refundable_credits",  # Louisiana
+        "ma_refundable_credits",  # Massachusetts
+        "me_refundable_credits",  # Maine
+        "md_refundable_credits",  # Maryland
+        "mn_refundable_credits",  # Minnesota
+        "mt_refundable_credits",  # Montana
+        "mo_refundable_credits",  # Missouri
+        # Skip NC, which has no refundable credits
+        "nd_refundable_credits",  # North Dakota
+        "ne_refundable_credits",  # Nebraska
+        "nh_refundable_credits",  # New Hampshire
+        "nj_refundable_credits",  # New Jersey
+        "nm_refundable_credits",  # New Mexico
+        "ny_refundable_credits",  # New York
+        "ok_refundable_credits",  # Oklahoma
+        "or_refundable_credits",  # Oregon
+        # Skip PA, which has no refundable credits
+        "ri_refundable_credits",  # Rhode Island
+        "sc_refundable_credits",  # South Carolina
+        "ut_refundable_credits",  # Utah
+        "va_refundable_credits",  # Virginia
+        "vt_refundable_credits",  # Vermont
+        "wa_refundable_credits",  # Washington
+        "wi_refundable_credits",  # Wisconsin
         # LOCAL
-        "nyc_refundable_credits",  # New York City.
+        "nyc_refundable_credits",  # New York City
     ]
 
     def formula(household, period, parameters):

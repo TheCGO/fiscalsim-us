@@ -1,0 +1,14 @@
+description: Arkansas Max Allowable Stillbirth Tax Credit Amount
+values:
+  2022-01-01: 500
+metadata:
+  type: single_amount
+  reference:
+    - title: AR1000TC Arkansas Individual Income Tax Credits (Line 5)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits.pdf
+    - title: AR1000TC Arkansas Individual Income Tax Credits Instructions (Line 5)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits_Instructions.pdf
+  unit: /1
+  period: year
+  name: ar_stillbirth_credit
+  label: AR Max Allowable Stillbirth Tax Credit Amount

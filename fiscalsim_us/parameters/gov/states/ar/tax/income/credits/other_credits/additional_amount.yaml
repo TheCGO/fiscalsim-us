@@ -1,0 +1,77 @@
+description: Arkansas grants taxpayers this additional credit. married Filing Jointly - double the credit amount
+metadata:
+  type: single_amount
+  threshold_unit: currency-USD
+  label: Arkansas additional income tax credit
+  reference:
+  - title: 2022 AR 1000F Arkansas Individual Income Tax Return (line 36)
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000F_FullYearResidentIndividualIncomeTaxReturn.pdf
+
+  - title: 2022 Additional Tax Credit For Qualified Individuals Worksheet
+    href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_Final_AdditionalTaxCreditforQualifiedIndividuals_FI.pdf
+
+brackets:
+  - threshold:
+      2022-01-01: 0
+    amount:
+      2022-01-01: 60
+  - threshold:
+      2022-01-01: 24_301
+      2023-01-01: 25_001
+    amount:
+      2022-01-01: 55
+  - threshold:
+      2022-01-01: 24_401
+      2023-01-01: 25_101
+    amount:
+      2022-01-01: 50
+  - threshold:
+      2022-01-01: 24_501
+      2023-01-01: 25_201
+    amount:
+      2022-01-01: 45
+  - threshold:
+      2022-01-01: 24_601
+      2023-01-01: 25_301
+    amount:
+      2022-01-01: 40
+  - threshold:
+      2022-01-01: 24_701
+      2023-01-01: 25_401
+    amount:
+      2022-01-01: 35
+  - threshold:
+      2022-01-01: 24_801
+      2023-01-01: 25_501
+    amount:
+      2022-01-01: 30
+  - threshold:
+      2022-01-01: 24_901
+      2023-01-01: 25_601
+    amount:
+      2022-01-01: 25
+  - threshold:
+      2022-01-01: 25_001
+      2023-01-01: 25_701
+    amount:
+      2022-01-01: 20
+  - threshold:
+      2022-01-01: 25_101
+      2023-01-01: 25_801
+    amount:
+      2022-01-01: 15
+  - threshold:
+      2022-01-01: 25_201
+      2023-01-01: 25_901
+    amount:
+      2022-01-01: 10
+  - threshold:
+      2022-01-01: 25_301
+      2023-01-01: 26_001
+    amount:
+      2022-01-01: 5
+  - threshold:
+      2022-01-01: 25_401
+      2023-01-01: 26_101
+    amount:
+      2022-01-01: 0

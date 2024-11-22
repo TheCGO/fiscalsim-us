@@ -1,0 +1,27 @@
+- name: AR gross income unit test 1
+  period: 2022
+  input:
+    employment_income: 600
+    military_service_income: 1
+    taxable_pension_income: 6_000
+    state_code: AR
+  output:
+    ar_total_income: 601
+- name: AR gross income unit test 2
+  period: 2022
+  input:
+    employment_income: 50_000
+    taxable_pension_income: 12_000
+    state_code: AR
+  output:
+    ar_total_income: 56_000
+- name: AR gross income unit test 3
+  period: 2022
+  input:
+    employment_income: 600_000
+    farm_rent_income: 20_000
+    ar_capital_gains: 5_678
+    state_code: AR
+  output:
+    ar_total_income: 625_678
+

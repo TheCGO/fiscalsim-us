@@ -2,6 +2,8 @@ from fiscalsim_us.model_api import *
 
 
 class ar_exemptions(Variable):
+    "2022 AR 1000F instructions page 10"
+
     value_type = float
     entity = TaxUnit
     label = "Arkansas exemptions from income tax"

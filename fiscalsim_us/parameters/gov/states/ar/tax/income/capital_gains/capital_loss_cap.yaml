@@ -1,0 +1,22 @@
+description: This is the maximum amount of capital losses that an Arkansas taxpayer can claim per year, by filing status
+metadata:
+  type: single_amount
+  period: year
+  unit: currency-USD
+  label: Arkansas capital loss cap
+  name: capital_loss_cap
+  reference:
+    - title: Arkansas AR1000D Arkansas Individual Income Tax Capital Gains Line 12
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000D_CapitalGains.pdf
+  breakdown:
+    - filing_status
+JOINT:
+  2022-01-01: 3_000
+SURVIVING_SPOUSE:
+  2022-01-01: 3_000
+HEAD_OF_HOUSEHOLD:
+  2022-01-01: 3_000
+SINGLE:
+  2022-01-01: 3_000
+SEPARATE:
+  2022-01-01: 1_500

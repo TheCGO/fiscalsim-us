@@ -8,6 +8,7 @@ class state_income_tax_before_refundable_credits(Variable):
     unit = USD
     definition_period = YEAR
     adds = [
+        "ar_income_tax_before_refundable_credits",
         "ca_income_tax_before_refundable_credits",
         "co_income_tax_before_refundable_credits",
         "dc_income_tax_before_refundable_credits",
@@ -34,6 +35,7 @@ class state_income_tax_before_refundable_credits(Variable):
         "or_income_tax_before_refundable_credits",
         "pa_income_tax",  # PA has no refundable credits.
         "ri_income_tax_before_refundable_credits",
+        "sc_income_tax_before_refundable_credits",
         "ut_income_tax_before_refundable_credits",
         "va_income_tax_before_refundable_credits",
         "vt_income_tax_before_refundable_credits",

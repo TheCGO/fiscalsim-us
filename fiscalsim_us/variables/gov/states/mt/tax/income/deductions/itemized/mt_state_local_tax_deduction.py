@@ -34,4 +34,4 @@ class mt_state_local_tax_deduction(Variable):
             period
         ).gov.state.mt.tax.income.deductions.itemized.misc
         cap = salt.salt_cap[tax_unit("filing_status", period)]
-        return min(cap, salt_amount)
+        return min_(cap, salt_amount)

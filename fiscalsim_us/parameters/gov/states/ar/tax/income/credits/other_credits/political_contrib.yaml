@@ -1,0 +1,25 @@
+description: Arkansas Other Tax Credits - Political Contribution Credit (per Taxpayer)
+values:
+  2022-01-01: 50
+metadata:
+  type: single_amount
+  reference:
+    - title: AR1000TC Arkansas Individual Income Tax Credits (Line 1)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits.pdf
+    - title: AR1000TC Arkansas Individual Income Tax Credits Instructions (Line 1)
+      href: https://www.dfa.arkansas.gov/images/uploads/incomeTaxOffice/2022_AR1000TC_Schedule_of_TaxCredits_andBusiness_IncentiveCredits_Instructions.pdf
+  unit: currency-USD
+  period: year
+  label: Arkansas Other Tax Credits - Political Contribution Credit
+  breakdown:
+    - filing_status
+JOINT:
+  2022-01-01: 100
+SURVIVING_SPOUSE:
+  2022-01-01: 50
+HEAD_OF_HOUSEHOLD:
+  2022-01-01: 50
+SINGLE:
+  2022-01-01: 50
+SEPARATE:
+  2022-01-01: 50
