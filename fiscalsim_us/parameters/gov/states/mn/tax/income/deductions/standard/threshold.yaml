@@ -1,14 +1,19 @@
 description: MN state standard deduction threshold for full deduction
 SINGLE:
   2021-01-01: 206_050
+  2023-01-01: 220_650
 JOINT:
   2021-01-01: 206_050
+  2023-01-01: 220_650
 SEPARATE:
   2021-01-01: 103_025
+  2023-01-01: 110_325
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 206_050
+  2023-01-01: 220_650
 SURVIVING_SPOUSE:
   2021-01-01: 206_050
+  2023-01-01: 220_650
 metadata:
   unit: currency-USD
   period: year
@@ -21,3 +26,5 @@ metadata:
       href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1_inst_21.pdf, Page 12
     - title: 2022 Minnesota Individual Income Tax Return (M1) Instructions
       href: https://www.revenue.state.mn.us/sites/default/files/2023-03/m1_inst_22.pdf
+    - title: 2023 Minnesota Individual Income Tax Return (M1) Instructions
+      href: https://www.revenue.state.mn.us/sites/default/files/2024-02/m1-inst-23.pdf.pdf

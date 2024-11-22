@@ -10,6 +10,7 @@ class mn_elderly_disabled_subtraction(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1r_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1r_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2023-12/m1r-23.pdf"
     )
     defined_for = StateCode.MN
 

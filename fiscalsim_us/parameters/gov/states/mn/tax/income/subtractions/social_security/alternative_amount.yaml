@@ -10,19 +10,26 @@ metadata:
     href: https://www.taxformfinder.org/forms/2021/2021-minnesota-form-m1m.pdf#page=4
   - title: 2022 Minnesota Schedule M1M, Income Additions and Subtractions, Line 12 worksheet
     href: https://www.revenue.state.mn.us/sites/default/files/2023-01/m1m_22.pdf#page=4
+  - title: 2023 Minnesota Schedule M1M, Income Additions and Subtractions, Line 12 worksheet
+    href: https://www.revenue.state.mn.us/sites/default/files/2023-12/m1m-23.pdf#page=3
 
 JOINT:
   2021-01-01: 5_290
   2022-01-01: 5_450
+  2023-01-01: 5_840
 HEAD_OF_HOUSEHOLD:
   2021-01-01: 4_130
   2022-01-01: 4_260
+  2023-01-01: 4_560
 SURVIVING_SPOUSE:
   2021-01-01: 5_290
   2022-01-01: 5_450
+  2023-01-01: 5_840
 SINGLE:
   2021-01-01: 4_130
   2022-01-01: 4_260
+  2023-01-01: 4_560
 SEPARATE:
   2021-01-01: 2_645
   2022-01-01: 2_725
+  2023-01-01: 2_920

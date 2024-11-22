@@ -224,3 +224,8 @@
     added:
       - Updated and fixed Arkansas parameters, variables and tests.
   date: 2024-11-21 00:30:00
+- bump: patch
+  changes:
+    added:
+      - Updates Minnesota tax logic to 2023 law
+  date: 2024-11-22 01:15:00

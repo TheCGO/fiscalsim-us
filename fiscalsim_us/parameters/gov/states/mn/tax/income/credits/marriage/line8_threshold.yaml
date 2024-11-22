@@ -1,0 +1,12 @@
+description: Minnesota provides a marriage credit for joint filers where this the threshold in line 8 for computing the credit one way or another.
+values:
+  2020-01-01: 0
+  2023-01-01: 114_000
+
+metadata:
+  period: year
+  unit: currency-USD
+  label: Minnesota marriage credit line 8 threshold amount amount
+  reference:
+  - title: 2023 Minnesota Schedule M1MA, Line 8
+    href: https://www.revenue.state.mn.us/sites/default/files/2023-12/m1ma-23.pdf

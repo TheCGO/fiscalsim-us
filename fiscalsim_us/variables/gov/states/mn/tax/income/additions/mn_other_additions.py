@@ -4,8 +4,9 @@ from fiscalsim_us.model_api import *
 class mn_other_additions(Variable):
     """
     Unimplemented additions to Minnesota taxable income.
-    Line 2 of Minnesota 2022 Individual Income Tax return form M1. These
-    additions to income include the following categories which aren't calculated with other variables.
+    Line 2 of Minnesota 2023 Individual Income Tax return form M1. These
+    additions to income include the following categories which are not
+    calculated with other variables.
     * Interest from municipal bond of another state
     * Federally exempt interest from mutual funds investing in state bonds
     * Expenses deducted on federal form income not taxed by Minnesota

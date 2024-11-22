@@ -10,6 +10,7 @@ class mn_marriage_credit(Variable):
     reference = (
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1ma_21.pdf"
         "https://www.revenue.state.mn.us/sites/default/files/2023-01/m1ma_22.pdf"
+        "https://www.revenue.state.mn.us/sites/default/files/2023-12/m1ma-23.pdf"
     )
     defined_for = StateCode.MN
 
@@ -36,6 +37,7 @@ class mn_marriage_credit(Variable):
         # determine overall eligibility for credit
         eligible = joint & individual_income_eligible & taxable_income_eligible
         # determine credit amount
+        # line8_done = min_income < p.line8_threshold  TODO: add the <114000 case using table
         std_ded = mn_itax.deductions.standard.base[filing_status]
         fractional_std_ded = p.standard_deduction_fraction * std_ded
         taxinc1 = max_(0, min_income - fractional_std_ded)
