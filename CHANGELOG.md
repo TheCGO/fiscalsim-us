@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.7] - 2024-12-19 16:30:00
+
+### Added
+
+- Fixes typo in `mn_prev_year_state_refund.py`
+
 ## [0.3.6] - 2024-11-22 01:15:00
 
 ### Added
@@ -257,6 +263,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First prototype version based off of openfisca-us and tax-calculator.
 
 
+[0.3.7]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.6...v0.3.7
 [0.3.6]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.5...v0.3.6
 [0.3.5]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.4...v0.3.5
 [0.3.4]: https://github.com/TheCGO/fiscalsim-us/compare/v0.3.3...v0.3.4
