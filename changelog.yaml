@@ -229,3 +229,8 @@
     added:
       - Updates Minnesota tax logic to 2023 law
   date: 2024-11-22 01:15:00
+- bump: patch
+  changes:
+    added:
+      - Fixes typo in `mn_prev_year_state_refund.py`
+  date: 2024-12-19 16:30:00
