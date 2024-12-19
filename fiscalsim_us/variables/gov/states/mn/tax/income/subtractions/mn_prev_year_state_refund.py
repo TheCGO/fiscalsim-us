@@ -1,7 +1,7 @@
 from fiscalsim_us.model_api import *
 
 
-class mmn_prev_year_state_refund(Variable):
+class mn_prev_year_state_refund(Variable):
     """
     Line 6 of Minnesota 2023 Individual Income Tax return from M1. This is the
     State income refund from a previous year that was reported in line 1 of
