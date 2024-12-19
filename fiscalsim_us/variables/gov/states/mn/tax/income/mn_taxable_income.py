@@ -25,6 +25,7 @@ class mn_taxable_income(Variable):
         ADDS = ["adjusted_gross_income", "mn_additions"]
         SUBTRACTS = [
             "mn_subtractions",
+            "mn_prev_year_state_refund",
             "mn_exemptions",
             "mn_deductions",
         ]
